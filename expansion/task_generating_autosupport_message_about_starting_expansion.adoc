@@ -1,0 +1,33 @@
+---
+permalink: expansion/task_generating_autosupport_message_about_starting_expansion.html 
+sidebar: sidebar 
+keywords: generating, generate, autosupport, message, start, expansion, expand, cluster, troubleshoot, generate an autosupport message about starting expansion 
+summary: クラスタを拡張する直前に、拡張プロセスを開始することを示す AutoSupport メッセージを送信する必要があります。 
+---
+= 拡張開始の AutoSupport メッセージを生成
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+クラスタを拡張する直前に、拡張プロセスを開始することを示す AutoSupport メッセージを送信する必要があります。このメッセージは、社内と社外のサポートスタッフに拡張について知らせるとともに、将来トラブルシューティングが必要となった場合のタイムスタンプとして機能します。
+
+.作業を開始する前に
+AutoSupport がセットアップされている必要があります。
+
+.手順
+. クラスタ内の各ノードについて、を使用してAutoSupportメッセージを送信します。 `system node autosupport invoke` コマンドを実行します
++
+[listing]
+----
+cluster1::> system node autosupport invoke -node * -message "cluster expansion started" -type all
+The AutoSupport was successfully invoked on node "cluster1-1". To view the status
+of the AutoSupport, use the "system node autosupport history show" command.
+Note: It may take several minutes for the AutoSupport to appear in the history list.
+The AutoSupport was successfully invoked on node "cluster1-2". To view the status
+of the AutoSupport, use the "system node autosupport history show" command.
+Note: It may take several minutes for the AutoSupport to appear in the history list.
+2 entries were acted on.
+----
+

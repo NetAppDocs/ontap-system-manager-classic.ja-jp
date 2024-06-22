@@ -1,0 +1,16 @@
+---
+permalink: peering/concept_creating_peer_relationship_between_clusters_92_earlier.html 
+sidebar: sidebar 
+keywords: relationship, define, network, connection, enable, cluster, svm, exchange, data, secure, peer, relationship, peer, configure peer relationship, ontap 9.2 and earlier 
+summary: ONTAP 9.2 以前の ONTAP 9 リリースでの ONTAP System Manager の「クラシック」インターフェイスを使用すると、 SVM ピア関係を作成できます。 
+---
+= ピア関係の設定（ ONTAP 9.2 以前）
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+ONTAP 9.2 以前の ONTAP 9 リリースでの ONTAP System Manager の _classic_ インターフェイスを使用すると、 SVM ピア関係を作成できます。
+
+ピア関係で定義されるネットワーク接続により、クラスタ間および SVM 間でデータをセキュアにやり取りすることができます。SVM ピア関係を作成する前に、クラスタピア関係を作成する必要があります。

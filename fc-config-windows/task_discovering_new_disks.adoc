@@ -1,0 +1,46 @@
+---
+permalink: fc-config-windows/task_discovering_new_disks.html 
+sidebar: sidebar 
+keywords: lun, storage, virtual, machine, svm, appear, disk, windows, host, automatic, discover, manual, rescan, discover new disk 
+summary: Storage Virtual Machine （ SVM ）の LUN は、 Windows ホストではディスクとして表示されます。LUN のディスクを新たにシステムに追加した場合、そのディスクは自動的には検出されません。手動でディスクを再スキャンして検出する必要があります。 
+---
+= 新しいディスクを検出します
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Storage Virtual Machine （ SVM ）の LUN は、 Windows ホストではディスクとして表示されます。LUN のディスクを新たにシステムに追加した場合、そのディスクは自動的には検出されません。手動でディスクを再スキャンして検出する必要があります。
+
+.手順
+. Windows コンピュータの管理ユーティリティを開きます。
++
+|===
+| 使用するポート | に移動します 
+
+
+ a| 
+Windows Server 2012
+ a| 
+* ツール * > * コンピュータの管理 *
+
+
+
+ a| 
+Windows Server 2008
+ a| 
+* スタート * > * 管理ツール * > * コンピュータの管理 *
+
+
+
+ a| 
+Windows Server 2016
+ a| 
+* スタート * > 管理ツール * > コンピュータの管理 *
+
+|===
+. ナビゲーションツリーで * ストレージ * ノードを展開します。
+. [ ディスクの管理 ] をクリックします。
+. [* アクション *>* ディスクの再スキャン *] をクリックします。
+

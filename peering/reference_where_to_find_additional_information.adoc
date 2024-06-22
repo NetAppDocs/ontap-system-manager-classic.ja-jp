@@ -1,0 +1,42 @@
+---
+permalink: peering/reference_where_to_find_additional_information.html 
+sidebar: sidebar 
+keywords: successful, create, cluster, peer, relationship, protect, availability, data, configure, protection, configuration, where to find additional information 
+summary: クラスタピア関係の作成が完了すると、データの可用性を保護することができます。 
+---
+= 追加情報の参照先
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+クラスタピア関係の作成が完了すると、データの可用性を保護することができます。
+
+次の情報を使用してデータを保護できます。
+
+* link:../volume-disaster-prep/index.html["ボリュームのディザスタリカバリの準備"]
++
+異なるクラスタにあるボリューム間の SnapMirror 関係を設定および監視する簡単な方法について説明しています。
+
+* link:../volume-backup-snapvault/index.html["SnapVault を使用したボリュームのバックアップ"]
++
+クラスタ間 SnapVault 関係を設定する簡単な方法について説明しています。
+
+
+
+詳細については、以下を参照してください。
+
+* https://docs.netapp.com/us-en/ontap/data-protection/index.html["データ保護"^]
++
+リモートシステムへの Snapshot コピーと SnapMirror レプリケーションを使用してデータ損失を防ぐ方法について説明します
+
+* http://www.netapp.com/us/media/tr-4015.pdf["ネットアップテクニカルレポート 4015 ：v SnapMirror Configuration and Best Practices for ONTAP 9.1 、 9.2 』"^]
++
+クラスタピアリングを含むレプリケーションの設定に関する情報とベストプラクティスが記載されています。
+
+* https://docs.netapp.com/us-en/ontap/concepts/index.html["ONTAP の概念"^]
++
+クラスタピアリングの概念が記載されています。
+
+

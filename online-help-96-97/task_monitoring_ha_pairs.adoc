@@ -1,0 +1,26 @@
+---
+permalink: online-help-96-97/task_monitoring_ha_pairs.html 
+sidebar: sidebar 
+keywords: system, manager, ha, availability, monitor, ha, pair 
+summary: クラスタ内のすべての high-availability （ HA ）ペアについて、 System Manager を使用して、ノードのステータスとインターコネクトのステータスを監視できます。テイクオーバーやギブバックが有効になっているかどうかや発生したかどうかの情報のほか、現在実行できない場合はその理由も確認できます。 
+---
+= System Manager - ONTAP 9.7 以前を使用して HA ペアを監視します
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+ONTAP System Manager クラシック（ ONTAP 9.7 以前で使用可能）を使用して、クラスタ内のすべてのハイアベイラビリティ（ HA ）ペアについて、ノードのステータスとインターコネクトのステータスを監視できます。テイクオーバーやギブバックが有効になっているかどうかや発生したかどうかの情報のほか、現在実行できない場合はその理由も確認できます。
+
+.手順
+. [* Configuration * （コンフィグレーション * ） ] > [* Cluster * （クラスタ * ） ] > [* High Availability * （高可用性 *
+. High Availability * ウィンドウで、 HA ペアの図をクリックして、各ノードのクラスタ HA ステータス、ノードステータス、インターコネクトステータス、ハードウェアモデルなどの詳細を表示します。
++
+ノードのクラスタ管理 LIF またはデータ LIF がホームノードにない場合は、一部の LIF がホームノードにないことを示す警告メッセージが表示されます。
+
+
+
+* 関連情報 *
+
+xref:reference_high_availability.adoc[[ ハイアベイラビリティ（ High Availability ） ] ウィンドウ]

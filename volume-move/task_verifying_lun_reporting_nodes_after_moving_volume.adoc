@@ -1,0 +1,39 @@
+---
+permalink: volume-move/task_verifying_lun_reporting_nodes_after_moving_volume.html 
+sidebar: sidebar 
+keywords: volume, lun, destination, aggregate, high-availability, ha, pair, ontap, selective, reporting-nodes, list, path, verify, verify lun reporting nodes after moving a volume 
+summary: LUN レポートノードを追加して、最適化された LUN パスを維持することができます。 
+---
+= ボリュームの移動後に LUN レポートノードを確認
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+LUN レポートノードを追加して、最適化された LUN パスを維持することができます。
+
+LUN を含むボリュームを別のハイアベイラビリティ（ HA ）ペアのデスティネーションアグリゲートに移動する場合 ONTAP 、選択的 LUN マップのレポートノードリストに HA ペアが自動的に追加されます
+
+.作業を開始する前に
+デスティネーションノードとその HA パートナーに 1 つずつ、 2 つの LIF を設定する必要があります。
+
+.このタスクについて
+この手順は、ボリュームを HA ペアから別の HA ペアに移動する場合にのみ必要です。2 ノードクラスタ構成や MetroCluster 構成など、同じ HA ペアの別のノードにボリュームを移動する場合は、この手順を省略できます。
+
+.手順
+. デスティネーションノードとそのパートナーノードがボリュームのレポートノードリストに含まれていることを確認します。ノードがレポートノードリストにない場合は、デスティネーションノードとそのパートナーノードをボリュームのレポートノードリストに追加します。
++
+`lun mapping add-reporting-nodes`
+
+. ホストから再スキャンを実行して、新しく追加したパスを検出します。
+. 新しいパスを MPIO 構成に追加します。
+. レポートノードリストから、前の LUN 所有者とそのパートナーノードを削除します。
++
+`lun mapping remove-reporting-nodes -remote-nodes -vserver vserver_name -path lun_path -igroup igroup_name`
+
+. ホストを再スキャンして古いパスが削除されたことを確認します。
++
+ホストを再スキャンする手順については、ホストのマニュアルを参照してください。
+
+

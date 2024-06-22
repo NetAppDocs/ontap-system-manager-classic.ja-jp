@@ -1,0 +1,39 @@
+---
+permalink: online-help-96-97/task_restoring_volume_from_snapshot_copy.html 
+sidebar: sidebar 
+keywords: restore, volume, snapshot, copy, system, manager, online, help 
+summary: System Manager を使用すると、以前に作成した Snapshot コピーに記録されている状態にボリュームをリストアして、失われた情報を取得できます。Snapshot コピーからボリュームをリストアすると、既存のボリューム構成は上書きされます。Snapshot コピーの作成後にボリューム内のデータに加えた変更はすべて失われます。 
+---
+= System Manager - ONTAP 9.7 以前を使用して、 Snapshot コピーからボリュームをリストアします
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+ONTAP System Manager クラシック（ ONTAP 9.7 以前で使用可能）を使用すると、以前に作成した Snapshot コピーに記録されている状態にボリュームをリストアして、失われた情報を取得できます。Snapshot コピーからボリュームをリストアすると、既存のボリューム構成は上書きされます。Snapshot コピーの作成後にボリューム内のデータに加えた変更はすべて失われます。
+
+.作業を開始する前に
+* システムに SnapRestore ライセンスがインストールされている必要があります。
+* リストアする FlexVol に LUN が含まれている場合、 LUN をアンマウントまたはマッピング解除する必要があります。
+* リストアしたボリューム用の十分な空きスペースが必要です。
+* ボリュームにアクセスしているユーザに、ボリュームをリバートすること、および選択した Snapshot コピーのデータによってボリューム内の現在のデータが置換されることを通知する必要があります。
+
+
+.このタスクについて
+* リストアするボリュームに他のボリュームに対するジャンクションポイントが含まれている場合、それらのジャンクションポイントにマウントされているボリュームはリストアされません。
+* SnapLock Compliance ボリュームの Snapshot コピーはリストアできません。
+
+
+.手順
+. [* ストレージ *>* ボリューム *] をクリックします。
+. SVM * フィールドのドロップダウンメニューで、 * すべての SVM * を選択します。
+. Snapshot コピーからリストアするボリュームを選択します。
+. [ * その他の操作 * > * スナップショットの管理 * > * リストア * ] をクリックします。
+. 適切な Snapshot コピーを選択し、 * Restore * をクリックします。
+. 確認のチェックボックスをオンにし、 * リストア * をクリックします。
+
+
+* 関連情報 *
+
+xref:reference_volumes_window.adoc[Volumes （ボリューム）ウィンドウ]

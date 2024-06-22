@@ -1,0 +1,82 @@
+---
+permalink: peering/task_creating_cluster_peer_relationships_92_earlier.html 
+sidebar: sidebar 
+keywords: create, cluster, peer, relationship, enter, predetermined, passphrase, ip, address, intercluster, lif, remote, successful, create a cluster peer relationship, ontap 9.2 or earlier 
+summary: 2 つのクラスタ間にクラスタピア関係を作成するには、事前に設定されたパスフレーズおよびリモートクラスタのクラスタ間 LIF の IP アドレスを入力し、関係が作成されたことを確認します。 
+---
+= クラスタピア関係を作成する（ ONTAP 9.2 以前）
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+ONTAP 9.2 以前の ONTAP 9 リリースの ONTAP の _classic_ インターフェイスを使用して、事前に設定されたパスフレーズとリモートクラスタのクラスタ間 LIF の IP アドレスを入力して、 2 つのクラスタ間にクラスタピア関係を作成できます。 関係が正常に作成されたことを確認します。
+
+.作業を開始する前に
+* ピア関係を作成するクラスタのすべてのクラスタ間 LIF の IP アドレスを確認しておく必要があります。
+* それぞれのピア関係で使用するパスフレーズを確認しておく必要があります。
+
+
+.このタスクについて
+この手順は各クラスタで実行する必要があります。
+
+.手順
+. ソースクラスタから、デスティネーションクラスタとのクラスタピア関係を作成します。
++
+.. [* 構成 * （ Configurations * ） ] タブをクリックします。
+.. [* Cluster Settings] ペインで、 [* Cluster Peers* ] をクリックします。
+.. [ 作成（ Create ） ] をクリックします。
++
+Create Cluster Peer * （クラスタピアの作成 * ）ダイアログボックスが表示されます。
+
+.. [step1d -passphrase -used] [* Details of the remote cluster to be peered * ] 領域で、認証されたクラスタピア関係を確立するために両方のピアで使用するパスフレーズを指定します。
+.. デスティネーションクラスタのすべてのクラスタ間 LIF （ノードごとに 1 つ）の IP アドレスを、カンマで区切って入力します。
++
+image::../media/cluster_peer_create.gif[クラスタピアの作成ダイアログボックス]
+
+.. [ 作成（ Create ） ] をクリックします。
++
+1 つのクラスタだけが設定されているため、認証ステータスは「 pending 」です。
+
+
+
+. デスティネーションクラスタに切り替えて、ソースクラスタとのクラスタピア関係を作成します。
++
+.. [* 構成 * （ Configurations * ） ] タブをクリックします。
+.. [* Cluster Settings] ペインで、 [* Cluster Peers* ] をクリックします。
+.. [ 作成（ Create ） ] をクリックします。
++
+クラスタピアの作成ダイアログボックスが表示されます。
+
+.. [* Details of the remote cluster to be peered * ] 領域で、で指定したパスフレーズと同じパスフレーズを指定します <<step1d-passphrase-used,手順 1d>> ソースクラスタのクラスタ間 LIF の IP アドレスを設定し、 * Create * をクリックします。
+
+
++
+image::../media/cluster_peer_create_2.gif[この図には説明が付随しています。]
+
+. デスティネーション・クラスタの [*Cluster Peers*] ウィンドウで ' ソース・クラスタが「 available 」であること ' および認証ステータスが「 ok 」であることを確認します
++
+image::../media/cluster_peers_status.gif[この図には説明が付随しています。]
+
++
+更新された情報を表示するには、 * Refresh * をクリックしなければならない場合があります。
+
++
+2 つのクラスタのピア関係が確立されました。
+
+. ソースクラスタに切り替え、デスティネーションクラスタが「 available 」で、認証ステータスが「 ok 」であることを確認します。
++
+更新された情報を表示するには、 * Refresh * をクリックしなければならない場合があります。
+
+
+
+
+
+== 次に何をするか
+
+ソースボリュームとデスティネーションボリューム間にデータ保護関係を作成するときに、ソースとデスティネーションの SVM 間の SVM ピア関係を作成します。
+
+link:../volume-backup-snapvault/index.html["SnapVault を使用したボリュームのバックアップ"]
+
+link:../volume-disaster-recovery/index.html["ボリュームのディザスタリカバリの準備"]

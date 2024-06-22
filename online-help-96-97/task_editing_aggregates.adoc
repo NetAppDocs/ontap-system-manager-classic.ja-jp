@@ -1,0 +1,52 @@
+---
+permalink: online-help-96-97/task_editing_aggregates.html 
+sidebar: sidebar 
+keywords: online, help, edit, aggregates, raid, type, group, size, online, help 
+summary: System Manager を使用して、既存のアグリゲートのアグリゲート名、 RAID タイプ、 RAID グループサイズを必要に応じて変更できます。 
+---
+= System Manager - ONTAP 9.7 以前を使用してアグリゲートを編集します
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+ONTAP System Manager クラシック（ ONTAP 9.7 以前で使用可能）を使用して、必要に応じて、既存のアグリゲートのアグリゲート名、 RAID タイプ、および RAID グループサイズを変更できます。
+
+.作業を開始する前に
+アグリゲートの RAID タイプを RAID4 から RAID-DP に変更するには、ホットスペアを除く十分な数の互換性のあるスペアディスクがアグリゲートに含まれている必要があります。
+
+.このタスクについて
+* アレイ LUN をサポートする ONTAP システムの RAID グループは変更できません。
++
+使用できるオプションは RAID 0 のみです。
+
+* パーティショニングされたディスクの RAID タイプは変更できません。
++
+パーティショニングされたディスクに対して選択できるオプションは RAID-DP のみです。
+
+* SnapLock Compliance アグリゲートの名前は変更できません。
+* ストレージプールの SSD で構成されるアグリゲートの場合、変更できるのはアグリゲート名のみです。
+* トリプルパリティディスクのサイズが 10TB で、他のディスクのサイズが 10TB 未満の場合、 RAID タイプとして RAID-DP または RAID-TEC を選択できます。
+* トリプルパリティディスクのサイズが 10TB で、他のディスクのサイズが 1 本でも 10TB を超えている場合、 RAID-TEC は RAID タイプに使用できる唯一のオプションです。
+
+
+.手順
+. 次のいずれかの方法を選択します。
++
+** [* アプリケーションと階層 *>* ストレージ階層 *] をクリックします。
+** Storage * > * Aggregates & Disks * > * Aggregates * の順にクリックします
+
+
+. 編集するアグリゲートを選択し、 * 編集 * をクリックします。
+. アグリゲートの編集 * ダイアログボックスで、アグリゲート名、 RAID タイプ、 RAID グループサイズを必要に応じて変更します。
+. [ 保存（ Save ） ] をクリックします。
+
+
+* 関連情報 *
+
+xref:reference_aggregates_window.adoc[アグリゲートウィンドウに戻ります]
+
+xref:concept_what_compatible_spare_disks_are.adoc[互換性のあるスペアディスクとは]
+
+xref:reference_storage_tiers_window.adoc[ストレージ階層ウィンドウに戻ります]

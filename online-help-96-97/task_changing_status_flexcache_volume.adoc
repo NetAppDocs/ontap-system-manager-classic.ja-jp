@@ -1,0 +1,27 @@
+---
+permalink: online-help-96-97/task_changing_status_flexcache_volume.html 
+sidebar: sidebar 
+keywords: flexcache, volume, change, status,online, help 
+summary: System Manager 9.6 以降 FlexCache では、 FlexCache ボリュームをオフラインまたはオンラインにしたり、 FlexCache ボリュームへのアクセスを制限したりするときに、ボリュームのステータスを変更できます。 
+---
+= FlexCache ボリュームのステータス変更
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+System Manager 9.6 以降 FlexCache では、 FlexCache ボリュームをオフラインまたはオンラインにしたり、 FlexCache ボリュームへのアクセスを制限したりするときに、ボリュームのステータスを変更できます。
+
+.手順
+. [* ストレージ *>* ボリューム *] をクリックします。
+. SVM * フィールドのドロップダウンメニューで、 * すべての SVM * を選択します。
+. ステータスを変更する FlexCache ボリュームを選択します。
+. [ * その他の操作 * > * ステータスを * に変更 ] をクリックし、必要なステータスを選択して FlexCache ボリュームのステータスを更新します。
++
+[NOTE]
+====
+FlexCache ボリュームをオフラインにしてステータスを「制限」に変更するには、まずボリュームをアンマウントする必要があります。
+
+====
+

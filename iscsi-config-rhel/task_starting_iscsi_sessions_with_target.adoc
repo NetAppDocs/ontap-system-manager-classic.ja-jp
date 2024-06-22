@@ -1,0 +1,39 @@
+---
+permalink: iscsi-config-rhel/task_starting_iscsi_sessions_with_target.html 
+sidebar: sidebar 
+keywords: linux, host, iscsi, connection, node, target, storage, cluster, establish, session, start the iscsi sessions with the target 
+summary: Linux ホストには、ストレージクラスタ内の各ノード（ターゲット）との iSCSI 接続が必要です。セッションはホストから確立します。 
+---
+= ターゲットとの iSCSI セッションを開始します
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Linux ホストには、ストレージクラスタ内の各ノード（ターゲット）との iSCSI 接続が必要です。セッションはホストから確立します。
+
+.このタスクについて
+ONTAP では、 iSCSI ホストからクラスタ内の各ノードへのパスを設定する必要があります。DM-Multipath で、使用する最適なパスが選択されます。パスに障害が発生した場合は、 DM-Multipath で代替パスが選択されます。
+
+.手順
+. LinuxホストのコマンドプロンプトからiSCSIサービスを開始します。
++
+`service iscsid force-start`
+
+. iSCSIターゲットを検出します。
++
+`iscsiadm --mode discovery --op update --type sendtargets --portal targetIP`
+
++
+検出された各ターゲットの IP アドレスが別々の行に表示されます。
+
+. 各ターゲットにログインしてiSCSIセッションを確立します。
++
+`iscsiadm --mode node -l all`
+
+. アクティブなiSCSIセッションのリストを表示できます。
++
+`iscsiadm --mode session`
+
+

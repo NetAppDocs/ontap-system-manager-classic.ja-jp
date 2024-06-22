@@ -1,0 +1,14 @@
+---
+permalink: smb-config/task_configuring_access_to_existing_svm.html 
+sidebar: sidebar 
+keywords: add, access, smb, cifs, client, exist, svm, involve, configuration, map, dns, server, verify, windows, administration, host, configure, configure smb/cifs access to an existing svm 
+summary: 既存の SVM に対する SMB / CIFS クライアントのアクセスを追加するには、 SVM に CIFS の設定を追加し、 DNS サーバでマッピングを追加し、 Windows 管理ホストからの CIFS アクセスを確認します。その後、CIFSクライアントアクセスを設定できます。 
+---
+= 既存の SVM への SMB / CIFS アクセスを設定
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+既存の SVM に対する SMB / CIFS クライアントのアクセスを追加するには、 SVM に CIFS の設定を追加し、 DNS サーバでマッピングを追加し、 Windows 管理ホストからの CIFS アクセスを確認します。その後、CIFSクライアントアクセスを設定できます。

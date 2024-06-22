@@ -1,0 +1,16 @@
+---
+permalink: fc-config-esxi/concept_fc_configuration_workflow.html 
+sidebar: sidebar 
+keywords: storage, available, fc, provision, volume, lun, storage, virtual, machine, svm, connect, host, workflow, fc configuration workflow 
+summary: FC を使用してホストでストレージを利用できるようにするには、 Storage Virtual Machine でボリュームと LUN をプロビジョニングし、ホストから LUN に接続します。 
+---
+= FC 構成のワークフロー
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+FC を使用してホストでストレージを利用できるようにするには、 Storage Virtual Machine （ SVM ）でボリュームと LUN をプロビジョニングし、ホストから LUN に接続します。
+
+image::../media/fc_esx_workflow.gif[次の図は FC ワークフローのフローチャートを示したものです。ワークフローの各手順はトピックに対応しています。]

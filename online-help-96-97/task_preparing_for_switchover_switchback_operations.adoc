@@ -1,0 +1,49 @@
+---
+permalink: online-help-96-97/task_preparing_for_switchover_switchback_operations.html 
+sidebar: sidebar 
+keywords: prepare, switchover, switchback, operation, system, manager, online, help 
+summary: System Manager 9.6 を使用してスイッチオーバー処理を実行する前に、該当するサイトで必要な手順が完了していることを確認する必要があります。 
+---
+= スイッチオーバーとスイッチバックの処理を準備
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+ONTAP System Manager クラシック 9.6 を使用してスイッチオーバー処理を実行する前に、該当するサイトで必要な手順が完了していることを確認する必要があります。
+
+.手順
+. サイト B の災害からリカバリする場合は、次の手順を実行する必要があります。
++
+.. 破損したディスクやハードウェアを修理または交換します。
+.. 電源を復旧します。
+.. 発生したエラーの問題を解決します。
+.. ディザスタサイトを起動します。
+
+
+. クラスタが次の条件を満たしていることを確認します。
++
+** 計画的スイッチオーバーを実行する場合は、両方のサイトが Active 状態になっています。
+** MetroCluster システムでは ' 構成タイプ IP_Fabric` が使用されます
+** 両方のサイトが 2 ノード構成（各クラスタにノードが 2 つ）で動作している。シングルノード構成または 4 ノード構成のサイトは、 System Manager を使用したスイッチオーバーとスイッチバックの処理でサポートされていません。
+
+
+. リモートサイト（サイト B ）をローカルサイト（サイト A ）から起動する場合は、サイト B で System Manager 9.6 以降のバージョンが実行されていることを確認します。
+
+
+
+
+== MetroCluster ローカルサイト（サイト A ）の名前を System Manger ONTAP 9.7 以前の名前に変更します
+
+ONTAP System Manager クラシック（ ONTAP 9.7 以前で使用可能）を使用して、クラスタ内の MetroCluster ローカルサイト（サイト A ）の名前を変更できます。
+
+.手順
+. [*Configuration*>*Configuration Updates*] をクリックします。
+. クラスタ名の更新 * をクリックします。
+. テキストボックスで名前を更新し、 * 送信 * をクリックします。
++
+MetroCluster サイト A のステータスを表示すると更新後の名前を確認できます。
+
+. リモートサイト（サイトB）からMetroClusterサイトAを表示したときに更新後の名前を表示するには、リモートサイト（サイトB）のCLIで次のコマンドを実行します。 `cluster peer modify-local-name`
+

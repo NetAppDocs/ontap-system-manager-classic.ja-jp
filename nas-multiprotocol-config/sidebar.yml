@@ -1,0 +1,38 @@
+---
+section: nas-multiprotocol-config
+title: SMB / CIFS および NFS のマルチプロトコル構成
+entries:
+- title: 概要
+  url: "/nas-multiprotocol-config/index.html"
+- title: マルチプロトコルの設定ワークフロー
+  url: "/nas-multiprotocol-config/concept_cifs_nfs_configuration_workflow.html"
+  entries:
+  - title: アグリゲートを作成する
+    url: "/nas-multiprotocol-config/task_creating_aggregate.html"
+  - title: 新しいボリュームをプロビジョニングする場所を決定します
+    url: "/nas-multiprotocol-config/task_deciding_where_to_provision_new_volume.html"
+    entries:
+    - title: 基本的な SVM を作成
+      url: "/nas-multiprotocol-config/task_creating_new_svm.html"
+    - title: 既存の SVM に CIFS / NFS アクセスを追加
+      url: "/nas-multiprotocol-config/concept_adding_nas_access_to_existing_svm.html"
+    - title: SVM ルートボリュームのエクスポートポリシーを開く（ NFS 対応 SVM の新規作成）
+      url: "/nas-multiprotocol-config/task_opening_export_policy_svm_root_volume.html"
+    - title: DNS サーバでの SMB サーバのマッピング
+      url: "/nas-multiprotocol-config/task_mapping_smb_server_dns_server.html"
+    - title: LDAP の設定（ NFS 対応 SVM の新規作成）
+      url: "/nas-multiprotocol-config/task_configuring_ldap_new_svm.html"
+    - title: UNIX と Windows のユーザ名をマッピング
+      url: "/nas-multiprotocol-config/task_mapping_unix_windows_user_names.html"
+  - title: ボリュームを作成して設定
+    url: "/nas-multiprotocol-config/task_creating_configuring_volume.html"
+  - title: 共有を作成して権限を設定
+    url: "/nas-multiprotocol-config/task_creating_share_setting_its_permissions.html"
+  - title: ボリュームのエクスポートポリシーを作成
+    url: "/nas-multiprotocol-config/task_creating_export_policy_for_volume.html"
+  - title: SMB クライアントアクセスを確認
+    url: "/nas-multiprotocol-config/task_verifying_smb_client_access.html"
+  - title: UNIX 管理ホストから NFS アクセスを確認
+    url: "/nas-multiprotocol-config/task_verifying_nfs_access_from_unix_administration_host.html"
+  - title: CIFS および NFS のクライアントアクセスを設定して確認
+    url: "/nas-multiprotocol-config/task_configuring_verifying_client_access_new_svm.html"

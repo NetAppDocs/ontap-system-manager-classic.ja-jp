@@ -1,0 +1,42 @@
+---
+permalink: expansion/task_upgrading_or_downgrading_nodes.html 
+sidebar: sidebar 
+keywords: join, install, node, cluster, run, ontap, upgrade, downgrade 
+summary: 新しく設置したノードをクラスタに追加する前に、ノードで実行されている ONTAP のバージョンがクラスタと同じであることを確認する必要があります。ノードが異なるバージョンを実行している場合は、クラスタと一致するようにノードをアップグレードまたはダウングレードする必要があります。 
+---
+= ノードをアップグレードまたはダウングレードする
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+新しく設置したノードをクラスタに追加する前に、ノードで実行されている ONTAP のバージョンがクラスタと同じであることを確認する必要があります。ノードが異なるバージョンを実行している場合は、クラスタと一致するようにノードをアップグレードまたはダウングレードする必要があります。
+
+.手順
+. クラスタにインストールされているONTAPのバージョンを確認します。 `cluster image show`
+. ノードの ONTAP の現在のバージョンを表示します。
++
+.. 最初のノードで、ソフトウェアのバージョンを表示します。 `system node image show`
++
+[listing]
+----
+::*> system node image show
+                 Is      Is                                Install
+Node     Image   Default Current Version                   Date
+-------- ------- ------- ------- ------------------------- -------------------
+localhost
+         image1  false   false   9.3                    MM/DD/YYYY TIMESTAMP
+         image1  true    true    9.3                    MM/DD/YYYY TIMESTAMP
+2 entries were displayed.
+----
+.. 2 つ目のノードで同じ手順を繰り返します。
+
+
+. クラスタとノードの ONTAP のバージョンを比較し、次のいずれかの操作を実行します。
++
+** クラスタとノードの ONTAP のバージョンが同じである場合は、アップグレードもダウングレードも不要です。
+** クラスタとノードの ONTAP のバージョンが異なる場合は、を実行します link:https://docs.netapp.com/us-en/ontap/upgrade/index.html["ONTAPのアップグレード"] 以前のバージョンを実行しているノードまたはを実行できます link:https://docs.netapp.com/us-en/ontap/revert/index.html["ONTAP をリバートする"] 新しいバージョンを実行しているノード。
+
+
+

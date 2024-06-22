@@ -1,0 +1,41 @@
+---
+permalink: online-help-96-97/task_resizing_flexgroup_volumes.html 
+sidebar: sidebar 
+keywords: system, manager, online, help, resize, flexgroup, volume, resources 
+summary: System Manager を使用して、既存のリソースのサイズを変更するか、または新しいリソースを追加して、 FlexGroup ボリュームのサイズを変更できます。 
+---
+= System Manager - ONTAP 9.7 以前を使用して FlexGroup ボリュームのサイズを変更します
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+ONTAP System Manager クラシック（ ONTAP 9.7 以前で使用可能）を使用すると、既存のリソースのサイズを変更するか、または新しいリソースを追加して、 FlexGroup ボリュームのサイズを変更できます。
+
+.作業を開始する前に
+* FlexGroup ボリュームのサイズを変更するには、既存のアグリゲートに十分な空きスペースが必要です。
+* FlexGroup ボリュームを拡張するには、拡張に使用するアグリゲートに十分な空きスペースが必要です。
+
+
+.手順
+. [* ストレージ *>* ボリューム *] をクリックします。
+. SVM * フィールドのドロップダウンメニューで、 * すべての SVM * を選択します。
+. サイズを変更する FlexGroup ボリュームを選択し、 * その他の操作 * > * サイズ変更 * をクリックします。
+. FlexGroup ボリュームのサイズ変更 * ウィンドウで、 FlexGroup ボリュームのサイズを変更するサイズを指定します。
++
+デフォルトでは、既存のアグリゲートを使用して FlexGroup ボリュームのサイズが変更されます。System Manager 9.6 以降では、ボリュームに対して許容される最小サイズがフィールドの横に表示されます。
+
++
+[NOTE]
+====
+新しいリソースを追加して FlexGroup ボリュームを拡張する場合は、をクリックします image:../media/advanced_options.gif[""] （アドバンストオプション）。
+
+====
+. Snapshot コピーリザーブの割合を指定します。
+. FlexGroup ボリュームのサイズを変更するには、 * サイズ変更 * をクリックします。
+
+
+* 関連情報 *
+
+xref:reference_volumes_window.adoc[Volumes （ボリューム）ウィンドウ]

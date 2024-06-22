@@ -1,0 +1,19 @@
+---
+section: volume-move
+title: ボリューム移動の管理
+entries:
+- title: 概要
+  url: "/volume-move/index.html"
+- title: ボリューム移動ワークフロー
+  url: "/volume-move/concept_volume_move_workflow.html"
+  entries:
+  - title: ボリューム移動の方法とタイミングを計画します
+    url: "/volume-move/task_planning_method_timing_volume_move.html"
+  - title: System Manager を使用してボリュームを移動する
+    url: "/volume-move/task_moving_volume_using_system_manager.html"
+  - title: ボリュームの移動後に LUN レポートノードを確認
+    url: "/volume-move/task_verifying_lun_reporting_nodes_after_moving_volume.html"
+  - title: ボリュームを移動したら、 LUN レポートノードを更新します
+    url: "/volume-move/task_updating_lun_reporting_nodes_after_moving_volume.html"
+  - title: ボリューム移動後に NDMP バックアップを更新する
+    url: "/volume-move/task_updating_ndmp_backup_after_moving_volume.html"

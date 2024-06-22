@@ -1,0 +1,20 @@
+---
+permalink: online-help-96-97/concept_updating_clusters_metrocluster_configuration.html 
+sidebar: sidebar 
+keywords: update, cluster, metrocluster, configuration, online, help 
+summary: System Manager を使用して、 MetroCluster 構成のクラスタを更新できます。クラスタの更新以外の処理は、すべて両方のクラスタで実行する必要があります。 
+---
+= MetroCluster 構成のクラスタを System Manager ONTAP 9.7 以前を使用して更新する
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+ONTAP MetroCluster 構成のクラスタを更新するには、 System Manager クラシック（ ONTAP 9.7 以前で使用可能）を使用します。クラスタの更新以外の処理は、すべて両方のクラスタで実行する必要があります。
+
+image::../media/updating_cluster_mcc_configuration.gif[クラスタの MCC 構成を更新しています]
+
+* 関連情報 *
+
+https://docs.netapp.com/us-en/ontap/upgrade/task_upgrade_andu_sm.html["ONTAPのアップグレード"]

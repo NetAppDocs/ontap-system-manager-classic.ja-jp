@@ -1,0 +1,98 @@
+---
+permalink: online-help-96-97/concept_cifs_protocol.html 
+sidebar: sidebar 
+keywords: cif, protocol, system, manager, enable, configure, server, client, file, cluster, online, help, set up, general, properties, edit 
+summary: System Manager を使用して、 CIFS サーバを有効にして、 CIFS クライアントがクラスタ内のファイルにアクセスできるようにすることができます。 
+---
+= System ManagerでのCIFSプロトコルの設定- ONTAP 9.7以前
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+ONTAP System Manager クラシック（ ONTAP 9.7 以前で使用可能）を使用して、 CIFS サーバを有効にして、 CIFS クライアントがクラスタ上のファイルにアクセスできるように設定することができます。
+
+
+
+== CIFS をセットアップする
+
+System Manager を使用して、 CIFS サーバを有効にして、 CIFS クライアントがクラスタ内のファイルにアクセスできるようにすることができます。
+
+.作業を開始する前に
+* ストレージシステムに CIFS のライセンスがインストールされている必要があります。
+* Active Directory ドメインで CIFS を設定する場合には、次の要件を満たす必要があります。
++
+** DNS が有効になっていて、正しく設定されていること。
+** ストレージシステムが、完全修飾ドメイン名（ FQDN ）を使用してドメインコントローラと通信できる
+** クラスタとドメインコントローラ間の時間差（クロックスキュー）が 5 分以内である必要があります。
+
+
+* Storage Virtual Machine （ SVM ）に設定されているプロトコルが CIFS のみの場合は、次の要件を満たす必要があります。
++
+** ルートボリュームのセキュリティ形式は NTFS である必要があります。
++
+System Manager では、デフォルトでセキュリティ形式が UNIX に設定されます。
+
+** スーパーユーザアクセスの設定： `Any` CIFSプロトコルの場合。
+
+
+
+
+.手順
+. [ * ストレージ * > * SVMs * ] をクリックします。
+. SVM を選択し、 * SVM 設定 * をクリックします。
+. [* 構成 *] タブで、 [* セットアップ *] をクリックします。
+. [* CIFS Server Setup*] ダイアログ・ボックスの [*General] タブで 'NetBIOS 名と Active Directory ドメインの詳細を指定します
+. [* オプション * ] タブをクリックして、次の操作を実行します。
++
+** SMB 設定領域で、必要に応じて SMB 署名チェックボックスと SMB 暗号化チェックボックスを選択または選択解除します。
+** デフォルトの UNIX ユーザを指定します。
+** [WINS Servers] 領域で、必要な IP アドレスを追加します。
+
+
+. [ セットアップ ] をクリックします。
+
+
+
+
+== CIFS の一般プロパティを編集します
+
+System Manager を使用して、デフォルトの UNIX ユーザや Windows ユーザなど、 CIFS の一般プロパティを変更できます。CIFS サーバの SMB 署名を有効または無効にすることもできます。
+
+.手順
+. [ * ストレージ * > * SVMs * ] をクリックします。
+. SVM を選択し、 * SVM 設定 * をクリックします。
+. [ * 環境設定 * ] タブで、 [ * オプション * ] をクリックします。
+. CIFS オプション * ダイアログボックスで、必要に応じて次の CIFS サーバプロパティを変更します。
++
+** UNIX ユーザ
+** Windows ユーザ
+** IP アドレス
+** SMB 署名を有効または無効にします
++
+SMB 署名を有効にすると、データの侵害防止に役立ちます。ただし、ネットワークトラフィックは同じですが、クライアントとサーバの両方で CPU 使用率の増加という形でパフォーマンスの低下が発生する場合があります。リプレイアタックに対する保護を必要としない Windows クライアントについては、 SMB 署名を無効にすることができます。
+
++
+Windows クライアントでの SMB 署名の無効化については、 Microsoft Windows のマニュアルを参照してください。
+
+** SMB 3.0 暗号化を有効または無効にします
++
+SMB 3.0 セッションとトランスポート接続の間で複数のチャネルを確立するには、 SMB マルチチャネルを有効にする必要があります。
+
+
+
+. [ 保存（ Save ） ] または [ 保存して閉じる（ Save and Close ） ] をクリックします。
+
+
+* 関連情報 *
+
+xref:task_creating_cifs_share.adoc[CIFS 共有を作成する]
+
+xref:reference_cifs_window.adoc[[CIFS]ウィンドウ]
+
+xref:task_editing_volume_properties.adoc[ボリュームプロパティを編集しています]
+
+xref:task_modifying_export_policy_rules.adoc[エクスポートポリシールールの変更]
+
+https://docs.netapp.com/us-en/ontap/smb-admin/index.html["SMB / CIFS の管理"]

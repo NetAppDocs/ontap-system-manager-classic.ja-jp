@@ -1,0 +1,30 @@
+---
+permalink: nfs-config-esxi/task_configuring_host_iscsi_ports_vswitches.html 
+sidebar: sidebar 
+keywords: esxi, host, network, port, nfs, connection, storage, cluster, configure, configure host ports and vswitches 
+summary: ESXi ホストには、ストレージクラスタへの NFS 接続用のネットワークポートが必要です。 
+---
+= ホストポートと vSwitch を設定
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+ESXi ホストには、ストレージクラスタへの NFS 接続用のネットワークポートが必要です。
+
+.このタスクについて
+IP ハッシュを NIC チーミングポリシーとして使用することを推奨します。これには、単一の vSwitch 上に単一の VMkernel ポートが必要です。
+
+NFS に使用するホストポートとストレージクラスタポートには、同じサブネット内の IP アドレスが必要です。
+
+このタスクでは、 ESXi ホストを設定するための手順の概要を示します。詳細な手順については、使用している ESXi のバージョンに対応した VMware の出版物 _Storage_ を参照してください。
+
+http://www.vmware.com["VMware"]
+
+.手順
+. vSphere Client にログインし、インベントリペインから ESXi ホストを選択します。
+. [* Manage * （管理） ] タブで、 [* Networking* （ネットワーク） ] をクリックします。
+. Add Networking （ネットワークの追加） * をクリックし、 * VMKernel * および * Create a vSphere standard switch * を選択して、 VMkernel ポートと vSwitch を作成します。
+. vSwitch 用のジャンボフレームを設定します（使用する場合の MTU サイズは 9000 ）。
+

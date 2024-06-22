@@ -1,0 +1,140 @@
+---
+permalink: smb-config/task_creating_new_svm.html 
+sidebar: sidebar 
+keywords: wizard, process, creating, create, storage, virtual, machine, svm, domain, name, system, dns, logical, interface, lif, configuring, configure, cifs, server, creating, create, sharing, share, volume, create a new svm with a cifs volume and share 
+summary: ウィザードを使用して、新しい Storage Virtual Machine （ SVM ）の作成から、 Domain Name System （ DNS ；ドメインネームシステム）の設定、データ論理インターフェイス（ LIF ）の作成、 CIFS サーバの設定、ボリュームの作成と共有までの一連の処理を実行することができます。 
+---
+= CIFS ボリュームと共有を含む新しい SVM を作成
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+ウィザードを使用して、新しい Storage Virtual Machine （ SVM ）の作成から、 Domain Name System （ DNS ；ドメインネームシステム）の設定、データ論理インターフェイス（ LIF ）の作成、 CIFS サーバの設定、ボリュームの作成と共有までの一連の処理を実行することができます。
+
+.作業を開始する前に
+* ネットワークを設定し、関連する物理ポートをネットワークに接続しておく必要があります。
+* SVM で使用する次のネットワークコンポーネントを確認しておく必要があります。
++
+** データ論理インターフェイス（ LIF ）を作成するノードとそのノード上の特定のポート
+** データ LIF の IP アドレスをプロビジョニングするサブネット、または必要に応じてデータ LIF に割り当てる特定の IP アドレス
+** この SVM を追加する Active Directory （ AD ）ドメインと SVM を追加するために必要なクレデンシャル
+
+
+* サブネットは、 Network Information Service （ NIS ）、 Lightweight Directory Access Protocol （ LDAP ）、 Active Directory （ AD ）、 DNS などのサービスに必要なすべての外部サーバへのルーティングが可能である必要があります。
+* 外部ファイアウォールがある場合は、ネットワークサービスへのアクセスを許可するように適切に設定しておく必要があります。
+* AD ドメインコントローラ、クライアント、および SVM の時刻の誤差が 5 分以内になるように同期しておく必要があります。
+
+
+.手順
+. SVMs ウィンドウに移動します。
+. [* 作成 .*] をクリックします
+. Storage Virtual Machine （ SVM ）のセットアップ * ダイアログボックスで、 SVM を作成します。
++
+.. SVM に一意の名前を指定します。
++
+完全修飾ドメイン名（ FQDN ）を使用するか、クラスタ内で名前が一意になるような命名規則に従って指定してください。
+
+.. すぐには設定しない場合でも、ライセンスがあり、 SVM で将来的に使用する可能性のあるプロトコルはすべて選択します。
++
+NFS アクセスが必要になった場合は、 CIFS クライアントと NFS クライアントが同じデータ LIF を共有できるように、「 * nfs * now 」を選択する必要があります。
+
+.. 言語設定はデフォルトの C.UTF-8 のままにします。
++
+[NOTE]
+====
+NFS クライアントと SMB / CIFS クライアントの両方で国際文字の表示をサポートしている場合は、 ONTAP 9.5 以降で提供されている * UTF8MB4 * 言語コードの使用を検討してください。
+
+====
++
+あとで作成するボリュームでもこの言語が継承されます。ボリュームの言語を変更することはできません。
+
+.. *オプション*：SVMルートボリュームを格納するルートアグリゲートを選択します。
++
+選択したルートボリュームのアグリゲートがデータボリュームの場所に対応していない。データボリュームのアグリゲートは、あとでストレージをプロビジョニングするときに自動的に選択されます。
+
++
+image::../media/svm_setup_details_page_ntfs_selected_smb.gif[この図には説明が付随しています。]
+
+.. *オプション*：* DNS Configuration *領域で、このSVMに使用するデフォルトのDNS検索ドメインとネームサーバがあることを確認します。
++
+image::../media/svm_setup_details_dns_smb.gif[この図には説明が付随しています。]
+
+.. [Submit & Continue] をクリックします。
+
+
++
+SVM が作成されます。プロトコルの設定はまだ完了していません。
+
+. Configure CIFS/NFS protocol * ページの * Data LIF Configuration * セクションで、クライアントがデータへのアクセスに使用する LIF の詳細を指定します。
++
+.. LIF に IP アドレスを割り当てます。指定したサブネットから自動で割り当てるか、手動で入力して割り当てます。
+.. 「 * Browse 」をクリックして、 LIF に関連付けるノードとポートを選択します。
++
+image::../media/svm_setup_cifs_nfs_page_lif_multi_nas_smb.gif[この図には説明が付随しています。]
+
+
+
+. CIFS Server Configuration * セクションで CIFS サーバを定義し、 AD ドメインにアクセスするように設定します。
++
+.. CIFS サーバに AD ドメイン内で一意の名前を指定します。
+.. CIFS サーバを追加できる AD ドメインの FQDN を指定します。
+.. AD ドメイン内の CN=Computers 以外の組織単位（ OU ）を関連付ける場合は、その OU を入力します。
+.. OU に CIFS サーバを追加するための十分な権限がある管理用アカウントの名前とパスワードを指定します。
+.. この SVM 上のすべての共有に対する不正アクセスを防止するには、 SMB 3.0 を使用してデータを暗号化するオプションを選択します。
+
+
++
+image::../media/svm_setup_cifs_nfs_page_cifs_ad_smb.gif[この図には説明が付随しています。]
+
+. CIFS / SMB アクセス用にボリュームを作成し、共有をプロビジョニングします。
++
+.. CIFS / SMB クライアントからボリュームにアクセスするときに使用する共有の名前を指定します。
++
+入力した共有の名前はボリューム名としても使用されます。
+
+.. ボリュームのサイズを指定します。
++
+image::../media/svm_setup_cifs_nfs_page_cifs_share_smb.gif[CIFS 共有の設定に使用する領域のスクリーンショット]
+
+
+
++
+ボリュームのアグリゲートを指定する必要はありません。ボリュームは利用可能なスペースが最も多いアグリゲートに自動的に配置されます。
+
+. *オプション*：共有ACLを変更して、共有へのアクセスを制限します。
++
+.. [*permission] フィールドで、 [*Change] をクリックします。
+.. Everyone グループを選択し、 * Remove * をクリックします。
+.. *オプション*：* Add *をクリックし、SVMを含むWindows Active Directoryドメインで定義されている管理者グループの名前を入力します。
+.. 新しい管理者グループを選択し、 * Full Control * を選択します。
+.. [ 保存して閉じる ] をクリックします。
+
+
+. [Submit & Continue] をクリックします。
++
+次のオブジェクトが作成されます。
+
++
+** SVM のあとにという名前のデータ LIF に「 _cifs_lif1 」というサフィックスを付加
+** AD ドメインに属する CIFS サーバ
+** 使用可能なスペースが最も多いアグリゲートに配置されるボリューム。共有名に一致する名前で、末尾には「 _cifs_volume 」というサフィックスを付けます。
+** ボリューム上の共有
+
+
+. 表示されている他のすべてのプロトコル設定ページについては、 * Skip * をクリックして後でプロトコルを設定します。
+. * SVM 管理 * ページが表示されたら、この SVM に別の管理者を設定するか、設定を延期します。
++
+** [* Skip] をクリックし、必要に応じて後で管理者を設定します。
+** 必要な情報を入力して、「 * Submit & Continue * 」をクリックします。
+
+
+. 「 * 概要 * 」ページを確認し、後で必要となる情報を記録して、「 * OK 」をクリックします。
++
+DNS 管理者は、 CIFS サーバの名前とデータ LIF の IP アドレスを把握しておく必要があります。Windows クライアントでは、 CIFS サーバと共有の名前が必要になります。
+
+
+
+.結果
+新しい SVM が作成され、共有するように設定された新しいボリュームを含む CIFS サーバが作成されます。

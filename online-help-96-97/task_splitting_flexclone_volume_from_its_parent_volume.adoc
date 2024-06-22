@@ -1,0 +1,34 @@
+---
+permalink: online-help-96-97/task_splitting_flexclone_volume_from_its_parent_volume.html 
+sidebar: sidebar 
+keywords: split, flexclone, volume, parent, online, help, disk, space 
+summary: System Managerクラシック（ONTAP 9.7以前で使用可能）を使用して、FlexCloneボリュームを親ボリュームからスプリットできます。スプリットした FlexClone ボリュームは通常の FlexVol になります。親ボリュームのディスクスペースが使用され続け、ストレージ効率が維持されます。 
+---
+= System Manager - ONTAP 9.7 以前を使用して、 FlexClone ボリュームを親ボリュームからスプリットします
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+System Managerクラシック（ONTAP 9.7以前で使用可能）を使用して、FlexCloneボリュームを親ボリュームからスプリットできます。スプリットした FlexClone ボリュームは通常の FlexVol になります。親ボリュームのディスクスペースが使用され続け、ストレージ効率が維持されます。
+
+.作業を開始する前に
+FlexClone ボリュームはオンラインである必要があります。
+
+.このタスクについて
+AFF システムでないシステムの場合、クローンスプリット処理を実行するとクローンの既存の Snapshot コピーがすべて削除されます。SnapMirror 更新に必要な Snapshot コピーも削除されます。そのため、以降の SnapMirror 更新は失敗する可能性があります。
+
+ボリュームで他の処理を実行する必要がある場合、クローンスプリット処理を一時停止できます。他の処理の完了後にクローンスプリット処理を再開できます。
+
+.手順
+. [* ストレージ *>* ボリューム *] をクリックします。
+. SVM * フィールドのドロップダウンメニューで、 * すべての SVM * を選択します。
+. 親ボリュームからスプリットする FlexClone ボリュームを選択します。
+. [ * その他のアクション * > * クローン * > * スプリット * ] をクリックします。
+. クローンスプリット処理の FlexClone ボリュームの詳細を確認し、確認ダイアログボックスで「 * スプリットの開始」をクリックします。
+
+
+* 関連情報 *
+
+xref:reference_volumes_window.adoc[Volumes （ボリューム）ウィンドウ]

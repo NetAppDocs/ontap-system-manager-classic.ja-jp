@@ -1,0 +1,17 @@
+---
+permalink: smb-config/concept_adding_protocol_volume_to_protocol_enabled_svm.html 
+sidebar: sidebar 
+keywords: add, cifs, volume, cifs-enabled, svm, involves, creating, create, configure, configuring, share, set, permission, verify, windows, administration, host, add a cifs volume to a cifs-enabled svm 
+summary: CIFS 対応 SVM に CIFS ボリュームを追加するには、ボリュームを作成して設定し、共有を作成して権限を設定し、 Windows 管理ホストからのアクセスを確認します。その後、CIFSクライアントアクセスを設定できます。 
+---
+= CIFS 対応 SVM に CIFS ボリュームを追加
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+CIFS 対応 SVM に CIFS ボリュームを追加するには、ボリュームを作成して設定し、共有を作成して権限を設定し、 Windows 管理ホストからのアクセスを確認します。その後、CIFSクライアントアクセスを設定できます。
+
+.作業を開始する前に
+SVMでCIFSの設定が完了している必要があります。

@@ -1,0 +1,27 @@
+---
+permalink: nfs-config-esxi/task_verifying_nfs_access_from_esxi_host.html 
+sidebar: sidebar 
+keywords: provision, datastore, esxi, verify, nfs, access, creating, create, virtual, machine, power, verify nfs access from an esxi host 
+summary: データストアのプロビジョニングが完了したら、データストアに仮想マシンを作成して電源をオンにすることで、 ESXi ホストに NFS アクセスが許可されていることを確認できます。 
+---
+= ESXi ホストからの NFS アクセスを確認
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+データストアのプロビジョニングが完了したら、データストアに仮想マシンを作成して電源をオンにすることで、 ESXi ホストに NFS アクセスが許可されていることを確認できます。
+
+.手順
+. vSphere Web Client * Home * ページで、 * Hosts and Clusters * をクリックします。
+. ナビゲーションペインで、データセンターを展開して以前に作成したデータストアを探します。
+. [ 新しい仮想マシンの作成 ] をクリックし、ウィザードに必要な情報を入力します。
++
+NFS アクセスを確認するには、以前に作成したデータセンター、 ESXi ホスト、およびデータストアを選択します。
+
++
+仮想マシンが vSphere Web Client のインベントリに表示されます。
+
+. 仮想マシンの電源をオンにします。
+

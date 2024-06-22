@@ -1,0 +1,33 @@
+---
+permalink: online-help-96-97/task_deleting_flexgroup_volumes.html 
+sidebar: sidebar 
+keywords: delete, flexgroup, volumes, online, help, system, manager 
+summary: System Manager FlexGroup を使用して、不要になった FlexGroup ボリュームを削除できます。 
+---
+= System Manager - ONTAP 9.7 以前を使用して FlexGroup ボリュームを削除します
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+ONTAP FlexGroup ボリュームが不要になった場合は、 FlexGroup System Manager クラシック（ ONTAP 9.7 以前で使用可能）を使用してボリュームを削除できます。
+
+.作業を開始する前に
+* FlexGroup ボリュームのジャンクションパスがアンマウントされている必要があります。
+* FlexGroup ボリュームがオフラインになっている必要があります。
+
+
+.このタスクについて
+System Manager では、 FlexGroup ボリュームのコンスティチュエントレベルの管理はサポートされません。
+
+.手順
+. [* ストレージ *>* ボリューム *] をクリックします。
+. SVM * フィールドのドロップダウンメニューで、 * すべての SVM * を選択します。
+. 削除する FlexGroup ボリュームを選択し、 * 削除 * をクリックします。
+. 確認のチェックボックスをオンにし、 * OK * をクリックします。
+
+
+* 関連情報 *
+
+xref:reference_volumes_window.adoc[Volumes （ボリューム）ウィンドウ]

@@ -1,0 +1,44 @@
+---
+permalink: volume-restore-snapvault/index.html 
+sidebar: sidebar 
+keywords: content, restore, volume, snapvault, vault, backup, ontap, data, loss, volume restore using snapvault overview 
+summary: データが失われた場合に、 ONTAP の SnapVault バックアップからボリュームを迅速にリストアできます。 
+---
+= SnapVault によるボリュームリストアの概要
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+データが失われた場合に、 ONTAP の SnapVault バックアップからボリュームを迅速にリストアできます。
+
+この手順は、次の方法でバックアップからリストアする場合に使用します。
+
+* クラスタで ONTAP 9 を実行している。
+* クラスタ管理者である。
+* の説明に従って、バックアップ関係を設定しておきます手順 xref:../volume-backup-snapvault/index.html[SnapVault を使用したボリュームのバックアップ]
+* 単一ファイル / LUN のリストアを実行しない。
+* すべての選択肢について検討するのではなく、ベストプラクティスに従う。
+* 背景にある概念について詳しく確認する必要はありません。
+* ONTAP 9.7 以降では、 ONTAP System Manager の UI ではなく、 ONTAP 9.7 以前のリリースで System Manager のクラシックインターフェイスを使用する。
+
+
+上記の想定条件に該当しない場合、または背景にある概念について詳しく学びたい場合は、次の資料を参照してください。
+
+link:http://www.netapp.com/us/media/tr-4183.pdf["ネットアップテクニカルレポート 4183 ：『 SnapVault ベストプラクティス』"^]
+
+
+
+== ONTAP でこれを行うその他の方法
+
+[cols="2"]
+|===
+| 実行するタスク | 参照するコンテンツ 
+
+
+| 再設計された System Manager （ ONTAP 9.7 以降で使用可能） | link:https://docs.netapp.com/us-en/ontap/task_dp_restore_from_vault.html["以前の Snapshot コピーからボリュームをリストアします"^] 
+
+
+| ONTAP のコマンドラインインターフェイス | link:https://docs.netapp.com/us-en/ontap/data-protection/restore-volume-snapvault-backup-task.html["SnapMirror デスティネーションからボリュームの内容をリストアします"^] 
+|===

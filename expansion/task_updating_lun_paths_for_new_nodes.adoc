@@ -1,0 +1,70 @@
+---
+permalink: expansion/task_updating_lun_paths_for_new_nodes.html 
+sidebar: sidebar 
+keywords: cluster, configure, san, lif, add, update, path, lun, node, update lun paths for the new nodes 
+summary: クラスタが SAN 用に構成されている場合は、新しく追加したノードに SAN LIF を作成し、パスを更新する必要があります。 
+---
+= 新しいノードの LUN パスを更新します
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+クラスタが SAN 用に構成されている場合は、新しく追加したノードに SAN LIF を作成し、パスを更新する必要があります。
+
+.このタスクについて
+この手順は、クラスタに LUN が含まれている場合にのみ必要です。クラスタにファイルしか含まれていない場合は、この手順を省略できます。
+
+.手順
+. クラスタ内の Storage Virtual Machine （ SVM ）ごとに、新しく追加したノードに新しい LIF を作成します。
++
+.. を使用して、FCプロトコルまたはiSCSIプロトコルを使用するSVMを特定します。 `vserver show` コマンドにを指定します `-fields allowed-protocols` パラメータを指定し、出力を確認します。
++
+[listing]
+----
+cluster1::> vserver show -fields allowed-protocols
+vserver allowed-protocols
+------- -----------------
+vs1     cifs,ndmp
+vs2     fcp
+vs3     iscsi
+...
+----
+.. FCまたはiSCSIを使用するSVMごとに、次のコマンドを使用して、新しく追加した各ノードに少なくとも2つのデータLIFを作成します。 `network interface create` コマンドにを指定します `-role data` パラメータ
++
+[listing]
+----
+cluster1::> network interface create -vserver vs1 -lif lif5 -role data
+-data-protocol iscsi -home-node cluster1-3 -home-port e0b
+-address 192.168.2.72 -netmask 255.255.255.0
+----
+.. 各SVMについて、次のコマンドを使用して、クラスタ内のすべてのノードにLIFがあることを確認します。 `network interface show` コマンドにを指定します `-vserver` パラメータ
+
+
+. ポートセットを更新します。
++
+.. を使用してポートセットが存在するかどうかを確認します。 `lun portset show` コマンドを実行します
+.. 既存のホストが新しいLIFを認識できるようにするには、 `lun portset add` コマンド-- LIFごとに1回
+
+
+. FC または FCoE を使用する場合は、ゾーニングを更新します。
++
+.. ゾーニングが正しく設定され、ホスト上の既存のイニシエータポートが新しいノード上の新しいターゲットポートに接続できることを確認します。
+.. スイッチゾーニングを更新して、新しいノードを既存のイニシエータに接続します。
++
+ゾーニングの設定方法は、使用するスイッチによって異なります。
+
+.. LUNを新しいノードに移動する場合は、を使用して新しいパスをホストに公開します。 `lun mapping add-reporting-nodes` コマンドを実行します
+
+
+. すべてのホストオペレーティングシステムで、再スキャンを実行して新しく追加したパスを検出します。
+. ホストのオペレーティングシステムによっては、古いパスを削除します。
+. MPIO 構成のパスを追加または削除します。
+
+
+* 関連情報 *
+
+https://docs.netapp.com/us-en/ontap/san-config/index.html["SAN構成"^]
+
+https://docs.netapp.com/us-en/ontap/san-admin/index.html["SAN 管理"^]

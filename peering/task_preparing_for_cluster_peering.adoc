@@ -1,0 +1,94 @@
+---
+permalink: peering/task_preparing_for_cluster_peering.html 
+sidebar: sidebar 
+keywords: create, creating, cluster, peer, relationship, verify, time, synchronized, external, network, procotol, ntp, server, subnet, port, passphrase, prepare, prepare for cluster peering 
+summary: ONTAP 9.7 以前の ONTAP System Manager の「クラシック」インターフェイスを使用してクラスタピア関係を作成する前に、各クラスタの時刻が外部 Network Time Protocol （ NTP ；ネットワークタイムプロトコル）サーバと同期されていることを確認し、使用するサブネット、ポート、およびパスフレーズを特定する必要があります。 
+---
+= クラスタピアリングを準備
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+ONTAP 9.7 以前の ONTAP System Manager の _classic_ インターフェイスを使用してクラスタピア関係を作成する前に、各クラスタの時刻が外部ネットワークタイムプロトコル（ NTP ）サーバと同期されていることを確認し、使用するサブネット、ポート、およびパスフレーズを特定する必要があります。
+
+.手順
+. ONTAP 9.2 以前を実行している場合は、クラスタピア関係ごとに使用するパスフレーズを決定します。
++
+パスフレーズは 8 文字以上にする必要があります。
+
++
+|===
+
+
+| 関係 | パスフレーズ 
+
+
+ a| 
+クラスタ A とクラスタ B
+ a| 
+
+|===
++
+ONTAP 9.3 以降では、クラスタピア関係を作成する際にリモートクラスタからパスフレーズを生成できます。
+
++
+link:task_creating_cluster_peer_relationship_starting_with_ontap_9_3.html["クラスタピア関係の作成（ ONTAP 9.3 以降）"]
+
+. クラスタ間 LIF に使用するサブネット、 IP アドレス、およびポートを特定します。
++
+デフォルトでは、 IP アドレスはサブネットから自動的に選択されます。IP アドレスを手動で指定する場合は、その IP アドレスがすでにサブネットにあるか、あとでサブネットに追加できることを確認する必要があります。サブネットに関する情報は、 [ ネットワーク ] タブで確認できます。
+
++
+次の表のような表を作成して、クラスタに関する情報を記録します。  次の表は、各クラスタにノードが 4 つあることを前提としています。クラスタのノードが 4 つよりも多い場合は、追加情報に行を追加します。
+
++
+|===
+
+
+|  | クラスタ A | クラスタ B 
+
+
+ a| 
+サブネット（ ONTAP 9.2 以前）
+ a| 
+ a| 
+
+
+
+ a| 
+IP アドレス（ ONTAP 9.3 以降、 ONTAP 9.2 以前ではオプション）
+ a| 
+ a| 
+
+
+
+ a| 
+ノード 1 のポート
+ a| 
+ a| 
+
+
+
+ a| 
+ノード2ポート
+ a| 
+ a| 
+
+
+
+ a| 
+ノード3のポート
+ a| 
+ a| 
+
+
+
+ a| 
+ノード4ポート
+ a| 
+ a| 
+
+|===
+

@@ -1,0 +1,26 @@
+---
+permalink: online-help-96-97/task_hiding_snapshot_copy_directory.html 
+sidebar: sidebar 
+keywords: hide, snapshot, copy, directory, system, manager, online, help 
+summary: System Manager では、 Snapshot コピーディレクトリ（ .snapshot ）を非表示にして、ボリュームディレクトリを表示したときに Snapshot コピーディレクトリが表示されないようにすることができます。デフォルトでは、 .snapshot ディレクトリは表示されます。 
+---
+= System Manager - ONTAP 9.7 以前では、 Snapshot コピーのディレクトリを非表示にします
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+ONTAP System Managerの従来型（ONTAP 9.7以前で利用可能）を使用して、Snapshotコピーディレクトリを非表示にできます。  `.snapshot`）をクリックし、ボリュームディレクトリを表示したときにSnapshotコピーディレクトリが表示されないようにします。デフォルトでは、が表示されます `.snapshot` ディレクトリが表示されます。
+
+.手順
+. [* ストレージ *>* ボリューム *] をクリックします。
+. SVM * フィールドのドロップダウンメニューで、 * すべての SVM * を選択します。
+. 非表示にする Snapshot コピーディレクトリのボリュームを選択します。
+. [ * その他の操作 * > * スナップショットの管理 * > * 構成設定 * ] をクリックします。
+. [ スナップショットディレクトリ（ .snapshot ）を表示する * （ Make snapshot directory （ .snapshot ） visible * ） ] オプションが選択されていないことを確認し、 [ * OK* ] をクリックします。
+
+
+* 関連情報 *
+
+xref:reference_volumes_window.adoc[Volumes （ボリューム）ウィンドウ]

@@ -1,0 +1,30 @@
+---
+permalink: online-help-96-97/task_deleting_flexcache_volumes.html 
+sidebar: sidebar 
+keywords: delete, flexcache, volume, system, manager, online, help 
+summary: System Manager 9.6 以降では、不要になった FlexCache を削除できます。 
+---
+= FlexCache ボリュームを削除しています
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+System Manager 9.6 以降では、不要になった FlexCache を削除できます。
+
+.作業を開始する前に
+* FlexCache ボリュームのジャンクションパスがアンマウントされている必要があります。
+* FlexCache ボリュームがオフラインになっている必要があります。
+
+
+.手順
+. [* ストレージ *>* ボリューム *] をクリックします。
+. SVM * フィールドのドロップダウンメニューで、 * すべての SVM * を選択します。
+. 削除する FlexCache ボリュームを選択し、 * 削除 * をクリックします。
+. 確認のチェックボックスをオンにし、 * OK * をクリックします。
+
+
+* 関連情報 *
+
+xref:reference_volumes_window.adoc[Volumes （ボリューム）ウィンドウ]

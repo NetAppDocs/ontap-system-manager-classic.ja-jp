@@ -1,0 +1,14 @@
+---
+permalink: volume-disaster-recovery/task_reactivating_source_volume.html 
+sidebar: sidebar 
+keywords: source, volume, resynchronize, data, destination, volume, source, update, modification, resynchronization, operation, activate, reactivate the source volume 
+summary: ソースボリュームが使用できる状態になったら、デスティネーションボリュームからソースボリュームにデータを再同期し、再同期後の変更を反映して、ソースボリュームをアクティブ化する必要があります。 
+---
+= ソースボリュームを再アクティブ化
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+ソースボリュームが使用できる状態になったら、デスティネーションボリュームからソースボリュームにデータを再同期し、再同期後の変更を反映して、ソースボリュームをアクティブ化する必要があります。

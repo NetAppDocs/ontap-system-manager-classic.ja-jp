@@ -1,0 +1,45 @@
+---
+permalink: fc-config-esxi/task_configuring_iscsi_fc_creating_lun_on_existing_svm.html 
+sidebar: sidebar 
+keywords: configure, fc, exist, storage, virtual, machine, svm, fc, protocol, enable, information, configure, configurin, configure fc on an existing svm 
+summary: 既存の Storage Virtual Machine に FC を設定することができます。FC プロトコルがすでに有効になっているが、 SVM での設定はまだ完了していない必要があります。この情報は、 FC をまだ設定していない SVM に複数のプロトコルを設定するケースを想定しています。 
+---
+= 既存の SVM で FC を設定
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+既存の Storage Virtual Machine （ SVM ）で FC を設定することができます。FC プロトコルがすでに有効になっているが、 SVM での設定はまだ完了していない必要があります。この情報は、 FC をまだ設定していない SVM に複数のプロトコルを設定するケースを想定しています。
+
+.作業を開始する前に
+FC ファブリックを設定し、ファブリックに必要な物理ポートを接続しておく必要があります。
+
+.手順
+. SVMs ウィンドウに移動します。
+. 設定する SVM を選択します。
+. SVM ** の [Details] ペインで、プロトコルがイネーブルになっているが、完全には設定されていないことを示すグレーの背景が表示されていることを確認します。
++
+背景が緑の * FC/FCoE * と表示されている場合、 SVM はすでに設定されています。
+
++
+image::../media/existing_svm_protocols_fc_esxi.gif[4 つのプロトコルの背景がいずれもグレーになっている詳細ページの図。]
+
+. 灰色の背景にある * FC/FCoE * プロトコルリンクをクリックします。
++
+FC / FCoE プロトコルの設定ウィンドウが表示されます。
+
+. FC サービスと LIF を設定するには、 * FC / FCoE プロトコルの設定 * ページで次の手順を実行します。
++
+.. Configure Data LIFs for FC * チェックボックスをオンにします。
+.. 入力するコマンド `2` [ノードあたりのLIF数]*フィールドに入力します。
++
+可用性を確保してデータ移動を可能にするために、ノードごとに 2 つの LIF が必要です。
+
+.. オプションの * FCP ストレージ用の LUN のプロビジョニング * は無視してください。この LUN は、あとで Virtual Storage Console for VMware vSphere でプロビジョニングされるためです。
+.. [ 送信して閉じる ] をクリックします。
+
+
+. 「 * Summary * 」ページを確認し、 LIF 情報を記録して「 * OK 」をクリックします。
+

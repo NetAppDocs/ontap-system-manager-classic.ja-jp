@@ -1,0 +1,45 @@
+---
+permalink: online-help-96-97/reference_managing_svms.html 
+sidebar: sidebar 
+keywords: storage, virtual, machine, svm, administrator, system, manager, online, help 
+summary: Storage Virtual Machine （ SVM ）管理者は、クラスタ管理者によって割り当てられた権限に応じて、 SVM およびそのリソース（ボリューム、プロトコル、サービスなど）を管理できます。SVM 管理者は、 SVM を作成、変更、または削除できません。 
+---
+= System Manager を使用して ONTAP 9.7 以前を管理します
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+ONTAP システムマネージャクラシック（ ONTAP 9.7 以前で使用可能）では、クラスタ管理者によって割り当てられた権限に応じて、 Storage Virtual Machine （ SVM ）管理者が SVM とそのリソース（ボリューム、プロトコル、サービスなど）を管理できます。SVM 管理者は、 SVM を作成、変更、または削除できません。
+
+[NOTE]
+====
+SVM 管理者は、 System Manager にログインできません。
+
+====
+SVM 管理者は、次の管理作業のすべてまたは一部を実施できます。
+
+* データアクセスプロトコルの設定
++
+SVM 管理者は、 NFS 、 CIFS 、 iSCSI 、および Fibre Channel （ FC 、 FCoE を含む）などのデータアクセスプロトコルを設定できます。
+
+* サービスの設定
++
+SVM 管理者は、 LDAP 、 NIS 、 DNS などのサービスを設定できます。
+
+* ストレージ管理
++
+SVM 管理者は、ボリューム、クォータ、 qtree 、およびファイルを管理できます。
+
+* SAN 環境での LUN 管理
+* ボリュームの Snapshot コピーの管理
+* SVM の監視
++
+SVM 管理者は、ジョブ、ネットワーク接続、ネットワークインターフェイス、および SVM のヘルスを監視できます。
+
+
+
+* 関連情報 *
+
+https://docs.netapp.com/ontap-9/index.jsp["ONTAP 9 ドキュメンテーション・センター"]

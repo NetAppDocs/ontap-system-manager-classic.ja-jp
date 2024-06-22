@@ -1,0 +1,39 @@
+---
+permalink: volume-disaster-recovery/task_updating_source_volume.html 
+sidebar: sidebar 
+keywords: resynchronize, resynchronizing, source, volume, update, activate, update the source volume 
+summary: 再同期の完了後、ソースボリュームをアクティブ化する前に、ソースボリュームを更新して最新の変更内容をすべて反映することができます。 
+---
+= ソースボリュームを更新
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+再同期の完了後、ソースボリュームをアクティブ化する前に、ソースボリュームを更新して最新の変更内容をすべて反映することができます。
+
+.このタスクについて
+このタスクは * source * cluster で実行する必要があります。
+
+.手順
+. 実行している System Manager のバージョンに応じて、次のいずれかの手順を実行します。
++
+** ONTAP 9.4 以前： ［ * 保護 * ］ > ［ * 関係 * ］ をクリックします。
+** ONTAP 9.5 以降： * Protection * > * Volume Relationships * をクリックします。
+
+
+. ソースボリュームとデスティネーションボリューム間の SnapMirror 関係を選択し、 * Operations * > * Update * をクリックします。
+. ソースボリュームとデスティネーションボリュームの間の最も新しい共通の Snapshot コピーに基づく差分転送を実行します。
++
+** ONTAP 9.3 以降：「 * as per policy * 」オプションを選択します。
+** ONTAP 9.2 以前：「 * on demand * 」オプションを選択します。
+
+
+. *オプション：転送に使用するネットワーク帯域幅を制限するには、転送帯域幅を*に制限するを選択し、最大転送速度を指定します。
+. [ 更新（ Update ） ] をクリックします。
+. 転送ステータスがであることを確認します。 `Idle` 前回の転送タイプは `Update` をクリックします。
++
+image::../media/snapmirror_update_verify.gif[SnapMirror 関係の詳細]
+
+

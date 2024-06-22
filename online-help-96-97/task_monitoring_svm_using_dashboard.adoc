@@ -1,0 +1,20 @@
+---
+permalink: online-help-96-97/task_monitoring_svm_using_dashboard.html 
+sidebar: sidebar 
+keywords: system, manager, health, performance, monitor, svms, online, help 
+summary: System Manager のダッシュボードを使用すると、 Storage Virtual Machine （ SVM ）の健常性とパフォーマンスを監視できます。 
+---
+= System Manager - ONTAP 9.7 以前を使用して SVM を監視します
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+ONTAP System Manager クラシック（ ONTAP 9.7 以前で使用可能）のダッシュボードを使用すると、 Storage Virtual Machine （ SVM ）の健常性とパフォーマンスを監視できます。
+
+.手順
+. [ * ストレージ * > * SVMs * ] をクリックします。
+. 監視する SVM を選択します。
+. ダッシュボードパネル内の詳細情報を確認します。
+

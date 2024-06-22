@@ -1,0 +1,32 @@
+---
+permalink: snmp-config/task_adding_snmp_community.html 
+sidebar: sidebar 
+keywords: system, manager, add, community, administrative, storage, virtual, machine, svm, cluster, snmpv1, snmpv2c, protocol, add an anmp community 
+summary: ONTAP 9.7 以前では、 ONTAP System Manager の「クラシック」インターフェイスを使用して、 SNMPv1 または SNMPv2c を実行しているクラスタの管理 Storage Virtual Machine （ SVM ）にコミュニティを追加できます。System Manager は、 SNMP プロトコル SNMPv1 と SNMPv2c 、および SNMP コミュニティを使用して、ストレージシステムを検出します。 
+---
+= SNMP コミュニティを追加します
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+ONTAP 9.7 以前で ONTAP System Manager の _classic_ インターフェイスを使用して、 SNMPv1 または SNMPv2c を実行しているクラスタの管理 Storage Virtual Machine （ SVM ）にコミュニティを追加できます。System Manager は、 SNMP プロトコル SNMPv1 と SNMPv2c 、および SNMP コミュニティを使用して、ストレージシステムを検出します。
+
+.このタスクについて
+この手順は、クラスタの管理 SVM に SNMP コミュニティを追加するためのものです。データ SVM に SNMP コミュニティを追加するための手順については、を参照してください https://docs.netapp.com/us-en/ontap/networking/index.html["Network Management の略"]。
+
+ONTAP の新規インストールでは、 SNMPv1 と SNMPv2c はデフォルトで無効になっています。SNMPv1 と SNMPv2c は、 SNMP コミュニティを作成すると有効になります。
+
+.手順
+. SNMP ウィンドウで、 * Edit * をクリックして、 * Edit SNMP Settings * ダイアログボックスを開きます。
+. [*General] タブで、 ONTAP システムの担当者と場所を指定します。
+. [ * 追加 ] をクリックし、コミュニティ名を入力して、 [ * コミュニティ名 * ] ウィンドウ枠の * [OK] をクリックします。
++
+コミュニティ名は複数追加できます。コミュニティ名の最大文字数は32文字です。次の特殊文字は使用できません。 `, / : " ' |`
+
++
+image::../media/snmp_cfg_comm_step3.gif[この図は、 Edit SNMP Settings ダイアログボックスを示しています,General tab,in which the example community name "comty1" is entered.]
+
+. コミュニティ名の追加が完了したら、 * Edit SNMP Settings * （ SNMP 設定の編集）ダイアログボックスで * OK * をクリックします。
+

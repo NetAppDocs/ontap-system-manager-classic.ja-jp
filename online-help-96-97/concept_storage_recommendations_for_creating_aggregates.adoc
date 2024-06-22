@@ -1,0 +1,42 @@
+---
+permalink: online-help-96-97/concept_storage_recommendations_for_creating_aggregates.html 
+sidebar: sidebar 
+keywords: storage, recommendations, create, aggregate, system, manager, online, help 
+summary: System Manager 9.4 以降では、ストレージの推奨事項に基づいてアグリゲートを作成できます。ただし、ストレージの推奨事項に基づいたアグリゲートの作成が環境でサポートされているかどうかを確認する必要があります。サポートされていない場合は、使用する RAID ポリシーとディスク構成を決定し、アグリゲートを手動で作成する必要があります。 
+---
+= System Manager - ONTAP 9.7 以前を使用してアグリゲートを作成する場合のストレージの推奨事項
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+System Manager 9.4 以降では、ストレージの推奨事項に基づいてアグリゲートを作成できます。ただし、ストレージの推奨事項に基づいたアグリゲートの作成が環境でサポートされているかどうかを確認する必要があります。サポートされていない場合は、使用する RAID ポリシーとディスク構成を決定し、アグリゲートを手動で作成する必要があります。
+
+クラスタ内の利用可能なスペアディスクが System Manager で分析され、それらのスペアディスクを使用してアグリゲートを作成する方法が推奨事項として生成されます。推奨されるアグリゲートの名前と使用可能なサイズを含む概要情報が System Manager に表示されます。
+
+多くの場合、ストレージの推奨事項に従うことで環境に最適な構成になります。ただし、クラスタで ONTAP 9.3 以前が実行されている場合や次の構成が環境に含まれている場合は、アグリゲートを手動で作成する必要があります。
+
+* サードパーティ製アレイ LUN を使用するアグリゲート
+* Cloud Volumes ONTAP または ONTAP Select を使用した仮想ディスク
+* MetroCluster 構成
+* SyncMirror 機能
+* MSATA ディスク
+* Flash Pool アグリゲート
+* 複数のタイプまたはサイズのディスクがノードに接続されている場合
+
+
+また、環境内のディスクが次の状況にある場合は、ストレージの推奨事項に基づいてアグリゲートを作成する前に解決しておく必要があります。
+
+* ディスクが不足している
+* スペアディスクの数が安定しない
+* 未割り当てディスク
+* スペアが初期化されていない（ ONTAP 9.6 より前のバージョン）
+* ディスクのメンテナンステストを実行中である
+
+
+* 関連情報 *
+
+https://docs.netapp.com/us-en/ontap/disks-aggregates/index.html["ディスクおよびアグリゲートの管理"]
+
+xref:task_zeroing_disks.adoc[スペアディスクの初期化中です]

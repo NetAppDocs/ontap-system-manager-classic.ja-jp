@@ -1,0 +1,67 @@
+---
+permalink: volume-backup-snapvault/task_creating_snapvault_relationship_93_later.html 
+sidebar: sidebar 
+keywords: create, snapvault, relationship, source, volume, cluster, destination, peer, backup, create a snapvault relationship, Beginning with ontap 9.3 
+summary: SnapVault バックアップを作成するには、ピア関係にあるそれぞれのクラスタのソースボリュームとデスティネーションボリュームの間で SnapVault 関係を作成する必要があります。 
+---
+= SnapVault 関係の作成（ ONTAP 9.3 以降）
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+SnapVault バックアップを作成するには、ピア関係にあるそれぞれのクラスタのソースボリュームとデスティネーションボリュームの間で SnapVault 関係を作成する必要があります。
+
+.作業を開始する前に
+* デスティネーションクラスタのクラスタ管理者のユーザ名とパスワードが必要です。
+* デスティネーションアグリゲートの使用可能なスペースを確保する必要があります。
+
+
+.このタスクについて
+このタスクは * source * cluster で実行する必要があります。
+
+.手順
+. [* ストレージ *>* ボリューム *] をクリックします。
+. バックアップするボリュームを選択し、 * Actions * > * Protect * をクリックします。
++
+複数のソースボリュームを選択し、 1 つのデスティネーションボリュームとの SnapVault 関係を作成することもできます。
+
+. [* Volumes] ： Protect Volumes] ページで、次の情報を入力します。
++
+.. [ 関係タイプ * （ Relationship Type * ） ] ドロップダウンリストから [ * ボールト * （ * Vault * ） ] を選択する。
+.. デスティネーションクラスタ、デスティネーション SVM 、およびデスティネーションボリュームのサフィックスを選択します。
++
+デスティネーション SVM のリストには、ピア関係が設定された SVM と許可されている SVM のみが表示
+
++
+デスティネーションボリュームが自動的に作成されます。デスティネーションボリュームの名前は、ソースボリュームの名前にサフィックスを追加した名前になります。
+
+.. をクリックします image:../media/advanced_options_icon_backup.gif[""]。
+.. [詳細オプション]ダイアログボックスで、*[保護ポリシー]*が `XDPDefault`。
+.. [ 保護スケジュール ] を選択します。
++
+デフォルトでは、が表示されます `daily` スケジュールが選択されています。
+
+.. SnapVault 関係の初期化で「 * Yes 」が選択されていることを確認します。
++
+デフォルトでは、すべてのデータ保護関係が初期化されます。
+
+.. [ 適用（ Apply ） ] をクリックして、変更を保存する。
++
+image::../media/snapvault_advanced_options.gif[SnapVault の詳細オプション]
+
+
+
+. [* Volumes] ： [Protect Volumes] ページで、 [* Validate] をクリックして、ボリュームに SnapMirror ラベルが一致するかどうかを確認します。
+. [ 保存（ Save ） ] をクリックして、 SnapVault 関係を作成します。
+. SnapVault関係のステータスが `Snapmirrored` 状態。
++
+.. [*Volumes] ウィンドウに移動し、バックアップされたボリュームを選択します。
+.. ボリュームを展開し、 * protection * をクリックして、ボリュームのデータ保護ステータスを表示します。
+
+
++
+image::../media/snapvault_9_3.gif[SnapVault 9 3.]
+
+

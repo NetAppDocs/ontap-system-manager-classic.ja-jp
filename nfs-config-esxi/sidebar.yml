@@ -1,0 +1,44 @@
+---
+section: nfs-config-esxi
+title: VSC を使用した ESXi 向けの NFS 設定
+entries:
+- title: 概要
+  url: "/nfs-config-esxi/index.html"
+- title: ESXi ワークフロー向けの NFS クライアント構成
+  url: "/nfs-config-esxi/task_nfs_client_configuration_for_esxi_workflow.html"
+  entries:
+  - title: 構成がサポートされていることを確認します
+    url: "/nfs-config-esxi/task_verifying_configuration_is_supported.html"
+  - title: NFS クライアント設定ワークシートに記入
+    url: "/nfs-config-esxi/reference_completing_nfs_configuration_worksheet.html"
+  - title: をインストールします
+    url: "/nfs-config-esxi/task_installing_virtual_storage_console_for_vmware_vsphere.html"
+  - title: ストレージクラスタを VSC に追加
+    url: "/nfs-config-esxi/task_adding_storage_cluster_to_virtual_storage_cluster.html"
+  - title: 最適なパフォーマンスを実現できるようにネットワークを設定します
+    url: "/nfs-config-esxi/task_configuring_your_network_for_best_performance.html"
+  - title: ESXi ホストを設定
+    url: "/nfs-config-esxi/task_configuring_esxi_host.html"
+    entries:
+    - title: ホストポートと vSwitch を設定
+      url: "/nfs-config-esxi/task_configuring_host_iscsi_ports_vswitches.html"
+    - title: ESXi ホストのベストプラクティスを設定
+      url: "/nfs-config-esxi/task_configuring_esxi_host_best_practice_settings.html"
+  - title: アグリゲートを作成する
+    url: "/nfs-config-esxi/task_creating_aggregate.html"
+  - title: 新しいボリュームをプロビジョニングする場所を決定します
+    url: "/nfs-config-esxi/task_deciding_where_to_provision_new_volume.html"
+  - title: NFS 対応 SVM を新規に作成
+    url: "/nfs-config-esxi/task_creating_new_nfs_enabled_svm.html"
+  - title: 既存の SVM に NFS アクセスを追加
+    url: "/nfs-config-esxi/concept_adding_nfs_access_to_existing_svm.html"
+  - title: 既存のSVMでNFSが有効になっていることを確認
+    url: "/nfs-config-esxi/task_verifying_that_nfs_is_enabled_on_existing_svm.html"
+  - title: データストアをプロビジョニングしてその格納先ボリュームを作成する
+    url: "/nfs-config-esxi/task_provisioning_datastore_creating_its_containing_lun_volume.html"
+  - title: ESXi ホストからの NFS アクセスを確認
+    url: "/nfs-config-esxi/task_verifying_nfs_access_from_esxi_host.html"
+  - title: NFS Plug-in for VMware VAAI を導入します
+    url: "/nfs-config-esxi/task_deploying_netapp_nfs_plugin_for_vmware_vaai.html"
+  - title: ホストにデータストアをマウントします
+    url: "/nfs-config-esxi/task_mounting_datastores_on_hosts.html"

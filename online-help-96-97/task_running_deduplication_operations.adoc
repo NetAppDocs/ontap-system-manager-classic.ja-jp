@@ -1,0 +1,36 @@
+---
+permalink: online-help-96-97/task_running_deduplication_operations.html 
+sidebar: sidebar 
+keywords: run, deduplication, operation, system, manager, online, help, flexvol, volume 
+summary: System Manager を使用すると、重複排除を FlexVol ボリュームの作成直後に実行するか、またはスケジュールを設定して、指定した時間に実行することができます。 
+---
+= System Manager - ONTAP 9.7 以前を使用して、重複排除処理を実行します
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+ONTAP System Managerクラシック（ONTAP 9.7以前で利用可能）を使用すると、重複排除をFlexVol ボリュームの作成直後に実行するか、またはスケジュールを設定して、指定した時間に実行することができます。
+
+.作業を開始する前に
+* ボリュームで重複排除が有効になっている必要があります。
+* ボリュームは、オンラインでマウントされている必要があります。
+
+
+.このタスクについて
+重複排除は、処理中にシステムリソースを消費するバックグラウンドプロセスであるため、実行中の他の処理に影響を与える可能性があります。他の処理を実行する前に、重複排除をキャンセルする必要があります。
+
+.手順
+. [* ストレージ *>* ボリューム *] をクリックします。
+. SVM * フィールドのドロップダウンメニューで、 * すべての SVM * を選択します。
+. 重複排除を実行するボリュームを選択します。
+. その他の操作 * > * Storage Efficiency * をクリックします。
+. 初めてボリュームに対して重複排除を実行する場合は、 Storage Efficiency * ダイアログボックスで * ボリューム全体をスキャン * を選択して、ボリュームデータ全体に対して重複排除を実行します。
+. [ スタート ] ボタンをクリックします。
+. ボリュームウィンドウの * Storage Efficiency * タブで、重複排除処理の前回の実行結果を確認します。
+
+
+* 関連情報 *
+
+xref:reference_volumes_window.adoc[Volumes （ボリューム）ウィンドウ]

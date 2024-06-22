@@ -1,0 +1,16 @@
+---
+permalink: expansion/concept_cluster_expansion_workflow.html 
+sidebar: sidebar 
+keywords: cluster, expansion, workflow 
+summary: クラスタ拡張ワークフロー 
+---
+= クラスタ拡張ワークフロー
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+既存のクラスタにノードを 2 つ追加するには、クラスタを拡張する準備ができていることを確認し、クラスタを準備し、新しいノードを設置し、拡張を完了します。
+
+image::../media/cluster_expansion_workflow.gif[この図には説明が付随しています。]

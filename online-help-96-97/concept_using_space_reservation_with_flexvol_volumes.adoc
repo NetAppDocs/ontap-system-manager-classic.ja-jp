@@ -1,0 +1,26 @@
+---
+permalink: online-help-96-97/concept_using_space_reservation_with_flexvol_volumes.html 
+sidebar: sidebar 
+keywords: space, reservation, flexvol, volume, online, help 
+summary: スペースリザベーションを使用して FlexVol ボリュームをプロビジョニングすることができます。シンプロビジョニングを使用すると、すべてのストレージが使用中でないかぎり、アグリゲートの実際の使用可能容量よりも多くのストレージを割り当てることが可能です。 
+---
+= System Manager - ONTAP 9.7 以前を使用して、 FlexVol ボリュームのスペースリザベーションを使用します
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+ONTAP System Manager クラシック（ ONTAP 9.7 以前で使用可能）では、スペースリザベーションを使用して FlexVol ボリュームをプロビジョニングできます。シンプロビジョニングを使用すると、すべてのストレージが使用中でないかぎり、アグリゲートの実際の使用可能容量よりも多くのストレージを割り当てることが可能です。
+
+シックプロビジョニングでは、ボリューム内のブロックにいつでも書き込むことができるように、アグリゲートの十分なストレージが確保されます。
+
+アグリゲートは、複数の Storage Virtual Machine （ SVM ）に含まれるボリュームにストレージを提供できます。シンプロビジョニングを使用していて、 SVM 同士を厳密に分離する必要がある場合（たとえば、マルチテナンシー環境でストレージを提供している場合など）、全容量が割り当てられたボリューム（シックプロビジョニング）を使用するか、テナント間でアグリゲートが共有されないようにする必要があります。
+
+スペースリザベーションが「デフォルト」に設定されている場合、 ONTAP のスペースリザベーション設定がボリュームに適用されます。
+
+* 関連情報 *
+
+http://www.netapp.com/us/media/tr-3563.pdf["ネットアップテクニカルレポート 3563 ：『 NetApp Thin Provisioning Increases Storage Utilization With On Demand Allocation 』"^]
+
+http://www.netapp.com/us/media/tr-3483.pdf["ネットアップテクニカルレポート 3483 ：『 NetApp の SAN または IP SAN 構成のエンタープライズ環境におけるシン プロビジョニング』"^]

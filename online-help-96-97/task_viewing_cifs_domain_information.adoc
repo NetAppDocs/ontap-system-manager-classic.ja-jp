@@ -1,0 +1,21 @@
+---
+permalink: online-help-96-97/task_viewing_cifs_domain_information.html 
+sidebar: sidebar 
+keywords: system, manager, view, cifs, domain, information, online, help 
+summary: System Manager を使用して、ストレージシステムに接続されているドメインコントローラとサーバに関する情報を表示できます。 
+---
+= System Manager - ONTAP 9.7 以前を使用して、 CIFS ドメインの情報を表示します
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+ONTAP System Manager クラシック（ ONTAP 9.7 以前で使用可能）を使用して、ストレージシステムに接続されているドメインコントローラとサーバに関する情報を表示できます。
+
+.手順
+. [ * ストレージ * > * SVMs * ] をクリックします。
+. SVM を選択し、 * SVM 設定 * をクリックします。
+. [* ドメイン *] タブをクリックします。
+. 接続されているドメインコントローラとサーバに関する情報を確認します。
+

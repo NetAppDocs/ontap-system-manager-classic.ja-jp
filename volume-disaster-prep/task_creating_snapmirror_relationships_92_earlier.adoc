@@ -1,0 +1,103 @@
+---
+permalink: volume-disaster-prep/task_creating_snapmirror_relationships_92_earlier.html 
+sidebar: sidebar 
+keywords: create, snapmirror, relationship, source, volume, cluster, destination, peer, replacting, replacate, data, disaster, recovery, create the snapmirror relationship, ontap 9.2 or earlier 
+summary: ディザスタリカバリ用にデータをレプリケートするには、ピア関係にあるそれぞれのクラスタのソースボリュームとデスティネーションボリュームの間で SnapMirror 関係を作成する必要があります。 
+---
+= SnapMirror 関係を作成（ ONTAP 9.2 以前）
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+ディザスタリカバリ用にデータをレプリケートするには、ピア関係にあるそれぞれのクラスタのソースボリュームとデスティネーションボリュームの間で SnapMirror 関係を作成する必要があります。
+
+.作業を開始する前に
+* デスティネーションクラスタのクラスタ管理者のユーザ名とパスワードが必要です。
+* デスティネーションアグリゲートの使用可能なスペースを確保する必要があります。
+* 両方のクラスタで、ユーザアクセス、認証、およびクライアントアクセスを環境の要件に合わせて適切に設定しておく必要があります。
+
+
+.このタスクについて
+このタスクは * source * cluster で実行する必要があります。
+
+.手順
+. [ * ストレージ * > * SVMs * ] をクリックします。
+. SVM を選択し、 * SVM 設定 * をクリックします。
+. [* Volumes （ボリューム） ] タブをクリックします
+. ミラー関係を作成するボリュームを選択し、 * Protect * をクリックします。
++
+Create Protection Relationship ウィンドウが表示されます。
+
+. [ 関係タイプ * （ Relationship Type * ） ] セクションで、 [ 関係タイプ * （ Relationship Type * ） ] ドロップダウンリストから [ * ミラー * （ * Mirror * ） ] を選択する。
+. デスティネーションボリューム * セクションで、ピアクラスタを選択します。
+. デスティネーションボリュームの SVM を指定します。
++
+|===
+| SVM の状態 | 作業 
+
+
+ a| 
+ピアリング完了
+ a| 
+ピア関係にある SVM をリストから選択します。
+
+
+
+ a| 
+ピアリングされていません
+ a| 
+.. SVM を選択します。
+.. [* Authenticate] をクリックします。
+.. ピアクラスタのクラスタ管理者のクレデンシャルを入力し、 * Create * をクリックします。
+
+
+|===
+. 新しいデスティネーションボリュームを作成します。
++
+.. 「 * New Volume * （新規ボリューム）」オプションを選択します。
+.. デフォルトのボリューム名を使用するか、新しいボリューム名を指定します。
+.. デスティネーションアグリゲートを選択します。
+
+
++
+image::../media/destination_volume_settings.gif[デスティネーションボリュームの設定]
+
+. 「 * Configuration Details * 」セクションで、ミラーポリシーとして「 * MirrorAllSnapshots * 」を選択します。
++
+`DPDefault` および `MirrorLatest` は、SnapMirror関係で使用できるその他のデフォルトのミラーポリシーです。
+
+. 保護スケジュールをスケジュールのリストから選択します。
+. [Initialize Relationship *] チェックボックスがオンになっていることを確認し、 [*Create] をクリックします。
++
+SnapMirror 関係を初期化すると、デスティネーションボリュームのベースラインでソースボリュームの保護が開始されるようになります。
+
++
+image::../media/create_snapmirror_relationship_window.gif[[Create SnapMirror]ウィンドウ]
+
++
+関係が初期化されて、ソースボリュームからデスティネーションボリュームへのデータのベースライン転送が開始されます。
+
++
+初期化処理には時間がかかることがあります。[ ステータス ] セクションには、各ジョブのステータスが表示されます。
+
++
+image::../media/snapmirror_create_3_successful.gif[SnapMirrorが作成されました]
+
+. SnapMirror 関係のステータスを確認します。
++
+.. SnapMirror 関係を作成したボリュームを * Volumes * リストから選択し、 * Data Protection * をクリックします。
+.. [データ保護]*タブで、作成したSnapMirror関係がリストに表示されていること、関係の状態がであることを確認します。 `Snapmirrored`。
++
+image::../media/snapmirror_create_4_verify.gif[関係が作成されたことを確認]
+
+
+
+
+
+
+
+== 次に何をするか
+
+ソースボリュームのシンプロビジョニング、重複排除、圧縮、および自動拡張の設定を書き留めておく必要があります。この情報は、 SnapMirror 関係を解除するときにデスティネーションボリュームの設定を確認するために使用します。

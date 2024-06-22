@@ -1,0 +1,43 @@
+---
+permalink: expansion/task_adding_node_locked_licenses.html 
+sidebar: sidebar 
+keywords: cluster, feature, node-locked, license, entitle, functionality, add, add node-locked licenses 
+summary: クラスタにノードロックライセンスを使用する機能がある場合は、新しいノード用にノードロックライセンスがインストールされていることを確認する必要があります。 
+---
+= ノードロックライセンスを追加
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+クラスタにノードロックライセンス（ライセンスされた機能の使用権を特定のノードのみに与えるライセンス）を使用する機能がある場合は、新しいノード用にノードロックライセンスがインストールされていることを確認する必要があります。ライセンスは、ノードをクラスタに追加する前に追加する必要があります。
+
+ONTAP 9.7以前のリリースで_Classic_System Manager UIを使用している場合は、このタスクを実行します。ONTAP 9.7以降でSystem Manager UIを使用している場合は、を参照してください link:https://docs.netapp.com/us-en/ontap/task_admin_enable_new_features.html["ライセンスキーを追加して新しい機能を有効にします"]。
+
+ライセンスの管理の詳細については、を参照してください link:https://docs.netapp.com/us-en/ontap/system-admin/manage-licenses-concept.html["ライセンスの管理の概要"]。
+
+.手順
+. を使用して各ライセンスキーを追加します。 `system license add` コマンドを実行します
++
+[listing]
+----
+cluster1::> system license add -license-code AAAAAAAAAAAAAA
+----
+. 既存のライセンスを表示するには、 `system license show` コマンドを実行します
++
+[listing]
+----
+cluster1::> system license show
+
+Serial Number: 9-99-999999
+Owner: cluster1
+Package           Type    Description           Expiration
+----------------- ------- --------------------- --------------------
+Base              site    Cluster Base License  -
+NFS               license NFS License           -
+CIFS              license CIFS License          -
+...
+----
+. 既存のノードと新しいノードのシリアル番号を含むすべてのシリアル番号に対してノードロックライセンスが表示されていることを確認します。
+

@@ -1,0 +1,48 @@
+---
+permalink: fc-config-rhel/task_verifying_that_iscsi_fc_configuration_is_supported.html 
+sidebar: sidebar 
+keywords: reliable, operation, verify, entire, fc, configuration, support, verify that the fc configuration is supported 
+summary: 安定した運用を実現するために、 FC 構成全体がサポートされることを確認する必要があります。 
+---
+= FC 構成がサポートされていることを確認します
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+安定した運用を実現するために、 FC 構成全体がサポートされることを確認する必要があります。
+
+.手順
+. Interoperability Matrix に移動して、次のコンポーネントについて、サポートされている組み合わせであることを確認します。
++
+** ONTAP ソフトウェア
+** ホストコンピュータの CPU アーキテクチャ（標準のラックサーバの場合）
+** 特定のプロセッサブレードモデル（ブレードサーバ用）
+** FC ホストバスアダプタ（ HBA ）のモデルとドライバ、ファームウェア、 BIOS のバージョン
+** ストレージプロトコル（ FC ）
+** Linux オペレーティングシステムのバージョン
+** DM-Multipath パッケージ
+** Linux Unified Host Utilities のこと
+
+
+. 選択した構成の構成名を選択します。
++
+その構成の詳細が [ 構成の詳細 ] ウィンドウに表示されます。
+
+. 次のタブの情報を確認します。
++
+** 注：
++
+お使いの構成に固有の重要なアラートおよび情報が表示されます。
+
++
+アラートを確認して、オペレーティングシステムに必要なパッケージを特定します。
+
+** ポリシーとガイドライン
++
+すべての SAN 構成に関する一般的なガイドラインが表示されます。
+
+
+
+

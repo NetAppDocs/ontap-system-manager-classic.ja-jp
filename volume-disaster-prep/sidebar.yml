@@ -1,0 +1,19 @@
+---
+section: volume-disaster-prep
+title: ボリュームのディザスタリカバリの準備
+entries:
+- title: 概要
+  url: "/volume-disaster-prep/index.html"
+- title: ボリュームのディザスタリカバリの準備ワークフロー
+  url: "/volume-disaster-prep/concept_snapmirror_intercluster_configuration_workflow.html"
+  entries:
+  - title: クラスタピア関係と SVM ピア関係を確認
+    url: "/volume-disaster-prep/task_verifying_cluster_peer_relationship.html"
+  - title: SnapMirror 関係を作成する（ ONTAP 9.3 以降）
+    url: "/volume-disaster-prep/task_creating_snapmirror_relationships_93_later.html"
+  - title: SnapMirror 関係を作成（ ONTAP 9.2 以前）
+    url: "/volume-disaster-prep/task_creating_snapmirror_relationships_92_earlier.html"
+  - title: データアクセス用のデスティネーション SVM をセットアップ
+    url: "/volume-disaster-prep/task_setting_up_destination_svm_for_data_access.html"
+  - title: SnapMirror データ転送のステータスを監視します
+    url: "/volume-disaster-prep/task_monitoring_status_snapmirror_data_transfers.html"

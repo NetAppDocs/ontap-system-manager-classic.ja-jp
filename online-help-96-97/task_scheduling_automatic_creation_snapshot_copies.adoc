@@ -1,0 +1,31 @@
+---
+permalink: online-help-96-97/task_scheduling_automatic_creation_snapshot_copies.html 
+sidebar: sidebar 
+keywords: schedule, automatic, creation, snapshot, copy, online, help 
+summary: System Manager を使用して、ボリュームの自動 Snapshot コピーを自動作成するスケジュールを設定できます。コピーを作成する時間と頻度を指定できます。保存する Snapshot コピーの数も指定できます。 
+---
+= System Manager ONTAP 9.7 以前を使用して、 Snapshot コピーの自動作成をスケジュールします
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+ONTAP System Manager クラシック（ ONTAP 9.7 以前で使用可能）を使用して、ボリュームの自動 Snapshot コピーを自動作成するスケジュールを設定できます。コピーを作成する時間と頻度を指定できます。保存する Snapshot コピーの数も指定できます。
+
+.手順
+. [* ストレージ *>* ボリューム *] をクリックします。
+. SVM * フィールドのドロップダウンメニューで、 * すべての SVM * を選択します。
+. ボリュームのリストから必要なボリュームを選択します。
+. [ * その他の操作 * > * スナップショットの管理 * > * 構成設定 * ] をクリックします。
+. Configure Volume Snapshot Copies * （ボリューム Snapshot コピーの設定）ダイアログボックスで、 * Enable scheduled Snapshot Copies * （スケジュールされた Snapshot コピーを有効にする）を選択します。
+. Snapshot ポリシーを選択します。
++
+作成するスケジュールを設定できるのは、ポリシーベースの Snapshot コピーのみです。
+
+. OK * をクリックして変更を保存し、 Snapshot コピーのスケジュールを開始します。
+
+
+* 関連情報 *
+
+xref:reference_volumes_window.adoc[Volumes （ボリューム）ウィンドウ]

@@ -1,0 +1,75 @@
+---
+permalink: online-help-96-97/concept_nis_services.html 
+sidebar: sidebar 
+keywords: online, help, system, manager, nis, services, add, edit, manage, network, information, service, domain, svm, modify, command 
+summary: System Manager を使用して、 Network Information Service （ NIS ）ドメインを追加、編集、管理できます。 
+---
+= ONTAP 9.7 以前の System Manager を使用して NIS サービスを管理します
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+ONTAP システムマネージャクラシック（ ONTAP 9.7 以前で使用可能）を使用して、 Network Information Service （ NIS ）ドメインを追加、編集、管理できます。
+
+
+
+== NIS ドメインを追加する
+
+NIS を使用すると、ホスト情報を一元的に管理できます。System Manager を使用して、ストレージシステムの NIS ドメイン名を追加できます。Storage Virtual Machine （ SVM ）で同時にアクティブにできる NIS ドメインは 1 つだけです。
+
+.手順
+. [ * ストレージ * > * SVMs * ] をクリックします。
+. SVM を選択し、 * SVM 設定 * をクリックします。
+. [*Services*] ペインで、 [*NIS*] をクリックします。
+. [ 作成（ Create ） ] をクリックします。
+. NIS ドメイン名を入力し、 1 つ以上の NIS サーバを追加します。
+. [ 作成（ Create ） ] をクリックします。
+
+
+
+
+== NIS ドメインを編集する
+
+System Manager を使用し、 Storage Virtual Machine （ SVM ）の認証および許可の要件に基づいて NIS ドメインを変更できます。
+
+.手順
+. [ * ストレージ * > * SVMs * ] をクリックします。
+. SVM を選択し、 * SVM 設定 * をクリックします。
+. [*Services*] ペインで、 [*NIS*] をクリックします。
+. NIS ドメインを選択し、 * Edit * をクリックします。
+. 必要な変更を行い、 * Edit * をクリックします。
+
+
+
+
+== [NIS]ウィンドウ
+
+NIS ウィンドウでは、ストレージシステムの現在の NIS 設定を確認できます。
+
+
+
+=== コマンドボタン
+
+* * 作成 * 。
++
+NIS ドメインの作成ダイアログボックスを開きます。このダイアログボックスで、 NIS ドメインを作成できます。
+
+* * 編集 * 。
++
+NIS ドメインの編集ダイアログボックスを開きます。このダイアログボックスで、 NIS サーバの追加、削除、または変更を行うことができます。
+
+* * 削除 *
++
+選択した NIS ドメインを削除します。
+
+* * 更新 *
++
+ウィンドウ内の情報を更新します。
+
+
+
+* 関連情報 *
+
+https://docs.netapp.com/us-en/ontap/nfs-config/index.html["NFS構成"^]

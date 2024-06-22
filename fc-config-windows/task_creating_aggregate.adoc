@@ -1,0 +1,27 @@
+---
+permalink: fc-config-windows/task_creating_aggregate.html 
+sidebar: sidebar 
+keywords: exist, aggregate, create, physical, storage, volume, provision, create an aggregate 
+summary: 既存のアグリゲートを使用しない場合は、プロビジョニングするボリュームに物理ストレージを提供するアグリゲートを新規に作成します。 
+---
+= アグリゲートを作成する
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+既存のアグリゲートを使用しない場合は、プロビジョニングするボリュームに物理ストレージを提供するアグリゲートを新規に作成します。
+
+.手順
+. URLを入力 `+https://IP-address-of-cluster-management-LIF+` Webブラウザで、クラスタ管理者のクレデンシャルを使用してSystem Managerにログインします。
+. [* Aggregate] ウィンドウに移動します。
+. [* 作成 .*] をクリックします
+. 画面の指示に従って、デフォルトの RAID-DP 構成を使用してアグリゲートを作成し、 * Create * をクリックします。
++
+image::../media/aggregate_creation_fc_windows.gif[System Manager のアグリゲートの作成画面]
+
+
+
+.結果
+指定した構成でアグリゲートが作成され、アグリゲートウィンドウのアグリゲートのリストに追加されます。

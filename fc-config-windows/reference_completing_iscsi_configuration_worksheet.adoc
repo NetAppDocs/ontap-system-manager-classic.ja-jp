@@ -1,0 +1,205 @@
+---
+permalink: fc-config-windows/reference_completing_iscsi_configuration_worksheet.html 
+sidebar: sidebar 
+keywords: require, fc, initiator, target, wwpn, storage, configuration, information, perform, fc, task, complete the fc configuration worksheet 
+summary: FC の設定タスクを実行するには、 FC イニシエータとターゲットの WWPN 、およびストレージの構成情報が必要です。 
+---
+= FC 構成ワークシートに記入
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+FC の設定タスクを実行するには、 FC イニシエータとターゲットの WWPN 、およびストレージの構成情報が必要です。
+
+
+
+== FC ホストの WWPN
+
+|===
+| ポート | WWPN 
+
+
+ a| 
+FC スイッチ 1 に接続されたイニシエータ（ホスト）ポートを指定します
+ a| 
+
+
+
+ a| 
+FCスイッチ2に接続されたイニシエータ（ホスト）ポート
+ a| 
+
+|===
+
+
+== FC ターゲットの WWPN
+
+クラスタのノードごとに FC のデータ LIF が 2 つ必要です。Storage Virtual Machine （ SVM ）の作成時に LIF を作成すると、 ONTAP によって WWPN が割り当てられます。
+
+image::../media/network_fc_or_iscsi_express_fc_windows.gif[この図は 4 つのノードを示しています,two switches,and a host. Each node has two LIFs]
+
+|===
+| LIF | WWPN 
+
+
+ a| 
+FC スイッチ 1 に接続されたノード 1 の LIF のポート
+ a| 
+
+
+
+ a| 
+FC スイッチ 1 に接続されたノード 2 の LIF のポート
+ a| 
+
+
+
+ a| 
+FCスイッチ1に接続されたノード3のLIFのポート
+ a| 
+
+
+
+ a| 
+FCスイッチ1に接続されたノード4のLIFのポート
+ a| 
+
+
+
+ a| 
+FCスイッチ2に接続されたノード1のLIFのポート
+ a| 
+
+
+
+ a| 
+FCスイッチ2に接続されたノード2のLIFのポート
+ a| 
+
+
+
+ a| 
+FCスイッチ2に接続されたノード3のLIFのポート
+ a| 
+
+
+
+ a| 
+FCスイッチ2に接続されたノード4のLIFのポート
+ a| 
+
+|===
+
+
+== ストレージ構成
+
+アグリゲートと SVM がすでに作成されている場合は、名前をここに記録します。作成されていない場合は必要に応じて作成できます。
+
+|===
+| LUN の所属先ノードを指定します 
+
+
+ a| 
+アグリゲート名
+
+
+
+ a| 
+SVM 名
+
+|===
+
+
+== LUNノシヨウホウ
+
+|===
+| LUNサイズ 
+
+
+ a| 
+ホストオペレーティングシステム
+
+
+
+ a| 
+LUN 名（オプション）
+
+
+
+ a| 
+LUN 概要（オプション）
+
+|===
+
+
+== SVM情報
+
+既存の SVM を使用しない場合、新規に作成するために次の情報が必要です。
+
+[cols="1a,1a"]
+|===
+2+| SVM 名 
+
+
+ a| 
+SVM IPspace
+
+
+
+ a| 
+SVM ルートボリューム用のアグリゲート
+
+
+
+ a| 
+SVM のユーザ名（オプション）
+
+
+
+ a| 
+SVM のパスワード（オプション）
+
+
+
+ a| 
+SVM の管理 LIF （オプション）
+
+
+
+ a| 
+ a| 
+サブネット
+
+
+
+ a| 
+ a| 
+IP アドレス
+
+
+
+ a| 
+ a| 
+ネットワークマスク
+
+
+
+ a| 
+ a| 
+ゲートウェイ
+
+
+
+ a| 
+ a| 
+ホームノード
+
+
+
+ a| 
+ a| 
+ホームポート
+
+|===

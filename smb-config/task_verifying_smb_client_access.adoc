@@ -1,0 +1,34 @@
+---
+permalink: smb-config/task_verifying_smb_client_access.html 
+sidebar: sidebar 
+keywords: verify, configure, smb, correct, access, writing, data, share, test, server, name, netbios, alias, verify smb client access 
+summary: 共有にアクセスしてデータを書き込むことで、 SMB が正しく設定されていることを確認する必要があります。SMB サーバ名と NetBIOS エイリアスを使用してアクセスをテストします。 
+---
+= SMB クライアントアクセスを確認
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+共有にアクセスしてデータを書き込むことで、 SMB が正しく設定されていることを確認する必要があります。SMB サーバ名と NetBIOS エイリアスを使用してアクセスをテストします。
+
+.手順
+. Windows クライアントにログインします。
+. SMB サーバ名を使用してアクセスをテストします。
++
+.. エクスプローラで、次の形式で共有にドライブをマッピングします。 `\⁠\\SMB_Server_Name\Share_Name`
++
+正常にマッピングされない場合は、 DNS マッピングがネットワーク全体にまだ反映されていない可能性があります。しばらく待ってから、再度 SMB サーバ名を使用してアクセスをテストしてください。
+
++
+SMBサーバの名前がvs1.example.comで、共有の名前がSHARE1の場合は、次のように入力します。 `\⁠\vs0.example.com\SHARE1`
+
+.. 新しく作成したドライブで、テストファイルを作成し、作成できたら削除します。
+
+
++
+SMB サーバ名を使用した共有への書き込みアクセスが可能であることを確認できました。
+
+. NetBIOS エイリアスについて手順 2 を繰り返します。
+

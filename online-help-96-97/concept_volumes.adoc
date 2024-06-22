@@ -1,0 +1,27 @@
+---
+permalink: online-help-96-97/concept_volumes.html 
+sidebar: sidebar 
+keywords: system, manager, create, edit, delete, volume, tab, cif, nfs, online, help 
+summary: System Manager を使用して、ボリュームを作成、編集、削除できます。 
+---
+= System Manager - ONTAP 9.7以前を使用してボリュームを管理します
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+ONTAP System Manager クラシック（ 9.7 以前のバージョンで使用可能）を使用して、ボリュームを作成、編集、および削除できます。
+
+クラスタ内のすべてのボリュームにアクセスするには、ボリュームタブを使用するか、 * SVM * > * ボリューム * を使用して SVM に固有のボリュームにアクセスします。
+
+[NOTE]
+====
+ボリュームタブは、 CIFS および NFS のライセンスが有効になっている場合にのみ表示されます。
+
+====
+* 関連情報 *
+
+https://docs.netapp.com/us-en/ontap/concepts/index.html["ONTAP の概念"^]
+
+https://docs.netapp.com/us-en/ontap/volumes/index.html["論理ストレージ管理"^]

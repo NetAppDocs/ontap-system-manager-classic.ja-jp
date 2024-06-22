@@ -1,0 +1,31 @@
+---
+permalink: online-help-96-97/task_viewing_list_saved_snapshot_copies.html 
+sidebar: sidebar 
+keywords: view, list, saved, snapshot, copy, system, manager, online, help 
+summary: System Manager を使用すると、選択したボリュームについて保存されているすべての Snapshot コピーのリストを、ボリュームウィンドウの下部ペインにある Snapshot コピータブで確認できます。このリストを使用して、 Snapshot コピーの名前変更、リストア、または削除を実行できます。 
+---
+= System Manager - ONTAP 9.7 以前を使用して、保存された Snapshot コピーのリストを表示します
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+ONTAP System Managerクラシック（ONTAP 9.7以前で使用可能）を使用すると、選択したボリュームについて保存されているすべてのSnapshotコピーのリストを、ボリュームウィンドウの下部ペインにあるSnapshotコピータブで確認できます。このリストを使用して、 Snapshot コピーの名前変更、リストア、または削除を実行できます。
+
+.作業を開始する前に
+ボリュームはオンラインである必要があります。
+
+.このタスクについて
+一度に表示できる Snapshot コピーのボリュームは 1 つだけです。
+
+.手順
+. [* ストレージ *>* ボリューム *] をクリックします。
+. SVM * フィールドのドロップダウンメニューで、 * すべての SVM * を選択します。
+. 保存された Snapshot コピーを表示するボリュームの横にあるプラス記号（ + ）をクリックします。
+. Show More Details * リンクをクリックすると、ボリュームに関する詳細情報が表示されます。
+. [* Snapshot Copies * （ Snapshot コピー * ） ] タブをクリックします。
++
+選択したボリュームで利用できる Snapshot コピーのリストが表示されます。
+
+

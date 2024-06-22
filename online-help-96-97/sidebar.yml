@@ -1,0 +1,495 @@
+---
+section: online-help-96-97
+title: System Manager 9.6 および 9.7 を使用したクラスタ管理
+entries:
+- title: System Manager について理解する
+  url: "/online-help-96-97/index.html"
+- title: ONTAP System Manager を使用してクラスタをセットアップする
+  entries:
+  - title: テンプレートファイルを使用してクラスタをセットアップします
+    url: "/online-help-96-97/task_setting_up_cluster_using_template_file.html"
+    entries:
+    - title: クラスタを作成します
+      url: "/online-help-96-97/task_creating_cluster.html"
+    - title: ネットワークをセットアップする
+      url: "/online-help-96-97/task_setting_up_network.html"
+    - title: サポートページをセットアップする
+      url: "/online-help-96-97/task_setting_up_support_page.html"
+    - title: ストレージの推奨事項を確認
+      url: "/online-help-96-97/task_reviewing_storage_recommendations.html"
+    - title: SVM を作成します。
+      url: "/online-help-96-97/task_creating_svm.html"
+- title: ONTAP System Manager のブラウザベースのグラフィカルインターフェイスを使用してクラスタにアクセスします
+  url: "/online-help-96-97/task_accessing_cluster_using_system_manager.html"
+- title: System Manager オプションを設定
+  url: "/online-help-96-97/task_configuring_system_manager_options.html"
+- title: ONTAP System Manager ログファイルを表示します
+  url: "/online-help-96-97/task_viewing_system_manager_log_files.html"
+- title: クラスタをセットアップする
+  entries:
+  - title: クラスタをセットアップする
+    url: "/online-help-96-97/task_updating_cluster_name.html"
+  - title: ライセンスを追加します
+    url: "/online-help-96-97/task_adding_licenses.html"
+  - title: クラスタのタイムゾーンを設定します
+    url: "/online-help-96-97/task_setting_time_zone_for_cluster.html"
+  - title: HA ペアを監視する
+    url: "/online-help-96-97/task_monitoring_ha_pairs.html"
+- title: ネットワークをセットアップする
+  url: "/online-help-96-97/concept_setting_up_network.html"
+- title: 物理ストレージをセットアップする
+  entries:
+  - title: ノードへのディスクの割り当て
+    url: "/online-help-96-97/task_assigning_disks_to_nodes.html"
+  - title: スペアディスクの初期化中です
+    url: "/online-help-96-97/task_zeroing_disks.html"
+  - title: アグリゲートを使用したストレージのプロビジョニング
+    url: "/online-help-96-97/task_provisioning_storage_through_aggregates.html"
+- title: SVMs を作成します
+  url: "/online-help-96-97/task_creating_svms.html"
+  entries:
+  - title: SVM で CIFS プロトコルと NFS プロトコルを設定
+    url: "/online-help-96-97/task_configuring_cifs_nfs_protocols_on_svms.html"
+  - title: SVM に iSCSI プロトコルを設定
+    url: "/online-help-96-97/task_configuring_iscsi_protocol_on_svms.html"
+  - title: SVM で FC プロトコルと FCoE プロトコルを設定
+    url: "/online-help-96-97/task_configuring_fc_fcoe_protocol_on_svms.html"
+  - title: SVM に NVMe プロトコルを設定します
+    url: "/online-help-96-97/task_configuring_nvme_protocol_on_svms.html"
+  - title: SVM 管理者に管理を委譲する
+    url: "/online-help-96-97/task_delegating_administration_to_svm_administrators.html"
+  - title: FlexVol ボリュームを作成します
+    url: "/online-help-96-97/task_creating_flexvol_volumes.html"
+  - title: SnapLock ボリュームを作成します
+    url: "/online-help-96-97/task_creating_snaplock_volumes.html"
+- title: SAML 認証をセットアップする
+  url: "/online-help-96-97/task_setting_up_saml_authentication.html"
+- title: ピアリングをセットアップする
+  url: "/online-help-96-97/task_setting_up_peering.html"
+- title: クラスタを管理します
+  entries:
+  - title: ダッシュボードウィンドウ
+    url: "/online-help-96-97/reference_dashboard_window.html"
+  - title: MetroCluster のスイッチオーバーとスイッチバック
+    entries:
+    - title: MetroCluster のスイッチオーバーとスイッチバックのワークフロー
+      url: "/online-help-96-97/concept_metrocluster_switchover_switchback_workflow.html"
+    - title: スイッチオーバーとスイッチバックの処理を準備しています
+      url: "/online-help-96-97/task_preparing_for_switchover_switchback_operations.html"
+    - title: ネゴシエートスイッチオーバーの実行
+      url: "/online-help-96-97/task_performing_negotiated_planned_switchover.html"
+    - title: 計画外スイッチオーバーの実行
+      url: "/online-help-96-97/task_performing_unplanned_switchover.html"
+    - title: スイッチバックを実行しています
+      url: "/online-help-96-97/task_performing_switchback.html"
+    - title: MetroCluster のスイッチオーバーとスイッチバックの処理のウィンドウ
+      url: "/online-help-96-97/reference_metrocluster_switchover_switchback_window.html"
+- title: アプリケーション
+  url: "/online-help-96-97/concept_applications.html"
+  entries:
+  - title: 基本テンプレートのプロビジョニング
+    url: "/online-help-96-97/task_provisioning_basic_template.html"
+  - title: ストレージサービスの定義
+    url: "/online-help-96-97/reference_storage_service_definitions.html"
+  - title: System Manager に Microsoft SQL Server over SAN を追加します
+    url: "/online-help-96-97/task_adding_microsoft_sql_server_over_san_to_system_manager.html"
+  - title: アプリケーションプロビジョニングの設定
+    url: "/online-help-96-97/reference_application_provisioning_settings.html"
+  - title: アプリケーションを編集します
+    url: "/online-help-96-97/task_editing_application.html"
+  - title: アプリケーションを削除します
+    url: "/online-help-96-97/task_deleting_application.html"
+  - title: アプリケーションウィンドウ
+    url: "/online-help-96-97/reference_applications_window.html"
+- title: 設定の更新
+  url: "/online-help-96-97/concept_configuration_update.html"
+- title: サービスプロセッサ
+  url: "/online-help-96-97/concept_service_processors.html"
+- title: クラスタピア
+  url: "/online-help-96-97/concept_cluster_peers.html"
+- title: 高可用性
+  url: "/online-help-96-97/concept_high_availability.html"
+- title: ライセンス
+  url: "/online-help-96-97/concept_licenses.html"
+- title: クラスタの拡張
+  url: "/online-help-96-97/concept_cluster_expansion.html"
+- title: クラスタを更新
+  url: "/online-help-96-97/concept_updating_clusters.html"
+  entries:
+  - title: MetroCluster 以外の構成でクラスタを更新する
+    url: "/online-help-96-97/concept_updating_clusters_non_metrocluster_configuration.html"
+  - title: MetroCluster 構成のクラスタを更新
+    url: "/online-help-96-97/concept_updating_clusters_metrocluster_configuration.html"
+  - title: ONTAP ソフトウェアイメージの取得
+    url: "/online-help-96-97/task_obtaining_ontap_software_images.html"
+  - title: シングルノードクラスタを更新
+    url: "/online-help-96-97/task_updating_single_node_clusters.html"
+  - title: クラスタを無停止で更新
+    url: "/online-help-96-97/task_updating_cluster_nondisruptively.html"
+  - title: クラスタの更新ウィンドウ
+    url: "/online-help-96-97/reference_cluster_update_window.html"
+- title: クラスタの日付と時刻の設定
+  url: "/online-help-96-97/concept_date_time.html"
+- title: SNMP
+  url: "/online-help-96-97/concept_snmp.html"
+- title: LDAP
+  url: "/online-help-96-97/concept_ldap.html"
+- title: ユーザ
+  url: "/online-help-96-97/concept_cluster_user_accounts.html"
+- title: ロール
+  url: "/online-help-96-97/concept_roles.html"
+- title: ネットワークを管理します
+  url: "/online-help-96-97/concept_managing_network.html"
+- title: IPspace
+  url: "/online-help-96-97/concept_ipspaces.html"
+- title: ブロードキャストドメイン
+  url: "/online-help-96-97/concept_broadcast_domains.html"
+- title: サブネット
+  url: "/online-help-96-97/concept_subnets.html"
+- title: ネットワークインターフェイス
+  url: "/online-help-96-97/concept_network_interfaces.html"
+- title: イーサネットポート
+  url: "/online-help-96-97/concept_ethernet_ports.html"
+- title: FC / FCoE アダプタと NVMe アダプタ
+  url: "/online-help-96-97/concept_fc_fcoe_nvme_adapters.html"
+- title: ストレージ階層
+  entries:
+  - title: アグリゲートを編集する
+    url: "/online-help-96-97/task_editing_aggregates.html"
+  - title: アグリゲートを削除する
+    url: "/online-help-96-97/task_deleting_aggregates.html"
+  - title: アグリゲートの作成時に RAID 構成を変更する
+    url: "/online-help-96-97/task_changing_raid_configuration_when_creating_aggregate.html"
+  - title: SSD の追加によるキャッシュのプロビジョニング
+    url: "/online-help-96-97/task_provisioning_cache_by_adding_disks.html"
+  - title: データディスクを追加します
+    url: "/online-help-96-97/task_adding_capacity_disks.html"
+  - title: データディスクを追加するときに RAID グループを変更します
+    url: "/online-help-96-97/task_changing_raid_group_when_adding_capacity_disks.html"
+  - title: FlexVol ボリュームを移動しています
+    url: "/online-help-96-97/task_moving_flexvol_volumes.html"
+  - title: アグリゲートのミラーリング
+    url: "/online-help-96-97/task_mirroring_aggregates.html"
+  - title: アグリゲート情報を表示します
+    url: "/online-help-96-97/task_viewing_aggregate_information.html"
+  - title: StorageGRID を使用する場合の CA 証明書のインストール
+    url: "/online-help-96-97/task_installing_ca_certificate_if_you_use_storagegrid_webscale.html"
+  - title: 実質的 ONTAP ディスクタイプを使用して HDD を混在させる方法
+    url: "/online-help-96-97/reference_effective_data_ontap_disk_types.html"
+  - title: 互換性のあるスペアディスクとは
+    url: "/online-help-96-97/concept_what_compatible_spare_disks_are.html"
+  - title: System Manager とホットスペアとの相互運用性
+    url: "/online-help-96-97/concept_how_system_manager_calculates_hot_spares.html"
+  - title: ディスクタイプおよびディスク rpm の表示ルール
+    url: "/online-help-96-97/concept_rules_for_mixing_disk_types_disk_rpms.html"
+  - title: アグリゲートの作成に関するストレージの推奨事項
+    url: "/online-help-96-97/concept_storage_recommendations_for_creating_aggregates.html"
+  - title: ストレージ階層ウィンドウに戻ります
+    url: "/online-help-96-97/reference_storage_tiers_window.html"
+- title: クラウド階層を設定および管理する
+  url: "/online-help-96-97/task_configuring_managing_cloud_tiers.html"
+- title: アグリゲート
+  url: "/online-help-96-97/concept_aggregates.html"
+- title: ストレージプール
+  url: "/online-help-96-97/concept_storage_pools.html"
+- title: ノードへのディスクの再割り当て
+  url: "/online-help-96-97/task_reassigning_disks_to_nodes.html"
+- title: ディスク
+  entries:
+  - title: ディスク情報を表示します
+    url: "/online-help-96-97/task_viewing_disk_information.html"
+  - title: ONTAP で使用されるディスクタイプ名
+    url: "/online-help-96-97/concept_how_ontap_reports_drive_types.html"
+  - title: マルチディスクキャリアを安全に取り外せるかどうかを確認します
+    url: "/online-help-96-97/concept_how_to_determine_when_safe_to_remove_multi_disk_carrier.html"
+  - title: ディスクウィンドウ
+    url: "/online-help-96-97/reference_disks_window.html"
+- title: アレイ LUN
+  url: "/online-help-96-97/concept_array_luns.html"
+- title: ノード
+  url: "/online-help-96-97/concept_nodes.html"
+- title: ハードウェアキャッシュ
+  url: "/online-help-96-97/concept_hardware_cache.html"
+- title: イベント
+  url: "/online-help-96-97/concept_events.html"
+- title: システムアラート
+  url: "/online-help-96-97/concept_system_alerts.html"
+- title: AutoSupport 通知
+  url: "/online-help-96-97/concept_autosupport.html"
+- title: ジョブ
+  url: "/online-help-96-97/concept_jobs.html"
+- title: Flash Pool 統計情報
+  url: "/online-help-96-97/concept_flash_pool_statistics.html"
+- title: SVM のダッシュボードウィンドウ
+  url: "/online-help-96-97/reference_svm_dashboard_window.html"
+  entries:
+  - title: SVM を監視する
+    url: "/online-help-96-97/task_monitoring_svm_using_dashboard.html"
+  - title: SVM の設定を編集します
+    url: "/online-help-96-97/task_editing_svm_settings.html"
+  - title: SVM を削除します
+    url: "/online-help-96-97/task_deleting_svms.html"
+  - title: SVM を起動します
+    url: "/online-help-96-97/task_starting_svms.html"
+  - title: SVM を停止します
+    url: "/online-help-96-97/task_stopping_svms.html"
+  - title: SVMs を管理します
+    url: "/online-help-96-97/reference_managing_svms.html"
+  - title: ファイルアクセスのトレースによる SVM のアクセスエラー診断
+    url: "/online-help-96-97/task_tracing_file_access_to_diagnose_access_errors_on_svms.html"
+  - title: SVMの概要
+    url: "/online-help-96-97/concept_why_you_use_svms.html"
+  - title: ONTAP ネームサービススイッチの設定について
+    url: "/online-help-96-97/concept_how_data_ontap_name_service_switch_configuration_works.html"
+  - title: Storage Virtual Machine ウィンドウ
+    url: "/online-help-96-97/reference_svm_window.html"
+  - title: "[ ファイルアクセスのトレース ] ウィンドウ"
+    url: "/online-help-96-97/reference_trace_file_access_window.html"
+- title: 個のボリューム
+  entries:
+  - title: ボリュームプロパティを編集します
+    url: "/online-help-96-97/task_editing_volume_properties.html"
+  - title: データ保護ボリュームを編集
+    url: "/online-help-96-97/task_editing_data_protection_volumes.html"
+  - title: ボリュームを削除します
+    url: "/online-help-96-97/task_deleting_volumes.html"
+  - title: FlexClone ボリュームの作成
+    url: "/online-help-96-97/task_creating_flexclone_volumes.html"
+  - title: FlexClone ファイルの作成
+    url: "/online-help-96-97/task_creating_flexclone_files.html"
+  - title: 親ボリュームから FlexClone ボリュームをスプリットする
+    url: "/online-help-96-97/task_splitting_flexclone_volume_from_its_parent_volume.html"
+  - title: FlexClone ボリューム階層を表示します
+    url: "/online-help-96-97/task_viewing_flexclone_volumes_hierarchy.html"
+  - title: ボリュームのステータスを変更します
+    url: "/online-help-96-97/task_changing_status_volume.html"
+  - title: 保存された Snapshot コピーのリストを表示します
+    url: "/online-help-96-97/task_viewing_list_saved_snapshot_copies.html"
+  - title: 定義されたスケジュール以外で Snapshot コピーを作成します
+    url: "/online-help-96-97/task_creating_snapshot_copies_outside_defined_schedule.html"
+  - title: Snapshot コピーリザーブを設定します
+    url: "/online-help-96-97/task_setting_snapshot_copy_reserve.html"
+  - title: Snapshot コピーディレクトリを非表示にします
+    url: "/online-help-96-97/task_hiding_snapshot_copy_directory.html"
+  - title: Snapshot コピーの自動作成をスケジュール設定しています
+    url: "/online-help-96-97/task_scheduling_automatic_creation_snapshot_copies.html"
+  - title: Snapshot コピーからボリュームをリストアします
+    url: "/online-help-96-97/task_restoring_volume_from_snapshot_copy.html"
+  - title: Snapshot コピーの有効期限を延長します
+    url: "/online-help-96-97/task_extending_expiry_date_snapshot_copies.html"
+  - title: Snapshot コピーの名前を変更します
+    url: "/online-help-96-97/task_renaming_snapshot_copies.html"
+  - title: Snapshot コピーを削除します
+    url: "/online-help-96-97/task_deleting_snapshot_copies.html"
+  - title: ボリュームのサイズを変更
+    url: "/online-help-96-97/task_resizing_volumes.html"
+  - title: ボリュームで Storage Efficiency を有効にします
+    url: "/online-help-96-97/task_enabling_storage_efficiency_on_volume.html"
+  - title: 重複排除スケジュールを変更します
+    url: "/online-help-96-97/task_changing_deduplication_schedule.html"
+  - title: 重複排除処理を実行します
+    url: "/online-help-96-97/task_running_deduplication_operations.html"
+  - title: アグリゲート間またはノード間で FlexVol ボリュームを移動する
+    url: "/online-help-96-97/task_moving_flexvol_volumes_between_aggregates_or_nodes.html"
+  - title: ストレージ QoS にボリュームを割り当てます
+    url: "/online-help-96-97/task_assigning_volumes_to_storage_qos.html"
+  - title: ソース SVM からミラー関係を作成
+    url: "/online-help-96-97/task_creating_mirror_relationship_from_source_volume.html"
+  - title: ソース SVM からバックアップ関係を作成
+    url: "/online-help-96-97/task_creating_vault_relationship_from_source_svm.html"
+  - title: ソース SVM からミラーとバックアップ関係を作成
+    url: "/online-help-96-97/task_creating_mirror_vault_relationship_from_source_svm.html"
+  - title: VMware 用の NFS データストアを作成します
+    url: "/online-help-96-97/task_creating_nfs_datastore_for_vmware.html"
+  - title: ボリュームの階層化ポリシーを変更する
+    url: "/online-help-96-97/task_changing_tiering_policy_volume_destination_topic_delete.html"
+  - title: FlexGroup ボリュームを作成します
+    url: "/online-help-96-97/task_creating_flexgroup_volumes.html"
+  - title: FlexGroup ボリューム情報を表示します
+    url: "/online-help-96-97/task_viewing_flexgroup_volume_information.html"
+  - title: FlexGroup ボリュームを編集します
+    url: "/online-help-96-97/task_editing_flexgroup_volumes.html"
+  - title: FlexGroup ボリュームのアドバンストオプションの指定
+    url: "/online-help-96-97/task_specifying_advanced_options_for_flexgroup_volume.html"
+  - title: FlexGroup ボリュームのサイズを変更
+    url: "/online-help-96-97/task_resizing_flexgroup_volumes.html"
+  - title: FlexGroup ボリュームのステータスを変更します
+    url: "/online-help-96-97/task_changing_status_flexgroup_volume.html"
+  - title: FlexGroup ボリュームを削除します
+    url: "/online-help-96-97/task_deleting_flexgroup_volumes.html"
+  - title: FlexCache ボリュームを作成します
+    url: "/online-help-96-97/task_creating_flexcache_volumes.html"
+  - title: FlexCache ボリューム情報を表示します
+    url: "/online-help-96-97/task_viewing_flexcache_volume_information.html"
+  - title: FlexCache ボリュームを編集します
+    url: "/online-help-96-97/task_editing_flexcache_volumes.html"
+  - title: FlexCache ボリュームのアドバンストオプションの指定
+    url: "/online-help-96-97/task_specifying_advanced_options_for_flexcache_volume.html"
+  - title: FlexCache ボリュームのサイズを変更
+    url: "/online-help-96-97/task_resizing_flexcache_volumes.html"
+  - title: FlexCache ボリュームのステータスを変更します
+    url: "/online-help-96-97/task_changing_status_flexcache_volume.html"
+  - title: FlexCache ボリュームを削除します
+    url: "/online-help-96-97/task_deleting_flexcache_volumes.html"
+  - title: FlexVol のボリュームギャランティの動作
+    url: "/online-help-96-97/concept_how_volume_guarantees_work_for_flexvol_volumes.html"
+  - title: FlexVol ボリュームでスペースリザベーションを使用する
+    url: "/online-help-96-97/concept_using_space_reservation_with_flexvol_volumes.html"
+  - title: ボリュームのサイズ変更のオプション
+    url: "/online-help-96-97/concept_options_for_resizing_volumes.html"
+  - title: Volumes （ボリューム）ウィンドウ
+    url: "/online-help-96-97/reference_volumes_window.html"
+- title: ジャンクションパス
+  url: "/online-help-96-97/concept_namespace.html"
+- title: 共有
+  url: "/online-help-96-97/concept_shares.html"
+- title: LUN
+  url: "/online-help-96-97/concept_luns.html"
+  entries:
+  - title: FC SAN 向けに最適化された LUN を作成
+    url: "/online-help-96-97/task_creating_fc_san_optimized_luns.html"
+  - title: アプリケーション固有の LUN 設定
+    url: "/online-help-96-97/reference_application_specific_lun_settings.html"
+  - title: LUNs を作成します
+    url: "/online-help-96-97/task_creating_luns.html"
+  - title: LUN を削除します
+    url: "/online-help-96-97/task_deleting_luns.html"
+  - title: igroupを管理します
+    url: "/online-help-96-97/task_creating_initiator_groups.html"
+  - title: ポートセットを作成します
+    url: "/online-help-96-97/task_creating_portsets.html"
+  - title: LUN のクローニング
+    url: "/online-help-96-97/task_cloning_luns.html"
+  - title: LUN を編集します
+    url: "/online-help-96-97/task_editing_luns.html"
+  - title: LUN をオンラインにしています
+    url: "/online-help-96-97/task_bringing_luns_online.html"
+  - title: LUN をオフラインにします
+    url: "/online-help-96-97/task_taking_luns_offline.html"
+  - title: LUN を移動中です
+    url: "/online-help-96-97/task_moving_luns.html"
+  - title: ストレージ QoS に LUN を割り当てています
+    url: "/online-help-96-97/task_assigning_luns_to_storage_qos.html"
+  - title: igroup を編集します
+    url: "/online-help-96-97/task_editing_initiator_groups.html"
+  - title: イニシエータを編集する
+    url: "/online-help-96-97/task_editing_initiators.html"
+  - title: LUN 情報を表示します
+    url: "/online-help-96-97/task_viewing_lun_information.html"
+  - title: イニシエータグループを表示する
+    url: "/online-help-96-97/task_viewing_initiator_groups.html"
+  - title: LUN を含む FlexVol の操作に関するガイドライン
+    url: "/online-help-96-97/concept_guidelines_working_with_volumes_that_contain_luns.html"
+  - title: LUN のスペースリザベーションを理解する
+    url: "/online-help-96-97/concept_using_space_reservation_for_luns.html"
+  - title: LUN マルチプロトコルタイプの使用に関するガイドライン
+    url: "/online-help-96-97/concept_lun_multiprotocol_type_guidelines.html"
+  - title: LUN ウィンドウ
+    url: "/online-help-96-97/reference_luns_window.html"
+- title: qtree
+  url: "/online-help-96-97/concept_qtrees.html"
+- title: クォータ
+  url: "/online-help-96-97/concept_quotas.html"
+- title: CIFSプロトコル
+  url: "/online-help-96-97/concept_cifs_protocol.html"
+  entries:
+  - title: ホームディレクトリパスを追加します
+    url: "/online-help-96-97/task_adding_home_directory_paths.html"
+  - title: CIFS ドメインコントローラをリセットします
+    url: "/online-help-96-97/task_resetting_cifs_domain_controllers.html"
+  - title: CIFS グループポリシー設定を更新する
+    url: "/online-help-96-97/task_updating_cifs_group_policy_configuration.html"
+  - title: BranchCache をセットアップする
+    url: "/online-help-96-97/task_setting_up_branchcache.html"
+  - title: 優先ドメインコントローラを追加する
+    url: "/online-help-96-97/task_adding_preferred_domain_controllers.html"
+  - title: CIFS ドメイン情報を表示する
+    url: "/online-help-96-97/task_viewing_cifs_domain_information.html"
+  - title: "[CIFS]ウィンドウ"
+    url: "/online-help-96-97/reference_cifs_window.html"
+- title: NFS プロトコル
+  url: "/online-help-96-97/concept_nfs_protocol.html"
+- title: NVMe をセットアップする
+  url: "/online-help-96-97/concept_setting_up_nvme.html"
+  entries:
+  - title: NVMe ネームスペースを作成する
+    url: "/online-help-96-97/task_creating_nvme_namespace.html"
+  - title: NVMe ネームスペースを編集する
+    url: "/online-help-96-97/task_editing_nvme_namespace.html"
+  - title: NVMe ネームスペースをクローニングする
+    url: "/online-help-96-97/task_cloning_nvme_namespace.html"
+  - title: NVMe サービスを開始および停止します
+    url: "/online-help-96-97/task_starting_or_stopping_nvme_service.html"
+  - title: NVMe サブシステムとは
+    url: "/online-help-96-97/concept_what_nvme_subsystem_is.html"
+- title: iSCSI プロトコル
+  url: "/online-help-96-97/concept_iscsi_protocol.html"
+- title: FC/FCoE プロトコル
+  url: "/online-help-96-97/concept_fc_fcoe_protocol.html"
+- title: エクスポートポリシー
+  url: "/online-help-96-97/concept_export_policies.html"
+- title: 効率化ポリシー
+  url: "/online-help-96-97/concept_efficiency_policies.html"
+- title: QoSポリシーグループを管理します
+  url: "/online-help-96-97/task_creating_qos_policy_groups.html"
+  entries:
+  - title: ポリシーグループへのストレージオブジェクトの割り当てに関するルール
+    url: "/online-help-96-97/concept_rules_for_assigning_storage_objects_to_policy_groups.html"
+- title: NISサアヒス
+  url: "/online-help-96-97/concept_nis_services.html"
+- title: LDAP クライアントサービス
+  url: "/online-help-96-97/concept_ldap_client_services.html"
+- title: LDAP 設定サービス
+  url: "/online-help-96-97/concept_ldap_configuration_services.html"
+- title: Kerberos Realm サービス
+  url: "/online-help-96-97/concept_kerberos_realm_services.html"
+- title: DNS/DDNS サービス
+  url: "/online-help-96-97/concept_dns_ddns_services.html"
+- title: SVMユーザ
+  url: "/online-help-96-97/concept_svm_user_accounts.html"
+- title: "「 UNIX 」"
+  url: "/online-help-96-97/concept_unix.html"
+- title: ローカルWindowsグループ
+  entries:
+  - title: Windowsローカルグループを管理します
+    url: "/online-help-96-97/task_editing_local_windows_group_properties.html"
+- title: ネームマッピング
+  url: "/online-help-96-97/concept_name_mapping.html"
+- title: ミラー関係
+  entries:
+  - title: ミラー関係を管理します
+    url: "/online-help-96-97/task_editing_mirror_relationships.html"
+  - title: SnapMirror 関係を解除します
+    url: "/online-help-96-97/task_breaking_snapmirror_relationships.html"
+  - title: ミラー関係を逆再同期しています
+    url: "/online-help-96-97/task_reverse_resynchronizing_snapmirror_relationships.html"
+  - title: ミラー転送を中止します
+    url: "/online-help-96-97/task_aborting_mirror_relationships.html"
+  - title: ミラー関係のボリュームをリストアする
+    url: "/online-help-96-97/task_restoring_volume_mirror_relationship.html"
+- title: バックアップ関係
+  entries:
+  - title: バックアップ関係を管理
+    url: "/online-help-96-97/task_editing_vault_relationships.html"
+  - title: Snapshot コピーの転送を中止する
+    url: "/online-help-96-97/task_aborting_vault_relationships.html"
+  - title: バックアップ関係のボリュームをリストアする
+    url: "/online-help-96-97/task_restoring_volume_vault_relationship.html"
+- title: ミラーとバックアップ関係
+  entries:
+  - title: ミラーとバックアップ関係を管理します
+    url: "/online-help-96-97/task_editing_mirror_vault_relationships.html"
+  - title: ミラーとバックアップ関係を中止します
+    url: "/online-help-96-97/task_aborting_mirror_vault_relationships.html"
+  - title: ミラーとバックアップ関係のボリュームをリストアする
+    url: "/online-help-96-97/task_restoring_volume_mirror_vault_relationship.html"
+- title: 保護ウィンドウ
+  url: "/online-help-96-97/reference_protection_window.html"
+- title: SVM関係
+  url: "/online-help-96-97/concept_svm_relationships.html"
+- title: 保護ポリシーを管理する
+  url: "/online-help-96-97/concept_protection_policies.html"
+- title: Snapshotポリシーを管理します
+  url: "/online-help-96-97/concept_snapshot_policies.html"
+- title: スケジュールを管理します
+  url: "/online-help-96-97/concept_schedules.html"

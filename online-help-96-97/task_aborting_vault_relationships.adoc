@@ -1,0 +1,29 @@
+---
+permalink: online-help-96-97/task_aborting_vault_relationships.html 
+sidebar: sidebar 
+keywords: abort, snapshot, copy, transfer, online, help, system, manager 
+summary: System Manager を使用して、現在実行中のデータ転送を中止または停止することができます。 
+---
+= System Manager - ONTAP 9.7 以前を使用して、 Snapshot コピーの転送を中止します
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+ONTAP System Manager クラシック（ ONTAP 9.7 以前で使用可能）を使用して、現在実行中のデータ転送を中止または停止できます。
+
+.手順
+. [* 保護 *>] 、 [* ボリューム関係 *] の順にクリックします。
+. データ転送を停止する関係を選択し、 * Operations * > * Abort * をクリックします。
+. [ 転送を中止する * ] チェックボックスをオンにして、操作を確定します。
+. *オプション：*転送済みのデータを保持*チェックボックスを選択すると、デスティネーションボリュームにすでに転送されているデータが保持されます。
+. * 中止 * をクリックします。
+
+
+.結果
+転送ステータスは ' 操作が完了するまで中止中と表示され ' 操作が完了するとアイドルと表示されます
+
+* 関連情報 *
+
+xref:reference_protection_window.adoc[保護ウィンドウ]

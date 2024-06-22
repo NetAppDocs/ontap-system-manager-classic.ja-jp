@@ -1,0 +1,28 @@
+---
+permalink: volume-restore-snapvault/concept_volume_restore_workflow.html 
+sidebar: sidebar 
+keywords: source, volume, data, corrupt, restore, snapvault, backup, destination, restoring, exist, operation, volume restore workflow 
+summary: ソースボリュームを使用できない場合やデータが破損した場合は、 SnapVault バックアップからリストアできます。SnapVault バックアップからボリュームをリストアするときは、 SnapVault デスティネーションボリュームを選択し、新しいボリュームまたは既存のボリュームにリストアして、リストア処理を確認します。 
+---
+= ボリュームリストアのワークフロー
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+ソースボリュームを使用できない場合やデータが破損した場合は、 SnapVault バックアップからリストアできます。SnapVault バックアップからボリュームをリストアするときは、 SnapVault デスティネーションボリュームを選択し、新しいボリュームまたは既存のボリュームにリストアして、リストア処理を確認します。
+
+image::../media/volume_restore_workflow.gif[次の図は SnapVault ボリュームリストアワークフローのフローチャートを示したものです。ワークフローの各手順はトピックに一致しています]
+
+追加情報を使用すると、 SnapVault バックアップ関係を管理したり、他の方法でデータ保護を行ってデータリソースの可用性を保護したりすることができます。
+
+* xref:../volume-disaster-prep/index.html[ボリュームのディザスタリカバリの準備]
++
+ディザスタリカバリに備えて別の ONTAP クラスタのデスティネーションボリュームを設定する簡単な方法について説明しています。
+
+* xref:../volume-disaster-recovery/index.html[ボリュームディザスタリカバリ]
++
+災害発生時に別の ONTAP クラスタのデスティネーションボリュームをアクティブ化する簡単な方法と、リカバリ後にソースボリュームを再アクティブ化して SnapMirror 関係を元の状態に戻す方法について説明しています。
+
+

@@ -1,0 +1,45 @@
+---
+permalink: iscsi-config-esxi/index.html 
+sidebar: sidebar 
+keywords: iscsi, service, storage, virtual, machine, svm, provision, lun, esx, host, computer 
+summary: ONTAP System Manager の従来のインターフェイス（ ONTAP 9.7 以前）を使用すると、 Storage Virtual Machine （ SVM ）に iSCSI サービスを簡単にセットアップし、 LUN をプロビジョニングし、 ESXi ホストコンピュータで iSCSI イニシエータを使用して LUN を使用できるようにすることができます。 
+---
+= VSC を使用した ESXi 向けの iSCSI 設定の概要
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+ONTAP System Manager の従来のインターフェイス（ ONTAP 9.7 以前）を使用すると、 Storage Virtual Machine （ SVM ）に iSCSI サービスを簡単にセットアップし、 LUN をプロビジョニングし、 ESXi ホストコンピュータで iSCSI イニシエータを使用して LUN を使用できるようにすることができます。
+
+次の場合にこの手順を使用します。
+
+* ESXi 5.x でネイティブの ESXi iSCSI ソフトウェアイニシエータを使用している
+* iSCSI に CHAP 認証を使用しない。
+* サポートされているバージョンの Virtual Storage Console for VMware vSphere （ VSC ）を使用して ESX ホストのストレージを設定している。
++
+** VSC 7.0 以降、 VSC はの一部です https://docs.netapp.com/us-en/ontap-tools-vmware-vsphere/index.html["VMware vSphere 向け ONTAP ツール"^] VSC 、 vStorage APIs for Storage Awareness （ VASA ） Provider 、および Storage Replication Adapter （ SRA ） for VMware vSphere の機能を搭載した仮想アプライアンス。
+** 必ずを確認してください https://imt.netapp.com/matrix/["NetApp Interoperability Matrix Tool で確認できます"^] 現在の ONTAP リリースと VSC リリースの互換性を確認するため。
+
+
+* ネットワークで IPv4 アドレスを使用している。
+* 次のいずれかの方法で論理インターフェイスにアドレスを割り当てる。
++
+** 定義したサブネットから自動で割り当てられます
+** 既存のサブネットから選択したアドレスを使用して、手動で割り当てます
+** 既存のサブネットに追加するアドレスを使用して、手動で割り当てます
+
+
+* クラスタ内の各ノードに高速イーサネットポート（ 1GbE 以上、 10GbE を推奨）が少なくとも 2 つある。
++
+オンボードUTA2（別名 `CNA`）ポートは設定可能です。これらのポートは ONTAP CLI で設定しますが、手順では説明しません。
+
++
+を参照してください link:https://docs.netapp.com/us-en/ontap/networking/index.html["Network Management の略"^] CLI を使用してイーサネットポートのフロー制御を設定するため。
+
+* iSCSI SAN ブートを設定しない。
+* VM のストレージを ESXi ハイパーバイザーから提供しており、 VM で iSCSI イニシエータを実行していない。
+
+
+詳細については、を参照してください https://docs.netapp.com/us-en/netapp-solutions/virtualization/vsphere_ontap_ontap_for_vsphere.html["TR-4597 ：『 VMware vSphere for ONTAP 』"^] および VSC リリースのドキュメントを参照してください。

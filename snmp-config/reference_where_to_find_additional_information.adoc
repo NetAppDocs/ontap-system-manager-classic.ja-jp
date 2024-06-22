@@ -1,0 +1,26 @@
+---
+permalink: snmp-config/reference_where_to_find_additional_information.html 
+sidebar: sidebar 
+keywords: reference, manual, configure, snmp, where to find additional information 
+summary: SNMP の設定に役立つその他のリファレンスマニュアルが用意されています。 
+---
+= 追加情報の参照先
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+SNMP の設定に役立つその他のリファレンスマニュアルが用意されています。
+
+詳細については、次のドキュメントを参照してください。
+
+* https://docs.netapp.com/us-en/ontap/networking/index.html["Network Management の略"^]
++
+サブネット、クラスタ間 LIF 、ルート、ファイアウォールポリシーなど、さまざまなネットワークコンポーネントを設定する方法について説明しています。データ Storage Virtual Machine （ SVM ）での SNMP コミュニティまたはセキュリティユーザの作成方法、 SNMP トラップホストの管理方法についての説明もあります。
+
+* http://www.netapp.com/us/media/tr-4220.pdf["ネットアップテクニカルレポート 4220 ：『 SNMP Support in Data ONTAP 』"^]
++
+ONTAP における SNMP サポートについて説明します。 7-Mode 環境とクラスタ環境での SNMP サポートの詳細な比較、 SNMP トラップでサポートされるすべてのデフォルトイベントのリストなどが含まれます。
+
+

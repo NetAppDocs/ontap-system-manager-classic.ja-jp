@@ -1,0 +1,23 @@
+---
+permalink: volume-disaster-prep/concept_snapmirror_intercluster_configuration_workflow.html 
+sidebar: sidebar 
+keywords: preparing, prepare, volume, disaster, recovery, verify, cluster, peer, relationship, snapmirror, residing, reside, peer, destination, periodical, volume disaster recovery preparation workflow 
+summary: ボリュームのディザスタリカバリの準備では、クラスタピア関係を確認し、ピア関係にある双方のクラスタのボリューム間で SnapMirror 関係を作成し、データアクセスのためのデスティネーション SVM を設定して、 SnapMirror 関係を定期的に監視します。 
+---
+= ボリュームのディザスタリカバリの準備ワークフロー
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+ボリュームのディザスタリカバリの準備では、クラスタピア関係を確認し、ピア関係にある双方のクラスタのボリューム間で SnapMirror 関係を作成し、データアクセスのためのデスティネーション SVM を設定して、 SnapMirror 関係を定期的に監視します。
+
+image::../media/snapmirror_intercluster_cfg_workflow.gif[この図はボリュームのディザスタリカバリの準備ワークフローのフローチャートを示したものです。ワークフローの各手順はトピックに対応しています。]
+
+ディザスタリカバリの設定をテストする場合や災害の発生時にデスティネーションボリュームをアクティブ化する方法については、別のドキュメントで説明しています。災害発生後にソースボリュームを再アクティブ化する方法も、それらのドキュメントで確認できます。
+
+xref:../volume-disaster-recovery/index.html[ボリュームディザスタリカバリ]
+
+[+]
+ONTAP で災害の発生後にデスティネーションボリュームをアクティブ化し、リカバリ後にソースボリュームを再アクティブ化する簡単な方法について説明しています。

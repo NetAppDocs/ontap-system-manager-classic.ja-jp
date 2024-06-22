@@ -1,0 +1,19 @@
+---
+permalink: peering/concept_cluster_peering_workflow.html 
+sidebar: sidebar 
+keywords: set, relationship, cluster, peer, creating, create, intercluster, logical, interface, lif, relationship, svm, cluster and svm peering workflow 
+summary: ピア関係を設定するには、各クラスタでピアリングの準備を行い、各クラスタの各ノードにクラスタ間論理インターフェイス（ LIF ）を作成し、クラスタピア関係を設定してから SVM ピア関係を設定します。 
+---
+= クラスタと SVM のピア関係作成ワークフロー
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+ONTAP 9.7 以前の ONTAP System Manager を使用して、ピア関係を設定できます。
+ピア関係を設定するには、各クラスタでピアリングの準備を行い、各クラスタの各ノードにクラスタ間論理インターフェイス（ LIF ）を作成し、クラスタピア関係を設定してから SVM ピア関係を設定します。
+
+image::../media/cluster_peering_workflow.gif[この図には説明が付随しています]
+
+ONTAP 9.2 以前を実行している場合は、ソースボリュームとデスティネーションボリュームの間にデータ保護関係を作成するときに SVM ピア関係を作成します。

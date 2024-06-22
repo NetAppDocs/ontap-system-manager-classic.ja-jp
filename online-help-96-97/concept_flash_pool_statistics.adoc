@@ -1,0 +1,40 @@
+---
+permalink: online-help-96-97/concept_flash_pool_statistics.html 
+sidebar: sidebar 
+keywords: flash, pool, statistics, system, manager, ssd, tier, read, write, workload, aggregate, online, help 
+summary: System Manager を使用して、選択した Flash Pool アグリゲートの SSD 階層に対するリアルタイムの読み取り / 書き込みワークロードを表示できます。 
+---
+= ONTAP 9.7 以前の System Manger を使用して、 Flash Pool の統計を表示する
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+ONTAP System Manager クラシック（ ONTAP 9.7 以前で使用可能）を使用して、選択した Flash Pool アグリゲートの SSD 階層に対するリアルタイムの読み取り / 書き込みワークロードを表示できます。
+
+
+
+== Flash Pool アグリゲートの統計情報ウィンドウ
+
+選択した Flash Pool アグリゲートの SSD 階層に対する、リアルタイムの読み取り / 書き込みワークロードを表示できます。
+
+このページは、オールフラッシュで最適化されたノードを含むクラスタでは使用できません。
+
+* * Flash Pool アグリゲートの統計情報を表示します。 *
++
+Flash Pool アグリゲートのリストから、統計情報を表示する Flash Pool アグリゲートを選択できます。
+
+
+
+
+
+=== SSD キャッシュの読み取りワークロード
+
+Flash Pool アグリゲートに送信されたすべての読み取り要求のうち、 SSD 階層で実行された読み取り処理の割合をグラフに表示します。
+
+
+
+=== SSD キャッシュの書き込みワークロード
+
+Flash Pool アグリゲートに送信されたすべての書き込み要求のうち、 SSD 階層で実行された書き込み処理の割合をグラフに表示します。

@@ -1,0 +1,14 @@
+---
+permalink: volume-disaster-recovery/task_activating_destination_volume.html 
+sidebar: sidebar 
+keywords: source, volume, data, corruption, deletion, offline, state, destination, recover, access, activation, snapmirror, relationship, activate the destination volume 
+summary: データが破損した場合や誤って削除した場合、あるいはオフライン状態の場合など、データをソースボリュームから提供できないときは、ソースボリュームのデータをリカバリするまでの間、デスティネーションボリュームをアクティブ化してデータアクセスを提供する必要があります。アクティブ化には、以降の SnapMirror データ転送の中止と、 SnapMirror 関係の解除が伴います。 
+---
+= デスティネーションボリュームをアクティブ化
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+データが破損した場合や誤って削除した場合、あるいはオフライン状態の場合など、データをソースボリュームから提供できないときは、ソースボリュームのデータをリカバリするまでの間、デスティネーションボリュームをアクティブ化してデータアクセスを提供する必要があります。アクティブ化には、以降の SnapMirror データ転送の中止と、 SnapMirror 関係の解除が伴います。

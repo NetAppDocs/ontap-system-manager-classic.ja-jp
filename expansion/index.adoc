@@ -1,0 +1,48 @@
+---
+permalink: expansion/index.html 
+sidebar: sidebar 
+keywords: nondisruptive, expand, exist, cluster, ha, pair, expansion, overview 
+summary: HA ペアを追加すると、既存のクラスタを迅速かつ無停止で拡張できます。クラスタを拡張すると、クラスタのパフォーマンスが向上し、使用可能なストレージ容量が増えます。 
+---
+= クラスタの拡張の概要
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+HA ペアを追加すると、既存のクラスタを迅速かつ無停止で拡張できます。クラスタを拡張すると、クラスタのパフォーマンスが向上し、使用可能なストレージ容量が増えます。
+
+この手順は、次の条件に該当する場合にのみ使用してください。
+
+* 既存のクラスタが次の要件を満たしている。
++
+** ONTAP 9 を実行している。
+** 2 つ以上のノードを含んでいる。
++
+この手順の例では 2 ノードクラスタを使用していますが、 3 つ以上のノードで構成される環境クラスタも使用しています。
+
++
+シングルノードクラスタにノードを追加する場合は、別の手順を使用する必要があります。
+
++
+https://docs.netapp.com/platstor/topic/com.netapp.doc.hw-controller-add/home.html["2 台目のコントローラを追加して HA ペアを作成する"]
+
+** IPv6 アドレスとストレージ暗号化を使用していない。
+** MetroCluster 構成ではありません。
+
+
+* 追加するコントローラモジュールが次の要件を満たしている必要があります。
++
+** 新しいモジュールでない場合は、データが完全に消去され、クラスタの一部ではなくなり、新しいクラスタに追加できる状態になります。
+** ONTAP 9 をサポートしています。
+** 実行している ONTAP 9 リリースファミリーのバージョン。
+
+
+* System Manager を使用して ONTAP の設定作業を完了する場合、 ONTAP 9.7 以降の ONTAP System Manager UI ではなく、 ONTAP 9.7 以前のリリースで _Classic_System Manager UI を使用する必要があります。
++
+https://docs.netapp.com/us-en/ontap/["ONTAP System Manager のドキュメント"]
+
+* すべての選択肢について検討するのではなく、ベストプラクティスに従う。
+* 背景にある概念について詳しく確認する必要はありません。
+

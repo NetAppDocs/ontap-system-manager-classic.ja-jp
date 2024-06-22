@@ -1,0 +1,46 @@
+---
+permalink: iscsi-config-esxi/task_configuring_iscsi_fc_creating_lun_on_existing_svm.html 
+sidebar: sidebar 
+keywords: configure, iscsi, exist, storage, virtual, machine, svm, protocol, enable, configure iscsi on an existing svm 
+summary: 既存の Storage Virtual Machine （ SVM ）で iSCSI を設定できます。この手順は、 iSCSI プロトコルがすでに有効になっていて、 SVM での設定はまだ完了していない場合に実行この情報は、 iSCSI をまだ設定していない SVM に複数のプロトコルを設定するケースを想定しています。 
+---
+= 既存の SVM で iSCSI を設定
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+既存の Storage Virtual Machine （ SVM ）で iSCSI を設定できます。この手順は、 iSCSI プロトコルがすでに有効になっていて、 SVM での設定はまだ完了していない場合に実行この情報は、 iSCSI をまだ設定していない SVM に複数のプロトコルを設定するケースを想定しています。
+
+.作業を開始する前に
+ノードごとに 2 つの LIF を作成するための十分なネットワークアドレスが必要です。
+
+.手順
+. SVMs ウィンドウに移動します。
+. 設定する SVM を選択します。
+. [SVM** Details**]ペインで、プロトコルが有効になっているが設定が完了していないことを示す灰色の背景が[*iSCSI*]に表示されていることを確認します。
++
+緑の背景で * iscsi * が表示されている場合、 SVM はすでに設定されています。
+
++
+image::../media/existing_svm_protocols_iscsi_esxi.gif[4 つのプロトコルの背景がいずれもグレーになっている詳細ページの図。]
+
+. 灰色の背景の * iSCSI * プロトコル・リンクをクリックします。
++
+Configure iSCSI Protocol （ iSCSI プロトコルの設定）ウィンドウが表示されます。
+
+. iSCSI プロトコルの設定 * ページから iSCSI サービスと LIF を設定します。
++
+.. ターゲットのエイリアス名を入力します。
+.. 入力するコマンド `*2*` [ノードあたりのLIF数]*フィールドに入力します。
++
+可用性を確保してデータ移動を可能にするために、ノードごとに 2 つの LIF が必要です。
+
+.. LIF に IP アドレスを割り当てます。サブネットは指定してもしなくてもかまいません。
+.. オプションの * iSCSI ストレージ用の LUN のプロビジョニング * は無視してください。 LUN は、あとで Virtual Storage Console for VMware vSphere でプロビジョニングされるためです。
+.. [ 送信して閉じる ] をクリックします。
+
+
+. 「 * Summary * 」ページを確認し、 LIF 情報を記録して「 * OK 」をクリックします。
+

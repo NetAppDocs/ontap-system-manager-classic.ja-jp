@@ -1,0 +1,108 @@
+---
+permalink: nas-multiprotocol-config/concept_adding_nas_access_to_existing_svm.html 
+sidebar: sidebar 
+keywords: cifs, smb, nfs, access, exist, svm, lif, server, enabling, enable, configuring, configure, nis, add cifs and nfs access to an existing svm 
+summary: 既存の SVM への CIFS / SMB アクセスと NFS アクセスの両方を追加するには、データ LIF を作成し、 CIFS サーバを設定し、 NFS を有効にし、必要に応じて NIS を設定します。 
+---
+= 既存の SVM に CIFS / NFS アクセスを追加
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+既存の SVM への CIFS / SMB アクセスと NFS アクセスの両方を追加するには、データ LIF を作成し、 CIFS サーバを設定し、 NFS を有効にし、必要に応じて NIS を設定します。
+
+.作業を開始する前に
+* SVM で使用する次のネットワークコンポーネントを確認しておく必要があります。
++
+** データ論理インターフェイス（ LIF ）を作成するノードとそのノード上の特定のポート
+** データ LIF の IP アドレスをプロビジョニングするサブネット、または必要に応じてデータ LIF に割り当てる特定の IP アドレス
+** この SVM を追加する Active Directory （ AD ）ドメインと SVM を追加するために必要なクレデンシャル
+** NIS の情報 - ネームサービスやネームマッピングに NIS を使用している場合
+
+
+* 外部ファイアウォールがある場合は、ネットワークサービスへのアクセスを許可するように適切に設定しておく必要があります。
+* AD ドメインコントローラ、クライアント、および SVM の時刻の誤差が 5 分以内になるように同期しておく必要があります。
+* SVM で CIFS プロトコルと NFS プロトコルが許可されている必要があります。
++
+これは、別のプロトコルを設定する際にこの手順に従って SVM を作成していない場合に該当します。
+
+
+
+.このタスクについて
+CIFS と NFS のどちらを先に設定するかによって、表示されるダイアログボックスが異なります。この手順では、 CIFS を設定してから NFS を設定する必要があります。
+
+.手順
+. SVM のプロトコルを設定するための領域に移動します。
++
+.. 設定する SVM を選択します。
+.. [* 詳細 * （ * Details * ） ] ペインで、 [ * プロトコル * （ * Protocols ） ] の横の [* CIFS* ] をクリックします。
++
+image::../media/svm_add_protocol_multi_1st_cifs.gif[この図には説明が付随しています。]
+
+
+
+. CIFS プロトコルの設定 * ダイアログボックスの * データ LIF の設定 * セクションで、 SVM 用のデータ LIF を作成します。
++
+.. LIF に IP アドレスを割り当てます。指定したサブネットから自動で割り当てるか、手動で入力して割り当てます。
+.. 「 * Browse 」をクリックして、 LIF に関連付けるノードとポートを選択します。
++
+image::../media/svm_setup_cifs_nfs_page_lif_multi_nas_nas_mp.gif[この図には説明が付随しています。]
+
+
+
+. CIFS Server Configuration * セクションで CIFS サーバを定義し、 AD ドメインにアクセスするように設定します。
++
+.. CIFS サーバに AD ドメイン内で一意の名前を指定します。
+.. CIFS サーバを追加できる AD ドメインの FQDN を指定します。
+.. AD ドメイン内の CN=Computers 以外の組織単位（ OU ）を関連付ける場合は、その OU を入力します。
+.. OU に CIFS サーバを追加するための十分な権限がある管理用アカウントの名前とパスワードを指定します。
+.. この SVM 上のすべての共有に対する不正アクセスを防止するには、 SMB 3.0 を使用してデータを暗号化するオプションを選択します。
+
+
++
+image::../media/svm_setup_cifs_nfs_page_cifs_ad_nas_mp.gif[この図には説明が付随しています。]
+
+. CIFS / SMB アクセス用にボリュームを作成し、共有をプロビジョニングします。
++
+.. CIFS / SMB クライアントからボリュームにアクセスするときに使用する共有の名前を指定します。
++
+入力した共有の名前はボリューム名としても使用されます。
+
+.. ボリュームのサイズを指定します。
++
+image::../media/svm_setup_cifs_nfs_page_cifs_share_nas_mp.gif[CIFS 共有の設定に使用する領域のスクリーンショット]
+
+
+
++
+ボリュームのアグリゲートを指定する必要はありません。ボリュームは利用可能なスペースが最も多いアグリゲートに自動的に配置されます。
+
+. CIFS Storage * 領域用のボリュームのプロビジョニングは、マルチプロトコル・アクセスではなく、 CIFS アクセスのみにボリュームをプロビジョニングするため、このオプションは省略してください。
+. [ 送信して閉じる *] をクリックし、 [OK] をクリックします。
+. NFSを有効にします。
++
+.. SVM タブで、 NFS を有効にする SVM を選択し、 * Manage * をクリックします。
+.. [*Protocols* ] ペインで、 [*NFS*] をクリックし、 [*Enable*] をクリックします。
+
+
+. ネームサービスやネームマッピングに NIS を使用している場合は、 NIS を設定します。
++
+.. [* サービス *] ウィンドウで、 [*NIS*] をクリックします。
+.. [*NIS*] ウィンドウで、 [*Create] をクリックします。
+.. NIS サーバのドメインを指定します。
+.. NIS サーバの IP アドレスを追加します。
+.. Activate the domain for Storage Virtual Machine * を選択し、 * Create * をクリックします。
+
+
++
+image::../media/nis_creation.gif[この図には説明が付随しています。]
+
+
+
+
+
+== 次に何をするか
+
+SVM ルートボリュームのエクスポートポリシーを開きます。

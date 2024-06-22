@@ -1,0 +1,49 @@
+---
+permalink: fc-config-windows/task_creating_lun_its_containing_volume.html 
+sidebar: sidebar 
+keywords: create, lun, wizard, igroup, map, enable, host, access, create a lun 
+summary: LUN の作成には LUN 作成ウィザードを使用します。このウィザードでは、 igroup を作成し、作成した igroup に LUN をマッピングします。これにより、指定したホストから LUN にアクセスできるようになります。 
+---
+= LUNを作成する
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+LUN の作成には LUN 作成ウィザードを使用します。このウィザードでは、 igroup を作成し、作成した igroup に LUN をマッピングします。これにより、指定したホストから LUN にアクセスできるようになります。
+
+.作業を開始する前に
+* LUN を格納できるだけの十分な空きスペースがあるアグリゲートが必要です。
+* Storage Virtual Machine （ SVM ）で FC プロトコルを有効にし、適切な論理インターフェイス（ LIF ）を作成しておく必要があります。
+* ホストの FC ポートの Worldwide Port Name （ WWPN ；ワールドワイドポート名）を記録しておく必要があります。
+
+
+.このタスクについて
+組織の命名規則がある場合は、その規則に合わせて LUN やボリュームなどの名前を使用する必要があります。命名規則がない場合は、デフォルトの名前をそのまま使用してください。
+
+.手順
+. [*LUNs] ウィンドウに移動します
+. [* 作成 .*] をクリックします
+. LUN を作成する SVM を参照して選択します。
++
+LUN 作成ウィザードが表示されます。
+
+. 一般プロパティ * ページで、 Windows ホストで直接使用される LUN の種類 * Windows 2008 以降 * を選択するか、 Hyper-V 仮想マシンの VHD を含む LUN の場合は * Hyper-V * を選択します。
++
+[* Thin Provisioned * ] チェックボックスはオフのままにします。
+
++
+image::../media/lun_creation_thin_provisioned_windows_fc_windows.gif[[ シンプロビジョニング ] チェックボックスがオフになっているダイアログボックスを示す図。]
+
+. [* LUN Container * （ * LUN コンテナ * ） ] ページで、既存の FlexVol ボリュームを選択します。
++
+ボリュームに十分なスペースがあることを確認する必要があります。既存のボリュームに十分なスペースがない場合は、新しいボリュームを作成できます。
+
+. イニシエータマッピング * ページで、 * イニシエータグループの追加 * をクリックし、 * 一般 * タブで必要な情報を入力してから、 * イニシエータ * タブで、記録したホスト FC ポートのすべての WWPN を入力します。
+. 詳細を確認し、 [* 終了 ] をクリックしてウィザードを完了します。
+
+
+* 関連情報 *
+
+https://docs.netapp.com/us-en/ontap/system-admin/index.html["システム管理"]

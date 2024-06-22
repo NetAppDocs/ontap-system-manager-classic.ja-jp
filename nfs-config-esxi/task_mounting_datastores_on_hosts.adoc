@@ -1,0 +1,25 @@
+---
+permalink: nfs-config-esxi/task_mounting_datastores_on_hosts.html 
+sidebar: sidebar 
+keywords: mount, datastore, host, access, storage, provision, automatic, add, vmware, environment, mount datastores on hosts 
+summary: データストアをマウントすると、ホストからストレージにアクセスできるようになります。でプロビジョニングしたデータストアは、自動的にホストまたはクラスタにマウントされます。ホストへのデータストアのマウントは、ホストを VMware 環境に追加したあとに必要になる場合があります。 
+---
+= ホストにデータストアをマウントします
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+データストアをマウントすると、ホストからストレージにアクセスできるようになります。でプロビジョニングしたデータストアは、自動的にホストまたはクラスタにマウントされます。ホストへのデータストアのマウントは、ホストを VMware 環境に追加したあとに必要になる場合があります。
+
+.手順
+. vSphere Web Client * Home * ページで、 * Hosts and Clusters * ：
+. ナビゲーションペインで、ホストを含むデータセンターを展開します。
+. ホストを右クリックし、 * NetApp VSC * > * Mount Datastores * を選択します。
+. マウントするデータストアを選択し、「 * OK 」をクリックします。
+
+
+* 関連情報 *
+
+https://docs.netapp.com/vapp-96/topic/com.netapp.doc.vsc-iag/home.html["Virtual Storage Console 、 VASA Provider 、 Storage Replication Adapter for VMware vSphere 9.6 リリース"]

@@ -1,0 +1,55 @@
+---
+permalink: online-help-96-97/task_adding_microsoft_sql_server_over_san_to_system_manager.html 
+sidebar: sidebar 
+keywords: add, microsoft, sql, server, san, system, manager, online, help, enhanced, tab 
+summary: Enhanced タブを使用して、 Microsoft SQL Server over SAN のインスタンスを System Manager に追加できます。 
+---
+= ONTAP 9.7 以前のシステムマネージャに、 Microsoft SQL Server over SAN を追加します
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+拡張タブを使用して、 Microsoft SQL Server over SAN のインスタンスを ONTAP System Manager クラシック（ ONTAP 9.7 以前で使用可能）に追加できます。
+
+.このタスクについて
+次の手順では、 * Microsoft SQL Server * インスタンスを SAN 経由で System Manager に追加する方法について説明します。エクスポートプロトコルとして SMB を選択できるのは、 CIFS 用のライセンスがクラスタに設定されている場合のみです。この設定は Storage Virtual Machine （ SVM ）で行う必要があります。
+
+.手順
+. [* アプリケーションと階層 *>*Applications* ] をクリックします
+. [ 拡張 *] タブで、 [ * 追加 ] をクリックします
+. メニューから * Microsoft SQL Server インスタンス * を選択します。
++
+[NOTE]
+====
+ドロップダウンリストには、使用可能なすべてのアプリケーションタイプとテンプレートタイプのリストが含まれます。
+
+====
++
+Microsoft SQL Server インスタンスの追加ウィンドウが表示されます。
+
+. 次の情報を指定します。
++
+** データベース名
+** データベースのサイズと必要な ONTAP サービスレベル
+** サーバコアの数
+** ログのサイズと必要な ONTAP サービスレベル
+** tempdb 用にプロビジョニングします
++
+サーバを tempdb 用にプロビジョニングするかどうかを指定します。
+
+** エクスポートプロトコル（ SMB または SAN ）
++
+SAN を指定します
+
+** ホストオペレーティングシステム
+** LUN形式
+** ホストマッピング
+
+
+. [ アプリケーションの追加 ] をクリックします
+
+
+.結果
+Microsoft SQL Server over SAN インスタンスが System Manager に追加されます。

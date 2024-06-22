@@ -1,0 +1,125 @@
+---
+permalink: expansion/concept_joining_nodes_to_cluster_using_cli.html 
+sidebar: sidebar 
+keywords: install, controller, module, cluster, setup, command, join nodes to the cluster using the cli 
+summary: 新しく設置したコントローラモジュールの準備ができたら、 cluster setup コマンドを使用して各モジュールをクラスタに追加できます。 
+---
+= CLI を使用してクラスタにノードを追加します
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+新しく設置したコントローラモジュールの準備ができたら、を使用して各モジュールをクラスタに追加できます。 `cluster setup` コマンドを実行します
+
+.このタスクについて
+* この手順は両方のノードで実行する必要があります。
+* ノードは同時にではなく 1 つずつ追加する必要があります。
+
+
+.手順
+. [[step1]] `cluster setup` CLIプロンプトでコマンドを入力します。
++
+[listing]
+----
+::> cluster setup
+
+Welcome to the cluster setup wizard....
+
+Use your web browser to complete cluster setup by accessing
+https://10.63.11.29
+
+Otherwise, press Enter to complete cluster setup using the
+command line interface:
+----
++
+[NOTE]
+====
+GUI ベースのクラスタセットアップウィザードを使用する手順については、を参照してください xref:task_adding_nodes_to_cluster_using_system_manager.html[System Manager を使用したクラスタへのノードの追加]。
+
+====
+. CLI を使用してこの作業を完了するには、 Enter キーを押します。新しいクラスタを作成するか既存のクラスタに参加するかを確認するメッセージが表示されたら、と入力します `join`。
++
+[listing]
+----
+Do you want to create a new cluster or join an existing cluster? {create, join}:
+join
+----
+. 既存のクラスタインターフェイス設定を確認するプロンプトが表示されたら、キーを押します。 `Enter` それを受け入れるために。
++
+[listing]
+----
+Existing cluster interface configuration found:
+
+Port    MTU     IP              Netmask
+e1a     9000    169.254.87.75   255.255.0.0
+
+Do you want to use this configuration? {yes, no} [yes]:
+----
+. プロンプトに従って既存のクラスタに追加します。
++
+[listing]
+----
+Step 1 of 3: Join an Existing Cluster
+You can type "back", "exit", or "help" at any question.
+
+Enter the name of the cluster you would like to join [cluster1]: cluster1
+
+Joining cluster cluster1
+
+Starting cluster support services ..
+
+This node has joined the cluster cluster1.
+
+Step 2 of 3: Configure Storage Failover (SFO)
+You can type "back", "exit", or "help" at any question.
+
+SFO will be enabled when the partner joins the cluster.
+
+Step 3 of 3: Set Up the Node
+
+Cluster setup is now complete.
+----
++
+ノードは、クラスタの名前に合わせて自動的に名前が変更されます。
+
+. [[step5]]クラスタで、 `cluster show` コマンドを実行します
++
+[listing]
+----
+cluster1::> cluster show
+Node                  Health  Eligibility
+--------------------- ------- ------------
+cluster1-1            true    true
+cluster1-2            true    true
+cluster1-3            true    true
+3 entries were displayed.
+----
+. 繰り返します link:#step1["手順 1."] から link:#step5["ステップ5"] をクリックします。
++
+2 つ目のノードでは、クラスタセットアップウィザードの次の点が異なります。
+
++
+** パートナーがすでにクラスタに属しているため、デフォルトで既存のクラスタに追加されます。
+** 両方のノードでストレージフェイルオーバーが自動的に有効になります。
+
+
+. を使用して、ストレージフェイルオーバーが有効で実行可能であることを確認します。 `storage failover show` コマンドを実行します
++
+次の出力は、新しく追加したノードを含むクラスタのすべてのノードで、ストレージフェイルオーバーが有効かつ実行可能であることを示しています。
+
++
+[listing]
+----
+cluster1::> storage failover show
+                              Takeover
+Node           Partner        Possible State
+-------------- -------------- -------- -------------------------------------
+cluster1-1     cluster1-2     true     Connected to cluster1-2
+cluster1-2     cluster1-1     true     Connected to cluster1-1
+cluster1-3     cluster1-4     true     Connected to cluster1-3
+cluster1-4     cluster1-3     true     Connected to cluster1-4
+4 entries were displayed.
+----
+

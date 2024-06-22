@@ -1,0 +1,46 @@
+---
+permalink: online-help-96-97/concept_applications.html 
+sidebar: sidebar 
+keywords: application, predefined, template, system, manager, configuration, provision 
+summary: System Manager の事前定義されたアプリケーションテンプレートを使用して、既存のアプリケーションテンプレートを基にした設定を新たに作成することができます。その後、 ONTAP でアプリケーションのインスタンスをプロビジョニングできます。 
+---
+= System Manager - ONTAP 9.7以前を使用してアプリケーションを設定します
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+ONTAP System Manager クラシック（ ONTAP 9.7 以前で使用可能）の事前定義されたアプリケーションテンプレートを使用して、既存のアプリケーションテンプレートを基にした新しい設定を作成できます。その後、 ONTAP でアプリケーションのインスタンスをプロビジョニングできます。
+
+アプリケーションを設定するには、 * アプリケーションと階層 * > * アプリケーション * をクリックします。
+
+[NOTE]
+====
+アプリケーションのリストを表示しているときに他のユーザが CLI または REST API を使用してアプリケーションを追加した場合、それらの新しいアプリケーションはリストをスクロールしても表示されません。
+
+====
+System Manager では、次のアプリケーションを設定できます。
+
+* 一般アプリケーション *
+
+* NAS コンテナ（ NFS クライアントまたは CIFS クライアントにエクスポートされたボリューム）
+* 汎用の SAN アプリケーション（アプリケーションサーバにエクスポートされた LUN のセット）
+
+
+* データベース *
+
+* MongoDB （ SAN 経由）
+* Oracle （ NFS または SAN 経由）
+* Oracle Real Application Cluster （ NFS または SAN 経由）
+* Microsoft SQL Server （ SAN または SMB 経由）
+
+
+* 仮想インフラストラクチャ *
+
+* 仮想サーバ（ VMware 、 Hyper-V 、または Xen を使用）
+
+
+* 関連情報 *
+
+https://docs.netapp.com/us-en/ontap/concepts/index.html["ONTAP の概念"]

@@ -1,0 +1,40 @@
+---
+permalink: iscsi-config-esxi/task_testing_iscsi_paths.html 
+sidebar: sidebar 
+keywords: storage, failover, data, mobility, path, host, node, cluster, advertise, iscsi, ping, host, test, test iscsi paths from the host to the storage cluster 
+summary: ストレージフェイルオーバーやデータ移動が適切に行われるようにするには、ホストからストレージクラスタ内のすべてのノードへのパスが 2 つあることを確認する必要があります。iSCSI ターゲットからアドバタイズされるパスの数は限られているため、ホストからストレージクラスタポートに ping を送信する必要があります。 
+---
+= ホストからストレージクラスタへの iSCSI パスをテストします
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+ストレージフェイルオーバーやデータ移動が適切に行われるようにするには、ホストからストレージクラスタ内のすべてのノードへのパスが 2 つあることを確認する必要があります。iSCSI ターゲットからアドバタイズされるパスの数は限られているため、ホストからストレージクラスタポートに ping を送信する必要があります。
+
+.作業を開始する前に
+iSCSI パスに使用するすべての論理インターフェイス（ LIF ）の IP アドレスまたはホスト名を確認しておく必要があります。
+
+.このタスクについて
+ホストから LUN へのパスの数を制限するために、 LUN は igroup の一部のイニシエータにマッピングされます。
+
+* デフォルトでは、ホストが認識できるのは、ホストから LUN が作成された Storage Virtual Machine （ SVM ）を含むノードへのパスと、そのノードの HA パートナーへのパスだけです。
+* ホストからクラスタ内のすべてのノードへのパスを作成してテストする必要がありますが、ホストからアクセスできるのは所有者ノードとその HA パートナーのパスだけです。
+* LUN にはデフォルトのマッピングを適用してください。
++
+他の HA ペアのノードを LUN マップに追加するのは、 LUN を別のノードに移動する準備をする場合に限ります。
+
+
+
+.手順
+. ESXiホストから、 `ping` コマンドを実行して最初のLIFへのパスを確認します。
++
+。 `ping` コマンドはESXiサービスコンソールから使用できます。
+
+. を繰り返します `ping` コマンドを使用して、クラスタ内の各ノードの各iSCSI LIFへの接続を確認します。
+
+
+* 関連情報 *
+
+http://kb.vmware.com/kb/1003486["VMware の技術情報アーティクル 1003486 ：「 Testing network connectivity with the ping command"]

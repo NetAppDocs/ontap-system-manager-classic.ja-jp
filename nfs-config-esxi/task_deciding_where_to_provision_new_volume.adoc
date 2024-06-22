@@ -1,0 +1,38 @@
+---
+permalink: nfs-config-esxi/task_deciding_where_to_provision_new_volume.html 
+sidebar: sidebar 
+keywords: create, nfs, volume, exist, configuration, workflow, decide where to provision the new volume 
+summary: NFS ボリュームを作成する前に、そのボリュームを既存のボリュームに配置するかどうかを決め、既存のボリュームに配置する場合はどのような設定が必要になるかについても確認しておく必要があります。これにより、ワークフローが決まります。 
+---
+= 新しいボリュームをプロビジョニングする場所を決定します
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+NFS ボリュームを作成する前に、そのボリュームを既存のボリュームに配置するかどうかを決め、既存のボリュームに配置する場合はどのような設定が必要になるかについても確認しておく必要があります。これにより、ワークフローが決まります。
+
+
+
+== 手順
+
+* を新規に作成する場合は、既存の SVM で NFS 対応のを作成する手順に従います。
++
+link:task_creating_new_nfs_enabled_svm.html["NFS 対応 SVM の新規作成"]
+
++
+既存の SVM で NFS を有効にしていない場合は、この手順に従ってください。
+
+* NFS が有効になっているが設定はまだ完了していない既存の SVM にボリュームをプロビジョニングする場合は、既存の SVM に対する NFS アクセスの設定手順に従います。
++
+link:concept_adding_nfs_access_to_existing_svm.html["既存の SVM への NFS アクセスを設定する"]
+
++
+これは、この手順に続けて SVM を作成した場合に該当します。
+
+* NFS アクセスの設定が完了している既存の SVM でボリュームをプロビジョニングする場合は、既存の SVM で設定を検証する手順に従います。
++
+link:task_verifying_that_nfs_is_enabled_on_existing_svm.html["既存の SVM で設定を検証する"]
+
+

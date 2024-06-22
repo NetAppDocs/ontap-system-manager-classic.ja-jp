@@ -1,0 +1,56 @@
+---
+permalink: peering/task_creating_cluster_peer_relationship_starting_with_ontap_9_3.html 
+sidebar: sidebar 
+keywords: create, cluster, peer, relationship, cluster, system-generated, passphrase, ip, address, intercluster, lif, remote, create a cluster peer relationship, Beginning with ontap 9.3 
+summary: 2 つのクラスタ間にクラスタピア関係を作成するには、システム生成のパスフレーズおよびリモートクラスタのクラスタ間 LIF の IP アドレスを指定します。 
+---
+= クラスタピア関係を作成する（ ONTAP 9.3 以降）
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+ONTAP 9.3 以降では、 ONTAP 9.7 までの間、 ONTAP の System Manager の _classic_interface を使用して、 2 つのクラスタ間にクラスタピア関係を作成できます。そのためには、システム生成のパスフレーズと、リモートクラスタのクラスタ間 LIF の IP アドレスを指定します。
+
+.このタスクについて
+ONTAP 9.6 以降では、新しく作成されるすべてのクラスタピア関係で、クラスタピアリングの暗号化がデフォルトで有効になります。ONTAP 9.6 にアップグレードする前に作成されたピア関係については、クラスタピアリングの暗号化を手動で有効にする必要があります。ONTAP 9.5 以前を実行しているクラスタでは、クラスタピアリングの暗号化を使用できません。したがって、クラスタピアリングの暗号化を有効にするには、ピア関係の両方のクラスタが ONTAP 9.6 を実行している必要があります。
+
+クラスタピアリングの暗号化は、 Transport Security Layer （ TLS ）を使用して、 FlexCache や ONTAP などの 機能用のクラスタ間ピアリング通信を保護します。
+
+.手順
+. 「 * ターゲットクラスタのクラスタ間 LIF IP アドレス」フィールドに、リモートクラスタのクラスタ間 LIF の IP アドレスを入力します。
+. [[step2-passphrase]] リモートクラスタからパスフレーズを生成します。
++
+.. リモートクラスタの管理アドレスを指定します。
+.. 管理 URL * をクリックして、リモートクラスタで ONTAP システムマネージャを起動します。
+.. リモートクラスタにログインします。
+.. [* クラスタピア * ] ウィンドウで、 [* ピアリングパスフレーズの生成 ] をクリックします。
+.. IPspace 、パスフレーズの有効期限、および SVM 権限を選択します。
++
+すべての SVM または選択した SVM でピアリングを許可できます。SVM ピア要求が生成されると、許可した SVM とソース SVM の間に自動的にピア関係が確立され、リモート SVM からピア関係を承認する必要はありません。
+
+.. [* 生成（ Generate ） ] をクリックする。
++
+パスフレーズの情報が表示されます。
+
++
+image::../media/generate_passphrase.gif[この図には説明が付随しています。]
+
+.. パスフレーズの詳細をコピー * または * E メールパスフレーズの詳細を E メールで送信 * をクリックします。
+.. [ 完了（ Done ） ] をクリックします。
+
+
+. ソースクラスタで、で生成したパスフレーズを入力します <<step2-passphrase,ステップ2>>。
+. [* クラスタピアリングの開始 * ] をクリックします。
++
+クラスタピア関係が作成されました。
+
+. [* Continue （続行） ] をクリックします
+
+
+
+
+== 次に何をするか
+
+ピアリングプロセスを続行するには、 SVM ピアリングウィンドウで SVM の詳細を指定する必要があります。

@@ -1,0 +1,52 @@
+---
+permalink: online-help-96-97/task_deleting_svms.html 
+sidebar: sidebar 
+keywords: system, manager, delete, svm, online, help, storage, virtual, machine 
+summary: System Manager を使用して、不要になった Storage Virtual Machine （ SVM ）をストレージシステム構成から削除できます。 
+---
+= System Manager - ONTAP 9.7 以前のバージョンを使用して SVM を削除します
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+ONTAP System Manager クラシック（ ONTAP 9.7 以前で使用可能）を使用して、ストレージシステム構成から不要になった Storage Virtual Machine （ SVM ）を削除できます。
+
+.作業を開始する前に
+次の作業を完了しておきます。
+
+. すべてのボリュームの Snapshot コピー、データ保護（ DP ）ミラー、および負荷共有（ LS ）ミラーを無効にします
++
+[NOTE]
+====
+LS ミラーを無効にするには、コマンドラインインターフェイス（ CLI ）を使用する必要があります。
+
+====
+. SVM を削除する場合は、 SVM に属する igroup を手動ですべて削除します
+. ポートセットをすべて削除します
+. ルートボリュームを含め、 SVM 内のボリュームをすべて削除します
+. LUN のマッピングを解除し、オフラインにして削除します
+. SVM を削除する場合は、 CIFS サーバを削除します
+. SVM に関連付けられている、カスタマイズされたユーザアカウントとロールをすべて削除します
+. CLI を使用して、 SVM に関連付けられている NVMe サブシステムをすべて削除します。
+. SVM を停止します
+
+
+.このタスクについて
+SVM を削除すると、 SVM に関連付けられている次のオブジェクトも削除されます。
+
+* LIF 、 LIF フェイルオーバーグループ、および LIF ルーティンググループ
+* エクスポートポリシー
+* 効率化ポリシー
+
+
+Kerberos を使用するように設定されている SVM を削除したり、別の Service Principal Name （ SPN ；サービスプリンシパル名）を使用するように SVM を変更したりした場合、 SVM の元のサービスプリンシパルは自動的に削除されず、また Kerberos Realm からも無効になりません。プリンシパルは、手動で削除するか無効にする必要があります。プリンシパルを削除または無効にするためには、 Kerberos Realm 管理者のユーザ名とパスワードが必要です。
+
+ある SVM を削除する前に別の SVM にその SVM のデータを移動しておく場合は、 SnapMirror テクノロジを使用します。
+
+.手順
+. [ * ストレージ * > * SVMs * ] をクリックします。
+. 削除するSVMを選択し、*[削除]*をクリックします。
+. 確認のチェックボックスをオンにし、 * 削除 * をクリックします。
+

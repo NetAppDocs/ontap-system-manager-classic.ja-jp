@@ -1,0 +1,92 @@
+---
+permalink: online-help-96-97/task_viewing_flexcache_volume_information.html 
+sidebar: sidebar 
+keywords: system, manager, flexcache, volume, information, online, help 
+summary: System Manager 9.6 以降では、 FlexCache ボリュームに関する情報を表示できます。FlexCache ボリュームの割り当てスペースとパフォーマンスがグラフィカルに表示されます。 
+---
+= FlexCache ボリューム情報を表示しています
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+System Manager 9.6 以降では、 FlexCache ボリュームに関する情報を表示できます。FlexCache ボリュームの割り当てスペースとパフォーマンスがグラフィカルに表示されます。
+
+.手順
+. [* ストレージ *>* ボリューム *] をクリックします。
+. SVM * フィールドのドロップダウンメニューで、 * すべての SVM * を選択します。
+. 表示されたボリュームのリストで、情報を表示する FlexCache ボリュームを選択します。
++
+Style * 列には、 FlexCache ボリュームの「 FlexCache 」が表示されます。
+
++
+選択すると、選択した FlexCache ボリュームのボリュームウィンドウが表示されます。
+
+. 最初に、 * Volume * （ボリューム）ウィンドウに * Overview * （概要 * ）タブが表示されます。各タブをクリックすると、 FlexCache ボリュームに関するその他の詳細が表示されます。
++
+|===
+| クリックするタブ | 表示される詳細 
+
+
+ a| 
+* 概要 *
+ a| 
+FlexCache ボリュームに関する基本情報、 FlexCache ボリュームに割り当てられているスペース、および FlexCache ボリュームに関するパフォーマンス情報。
+
+
+
+ a| 
+* ストレージ効率 *
+ a| 
+FlexCache ボリュームの Storage Efficiency 設定。
+
+
+
+ a| 
+* パフォーマンス *
+ a| 
+レイテンシ、 IOPS 、およびスループットを基準に、 FlexCache ボリュームの平均パフォーマンス指標、読み取りパフォーマンス指標、書き込みパフォーマンス指標。また、キャッシュヒットまたはキャッシュミスの割合も表示されます。
+
+|===
+. *オプション：*その他のアクション*をクリックして追加情報 を表示し、ドロップダウンメニューで選択したアクションを実行します。
++
+|===
+| アクション | 説明 
+
+
+ a| 
+ステータスを変更します
+ a| 
+FlexCache ボリュームのステータスを変更できます。を参照してください link:task_changing_status_flexcache_volume.html["FlexCache ボリュームのステータス変更"]。
+
+
+
+ a| 
+サイズ変更
+ a| 
+FlexCache ボリュームのサイズを変更できます。を参照してください link:task_resizing_flexcache_volumes.html["FlexCache のサイズを変更しています"]。
+
+
+
+ a| 
+ストレージ効率
+ a| 
+FlexCache ボリュームのストレージ効率を改善するためのパラメータを調整できます。
+
+
+
+ a| 
+Storage QoS
+ a| 
+FlexCache ボリュームの最小および最大のストレージ制限を調整できます。
+
+
+
+ a| 
+暗号化キー変更
+ a| 
+暗号化キーをリセットできます（ FlexCache を含むピアクラスタで暗号化を有効にしている場合のみ）。
+
+|===
+

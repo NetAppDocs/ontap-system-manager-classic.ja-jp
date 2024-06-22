@@ -1,0 +1,38 @@
+---
+permalink: smb-config/task_deciding_where_to_provision_new_volume.html 
+sidebar: sidebar 
+keywords: create, cifs, volume, place, exist, storage, virtual, machine, svm, configuration, require, decision, workflow, decide where to provision the new volume 
+summary: 新しいCIFSボリュームを作成する前に、そのボリュームを既存のStorage Virtual Machine（SVM）に配置するかどうかを決め、既存のSVMに配置する場合はどのような設定が必要になるかについても確認しておく必要があります。これにより、ワークフローが決まります。 
+---
+= 新しいボリュームをプロビジョニングする場所を決定します
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+新しいCIFSボリュームを作成する前に、そのボリュームを既存のStorage Virtual Machine（SVM）に配置するかどうかを決め、既存のSVMに配置する場合はどのような設定が必要になるかについても確認しておく必要があります。これにより、ワークフローが決まります。
+
+
+
+== 手順
+
+* 新しいSVMにボリュームをプロビジョニングする場合は、CIFS対応の新しいSVMを作成します。
++
+link:task_creating_protocol_enabled_svm.html["CIFS対応SVMの新規作成"]
+
++
+既存のSVMでCIFSを有効にしていない場合は、この手順に従ってください。
+
+* CIFS が有効になっているが設定はまだ完了していない既存の SVM にボリュームをプロビジョニングする場合は、既存の SVM に対する CIFS / SMB アクセスを設定します。
++
+link:task_configuring_access_to_existing_svm.html["既存の SVM で CIFS / SMB アクセスを設定"]
+
++
+手順を使用して SAN アクセス用の SVM を作成した場合は、この手順に従ってください。
+
+* CIFS アクセスの設定が完了している既存の SVM にボリュームをプロビジョニングする場合は、 CIFS 対応 SVM に CIFS ボリュームを追加します。
++
+link:concept_adding_protocol_volume_to_protocol_enabled_svm.html["CIFS 対応 SVM への CIFS ボリュームの追加"]
+
+

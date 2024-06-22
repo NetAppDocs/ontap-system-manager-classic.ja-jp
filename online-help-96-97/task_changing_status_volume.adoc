@@ -1,0 +1,34 @@
+---
+permalink: online-help-96-97/task_changing_status_volume.html 
+sidebar: sidebar 
+keywords: flexvol, change, status, volume, online, help, system, manager 
+summary: ボリュームをオフラインにするとき、オンラインに戻すとき、またはボリュームへのアクセスを制限するときに、 System Manager を使用して、 FlexVol ボリュームのステータスを変更できます。 
+---
+= System Manager - ONTAP 9.7 以前を使用してボリュームのステータスを変更します
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+ボリュームをオフラインにするとき、オンラインに戻すとき、またはボリュームへのアクセスを制限するときに、 ONTAP System Manager クラシック（ ONTAP 9.7 以前で使用可能）を使用して FlexVol ボリュームのステータスを変更できます。
+
+.作業を開始する前に
+* ボリュームをボリュームコピー処理または SnapMirror レプリケーション処理のターゲットにする場合は、ボリュームを制限状態にする必要があります。
+* NAS ボリュームをオフラインにする場合は、 NAS ボリュームをアンマウントする必要があります。
+
+
+.このタスクについて
+ボリュームの保守、移動、または削除を実行するには、ボリュームをオフラインにします。オフラインにした場合は、クライアントからボリュームへの読み取り、または書き込みはできません。ルートボリュームをオフラインにすることはできません。
+
+.手順
+. [* ストレージ *>* ボリューム *] をクリックします。
+. SVM * フィールドのドロップダウンメニューで、 * すべての SVM * を選択します。
+. ステータスを変更するボリュームを選択します。
+. [ * その他の操作 * （ More Actions ） ] > * [ ステータスを * に変更（ Change status to * ） ] メニューから、必要なボリュームステータスを選択します。
+. 確認ダイアログボックスで * OK * をクリックして、ボリュームのステータスを変更します。
+
+
+* 関連情報 *
+
+xref:reference_volumes_window.adoc[Volumes （ボリューム）ウィンドウ]

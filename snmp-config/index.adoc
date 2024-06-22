@@ -1,0 +1,52 @@
+---
+permalink: snmp-config/index.html 
+sidebar: sidebar 
+keywords: content, configure, snmp, cluster, management, level, add, communities, community, security, user, traphost, communication, snmp configuration overview 
+summary: ONTAP 9.7 以前の ONTAP System Manager の「クラシック」インターフェイスを使用すると、クラスタ管理レベルで SNMP を設定し、コミュニティ、セキュリティユーザ、トラップホストを追加し、 SNMP 通信をテストできます。 
+---
+= SNMP 設定の概要
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+ONTAP 9.7 以前の場合に ONTAP System Manager の _classic_ インターフェイスを使用すると、クラスタ管理レベルで SNMP を設定し、コミュニティ、セキュリティユーザ、トラップホストを追加し、 SNMP 通信をテストできます。
+
+クラスタへの SNMP アクセスを設定する場合は、次の手順を実行します。
+
+* クラスタで ONTAP 9 を実行している。
+* すべての選択肢について検討するのではなく、ベストプラクティスに従う。
++
+[NOTE]
+====
+これらの手順には、コマンドラインインターフェイスを使用する必要がある手順がいくつかあります。
+
+====
+
+
+
+
+== ONTAP でこれを行うその他の方法
+
+ONTAP 9 のすべてのバージョンで、を使用したクラスタへの SNMP アクセスを設定できます。使用している ONTAP のバージョンに適した手順を使用してください。
+
+|===
+
+
+| 実行するタスク | 参照先 
+
+
+ a| 
+再設計された System Manager （ ONTAP 9.7 以降で使用可能）
+ a| 
+https://docs.netapp.com/us-en/ontap/networking/manage_snmp_on_the_cluster_@cluster_administrators_only@_overview.html["クラスタ上のSNMPの管理(クラスタ管理者のみ)>概要"^]
+
+
+
+ a| 
+ONTAP コマンドラインインターフェイス（ CLI ）
+ a| 
+https://docs.netapp.com/us-en/ontap/networking/commands_for_managing_snmp.html["SNMP を管理するためのコマンド"^]
+
+|===

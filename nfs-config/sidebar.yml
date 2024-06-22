@@ -1,0 +1,50 @@
+---
+section: nfs-config
+title: NFS構成
+entries:
+- title: 概要
+  url: "/nfs-config/index.html"
+- title: NFS の設定ワークフロー
+  url: "/nfs-config/concept_cifs_nfs_configuration_workflow.html"
+  entries:
+  - title: アグリゲートを作成する
+    url: "/nfs-config/task_creating_aggregate.html"
+  - title: 新しいボリュームをプロビジョニングする場所を決定します
+    url: "/nfs-config/task_deciding_where_to_provision_new_volume.html"
+- title: NFS 対応 SVM を新規に作成
+  url: "/nfs-config/task_creating_protocol_enabled_svm.html"
+  entries:
+  - title: NFS ボリュームを含む新しい SVM を作成してエクスポート
+    url: "/nfs-config/task_creating_new_svm.html"
+  - title: SVM ルートボリュームのエクスポートポリシーを開く（ NFS 対応 SVM の新規作成）
+    url: "/nfs-config/task_opening_export_policy_svm_root_volume.html"
+  - title: LDAP の設定（ NFS 対応 SVM の新規作成）
+    url: "/nfs-config/task_configuring_ldap_new_svm.html"
+  - title: UNIX 管理ホストから NFS アクセスを確認
+    url: "/nfs-config/task_verifying_nfs_access_from_unix_administration_host.html"
+  - title: NFS クライアントアクセスの設定と確認（ NFS 対応 SVM の新規作成）
+    url: "/nfs-config/task_configuring_verifying_client_access_new_svm.html"
+- title: 既存の SVM への NFS アクセスを設定する
+  url: "/nfs-config/task_configuring_access_to_existing_svm.html"
+  entries:
+  - title: 既存の SVM に NFS アクセスを追加
+    url: "/nfs-config/concept_adding_nas_access_to_existing_svm.html"
+  - title: SVM ルートボリュームのエクスポートポリシーを開く（既存の SVM への NFS アクセスの設定）
+    url: "/nfs-config/task_opening_export_policy_svm_root_volume_existing_svm.html"
+  - title: LDAP を設定（既存の SVM への NFS アクセスを設定）
+    url: "/nfs-config/task_configuring_ldap_existing_svm.html"
+  - title: UNIX 管理ホストから NFS アクセスを確認
+    url: "/nfs-config/task_verifying_nfs_access_from_unix_administration_host.html"
+  - title: NFS クライアントアクセスを設定して確認（既存の SVM への NFS アクセスを設定）
+    url: "/nfs-config/task_configuring_verifying_client_access_add_nfs_existing_svm.html"
+- title: NFS 対応 SVM に NFS ボリュームを追加
+  url: "/nfs-config/concept_adding_protocol_volume_to_protocol_enabled_svm.html"
+  entries:
+  - title: ボリュームを作成して設定
+    url: "/nfs-config/task_creating_configuring_volume.html"
+  - title: ボリュームのエクスポートポリシーを作成
+    url: "/nfs-config/task_creating_export_policy_for_volume.html"
+  - title: UNIX 管理ホストから NFS アクセスを確認
+    url: "/nfs-config/task_verifying_nfs_access_from_unix_administration_host.html"
+  - title: NFS クライアントアクセスを設定して確認する（ NFS 対応 SVM への NFS ボリュームの追加）
+    url: "/nfs-config/task_configuring_verifying_client_access_add_vol_existing_nfs_svm.html"

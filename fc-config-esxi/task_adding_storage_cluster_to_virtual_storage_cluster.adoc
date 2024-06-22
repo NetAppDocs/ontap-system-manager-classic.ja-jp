@@ -1,0 +1,27 @@
+---
+permalink: fc-config-esxi/task_adding_storage_cluster_to_virtual_storage_cluster.html 
+sidebar: sidebar 
+keywords: provision, datastore, esxi, host, datacenter, cluster, storage, virtual, machine, svm, add the storage cluster or svm to vsc 
+summary: データセンターの ESXi ホストに対して最初のデータストアをプロビジョニングする前に、クラスタまたは特定の Storage Virtual Machine （ SVM ）を Virtual Storage Console for VMware vSphere に追加する必要があります。クラスタを追加すると、クラスタ内の任意の SVM でストレージをプロビジョニングできるようになります。 
+---
+= ストレージクラスタまたは SVM を VSC for VMware vSphere に追加
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+データセンターの ESXi ホストに対して最初のデータストアをプロビジョニングする前に、クラスタまたは特定の Storage Virtual Machine （ SVM ）を Virtual Storage Console for VMware vSphere に追加する必要があります。クラスタを追加すると、クラスタ内の任意の SVM でストレージをプロビジョニングできるようになります。
+
+.作業を開始する前に
+追加するストレージクラスタまたは SVM の管理者クレデンシャルが必要です。
+
+.このタスクについて
+構成によっては、クラスタが自動的に検出されている場合と、すでに追加されている場合があります。
+
+.手順
+. vSphere Web Client にログインします。
+. Virtual Storage Console * を選択します。
+. 「 * ストレージ・システム」を選択し、「 * 追加」アイコンをクリックします。
+. Add Storage System * ダイアログボックスで、ストレージクラスタまたは SVM のホスト名と管理者クレデンシャルを入力し、 * OK * をクリックします。
+

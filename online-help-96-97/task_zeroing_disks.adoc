@@ -1,0 +1,30 @@
+---
+permalink: online-help-96-97/task_zeroing_disks.html 
+sidebar: sidebar 
+keywords: zero, spare, disks, system, manager, erase, data, online, help 
+summary: System Manager を使用して、スペアディスクに 0 を書き込むことで、すべてのデータを消去してフォーマットすることができます。これらのディスクは新しいアグリゲートで使用できます。 
+---
+= System Manager ONTAP 9.7 以前を使用してスペアディスクを初期化します
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+ONTAP System Manager クラシック（ ONTAP 9.7 以前で使用可能）を使用して、すべてのデータを消去し、ディスクに 0 を書き込むことでスペアディスクをフォーマットすることができます。これらのディスクは新しいアグリゲートで使用できます。
+
+.このタスクについて
+スペアディスクを初期化すると、アレイ LUN も含め、クラスタ内のすべてのスペアが初期化されます。特定のノードまたはクラスタ全体について、スペアディスクを初期化することができます。
+
+.手順
+. Storage * > * Aggregates & Disks * > * Disks * をクリックします。
+. [* Disks （ディスク） ] ウィンドウで、 [* Inventory （インベントリ） ] タブを選択します。
+. [* Zero Spares] をクリックします。
+. [*Zero Spares*] ダイアログ・ボックスで ' ディスクをゼロにするノードまたはすべてのノードを選択します
+. ゼロ化処理を確定するには、「ゼロ化されていないスペアをすべて初期化」チェックボックスを選択します。
+. [* Zero Spares] をクリックします。
+
+
+* 関連情報 *
+
+xref:concept_storage_recommendations_for_creating_aggregates.adoc[アグリゲートの作成に関するストレージの推奨事項]

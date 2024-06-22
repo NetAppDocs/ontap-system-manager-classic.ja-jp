@@ -1,0 +1,48 @@
+---
+permalink: online-help-96-97/concept_date_time.html 
+sidebar: sidebar 
+keywords: date, time, settings, cluster, system, manager, online, help 
+summary: System Manager を使用して、クラスタの日付と時刻の設定を管理できます。 
+---
+= System Manager - ONTAP 9.7 以前を使用して、クラスタの日時設定を管理します
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+ONTAP System Manager クラシック（ ONTAP 9.7 以前で使用可能）を使用して、クラスタの日付と時刻の設定を管理できます。
+
+
+
+== [ 日付と時刻 ] ウィンドウ
+
+Date and Time ウィンドウでは、ストレージシステムの現在の日時設定を確認したり、必要に応じて設定を変更したりできます。
+
+
+
+=== コマンドボタン
+
+* * 編集 * 。
++
+[ 日時の編集 ] ダイアログボックスが開きます。このダイアログボックスで、タイムサーバを編集できます。
+
+* * 更新 *
++
+ウィンドウ内の情報を更新します。
+
+
+
+
+
+=== 詳細領域
+
+詳細領域には、ストレージシステムの日付、時刻、タイムゾーン、 NTP サービス、およびタイムサーバに関する情報が表示されます。
+
+* 関連情報 *
+
+xref:task_setting_time_zone_for_cluster.adoc[クラスタのタイムゾーンを設定します]
+
+xref:task_setting_up_network_when_ip_address_range_is_disabled.adoc[IP アドレス範囲を無効にした状態でのネットワークの設定]
+
+https://docs.netapp.com/us-en/ontap/system-admin/index.html["システム管理"]

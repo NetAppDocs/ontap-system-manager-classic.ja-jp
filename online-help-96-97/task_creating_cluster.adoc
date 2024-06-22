@@ -1,0 +1,58 @@
+---
+permalink: online-help-96-97/task_creating_cluster.html 
+sidebar: sidebar 
+keywords: data, center, create, cluster, online, help, system, manager 
+summary: ONTAP System Manager を使用して、データセンターのクラスタを作成およびセットアップできます。 
+---
+= System Manager - ONTAP 9.7 以前のバージョンでクラスタを作成します
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+ONTAP System Manager クラシック（ ONTAP 9.7 以前で使用可能）を使用して、データセンター内にクラスタを作成およびセットアップできます。
+
+.このタスクについて
+ONTAP 9.1 以降をサポートするクラスタの場合、 ONTAP 9.1 以降を実行しているストレージシステムのみを追加できます。
+
+.手順
+. Webブラウザを開き、設定したノード管理IPアドレスを入力します。 `+https://node-management-IP+`
++
+** クラスタのクレデンシャルを設定している場合は、ログインページが表示されます。
++
+ログインするにはクレデンシャルを入力する必要があります。
+
+** クラスタのクレデンシャルを設定していない場合は、セットアップガイドウィンドウが表示されます。
++
+クラスタをセットアップするには、 * Guided Setup * アイコンをクリックします。
+
+
+
+. [* Cluster*] ページで、クラスタの名前を入力します。
++
+[NOTE]
+====
+すべてのノードが検出されない場合は、 * 更新 * をクリックします。
+
+====
++
+そのクラスタネットワーク内のノードが Nodes フィールドに表示されます。
+
+. *オプション：*必要に応じて、* Nodes *フィールドでノード名を更新します。
+. クラスタのパスワードを入力します。
+. *オプション：*機能ライセンスキーを入力します。
+. [Submit （送信） ] をクリックします。
+
+
+
+
+== 次に何をするか
+
+ネットワークページにネットワークの詳細を入力して、クラスタセットアップを続行します。
+
+* 関連情報 *
+
+xref:reference_licenses_window.adoc[ライセンスウィンドウ]
+
+xref:reference_configuration_updates_window.adoc[[ 構成の更新 ] ウィンドウ]

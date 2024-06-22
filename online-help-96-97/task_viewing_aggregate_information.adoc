@@ -1,0 +1,24 @@
+---
+permalink: online-help-96-97/task_viewing_aggregate_information.html 
+sidebar: sidebar 
+keywords: view, aggregate, information, online, help, system, manager 
+summary: System Manager のアグリゲートウィンドウを使用して、アグリゲートの名前、ステータス、およびスペースに関する情報を表示できます。 
+---
+= System Manager - ONTAP 9.7 以前のバージョンを使用して、アグリゲートの情報を表示します
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+ONTAP System Manager クラシック（ ONTAP 9.7 以前で使用可能）のアグリゲートウィンドウを使用して、アグリゲートの名前、ステータス、およびスペースに関する情報を表示できます。
+
+.手順
+. 次のいずれかの方法を選択します。
++
+** [* アプリケーションと階層 *>* ストレージ階層 *] をクリックします。
+** Storage * > * Aggregates & Disks * > * Aggregates * の順にクリックします
+
+
+. アグリゲート名をクリックすると、選択したアグリゲートの詳細が表示されます。
+

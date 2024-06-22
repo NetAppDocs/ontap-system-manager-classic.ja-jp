@@ -1,0 +1,46 @@
+---
+permalink: online-help-96-97/task_changing_raid_group_when_adding_capacity_disks.html 
+sidebar: sidebar 
+keywords: change, raid, group, add, capacity, disk, online, help, hdd 
+summary: アグリゲートにデータディスク（ HDD ）を追加するときに、ディスクを追加する RAID グループを System Manager で変更することができます。 
+---
+= System Manager - ONTAP 9.7 以前を使用してデータディスクを追加する場合は、 RAID グループを変更してください
+:allow-uri-read: 
+:experimental: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+アグリゲートにデータディスク（ HDD ）を追加するときに、 ONTAP System Manager クラシック（ ONTAP 9.7 以前でサポート）を使用して、ディスクを追加する RAID グループを変更できます。
+
+.このタスクについて
+* RAIDタイプがRAID-DPの場合、FSASまたはMSATAタイプの10TB以上のディスクは、 `Specific RAID group`ではなく、 `New RAID group` または `All RAID groups`。
++
+これらのディスクは、既存のアグリゲートのサイズにダウンサイズされて追加されます。
+
+* RAIDグループがRAID-TECの場合、FSASまたはMSATAタイプの10TB以上のディスクを `All RAID groups`、 `New RAID group`および `Specific RAID group`。
++
+これらのディスクは、既存のアグリゲートのサイズにダウンサイズされて追加されます。
+
+
+
+.手順
+. 次のいずれかの方法を選択します。
++
+** [* アプリケーションと階層 *>* ストレージ階層 *] をクリックします。
+** Storage * > * Aggregates & Disks * > * Aggregates * の順にクリックします
+
+
+. 「 * ストレージ階層 * 」ウィンドウで、データディスクを追加するアグリゲートを選択し、メニューをクリックします。その他の操作 [ 容量の追加 ] 。
+. [ 容量の追加 *] ダイアログボックスで、次の手順を実行します。
++
+.. [ 変更（ Change ） ] をクリックします。
+.. RAID 構成の変更 * ダイアログボックスで、データディスクを追加する RAID グループを指定します。
++
+デフォルト値は変更できます。 `All RAID groups` 次のいずれかに `Specific RAID group` または `New RAID group`。
+
+.. [ 保存（ Save ） ] をクリックします。
+
+
+

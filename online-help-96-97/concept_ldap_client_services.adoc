@@ -1,0 +1,151 @@
+---
+permalink: online-help-96-97/concept_ldap_client_services.html 
+sidebar: sidebar 
+keywords: ldap, client, service, system, manager, add, edit, delete, client, configuration, online, help, cluster, level, storage, virtual, machine, 
+summary: System Manager を使用して、 LDAP クライアント設定を追加、編集、削除できます。 
+---
+= ONTAP 9.7 以前の System Manager で LDAP クライアントサービスを設定します
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+ONTAP System Manager クラシック（ ONTAP 9.7 以前で使用可能）を使用して、 LDAP クライアント設定を追加、編集、および削除できます。
+
+
+
+== LDAP クライアント設定を追加します
+
+LDAP サービスを使用する場合は、 System Manager を使用して LDAP クライアント設定をクラスタレベルまたは Storage Virtual Machine （ SVM ）レベルで追加できます。LDAP サービスを使用するには、最初に LDAP クライアントを設定する必要があります。
+
+.このタスクについて
+SVM レベルでは、選択した SVM に対してのみ LDAP クライアントを追加できます。
+
+.手順
+. 次のいずれかの方法で LDAP クライアント設定を追加します。
++
+** クラスタレベル： * をクリックしますimage:../media/advanced_options.gif[""]*>*LDAP* 。
+** SVM レベル： * SVM * > * SVM 設定 * > * LDAP クライアント * をクリックします。
+
+
+. [ 追加（ Add ） ] をクリックします。
+. LDAP クライアントの名前を入力します。
+. Active Directory ドメインまたは LDAP サーバのいずれかを追加します。
+. をクリックします image:../media/advanced_options.gif[""] （詳細オプション）、 * スキーマ * を選択し、 * 適用 * をクリックします。
+. [*Base DN*] と [*TCP Port*] を指定します。
+. バインド * をクリックし、認証の詳細を指定します。
+. [ 保存して閉じる ] をクリックします。
+. 追加した LDAP クライアントが表示されていることを確認します。
+
+
+
+
+== LDAP クライアント設定を削除します
+
+System Manager を使用して、 LDAP クライアント設定をクラスタレベルまたは Storage Virtual Machine （ SVM ）レベルで削除できます。
+
+.このタスクについて
+SVM レベルでは、選択した SVM に対してのみ LDAP クライアントを削除できます。
+
+.手順
+. LDAP クライアント設定を削除します。
++
+** クラスタレベル： * をクリックしますimage:../media/advanced_options.gif[""]*>*LDAP* 。
+** SVM レベル： * SVM * > * SVM 設定 * > * LDAP クライアント * をクリックします。
+
+
+. 削除する LDAP クライアントを選択し、 * Delete * をクリックします。
+. 確認のチェックボックスをオンにし、 * 削除 * をクリックします。
+. 削除した LDAP クライアントが表示されていないことを確認します。
+
+
+
+
+== LDAP クライアント設定を編集します
+
+System Manager を使用して、 LDAP クライアント設定をクラスタレベルまたは Storage Virtual Machine （ SVM ）レベルで編集できます。
+
+.このタスクについて
+SVM レベルでは、選択した SVM に対してのみ LDAP クライアントを編集できます。
+
+.手順
+. LDAP クライアント設定を編集するには、次の手順に従います。
++
+** クラスタレベル： * をクリックしますimage:../media/advanced_options.gif[""]*>*LDAP* 。
+** SVM レベル： * SVM * > * SVM 設定 * > * LDAP クライアント * をクリックします。
+
+
+. 変更する LDAP クライアントを選択し、 * Edit * をクリックします。
+. Edit LDAP Client* （ * LDAP クライアントの編集）ダイアログボックスで、必要に応じて LDAP クライアントの設定を編集します。
+. [ 保存して閉じる ] をクリックします。
+. LDAP クライアント設定に加えた変更が表示されていることを確認します。
+
+
+
+
+== LDAP クライアントウィンドウ
+
+LDAP クライアントウィンドウを使用すると、 Storage Virtual Machine （ SVM ）レベルで、 NFS と CIFS 間のユーザ認証、ファイルアクセス認証、ユーザ検索、およびマッピングサービス用の LDAP クライアントを作成できます。
+
+
+
+=== コマンドボタン
+
+* * 追加 * 。
++
+LDAP クライアントの作成および設定を行うための Create LDAP Client ダイアログボックスを開きます。
+
+* * 編集 * 。
++
+LDAP クライアント設定を編集できる Edit LDAP Client ダイアログボックスを開きます。アクティブな LDAP クライアントを編集することもできます。
+
+* * 削除 *
++
+LDAP クライアント設定を削除するための Delete LDAP Client （複数可）ダイアログボックスを開きます。アクティブな LDAP クライアントを削除することもできます。
+
+* * 更新 *
++
+ウィンドウ内の情報を更新します。
+
+
+
+
+
+=== LDAP クライアントリスト
+
+LDAP クライアントの詳細を表形式で表示します。
+
+* * LDAP クライアント構成 *
++
+指定した LDAP クライアント設定の名前を表示します。
+
+* * Storage Virtual Machine *
++
+LDAP クライアント設定ごとに SVM の名前を表示します。
+
+* * スキーマ *
++
+LDAP クライアントごとにスキーマを表示します。
+
+* * 最小バインドレベル *
++
+LDAP クライアントごとに最小バインドレベルを表示します。
+
+* * Active Directory ドメイン *
++
+LDAP クライアント設定ごとに Active Directory ドメインを表示します。
+
+* * LDAPサーバ*
++
+LDAP クライアント設定ごとに LDAP サーバを表示します。
+
+* * 優先される Active Directory サーバ *
++
+LDAP クライアント設定ごとに優先される Active Directory サーバを表示します。
+
+
+
+* 関連情報 *
+
+xref:concept_ldap.adoc[LDAP]

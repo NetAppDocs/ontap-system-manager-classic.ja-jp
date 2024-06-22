@@ -1,0 +1,41 @@
+---
+permalink: online-help-96-97/task_configuring_nvme_protocol_on_svms.html 
+sidebar: sidebar 
+keywords: configure, nvme, protocol, svm, system, manager, namespaces, online, help 
+summary: System Manager を使用して、 Storage Virtual Machine （ SVM ）に NVMe プロトコルを設定できます。その後、ネームスペースを作成して NVMe サブシステムとホストに割り当てることができます。 
+---
+= System Manager - ONTAP 9.7 以前を使用して、 SVM に NVMe プロトコルを設定します
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+ONTAP System Managerクラシック（ONTAP 9.7以前で使用可能）を使用して、Storage Virtual Machine（SVM）にNVMeプロトコルを設定できます。その後、ネームスペースを作成して NVMe サブシステムとホストに割り当てることができます。
+
+.このタスクについて
+NVMe を使用する SVM では、他のプロトコルは使用できません。NVMe を選択すると、残りのプロトコルは無効になります。NVMe は SVM の作成時にも設定できます。
+
+.手順
+. SVM の作成時に NVMe プロトコルを設定していない場合は、 * Storage * > * SVMs * をクリックします
+. SVM を選択し、 * SVM settings * をクリックします。
+. [* Protocols] ペインで [* NVMe* ] をクリックします。
+. 必要に応じて、リンクをクリックしてプロトコルを設定します。
++
+[NOTE]
+====
+他のプロトコルが有効になっている場合は、それらを選択解除して NVMe を選択できるようにする必要があります。NVMe を他のプロトコルと組み合わせることはできません。
+
+====
+. Storage Virtual Machine の編集 * ペインで、 * リソース割り当て * をクリックします。
+. リソース割り当て * タブでは、ボリューム作成を委譲しないように選択することも、ボリュームを自動的にプロビジョニングするためのアグリゲートを選択することもできます。
+. [*Services] タブをクリックして、ネームサービススイッチの詳細を設定します。
+. [ 保存して閉じる ] をクリックします
++
+SVM に NVMe プロトコルが設定されます。プロトコルの設定が完了したら、 * SVM 設定 * を使用してサービスを開始または停止できます
+
+
+
+* 関連情報 *
+
+xref:concept_setting_up_nvme.adoc[NVMe をセットアップしています]

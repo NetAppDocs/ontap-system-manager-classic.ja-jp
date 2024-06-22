@@ -1,0 +1,34 @@
+---
+permalink: volume-restore-snapvault/task_verifying_restore_operation.html 
+sidebar: sidebar 
+keywords: perform, restore, operation, snapvault, backup, destination, volume, verify, source cluster, verify the restore operation 
+summary: SnapVault バックアップデスティネーションボリュームからのリストア処理の実行後、ソースクラスタでリストア処理のステータスを確認する必要があります。 
+---
+= リストア処理を検証
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+SnapVault バックアップデスティネーションボリュームからのリストア処理の実行後、ソースクラスタでリストア処理のステータスを確認する必要があります。
+
+.このタスクについて
+このタスクは * source * cluster で実行する必要があります。
+
+.手順
+. [* Volumes （ボリューム） ] ウィンドウに移動します。
+. ボリュームのリストでソースボリュームを選択し、 ONTAP のバージョンに応じて次のいずれかの操作を実行します。
++
+** ONTAP 9.3 以降：ソースボリュームをダブルクリックして詳細を表示し、 * protection * をクリックして、 SnapMirror 関係のデスティネーションボリュームと、ボリュームが含まれている SVM の名前を特定します。
+** ONTAP 9.2 以前：「 * データ保護 * 下部」タブをクリックして、 SnapMirror 関係のデスティネーションボリュームと、ボリュームが含まれている SVM の名前を特定します。
+[タイプ]フィールドが表示されます `Restore` 一時的にリストア処理が完了すると、フィールドに `Vault`。
++
+SnapVault 関係に問題がある場合は、トラブルシューティングを行ってください。SnapMirror 関係のトラブルシューティング手順は、 SnapVault 関係にも適用できます。
+
++
+http://www.netapp.com/us/media/tr-4015.pdf["ネットアップテクニカルレポート 4015 ：v SnapMirror Configuration and Best Practices for ONTAP 9.1 、 9.2 』"^]
+
+
+
+

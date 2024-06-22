@@ -1,0 +1,18 @@
+---
+permalink: online-help-96-97/concept_rules_for_mixing_disk_types_disk_rpms.html 
+sidebar: sidebar 
+keywords: rule, online, help, create, aggregate, add, capacity, disk, rpm 
+summary: アグリゲートを作成してデータディスクを追加する際には、ディスクタイプとディスク rpm の表示に関するルールを理解しておく必要があります。 
+---
+= System Manager - ONTAP 9.7 以前でディスクタイプとディスク rpm を表示する場合のルール
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+アグリゲートを作成してデータディスクを追加する際には、 ONTAP の System Manager クラシック（ ONTAP 9.7 以前で使用可能）にディスクタイプとディスク rpm の表示に適用されるルールを理解しておく必要があります。
+
+ディスクタイプの混在オプションとディスク rpm の混在オプションが有効でない場合は、実際のディスクタイプとディスク rpm が表示されます。
+
+これらの混在オプションを有効にすると、実際のディスクタイプとディスク rpm の代わりに、有効なディスクタイプと有効なディスク rpm が表示されます。たとえば、ディスクの混在オプションが有効になっている場合、 System Manager では BSAS ディスクが FSAS と表示されます。同様に、ディスク rpm の混在オプションが有効になっている場合、ディスクの rpm が 10 、 000 と 15 、 000 の場合、 System Manager では有効な rpm が 10 、 000 と表示されます。

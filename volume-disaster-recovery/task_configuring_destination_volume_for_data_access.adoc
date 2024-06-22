@@ -1,0 +1,50 @@
+---
+permalink: volume-disaster-recovery/task_configuring_destination_volume_for_data_access.html 
+sidebar: sidebar 
+keywords: activating, activate, destination, volume, configure, data, access, nas, client, san, host, access, data, source, reactivate, configure the destination volume for data access 
+summary: デスティネーションボリュームをアクティブ化したら、データにアクセスできるようにそのボリュームを設定する必要があります。NAS クライアントと SAN ホストは、ソースボリュームが再アクティブ化されるまでの間、デスティネーションボリュームのデータにアクセスできます。 
+---
+= データアクセス用のデスティネーションボリュームを設定
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+デスティネーションボリュームをアクティブ化したら、データにアクセスできるようにそのボリュームを設定する必要があります。NAS クライアントと SAN ホストは、ソースボリュームが再アクティブ化されるまでの間、デスティネーションボリュームのデータにアクセスできます。
+
+.このタスクについて
+このタスクは、 * デスティネーション * クラスタから実行する必要があります。
+
+
+
+== 手順
+
+* NAS 環境：
++
+.. ソースボリュームがソース SVM でマウントされていたのと同じジャンクションパスを使用して、 NAS ボリュームをネームスペースにマウントします。
+.. デスティネーションボリュームの CIFS 共有に適切な ACL を適用します。
+.. デスティネーションボリュームに NFS エクスポートポリシーを割り当てます。
+.. デスティネーションボリュームにクォータルールを適用します。
+.. DNS 名前解決の変更などの必要な手順を実行して、クライアントをデスティネーションボリュームにリダイレクトします。
+.. NFS 共有と CIFS 共有をクライアントに再マウントします。
+
+
+* SAN 環境の場合：
++
+.. ボリュームの LUN を SAN クライアントで使用できるように、適切なイニシエータグループに LUN をマッピングします。
+.. iSCSI の場合、 SAN ホストイニシエータから SAN LIF への iSCSI セッションを作成します。
+.. SAN クライアントで、ストレージの再スキャンを実行して接続された LUN を検出します。
+
+
+
+
+
+
+== 次に何をするか
+
+ソースボリュームが使用できなくなった原因を特定して、その問題を解決します。可能な場合はソースボリュームをオンラインに戻し、再同期して再アクティブ化する必要があります。
+
+* 関連情報 *
+
+https://docs.netapp.com/ontap-9/index.jsp["ONTAP 9 ドキュメンテーション・センター"]

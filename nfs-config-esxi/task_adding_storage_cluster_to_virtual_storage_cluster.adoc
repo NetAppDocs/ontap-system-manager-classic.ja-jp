@@ -1,0 +1,27 @@
+---
+permalink: nfs-config-esxi/task_adding_storage_cluster_to_virtual_storage_cluster.html 
+sidebar: sidebar 
+keywords: provision, datastore, esxi, host, datacenter, cluster, add, enable, storage, add, add the storage cluster or to vsc for 
+summary: データセンターの ESXi ホストに対して最初のデータストアをプロビジョニングする前に、のクラスタまたは固有のを追加する必要があります。クラスタを追加すると、クラスタ内の任意のにストレージをプロビジョニングできるようになります。 
+---
+= ストレージクラスタを VSC に追加
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+データセンターの ESXi ホストに対して最初のデータストアをプロビジョニングする前に、クラスタまたは特定の Storage Virtual Machine （ SVM ）を Virtual Storage Console for VMware vSphere に追加する必要があります。クラスタを追加すると、クラスタ内の任意の SVM でストレージをプロビジョニングできるようになります。
+
+.作業を開始する前に
+追加するストレージクラスタまたはの管理者クレデンシャルが必要です。
+
+.このタスクについて
+構成によっては、クラスタが自動的に検出されている場合と、すでに追加されている場合があります。
+
+.手順
+. vSphere Web Client にログインします。
+. Virtual Storage Console * を選択します。
+. 「 * ストレージ・システム」を選択し、「 * 追加」アイコンをクリックします。
+. Add Storage System * （ストレージ・システムの追加）ダイアログ・ボックスで ' ストレージ・クラスタのホスト名と管理者の資格情報を入力するか '* OK * をクリックします
+

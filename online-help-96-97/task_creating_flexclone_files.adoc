@@ -1,0 +1,43 @@
+---
+permalink: online-help-96-97/task_creating_flexclone_files.html 
+sidebar: sidebar 
+keywords: create, flexclone, file, parent, test, applications, online, help 
+summary: System Manager を使用して、親ファイルの書き込み可能なコピーである FlexClone ファイルを作成できます。これらのコピーを使用して、アプリケーションをテストできます。 
+---
+= System Manager - ONTAP 9.7 以前を使用して FlexClone ファイルを作成します
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+ONTAP System Manager クラシック（ ONTAP 9.7 以前で使用可能）を使用して、親ファイルの書き込み可能なコピーである FlexClone ファイルを作成できます。これらのコピーを使用して、アプリケーションをテストできます。
+
+.作業を開始する前に
+* クローニングするファイルは、アクティブファイルシステムの一部である必要があります。
+* ストレージシステムに FlexClone ライセンスがインストールされている必要があります。
+
+
+.このタスクについて
+* FlexClone ファイルがサポートされるのは FlexVol ボリュームのみです。
++
+親ボリュームからではなく、親ファイルが配置されているボリュームから親ファイルにアクセスすると、ボリューム内の親ファイルの FlexClone ファイルを作成できます。
+
+* FlexClone ファイルを SnapLock 上に作成することはできません。
+
+
+.手順
+. [* ストレージ *>* ボリューム *] をクリックします。
+. SVM * フィールドのドロップダウンメニューで、 * すべての SVM * を選択します。
+. FlexClone ファイルを作成するボリュームをボリュームのリストから選択します。
+. [ * その他のアクション * > * クローン * > * 作成 * > * ファイル * ] をクリックします。
+. Create FlexClone File * ダイアログボックスで、クローニングするファイルを選択し、 FlexClone ファイルの名前を指定します。
+. [* Clone* ] をクリックします。
+
+
+.結果
+FlexClone ファイルは、親ファイルと同じボリューム内に作成されます。
+
+* 関連情報 *
+
+xref:reference_volumes_window.adoc[Volumes （ボリューム）ウィンドウ]

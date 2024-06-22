@@ -1,0 +1,20 @@
+---
+permalink: online-help-96-97/concept_storage_virtual_machines.html 
+sidebar: sidebar 
+keywords: system, manager, svm, clister, online, help 
+summary: System Manager を使用して、クラスタ内の SVM を管理できます。 
+---
+= System Manager - ONTAP 9.7 以前を使用して、 Storage Virtual Machine を管理します
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+ONTAP System Manager クラシック（ ONTAP 9.7 以前で使用可能）を使用して、クラスタ内の SVM を管理できます。
+
+* 関連情報 *
+
+https://docs.netapp.com/us-en/ontap/san-admin/index.html["SAN 管理"^]
+
+https://docs.netapp.com/us-en/ontap/concepts/index.html["ONTAP の概念"^]

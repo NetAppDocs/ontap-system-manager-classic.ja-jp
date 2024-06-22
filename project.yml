@@ -1,0 +1,51 @@
+---
+settings:
+  name: System Manager Classic
+  noindex: true
+  internal:
+    pdf_enabled: false
+  prod:
+    pdf_enabled: true
+    harmony_enabled: false
+  search: ontap-system-manager-classic
+  langs: ja-jp,us-en,ko-kr,zh-cn,zh-tw,de-de,es-es,fr-fr,it-it
+sidebar:
+  entries:
+  - title: System Manager Classic のドキュメント
+    url: "/index.html"
+  - title: NAS ストレージをプロビジョニングする
+    entries:
+    - section: nfs-config
+    - section: nfs-config-esxi
+    - section: nas-multiprotocol-config
+    - section: smb-config
+  - title: SAN ストレージをプロビジョニング
+    entries:
+    - section: fc-config-esxi
+    - section: fc-config-rhel
+    - section: fc-config-windows
+    - section: iscsi-config-esxi
+    - section: iscsi-config-rhel
+    - section: iscsi-config-windows
+  - title: データ保護とディザスタリカバリ
+    entries:
+    - section: peering
+    - section: volume-disaster-recovery
+    - section: volume-disaster-prep
+    - section: volume-backup-snapvault
+    - section: volume-restore-snapvault
+  - title: クラスタ管理
+    entries:
+    - section: expansion
+    - section: volume-move
+    - section: snmp-config
+  - title: System Manager 9.6 および 9.7 を使用したクラスタ管理
+    entries:
+    - section: online-help-96-97
+  - title: ONTAP のドキュメント
+    url: https://docs.netapp.com/us-en/ontap/
+  - title: 法的通知
+    url: "/reference_legal_notices.html"
+product-family:
+  name: ONTAP
+  repo: ontap-family

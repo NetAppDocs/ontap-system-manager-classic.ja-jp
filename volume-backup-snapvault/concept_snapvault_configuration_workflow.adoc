@@ -1,0 +1,24 @@
+---
+permalink: volume-backup-snapvault/concept_snapvault_configuration_workflow.html 
+sidebar: sidebar 
+keywords: configuring, configure, snapvault, backup, relationship, verify, cluster, peer, relationship, snapvault, source, destination, volume, monitor, snapvault backup configuration workflow 
+summary: SnapVault バックアップ関係の設定では、クラスタピア関係を確認し、ソースボリュームとデスティネーションボリュームの間に SnapVault 関係を作成し、 SnapVault 関係を監視します。 
+---
+= SnapVault バックアップの設定ワークフロー
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+SnapVault バックアップ関係の設定では、クラスタピア関係を確認し、ソースボリュームとデスティネーションボリュームの間に SnapVault 関係を作成し、 SnapVault 関係を監視します。
+
+image::../media/snapvault_workflow.gif[この図は SnapVault バックアップの設定ワークフローのフローチャートを示したものです。ワークフローの各手順はトピックに対応しています。]
+
+バックアップしたデータをテストする場合やソースボリュームが失われた場合にデスティネーションボリュームからデータをリストアする方法については、別のドキュメントで説明しています。
+
+* xref:../volume-restore-snapvault/index.html[SnapVault を使用したボリュームリストアの管理]
++
+ONTAP の SnapVault バックアップからボリュームをリストアする簡単な方法について説明しています
+
+

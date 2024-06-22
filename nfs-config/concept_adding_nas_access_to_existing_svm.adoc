@@ -1,0 +1,75 @@
+---
+permalink: nfs-config/concept_adding_nas_access_to_existing_svm.html 
+sidebar: sidebar 
+keywords: nfs, access, exist, svm, creating, create, data, lif, configuring, configure, nis, provision, volume, export, policy, add, add nfs access to an existing svm 
+summary: 既存の SVM への NFS アクセスを追加するには、データ LIF を作成し、必要に応じて NIS を設定し、ボリュームをプロビジョニングし、ボリュームをエクスポートして、エクスポートポリシーを設定します。 
+---
+= 既存の SVM に NFS アクセスを追加
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+既存の SVM への NFS アクセスを追加するには、データ LIF を作成し、必要に応じて NIS を設定し、ボリュームをプロビジョニングし、ボリュームをエクスポートして、エクスポートポリシーを設定します。
+
+.作業を開始する前に
+* SVM で使用する次のネットワークコンポーネントを確認しておく必要があります。
++
+** データ論理インターフェイス（ LIF ）を作成するノードとそのノード上の特定のポート
+** データ LIF の IP アドレスをプロビジョニングするサブネット、または必要に応じてデータ LIF に割り当てる特定の IP アドレス
+
+
+* 外部ファイアウォールがある場合は、ネットワークサービスへのアクセスを許可するように適切に設定しておく必要があります。
+* SVM で NFS プロトコルが許可されている必要があります。
+
+
+詳細については、を参照してください link:https://docs.netapp.com/us-en/ontap/networking/index.html["ネットワーク管理マニュアル"^]。
+
+.手順
+. SVM のプロトコルを設定するための領域に移動します。
++
+.. 設定する SVM を選択します。
+.. [* 詳細 * （ * Details * ） ] パネルの [ * プロトコル * （ * Protocols ） ] の横にある [* NFS* （ * NFS * ） ] をクリック
++
+image::../media/svm_add_protocol_nfs_nfs.gif[この図には説明が付随しています。]
+
+
+
+. Configure NFS protocol * （ NFS プロトコルの設定 * ）ダイアログボックスで、データ LIF を作成します。
++
+.. LIF に IP アドレスを割り当てます。指定したサブネットから自動で割り当てるか、手動で入力して割り当てます。
+.. 「 * Browse 」をクリックして、 LIF に関連付けるノードとポートを選択します。
++
+image::../media/svm_setup_cifs_nfs_page_lif_multi_nas_nfs.gif[この図には説明が付随しています。]
+
+
+
+. ネームサービスやネームマッピングに NIS を使用している場合は、 NIS サーバのドメインと IP アドレスを指定し、 NIS ネームサービスソースを追加するデータベースタイプを選択します。
++
+image::../media/svm_setup_cifs_nfs_page_nis_area_nfs.gif[この図には説明が付随しています。]
+
++
+NIS サービスが利用できない場合は、 NIS サービスの設定は行わないでください。NIS サービスが適切に設定されていないと、原因データストアにアクセスできない可能
+
+. NFS アクセス用にボリュームを作成してエクスポートします。
++
+.. 「 * Export Name * 」に、エクスポート名とボリューム名の先頭の両方に使用する名前を入力します。
+.. ファイルを格納するボリュームのサイズを指定します。
++
+image::../media/svm_setup_cifs_nfs_page_nfs_export_nfs.gif[NFS エクスポートの設定に使用する領域のスクリーンショット]
+
++
+ボリュームのアグリゲートを指定する必要はありません。ボリュームは利用可能なスペースが最も多いアグリゲートに自動的に配置されます。
+
+.. [* permission] フィールドで、 [* Change] をクリックし、スーパーユーザアクセスを含む UNIX 管理ホストへの NFSv3 アクセスを許可するエクスポートルールを指定します。
++
+image::../media/export_rule_for_admin_manual_nfs_nfs.gif[この図には説明が付随しています。]
+
+
+
++
+Eng という 10GB のボリュームを作成して Eng という名前でエクスポートし、スーパーユーザアクセスを含む「 admin_host 」クライアントにエクスポートへのフルアクセスを許可するルールを追加できます。
+
+. [ 送信して閉じる *] をクリックし、 [OK] をクリックします。
+

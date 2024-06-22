@@ -1,0 +1,56 @@
+---
+permalink: online-help-96-97/task_editing_flexgroup_volumes.html 
+sidebar: sidebar 
+keywords: edit, flexgroup, volume, system, volume, online, help 
+summary: System Manager 9.6 以降では、既存の FlexGroup ボリュームのプロパティを編集できます。 
+---
+= FlexGroup ボリュームを編集しています
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+System Manager 9.6 以降では、既存の FlexGroup ボリュームのプロパティを編集できます。
+
+.作業を開始する前に
+FlexGroup はオンラインである必要があります。
+
+.このタスクについて
+FabricPool FlexGroup ボリュームは、次の状況で拡張できます。
+
+* FabricPool FlexGroup ボリュームは、 FabricPool アグリゲートでのみ拡張できます。
+* FabricPool 以外の FlexGroup ボリュームは FabricPool 以外のアグリゲートでのみ拡張できます。
+* FlexGroup ボリュームに FabricPool ボリュームと FabricPool 以外のボリュームが混在している場合、 FlexGroup ボリュームは FabricPool アグリゲートと FabricPool 以外のアグリゲートの両方で拡張できます。
+
+
+.手順
+. [* ストレージ *>* ボリューム *] をクリックします。
+. SVM * フィールドのドロップダウンメニューで、 * すべての SVM * を選択します。
+. 変更する FlexGroup ボリュームを選択し、 * 編集 * をクリックします。
+. *オプション：* FlexGroup ボリュームの名前を変更する場合は、*名前*フィールドに新しい名前を入力します。
++
+System Manager 9.6 以降では、 FlexGroup DP ボリュームの名前も変更できます。
+
+. *オプション：* encrypted *オプションを有効にして、ボリュームの暗号化を有効にします。
++
+このオプションを使用できるのは、ボリューム暗号化ライセンスを有効にした場合のみです。また、対応するプラットフォームで暗号化がサポートされている必要があります。
+
+. Snapshot コピーリザーブの割合を指定します。
+. * オプション： * クリック image:../media/advanced_options.gif[""] FlexGroup ボリュームの設定を変更します。を参照してください link:task_specifying_advanced_options_for_flexgroup_volume.html["FlexGroup ボリュームのアドバンストオプションの指定"]。
+. FlexGroup ボリュームのサイズを変更するサイズを指定します。
++
+デフォルトでは、既存のアグリゲートを使用して FlexGroup ボリュームのサイズが変更されます。ボリュームに対して許容される最小サイズがサイズのフィールドの横に表示されます。
+
++
+[NOTE]
+====
+新しいリソースを追加して FlexGroup ボリュームを拡張する場合は、をクリックします image:../media/advanced_options.gif[""] （アドバンストオプション）。を参照してください link:task_specifying_advanced_options_for_flexgroup_volume.html["FlexGroup ボリュームのアドバンストオプションの指定"]。
+
+====
+. [ 保存（ Save ） ] をクリックして、変更を保存します。
+
+
+* 関連情報 *
+
+xref:reference_volumes_window.adoc[Volumes （ボリューム）ウィンドウ]

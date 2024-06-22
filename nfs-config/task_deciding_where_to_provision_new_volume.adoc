@@ -1,0 +1,38 @@
+---
+permalink: nfs-config/task_deciding_where_to_provision_new_volume.html 
+sidebar: sidebar 
+keywords: create, nfs, volume, exist, storage, virtual, machine, svm, configuration, workflow, decide where to provision the new volume 
+summary: 新しい NFS ボリュームを作成する前に、そのボリュームを既存の Storage Virtual Machine （ SVM ）に配置するかどうかを決め、既存の SVM に配置する場合はどのような設定が必要になるかについても確認しておく必要があります。これにより、ワークフローが決まります。 
+---
+= 新しいボリュームをプロビジョニングする場所を決定します
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+新しい NFS ボリュームを作成する前に、そのボリュームを既存の Storage Virtual Machine （ SVM ）に配置するかどうかを決め、既存の SVM に配置する場合はどのような設定が必要になるかについても確認しておく必要があります。これにより、ワークフローが決まります。
+
+
+
+== 手順
+
+* 新しい SVM にボリュームをプロビジョニングする場合は、 NFS 対応 SVM を新規に作成します。
++
+link:task_creating_protocol_enabled_svm.html["NFS 対応 SVM の新規作成"]
+
++
+既存の SVM で NFS を有効にしていない場合は、この手順に従ってください。
+
+* NFS が有効になっているが設定はまだ完了していない既存の SVM にボリュームをプロビジョニングする場合は、既存の SVM に対する NFS アクセスを設定します。
++
+link:task_configuring_access_to_existing_svm.html["既存の SVM で NFS アクセスを設定"]
+
++
+これは、別のプロトコルを設定する際にこの手順に従って SVM を作成していない場合に該当します。
+
+* NFS アクセスの設定が完了している既存の SVM にボリュームをプロビジョニングする場合は、 NFS 対応 SVM に NFS ボリュームを追加します。
++
+link:concept_adding_protocol_volume_to_protocol_enabled_svm.html["NFS 対応 SVM への NFS ボリュームの追加"]
+
+

@@ -1,0 +1,92 @@
+---
+permalink: expansion/task_verifying_planned_configuration.html 
+sidebar: sidebar 
+keywords: expand, cluster, ensure, follow, plan, configuration, support, require, license, exist, ontap, verify, verify the planned configuration 
+summary: クラスタを拡張する前に、計画した構成がサポートされていること、必要なライセンスがあること、サイトが対応していること、クラスタスイッチが拡張をサポートしていること、既存のノードが同じバージョンの ONTAP 9 を使用していることを確認する必要があります。 
+---
+= 計画した構成を確認
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+クラスタを拡張する前に、計画した構成がサポートされていること、必要なライセンスがあること、サイトが対応していること、クラスタスイッチが拡張をサポートしていること、既存のノードが同じバージョンの ONTAP 9 を使用していることを確認する必要があります。
+
+.作業を開始する前に
+クラスタに管理者としてログインするために必要なユーザ名とパスワード、およびNetApp Support Siteにログインするために必要なユーザ名とパスワードの 2 セットのクレデンシャルが必要です。
+
+.手順
+. 計画した構成を確認します。
++
+.. 新しいコントローラのプラットフォームがクラスタの既存のコントローラと混在可能であることを確認します。
+.. 拡張後のクラスタが、プラットフォームのシステム制限を超えないことを確認します。
++
+https://hwu.netapp.com["NetApp Hardware Universe の略"^]
+
+.. クラスタが SAN 用に構成されている場合は、拡張後のクラスタが FC 、 FCoE 、および iSCSI の構成制限を超えないことを確認します。
++
+https://docs.netapp.com/us-en/ontap/san-config/index.html["SAN構成"^]
+
+
+
++
+これらの要件が満たされていないと、拡張を続行できません。
+
+. ライセンスが新しいノードに対応していることを確認します。
++
+.. 既存のクラスタで、 `system license show` コマンドを実行します
++
+[listing]
+----
+cluster1::> system license show
+
+Serial Number: 9-99-999999
+Owner: cluster1
+Package           Type    Description           Expiration
+----------------- ------- --------------------- --------------------
+Base              site    Cluster Base License  -
+NFS               license NFS License           -
+CIFS              license CIFS License          -
+...
+----
+.. 出力を確認して、ノードロックライセンス（タイプで識別）を特定します。 `license`）をクリックします。
+.. 追加のノードに含まれているライセンスが、クラスタの既存のノードロックライセンスと一致していることを確認します。
++
+http://mysupport.netapp.com/licenses["ネットアップソフトウェアライセンスの検索"^]
+
+
+
++
+追加のノードに必要なライセンスがない場合は、続行する前にライセンスを追加購入する必要があります。
+
+. サイトがすべての新しい機器に対応していることを確認します。
++
+https://hwu.netapp.com["NetApp Hardware Universe の略"^]
+
++
+サイトが対応していない場合は、拡張を続行する前にサイトを準備する必要があります。
+
+. 既存のスイッチが追加のコントローラをサポートしていることを確認します。
++
+https://hwu.netapp.com["NetApp Hardware Universe の略"^]
+
++
+クラスタがスイッチレスの場合、または既存のスイッチが追加のノードをサポートしていない場合は、クラスタスイッチを入手する必要があります。クラスタスイッチはあとで取り付けることができます。
+
+. 次のコマンドを使用して、既存のクラスタ内のすべてのノードが同じバージョンのONTAP 9（該当する場合はマイナーリリースとパッチも含む）を実行していることを確認します。 `cluster image show` コマンドを実行します
++
+[listing]
+----
+cluster1::> cluster image show
+                 Current                 Installation
+Node             Version                 Date
+---------------- ----------------------- ------------
+cluster1-1       8.3RC1                  12/15/2014 17:37:26
+cluster1-2       8.3RC1                  12/15/2014 17:37:42
+2 entries were displayed.
+----
++
+このワークフローの後半で参照できるように、 ONTAP ソフトウェアのバージョンをメモしておいてください。
+
+

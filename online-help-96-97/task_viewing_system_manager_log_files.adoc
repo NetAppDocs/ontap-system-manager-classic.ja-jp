@@ -1,0 +1,56 @@
+---
+permalink: online-help-96-97/task_viewing_system_manager_log_files.html 
+sidebar: sidebar 
+keywords: view, ontap, system, manager, log, file, online, help 
+summary: System Manager の使用中に問題が発生した場合は、テクニカルサポートにログファイルを送信して問題解決を手助けしてもらうことができます。System Manager のログファイルは、 ONTAP のログファイルと同じ mlog ディレクトリに保存されています。 
+---
+= System Manager ログファイルの表示 - ONTAP 9.7 以前
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+ONTAP System Managerクラシック（ONTAP 9.7以前で使用可能）を使用しているときに問題が発生した場合は、ログファイルを送信して、ネットアップサポートから指示された場合の問題のトラブルシューティングに役立てることができます。System Managerのログファイルは、 `mlog` ディレクトリとONTAPログファイル。
+
+.手順
+. クラスタ管理 LIF をホストしているノードを特定します。
+. Webブラウザに次のURLを入力します。 `+https://cluster-mgmt-LIF/spi+`
++
+`cluster-mgmt-LIF` は、クラスタ管理LIFのIPアドレスです。
+
+. クラスタ管理者のクレデンシャルを入力し、「 * OK 」をクリックします。
+. Data ONTAP - Root Volume File Access * ウィンドウで、クラスタ管理 LIF をホストするノードの * logs * リンクをクリックします。
+. に移動します `mlog` System Managerログファイルにアクセスするためのディレクトリ。
++
+ログファイルには次のものがありますが、どのログファイルが必要かは問題の種類によって異なります。
+
++
+** `sysmgr.log`
++
+このファイルには、 System Manager の最新のログが含まれます。
+
+** `mgwd.log`
+** `php.log`
+** `apache_access.log`
+** `messages.log`
+
+
+
+
+
+
+== システムロギングの仕組み
+
+システムロギングは、アプリケーションのトラブルシューティングに不可欠なツールです。システムロギングを有効にして、アプリケーションに問題があるときに、その問題を特定できるようにする必要があります。アプリケーションバイナリを変更することなく、 System Manager のロギングを実行時に有効化できます。
+
+ログ出力は膨大な量になることがあるため、管理が困難になる可能性があります。System Manager では、出力するログステートメントのタイプを選択することにより、ロギングの出力を絞り込むことができます。デフォルトでは、システムロギングは INFO に設定されます。次のいずれかのログレベルを選択できます。
+
+* オフ
+* エラー
+* 警告
+* 情報
+* デバッグ
+
+
+これらのレベルは階層的に機能します。ログレベルを off に設定すると、メッセージがロギングされません。

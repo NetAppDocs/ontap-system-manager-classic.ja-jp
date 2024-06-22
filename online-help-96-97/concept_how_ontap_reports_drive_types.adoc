@@ -1,0 +1,131 @@
+---
+permalink: online-help-96-97/concept_how_ontap_reports_drive_types.html 
+sidebar: sidebar 
+keywords: ontap, report, disk, type, industry, standards, sas, fc, storage, array, online, help 
+summary: ONTAP では、各ディスクにディスクタイプが関連付けられます。ONTAP では、一部のディスクタイプについて業界標準とは違う名称を使用します。 ONTAP のディスクタイプと業界標準のディスクタイプとの対応を確認し、混乱しないようにしてください。 
+---
+= System Manager - ONTAP 9.7 以前のバージョンで ONTAP からディスクタイプが報告される仕組み
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+ONTAP System Manager クラシック（ ONTAP 9.7 以前で使用可能）では、各ディスクにディスクタイプが関連付けられます。ONTAP では、一部のディスクタイプについて業界標準とは違う名称を使用します。 ONTAP のディスクタイプと業界標準のディスクタイプとの対応を確認し、混乱しないようにしてください。
+
+ONTAP のマニュアルでは、特に指定がないかぎり、ディスクタイプとは ONTAP で使用するディスクタイプを指します。_RAID ディスクタイプ _ は、特定のディスクが RAID で果たす役割を表します。ONTAP ディスクタイプとは関係ありません。
+
+システム構成によっては、サポートされるディスクタイプは、ストレージシステムモデル、シェルフタイプ、およびシステムにインストールされている I/O モジュールなどによって決まります。
+
+以下の表に、 SAS ストレージと FC ストレージの接続タイプ、およびストレージアレイのそれぞれについて、 ONTAP のディスクタイプと業界標準のディスクタイプとの対応を示します。
+
+
+
+== SAS-connected ストレージ
+
+|===
+| ONTAPディスクタイプ | ディスククラス | 業界標準のディスクタイプ | 説明 
+
+
+ a| 
+BSAS
+ a| 
+容量
+ a| 
+SATA
+ a| 
+SAS 接続ストレージシェルフへの接続を可能にする追加ハードウェアを搭載したブリッジ SAS-SATA ディスク
+
+
+
+ a| 
+FSA
+ a| 
+容量
+ a| 
+NL-SAS の場合
+ a| 
+ニアライン SAS
+
+
+
+ a| 
+mSATA （ mSATA
+ a| 
+容量
+ a| 
+SATA
+ a| 
+マルチディスクキャリアのストレージシェルフの SATA ディスク
+
+
+
+ a| 
+（ SAS ）。
+ a| 
+パフォーマンス
+ a| 
+（ SAS ）。
+ a| 
+Serial-Attached SCSI の略
+
+
+
+ a| 
+SSD の場合
+ a| 
+超高性能
+ a| 
+SSD の場合
+ a| 
+ソリッドステートドライブ
+
+|===
+
+
+== FC接続ストレージ
+
+|===
+| ONTAPディスクタイプ | ディスククラス | 業界標準のディスクタイプ 
+
+
+ a| 
+ATA の略
+ a| 
+容量
+ a| 
+SATA
+
+
+
+ a| 
+FCAL
+ a| 
+パフォーマンス
+ a| 
+FC
+
+|===
+
+
+== ストレージアレイ
+
+|===
+| ONTAPディスクタイプ | ディスククラス | 業界標準のディスクタイプ | 説明 
+
+
+ a| 
+LUN
+ a| 
+N/A
+ a| 
+LUN
+ a| 
+ストレージアレイでバックアップされ、 ONTAP でディスクとして使用される論理ストレージデバイス。 ONTAP がクライアントに提供する LUN と区別するため、これらの LUN を _ アレイ LUN_ と呼びます。
+
+|===
+* 関連情報 *
+
+https://hwu.netapp.com["NetApp Hardware Universe の略"^]
+
+http://www.netapp.com/us/media/tr-3437.pdf["ネットアップテクニカルレポート 3437 ：『 Storage Subsystem Resiliency 』"^]

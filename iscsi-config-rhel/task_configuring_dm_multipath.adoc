@@ -1,0 +1,85 @@
+---
+permalink: iscsi-config-rhel/task_configuring_dm_multipath.html 
+sidebar: sidebar 
+keywords: dm-multipath, manage, path, linux, host, storage, cluster, configuring, configure, lun, scsi, device, component, fail, cluster, configure, configure dm-multipath 
+summary: DM-Multipath は、 Linux ホストとストレージクラスタの間の複数のパスを管理します。Linux ホストから SCSI デバイスとして認識される LUN で DM-Multipath を設定すると、パスやコンポーネントで障害が発生した場合でも Linux ホストからストレージクラスタの LUN にアクセスできるようになります。 
+---
+= DM-Multipath を設定します
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+DM-Multipath は、 Linux ホストとストレージクラスタの間の複数のパスを管理します。Linux ホストから SCSI デバイスとして認識される LUN で DM-Multipath を設定すると、パスやコンポーネントで障害が発生した場合でも Linux ホストからストレージクラスタの LUN にアクセスできるようになります。
+
+.作業を開始する前に
+必要な DM-Multipath のバージョンを Interoperability Matrix Tool で確認しておく必要があります。
+
+https://mysupport.netapp.com/matrix["NetApp Interoperability Matrix Tool で確認できます"]
+
+[NOTE]
+====
+推奨されるアプローチは、各ファブリックまたはイーサネットネットワークへのパスをノードごとに 2 つずつ設定することです。これにより、パスで障害が発生したときにノードがパートナーに切り替わらなくなります。Windows ベースのオペレーティングシステムでは、物理ポートにリンクアグリゲーション（ LAG ）を使用することは推奨されません。
+
+====
+.手順
+. を編集します `/etc/multipath.conf` ファイルは次のとおりです。
++
+.. 除外する（ブラックリストに登録する）ネットアップ以外の SCSI デバイスがあるかどうかを確認します。
++
+これらのデバイスは、 `sanlun lun show` コマンドを実行します
+
++
+*** 除外するネットアップ以外のSCSIデバイスがある場合は、のblacklistセクションにデバイスのWorld Wide Identifier（WWID）を入力します。 `multipath.conf` ファイル。
++
+ネットアップ以外のSCSIデバイスのWWIDを表示するには、除外するデバイスで次のコマンドを入力します。 `SCSI_device_name` は、次のデバイスを指定します。 `/lib/udev/scsi_id -gud /dev/SCSI_device_name`
+
++
+例えば、 `/dev/sda` は除外するネットアップ以外のSCSIデバイスです。次のように入力します。
+
++
+`/lib/udev/scsi_id -gud /dev/sda`
+
++
+デバイスのWWIDが表示されます。このWWIDは、 `multipath.conf` ファイル。
+
++
+次の例では、 `multipath.conf` ファイル、ネットアップ以外のSCSIデバイス（WWID） `3600508e000000000753250f933cc4606` 除外：
+
++
+[listing]
+----
+blacklist {
+            **wwid       3600508e000000000753250f933cc4606**
+            devnode    "^(ram|raw|loop|fd|md|dm-|sr|scd|st)[0-9]*"
+            devnode    "^hd[a-z]"
+            devnode     "^cciss.*"
+}
+----
+*** 除外するデバイスがない場合は、 `multipath.conf` ファイル。
+
+
+.. ブートローダーのカーネル行の末尾に次の文字列を追加して、ネットアップ推奨のDM-Multipath設定を有効にします。 `rdloaddriver=scsi_dh_alua`
+
+
+. DM-Multipathデーモンを開始します。
++
+`/etc/init.d/multipathd start`
+
+. マルチパスサービスをブートシーケンスに追加して、マルチパスデーモンがシステムのブート時に常に開始されるようにします。
++
+`chkconfig multipathd on`
+
+. Linux ホストをリブートします。
+. を確認します `rdloaddriver` の実行時に設定が出力に表示される `cat /proc/cmdline`。
++
+。 `rdloaddriver` 設定は、カーネルに渡されるいくつかのブートオプションの1つとして表示されます。
+
++
+[listing]
+----
+# cat /proc/cmdline
+ro root=/dev/mapper/vg_ibmx3650210104-lv_root rd_NO_LUKS LANG=en_US.UTF-8 rd_NO_MD rd_LVM_LV=vg_ibmx3650210104/lv_root SYSFONT=latarcyrheb-sun16 rd_LVM_LV=vg_ibmx3650210104/lv_swap crashkernel=129M@0M  KEYBOARDTYPE=pc KEYTABLE=us rd_NO_DM rhgb quiet **rdloaddriver=scsi_dh_alua**
+----
+

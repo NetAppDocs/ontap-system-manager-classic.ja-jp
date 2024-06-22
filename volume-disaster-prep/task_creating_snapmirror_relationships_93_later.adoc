@@ -1,0 +1,70 @@
+---
+permalink: volume-disaster-prep/task_creating_snapmirror_relationships_93_later.html 
+sidebar: sidebar 
+keywords: create, snapmirror, relationship, source, volume, cluster, destination, peer, data, recovery, disaster, create the snapmirror relationship, Beginning with ontap 9.3 
+summary: ディザスタリカバリ用にデータをレプリケートするには、ピア関係にあるそれぞれのクラスタのソースボリュームとデスティネーションボリュームの間で SnapMirror 関係を作成する必要があります。 
+---
+= SnapMirror 関係を作成する（ ONTAP 9.3 以降）
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+ディザスタリカバリ用にデータをレプリケートするには、ピア関係にあるそれぞれのクラスタのソースボリュームとデスティネーションボリュームの間で SnapMirror 関係を作成する必要があります。
+
+.作業を開始する前に
+* デスティネーションアグリゲートの使用可能なスペースを確保する必要があります。
+* 両方のクラスタで、ユーザアクセス、認証、およびクライアントアクセスを環境の要件に合わせて適切に設定しておく必要があります。
+
+
+.このタスクについて
+このタスクは * source * cluster で実行する必要があります。
+
+.手順
+. [* ストレージ *>* ボリューム *] をクリックします。
+. ミラー関係を作成するボリュームを選択し、 * Actions * > * Protect * をクリックします。
+. [ 関係タイプ * （ Relationship Type * ） ] セクションで、 [ 関係タイプ * （ Relationship Type * ） ] ドロップダウンリストから [ * ミラー * （ * Mirror * ） ] を選択する。
+. [* Volumes] ： Protect Volumes] ページで、次の情報を入力します。
++
+.. 関係タイプとして * ミラー * を選択します。
+.. デスティネーションクラスタ、デスティネーション SVM 、およびデスティネーションボリュームの名前に付けるサフィックスを選択します。
++
+デスティネーション SVM のリストには、ピア関係が設定された SVM と許可されている SVM のみが表示
+
+.. をクリックします image:../media/advanced_options_icon_disaster.gif["[詳細オプション]アイコン"]。
+.. [詳細オプション]ダイアログボックスで、 `MirrorAllSnapshots` が保護ポリシーとして設定されている。
++
+`DPDefault` および `MirrorLatest` は、SnapMirror関係で使用できるその他のデフォルトの保護ポリシーです。
+
+.. 保護スケジュールを選択します。
++
+デフォルトでは、が表示されます `hourly` スケジュールが選択されています。
+
+.. SnapVault 関係の初期化で「 * Yes 」が選択されていることを確認します。
++
+デフォルトでは、すべてのデータ保護関係が初期化されます。SnapMirror 関係を初期化すると、デスティネーションボリュームのベースラインでソースボリュームの保護が開始されるようになります。
+
+.. [ 適用（ Apply ） ] をクリックして、変更を保存する。
++
+image::../media/snapmirror_advanced_options_93.gif[[詳細オプション]ウィンドウ]
+
+
+
+. 保存 * をクリックして、 SnapMirror 関係を作成します。
+. SnapMirror関係のステータスが `Snapmirrored` 状態。
++
+.. * Volumes * ウィンドウに移動し、 SnapMirror 関係を作成したボリュームを選択します。
+.. ボリュームをダブルクリックしてボリュームの詳細を表示し、 * protection * をクリックしてボリュームのデータ保護ステータスを表示します。
+
+
++
+image::../media/snapmirror_9_3.gif[SnapMirrorステータスのスクリーンショット]
+
+
+
+
+
+== 次に何をするか
+
+ソースボリュームのシンプロビジョニング、重複排除、圧縮、および自動拡張の設定を書き留めておく必要があります。この情報は、 SnapMirror 関係を解除するときにデスティネーションボリュームの設定を確認するために使用します。

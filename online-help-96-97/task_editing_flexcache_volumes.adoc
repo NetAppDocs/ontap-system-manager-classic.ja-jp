@@ -1,0 +1,29 @@
+---
+permalink: online-help-96-97/task_editing_flexcache_volumes.html 
+sidebar: sidebar 
+keywords: online, help, edit, flexcache, vaolume, system, manager 
+summary: System Manager 9.6 以降では、既存の FlexCache ボリュームのプロパティを編集できます。 
+---
+= FlexCache ボリュームを編集しています
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+System Manager 9.6 以降では、既存の FlexCache ボリュームのプロパティを編集できます。
+
+.手順
+. [* ストレージ *>* ボリューム *] をクリックします。
+. SVM * フィールドのドロップダウンメニューで、 * すべての SVM * を選択します。
+. 変更する FlexCache ボリュームを選択し、 * 編集 * をクリックします。
+. *オプション：* FlexCache Volume *の下の* Volume *フィールドに、FlexCache ボリュームの新しい名前を入力します。
+. *オプション：* FlexCache Volume *の下の* Size *フィールドにFlexCache ボリュームの新しいサイズを入力し、ドロップダウンメニューから単位を選択します。
+. *オプション：*暗号化を有効または無効にします。
+. * オプション： * クリック image:../media/advanced_options.gif[""] FlexCache ボリュームの詳細設定を変更します。を参照してください link:task_specifying_advanced_options_for_flexcache_volume.html["FlexCache ボリュームのアドバンストオプションの指定"]。
+. [ 保存（ Save ） ] をクリックして、変更を保存します。
+
+
+* 関連情報 *
+
+xref:reference_volumes_window.adoc[Volumes （ボリューム）ウィンドウ]

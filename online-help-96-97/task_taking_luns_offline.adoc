@@ -1,0 +1,27 @@
+---
+permalink: online-help-96-97/task_taking_luns_offline.html 
+sidebar: sidebar 
+keywords: take, lun, offline, online, help, management, system, manager 
+summary: System Manager の LUN の管理タブを使用して、選択した LUN をオフラインにし、ブロックプロトコルアクセスできないようにすることができます。 
+---
+= System Manager - ONTAP 9.7 以前を使用して、 LUN をオフラインにします
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+ONTAP System Manager クラシック（ ONTAP 9.7 以前で使用可能）の * LUN 管理 * タブを使用して、選択した LUN をオフラインにしてブロックプロトコルアクセスに使用できないようにすることができます。
+
+.作業を開始する前に
+LUN にアクセスしているすべてのホストアプリケーションを、停止または同期させる必要があります。
+
+.手順
+. [ * ストレージ * > * LUNs * ] をクリックします。
+. LUN 管理 * タブで、オフラインにする LUN を 1 つ以上選択します。
+. [ * ステータス * > * オフライン * ] をクリックします。
+
+
+* 関連情報 *
+
+xref:reference_luns_window.adoc[LUN ウィンドウ]

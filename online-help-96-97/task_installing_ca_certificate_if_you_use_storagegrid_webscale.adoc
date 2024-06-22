@@ -1,0 +1,35 @@
+---
+permalink: online-help-96-97/task_installing_ca_certificate_if_you_use_storagegrid_webscale.html 
+sidebar: sidebar 
+keywords: install, ca, certificate, storagegrid, fabricpool, aggregate, online, help 
+summary: ONTAP で FabricPool 対応アグリゲート用のオブジェクトストアとして使用する StorageGRID で認証を行うには、 StorageGRID CA 証明書をクラスタにインストールします。 
+---
+= System Manager ONTAP 9.7 以前で StorageGRID を使用する場合は、 CA 証明書をインストールします
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+ONTAP で FabricPool 対応アグリゲート用のオブジェクトストアとして StorageGRID で認証するには、 System Manager クラシック（ ONTAP 9.7 以前で使用可能）を使用してクラスタに StorageGRID CA 証明書をインストールします。
+
+.手順
+. StorageGRID システムのドキュメントに従って、グリッド管理インターフェイスを使用して StorageGRID システムの CA 証明書をコピーします。
++
+https://docs.netapp.com/sgws-113/topic/com.netapp.doc.sg-admin/home.html["StorageGRID 11.3 管理者ガイド"]
+
++
+StorageGRID をクラウド階層として追加する場合に CA 証明書がインストールされていないと、メッセージが表示されます。
+
+. StorageGRID CA 証明書を追加します。
++
+[NOTE]
+====
+指定する Fully Qualified Domain Name （ FQDN ；完全修飾ドメイン名）と StorageGRID CA 証明書のカスタム共通名が一致している必要があります。
+
+====
+
+
+* 関連情報 *
+
+xref:task_adding_cloud_tier.adoc[クラウド階層を追加しています]

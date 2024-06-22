@@ -1,0 +1,53 @@
+---
+permalink: iscsi-config-windows/task_installing_windows_unified_host_utilities.html 
+sidebar: sidebar 
+keywords: windows, unified, host, utilities, installation, program, registry, hba, paramater, netapp, ontapp, e-series, platform, install windows unified host utilities 
+summary: Windows Unified Host Utilities には、ネットアップの ONTAP および E シリーズのプラットフォームにおけるストレージシステムの動作を Windows ホストが正しく処理できるように、必要な Windows のレジストリパラメータと HBA パラメータを設定するインストールプログラムが含まれています。 
+---
+= Windows Unified Host Utilities をインストールする
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Windows Unified Host Utilities には、ネットアップの ONTAP および E シリーズのプラットフォームにおけるストレージシステムの動作を Windows ホストが正しく処理できるように、必要な Windows のレジストリパラメータと HBA パラメータを設定するインストールプログラムが含まれています。
+
+.作業を開始する前に
+次の作業を完了しておきます。
+
+* Interoperability Matrix でサポートされている構成を確認します
++
+https://mysupport.netapp.com/matrix["NetApp Interoperability Matrix Tool で確認できます"]
+
+* 必要な Windows 修正プログラムを Interoperability Matrix で確認します
++
+https://mysupport.netapp.com/matrix["NetApp Interoperability Matrix Tool で確認できます"]
+
+* FCP ライセンスを追加し、ターゲットサービスを開始します
+* ケーブル接続を確認します
++
+ケーブル接続と構成の詳細については、使用しているONTAPのバージョンに対応する_SAN構成_、またはNetApp Support SiteでEシリーズストレージシステムに対応する_Hardware Cabling_を参照してください。
+
+
+
+.このタスクについて
+Windows Unified Host Utilities ソフトウェアパッケージのインストール時に、マルチパスのサポートを含めるかどうかを指定する必要があります。Windows ホストまたは仮想マシンからストレージシステムへのパスが複数ある場合は、 MPIO を選択します。ストレージシステムへのパスが 1 つしかない場合にのみ、 MPIO を使用しないようにします。
+
+[NOTE]
+====
+MPIO の選択は、 Windows XP および Windows Vista システムでは使用できません。マルチパス I/O は、これらのゲスト OS ではサポートされていません。
+
+====
+Hyper-V ゲストでマルチパスのサポートを選択した場合、 raw （パススルー）ディスクはゲスト OS に表示されません。raw ディスクを使用することも、 MPIO を使用することもできますが、ゲスト OS で両方を使用することはできません。
+
+を参照してください link:https://docs.netapp.com/us-en/ontap-sanhost/hu_wuhu_71.html["Windows Unified Host のインストール"] を参照してください。
+
+.手順
+. NetApp Support Siteから該当するバージョンの Windows Unified Host Utilities をダウンロードします。
++
+https://mysupport.netapp.com/site/global/dashboard["ネットアップサポート"]
+
+. 実行ファイルを実行し、画面の指示に従います。
+. プロンプトが表示されたら、 Windows ホストをリブートします。
+

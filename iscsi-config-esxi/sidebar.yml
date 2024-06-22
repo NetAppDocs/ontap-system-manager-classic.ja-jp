@@ -1,0 +1,44 @@
+---
+section: iscsi-config-esxi
+title: VSC を使用した ESXi 向けの iSCSI 設定
+entries:
+- title: 概要
+  url: "/iscsi-config-esxi/index.html"
+- title: iSCSI の構成ワークフロー
+  url: "/iscsi-config-esxi/concept_iscsi_configuration_provisioning_workflow.html"
+  entries:
+  - title: iSCSI 構成がサポートされていることを確認します。
+    url: "/iscsi-config-esxi/task_verifying_that_iscsi_fc_configuration_is_supported.html"
+  - title: iSCSI 構成ワークシートに記入
+    url: "/iscsi-config-esxi/reference_completing_iscsi_configuration_worksheet.html"
+  - title: Virtual Storage Console をインストールします
+    url: "/iscsi-config-esxi/task_installing_virtual_storage_console_for_vmware_vsphere.html"
+  - title: ストレージクラスタまたは SVM を VSC for VMware vSphere に追加
+    url: "/iscsi-config-esxi/task_adding_storage_cluster_to_virtual_storage_cluster.html"
+  - title: 最適なパフォーマンスを実現できるようにネットワークを設定します
+    url: "/iscsi-config-esxi/task_configuring_your_network_for_best_performance.html"
+  - title: ホスト iSCSI ポートと vSwitch を設定
+    url: "/iscsi-config-esxi/task_configuring_host_iscsi_ports_vswitches.html"
+  - title: iSCSI ソフトウェアアダプタを有効にします
+    url: "/iscsi-config-esxi/task_enabling_iscsi_software_adapter.html"
+  - title: iSCSI ポートを iSCSI ソフトウェアアダプタにバインド
+    url: "/iscsi-config-esxi/task_binding_iscsi_ports_to_iscsi_software_adapter.html"
+  - title: ESXi ホストのベストプラクティスを設定
+    url: "/iscsi-config-esxi/task_configuring_esxi_host_best_practice_settings.html"
+  - title: アグリゲートを作成する
+    url: "/iscsi-config-esxi/task_creating_aggregate.html"
+  - title: ボリュームをプロビジョニングする場所を決定します
+    url: "/iscsi-config-esxi/task_deciding_where_to_provision_volume.html"
+    entries:
+    - title: 既存の SVM で iSCSI サービスが実行されていることを確認します
+      url: "/iscsi-config-esxi/task_verifying_iscsi_is_running_on_existing_vserver.html"
+    - title: 既存の SVM で iSCSI を設定
+      url: "/iscsi-config-esxi/task_configuring_iscsi_fc_creating_lun_on_existing_svm.html"
+    - title: 新しいSVMを作成
+      url: "/iscsi-config-esxi/task_creating_svm.html"
+  - title: ホストからストレージクラスタへの iSCSI パスをテストします
+    url: "/iscsi-config-esxi/task_testing_iscsi_paths.html"
+  - title: データストアをプロビジョニングし、そのデータストアを格納する LUN とボリュームを作成する
+    url: "/iscsi-config-esxi/task_provisioning_datastore_creating_its_containing_lun_volume.html"
+  - title: ホストが LUN に対して読み取りと書き込みを実行できることを確認します
+    url: "/iscsi-config-esxi/task_verifying_host_can_write_to_read_from_lun.html"

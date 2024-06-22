@@ -1,0 +1,18 @@
+---
+permalink: online-help-96-97/concept_storage_tiers.html 
+sidebar: sidebar 
+keywords: system, manager, storage, tiers, aggregates, security, requirements, backup, performance, data, sharing, online, help 
+summary: System Manager を使用して、セキュリティ、バックアップ、パフォーマンス、およびデータ共有に関するさまざまな要件に対応するアグリゲートを作成できます。 
+---
+= ストレージ階層
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+System Manager を使用して、セキュリティ、バックアップ、パフォーマンス、およびデータ共有に関するさまざまな要件に対応するアグリゲートを作成できます。
+
+* 関連情報 *
+
+https://docs.netapp.com/us-en/ontap/disks-aggregates/index.html["ディスクおよびアグリゲートの管理"]

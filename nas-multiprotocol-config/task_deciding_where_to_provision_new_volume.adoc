@@ -1,0 +1,35 @@
+---
+permalink: nas-multiprotocol-config/task_deciding_where_to_provision_new_volume.html 
+sidebar: sidebar 
+keywords: create, multiprotocol, volume, volume, storage, virtual, machine, svm, configuration, decision, workflow, decide where to provision the new volume 
+summary: 新しいマルチプロトコルボリュームを作成する前に、そのボリュームを既存の Storage Virtual Machine に配置するかどうかを決め、既存の SVM に配置する場合はどのような設定が必要になるかについても確認しておく必要があります。これにより、ワークフローが決まります。 
+---
+= 新しいボリュームをプロビジョニングする場所を決定します
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+新しいマルチプロトコルボリュームを作成する前に、そのボリュームを既存の Storage Virtual Machine （ SVM ）に配置するかどうかを決め、既存の SVM に配置する場合はどのような設定が必要になるかについても確認しておく必要があります。これにより、ワークフローが決まります。
+
+
+
+== 手順
+
+* 新しい SVM にボリュームをプロビジョニングする場合は、基本的な SVM を作成します。
++
+link:task_creating_new_svm.html["基本的な SVM を作成"]
+
++
+既存の SVM で CIFS と NFS を有効にしていない場合は、この手順に従ってください。
+
+* CIFS と NFS が有効になっているが設定はまだ完了していない既存の SVM にボリュームをプロビジョニングする場合は、既存の SVM に対する CIFS アクセスと NFS アクセスを追加します。
++
+link:concept_adding_nas_access_to_existing_svm.html["既存の SVM に CIFS アクセスと NFS アクセスを追加"]
+
+* CIFS および NFS のマルチプロトコルアクセスの設定が完了している既存の SVM でボリュームをプロビジョニングする場合は、ボリュームを直接作成して設定できます。
++
+link:task_creating_configuring_volume.html["ボリュームを作成して設定"]
+
+

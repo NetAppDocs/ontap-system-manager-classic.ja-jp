@@ -1,0 +1,70 @@
+---
+permalink: expansion/task_configuring_service_processor_network_cli.html 
+sidebar: sidebar 
+keywords: expand, cluster, configure, service, processor, sp, network, node, manual, network, configuration, automatic, configure the service processor network 
+summary: クラスタを拡張したら、新しいノードでサービスプロセッサネットワークを設定する必要があります。 
+---
+= サービスプロセッサネットワークを設定
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+クラスタを拡張したら、新しいノードでサービスプロセッサ（ SP ）ネットワークを設定する必要があります。SP のネットワーク設定が手動の場合は、新しいノードに SP の IP アドレスを設定する必要があります。SP が自動ネットワーク設定を使用している場合は、選択された IP アドレスを特定する必要があります。
+
+.手順
+. クラスタSPで手動ネットワーク設定を使用している場合は、次のコマンドを使用して、SPネットワークの両方のノードにIPアドレスを設定します。 `system service-processor network modify` コマンドを実行します
++
+次のコマンドは、 cluster1-3 ノードと cluster1-4 ノードに SP ネットワークを設定しています。
+
++
+[listing]
+----
+cluster1::> system service-processor network modify -node cluster1-3 -address-family IPv4 -enable true -ip-address 192.168.123.98-netmask 255.255.255.0 -gateway 192.168.123.1
+cluster1::> system service-processor network modify -node cluster1-4 -address-family IPv4 -enable true -ip-address 192.168.123.99 -netmask 255.255.255.0 -gateway 192.168.123.1
+----
+. 次のコマンドを使用して、両方の新しいノードにSPネットワークが正しく設定されていることを確認します。 `system service-processor network show` コマンドをノードごとに実行します。
++
+ステータスがになっている必要があります `succeeded`。すべての状況で検証が必要です。SP ネットワークが自動的に設定された場合でも、正しく設定されたことを確認し、割り当てられた IP アドレスを特定する必要があります。
+
++
+次の出力は、 cluster1-3 ノードと cluster1-4 ノードの両方で SP ネットワークが正しく設定されていることを示しています。
+
++
+[listing]
+----
+cluster1::> system service-processor network show -node cluster1-3
+                             Address
+Node          Status         Family    Link State  IP Address
+------------- -------------- --------- ----------- ------------------------
+cluster1-3    online         IPv4      up          192.168.123.98
+
+                                 DHCP: none
+                          MAC Address: 00:a0:98:43:a1:1e
+                      Network Gateway: 10.60.172.1
+             Network Mask (IPv4 only): 255.255.255.0
+            Prefix Length (IPv6 only): -
+                      IPv6 RA Enabled: -
+                          Subnet Name: -
+              SP Network Setup Status: succeeded
+                                     ...
+
+cluster1::> system service-processor network show -node cluster1-4
+                             Address
+Node          Status         Family    Link State  IP Address
+------------- -------------- --------- ----------- ------------------------
+cluster1-4    online         IPv4      up          192.168.123.99
+
+                                 DHCP: none
+                          MAC Address: 00:a0:98:43:a1:1e
+                      Network Gateway: 10.60.172.1
+             Network Mask (IPv4 only): 255.255.255.0
+            Prefix Length (IPv6 only): -
+                      IPv6 RA Enabled: -
+                          Subnet Name: -
+              SP Network Setup Status: succeeded
+                                     ...
+----
+. サイトに SP ネットワークの DNS エントリがある場合は、新しいノードに DNS エントリが作成されていることを確認します。
+

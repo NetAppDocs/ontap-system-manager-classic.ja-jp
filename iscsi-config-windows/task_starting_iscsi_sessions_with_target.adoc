@@ -1,0 +1,62 @@
+---
+permalink: iscsi-config-windows/task_starting_iscsi_sessions_with_target.html 
+sidebar: sidebar 
+keywords: windows, host, iscsi, connection, cluster, establish, sessions, initiator, properties, dialog, box, start iscsi sessions with the target 
+summary: Windows ホストには、クラスタ内の各ノードへの iSCSI 接続が必要です。ホストからセッションを確立するには、ホストの iSCSI Initiator Properties （ iSCSI イニシエータのプロパティ）ダイアログボックスを使用します。 
+---
+= ターゲットとの iSCSI セッションを開始します
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Windows ホストには、クラスタ内の各ノードへの iSCSI 接続が必要です。ホストからセッションを確立するには、ホストの iSCSI Initiator Properties （ iSCSI イニシエータのプロパティ）ダイアログボックスを使用します。
+
+.作業を開始する前に
+アクセスする LUN を含む Storage Virtual Machine （ SVM ）の iSCSI データ LIF の IP アドレスを確認しておく必要があります。
+
+.このタスクについて
+ONTAP では、 iSCSI ホストからクラスタ内の各ノードへのパスを設定する必要があります。ネイティブ DSM では、使用する最適なパスが選択されます。パスに障害が発生した場合は、ネイティブ DSM で代替パスが選択されます。
+
+iSCSI Initiator Properties （ iSCSI イニシエータのプロパティ）ダイアログボックスのボタンとラベルは、 Windows のバージョンによって異なります。タスクの手順には、複数のボタンまたはラベル名が含まれているものもあります。使用している Windows のバージョンに一致する名前を選択してください。
+
+.手順
+. [* iSCSI Initiator Properties* （ iSCSI イニシエータのプロパティ） ] ダイアログボックスを開きます。
++
+|===
+| 用途 | をクリックします 
+
+
+ a| 
+Windows Server 2012
+ a| 
+* サーバー・マネージャー * > * ダッシュボード * > * ツール * > * iSCSI イニシエータ *
+
+
+
+ a| 
+Windows Server 2008
+ a| 
+* スタート *>* 管理ツール *>* iSCSI イニシエータ *
+
+|===
+. [* Discover* （検出） ] タブで、 [* Discover Port* （ポータルの検出） ] または [* Add Portal* （ポータルの追加） ] をクリックし、 iSCSI ターゲットポートの IP アドレスを入力します。
+. [* ターゲット *] タブで、検出したターゲットを選択し、 [ ログオン *] または [ 接続 *] をクリックします。
+. 「 * マルチパスを有効にする * 」を選択し、コンピュータの起動時にこの接続を自動的に復元する * または * この接続をお気に入りターゲットのリストに追加 * を選択して、「 * 詳細設定 * 」をクリックします。
+. ローカルアダプター * の場合は、 * Microsoft iSCSI イニシエータ * を選択します。
++
+次の例は、 Windows Server 2008 のものです。
+
++
+image::../media/iscsi_login_for_windows.gif[この図は、 Windows iSCSI イニシエータのログインの詳細設定ダイアログとその前後の手順を示しています。]
+
+. 「 * Source IP * 」または「 * Initiator IP * 」の場合、 iSCSI ターゲット LIF と同じサブネットまたは VLAN 上のポートの IP アドレスを選択します。
+. 残りのチェックボックスはデフォルト値のままにして、 * OK * をクリックします。
+. [ * ターゲット * ] タブで、同じターゲットをもう一度選択し、 [ * ログオン * ] または [ * 接続 * ] をクリックします。
+. 「 * マルチパスを有効にする * 」を選択し、コンピュータの起動時にこの接続を自動的に復元する * または * この接続をお気に入りターゲットのリストに追加 * を選択して、「 * 詳細設定 * 」をクリックします。
+. 「 * Source IP * 」または「 * Initiator IP * 」の場合、サブネット上の別のポートの IP アドレス、または別の iSCSI ターゲット LIF の VLAN を選択します。
+. * ターゲットポータル * には、 * ソース IP * として選択したポートに対応する iSCSI ターゲット LIF の IP アドレスを選択します。
+. 残りのチェックボックスはデフォルト値のままにして、 * OK * をクリックします。
+. 手順 8~12 を繰り返して、使用可能な各ターゲット LIF に接続します。
+

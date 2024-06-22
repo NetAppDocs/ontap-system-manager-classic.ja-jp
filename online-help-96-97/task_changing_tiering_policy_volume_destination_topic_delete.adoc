@@ -1,0 +1,21 @@
+---
+permalink: online-help-96-97/task_changing_tiering_policy_volume_destination_topic_delete.html 
+sidebar: sidebar 
+keywords: change, tiering, policy, system, manager, volume, online, help 
+summary: System Manager を使用して、ボリュームのデフォルトの階層化ポリシーを変更することで、ボリュームのデータが非アクティブになったときにクラウド階層に移動するかどうかを制御できます。 
+---
+= System Manager - ONTAP 9.7 以前を使用して、ボリュームの階層化ポリシーを変更します
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+ONTAP System Manager クラシック（ ONTAP 9.7 以前で使用可能）を使用して、ボリュームのデフォルトの階層化ポリシーを変更し、ボリュームのデータが非アクティブになったときにクラウド階層に移動するかどうかを制御できます。
+
+.手順
+. [* ストレージ *>* ボリューム *] をクリックします。
+. SVM * フィールドのドロップダウンメニューで、 * すべての SVM * を選択します。
+. 階層化ポリシーを変更するボリュームを選択し、 * その他の操作 * > * 階層化ポリシーの変更 * をクリックします。
+. 「 * 階層化ポリシー * 」リストから必要な階層化ポリシーを選択し、「 * 保存 * 」をクリックします。
+

@@ -1,0 +1,28 @@
+---
+permalink: online-help-96-97/task_specifying_advanced_options_for_flexcache_volume.html 
+sidebar: sidebar 
+keywords: flexcache, volume, online, help, advanced, options, specify 
+summary: System Manager 9.6 以降では、 FlexCache ボリュームを編集する際に、 FlexCache ボリュームに関連付けるアドバンストオプションを指定できます。 
+---
+= FlexCache ボリュームのアドバンストオプションの指定
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+System Manager 9.6 以降では、 FlexCache ボリュームを編集する際に、 FlexCache ボリュームに関連付けるアドバンストオプションを指定できます。
+
+.手順
+. *オプション：*[Edit FlexCache volume*（ボリュームの編集）]ウィンドウで、をクリックします image:../media/advanced_options.gif[""] をクリックして、アドバンストオプションを指定します。
++
+[ 詳細オプション ] ウィンドウが表示されます。このセクションにはセクション（左側の列の見出し）があり、さまざまなオプションを指定できます。
+
+. *オプション：* General Details *セクションで、ボリュームの権限を編集できます。
+. アグリゲートセクションでは、アグリゲートの選択 * の切り替えボタンを有効にしてベストプラクティスのデフォルト設定を上書きし、アグリゲートのリストから選択することができます。
+. Storage Efficiency * セクションでは、ボリュームで圧縮機能や重複排除機能を有効にできます。
++
+FlexCache ボリュームに対しては、重複排除はデフォルトで有効になりません。指定したボリュームサイズが重複排除の実行に必要な最大サイズよりも大きい場合、 System Manager はデフォルトの重複排除スケジュールを使用します。
+
+. [ 適用（ Apply ） ] をクリックして、変更を更新する。
+

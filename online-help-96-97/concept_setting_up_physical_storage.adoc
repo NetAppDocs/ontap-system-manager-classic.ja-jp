@@ -1,0 +1,14 @@
+---
+permalink: online-help-96-97/concept_setting_up_physical_storage.html 
+sidebar: sidebar 
+keywords: physical, storage, set, up, online, help, disk, node, spare, aggregates 
+summary: 物理ストレージのセットアップでは、ノードにディスクを割り当て、スペアディスクを初期化し、アグリゲートを作成します。 
+---
+= 物理ストレージをセットアップする
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+物理ストレージのセットアップでは、ノードにディスクを割り当て、スペアディスクを初期化し、アグリゲートを作成します。

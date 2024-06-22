@@ -1,0 +1,42 @@
+---
+permalink: smb-config/index.html 
+sidebar: sidebar 
+keywords: content, describe, smb, cifs, access, volume, exist, storage, virtual, machine, svm, system manager classic 
+summary: ONTAP System Manager の従来のインターフェイス（ ONTAP 9.7 以前）を使用すると、新規または既存の Storage Virtual Machine （ SVM ）の新しいボリュームに対する SMB / CIFS アクセスを簡単に設定できます。 
+---
+= SMB / CIFS の設定の概要
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+ONTAP System Manager の従来のインターフェイス（ ONTAP 9.7 以前）を使用すると、新規または既存の Storage Virtual Machine （ SVM ）の新しいボリュームに対する SMB / CIFS アクセスを簡単に設定できます。
+
+この手順は、ボリュームへのアクセスを設定する場合に使用します。
+
+* すべての選択肢について検討するのではなく、ベストプラクティスに従う。
+* データネットワークでデフォルトの IPspace 、デフォルトのブロードキャストドメイン、およびデフォルトのフェイルオーバーグループを使用する。
++
+データネットワークがフラット構成であれば、これらのデフォルトのオブジェクトを使用することで、リンク障害の発生時に LIF が確実に正しくフェイルオーバーされます。デフォルトのオブジェクトを使用しない場合は、を参照してください https://docs.netapp.com/us-en/ontap/networking/index.html["ネットワーク管理マニュアル"^] LIF パスのフェイルオーバーを設定する方法については、を参照してください。
+
+* 新しいボリュームはNTFSファイル権限を使用して保護されます。
+
+
+ONTAP の SMB プロトコル機能の範囲の詳細については、を参照してください link:https://docs.netapp.com/us-en/ontap/smb-admin/index.html["SMB リファレンスの概要"^]。
+
+
+
+== ONTAP でこれを行うその他の方法
+
+|===
+
+
+| 実行するタスク | 参照先 
+
+
+| 再設計された System Manager （ ONTAP 9.7 以降で使用可能） | link:https://docs.netapp.com/us-en/ontap/task_nas_provision_windows_smb.html["SMB を使用して Windows サーバ用の NAS ストレージをプロビジョニングする"^] 
+
+
+| ONTAP のコマンドラインインターフェイス | link:https://docs.netapp.com/us-en/ontap/smb-config/index.html["CLIヲシヨウシタSMBセツテイノカイヨウ"^] 
+|===

@@ -1,0 +1,38 @@
+---
+permalink: online-help-96-97/task_editing_data_protection_volumes.html 
+sidebar: sidebar 
+keywords: edit, data, protection, system, manager, online, help, dp, volume 
+summary: System Manager を使用して、データ保護（ DP ）ボリュームのボリューム名を変更することができます。ソースボリュームで Storage Efficiency が有効になっていない場合に、デスティネーションボリュームでのみ Storage Efficiency を有効にすることもできます。 
+---
+= System Manager - ONTAP 9.7 以前を使用して、データ保護ボリュームを編集します
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+ONTAP System Manager クラシック（ ONTAP 9.7 以前で使用可能）を使用して、データ保護（ DP ）ボリュームのボリューム名を変更できます。ソースボリュームで Storage Efficiency が有効になっていない場合に、デスティネーションボリュームでのみ Storage Efficiency を有効にすることもできます。
+
+.このタスクについて
+ミラー DP ボリュームの Storage Efficiency を変更することはできません。
+
+.手順
+. [* ストレージ *>* ボリューム *] をクリックします。
+. SVM * フィールドのドロップダウンメニューから、編集する DP ボリュームが配置されている Storage Virtual Machine （ SVM ）を選択します。
+. 変更するボリュームを選択し、 * 編集 * をクリックします。
+. Edit Data Protection Volume * （データ保護ボリュームの編集）ダイアログボックスで、ボリューム名を変更します。
+. Enable Storage Efficiency * オプションが選択されていることを確認します。
++
+ボリュームで Storage Efficiency がすでに有効になっている場合、このチェックボックスはデフォルトで選択されます。
+
+. *オプション：*[Advanced]タブをクリックして、次の手順を実行します。
++
+.. ボリュームに割り当てるキャッシングポリシーを選択します。
+.. ボリュームのキャッシュデータの保持優先度を選択します。
+
+
++
+これらのオプションは、 Flash Pool アグリゲートに含まれるデータ保護 FlexVol に対してのみ使用できます。
+
+. [ 保存（ Save ） ] をクリックします。
+

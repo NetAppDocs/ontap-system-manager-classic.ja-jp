@@ -1,0 +1,16 @@
+---
+permalink: nfs-config-esxi/task_nfs_client_configuration_for_esxi_workflow.html 
+sidebar: sidebar 
+keywords: nfs, client, configuration, esxi, workflow, nfs client configuration for esxi workflow 
+summary: NFS を使用して ESXi ホストでストレージを使用できるようにするには、でボリュームをプロビジョニングし、 ESXi ホストから NFS エクスポートに接続します。 
+---
+= ESXi ワークフロー向けの NFS クライアント構成
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+NFS を使用して ESXi ホストでストレージを使用できるようにするには、でボリュームをプロビジョニングし、 ESXi ホストから NFS エクスポートに接続します。
+
+image::../media/nfs_client_configuration_with_vaai_workflow.gif[VAAI を使用した NFS クライアント構成]

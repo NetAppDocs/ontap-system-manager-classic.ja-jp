@@ -1,0 +1,88 @@
+---
+permalink: online-help-96-97/concept_dns_ddns_services.html 
+sidebar: sidebar 
+keywords: dns, ddns, service, system, manager, manage, online, help, edit, settings, command, button 
+summary: System Manager を使用して、 DNS / DDNS サービスを管理できます。 
+---
+= System Manager - ONTAP 9.7 以前を使用して、 DNS / DDNS サービスを管理します
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+ONTAP System Manager クラシック（ ONTAP 9.7 以前で使用可能）を使用して、 DNS / DDNS サービスを管理できます。
+
+
+
+== DDNSの有効化または無効化
+
+System Manager を使用して、ストレージシステムで DDNS を有効または無効にすることができます。
+
+.このタスクについて
+* DNSはデフォルトで有効になっています。
+* DDNS はデフォルトでは無効になっています。
+* System Manager では、 DNS および DDNS の設定に対する検証チェックは実行されません。
+
+
+.手順
+. [ * ストレージ * > * SVMs * ] をクリックします。
+. SVM を選択し、 * SVM 設定 * をクリックします。
+. [*Services*] ペインで、 [*DNS/DDNS *] をクリックします。
+. *DNS/DDNS サービス * ウィンドウで、 * 編集 * をクリックします。
+. Edit DNS/DDNS Settings * ダイアログボックスで、 * DDNS service * チェックボックスをオンにして DDNS を有効にします。
++
+DDNS を無効にするには、 * DDNS サービス * チェックボックスの選択を解除します。
+
+. [OK] をクリックします。
+
+
+
+
+== DNS および DDNS の設定を編集します
+
+DNSを使用すると、ホスト情報を一元的に保守できます。System Manager を使用して、ストレージシステムの DNS ドメイン名を追加または変更できます。ストレージシステムで DDNS を有効にして、 DNS サーバのネームサーバを自動的に更新することもできます。
+
+.作業を開始する前に
+セキュアな DDNS を使用するために、 Storage Virtual Machine （ SVM ）用の CIFS サーバまたは Active Directory アカウントをセットアップしておく必要があります。
+
+.このタスクについて
+System Manager では、 DNS および DDNS の設定に対する検証チェックは実行されません。
+
+.手順
+. [ * ストレージ * > * SVMs * ] をクリックします。
+. SVM を選択し、 * SVM 設定 * をクリックします。
+. [*Services*] ペインで、 [*DNS/DDNS *] をクリックします。
+. [ 編集（ Edit ） ] をクリックします。
+. *DNS Domains and Name Servers* 領域で、 DNS ドメイン名および IP アドレスを追加または変更します。
+. DDNS サービス * チェックボックスを選択して DDNS を有効にします。
++
+.. セキュア DDNS を有効にするには、 * セキュア DDNS を有効にする * チェックボックスをオンにします。
+.. DDNS サービスの Fully Qualified Domain Name （ FQDN ；完全修飾ドメイン名）と Time-To-Live （ TTL ）の値を指定します。
++
+デフォルトでは、TTLは24時間、FQDNは `SVM name. domain name`。
+
+
+
+. [OK] をクリックして、行った変更を保存します。
+
+
+
+
+== DNS / DDNS サービスウィンドウ
+
+DNS / DDNS サービスウィンドウを使用すると、システムの現在の DNS および DDNS の設定を確認して編集できます。
+
+
+
+=== コマンドボタン
+
+* * 編集 * 。
++
+DNS / DDNS 設定の編集ダイアログボックスを開きます。このダイアログボックスを使用して、 DNS または DDNS の詳細を追加または変更できます。DDNS を有効または無効にすることもできます。
+
+* * 更新 *
++
+ウィンドウ内の情報を更新します。
+
+

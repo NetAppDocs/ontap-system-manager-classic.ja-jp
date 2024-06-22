@@ -1,0 +1,50 @@
+---
+permalink: online-help-96-97/task_deleting_snapshot_copies.html 
+sidebar: sidebar 
+keywords: delete, snapshot, copy, online, help, system, manager 
+summary: ディスクスペースを節約したり解放したりする場合、 System Manager を使用して Snapshot コピーを削除できます。また、不要になった Snapshot コピーを削除することもできます。 
+---
+= System Manager - ONTAP 9.7 以前を使用して Snapshot コピーを削除します
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+ディスクスペースを節約したり解放したりする場合、 ONTAP System Manager クラシック（ ONTAP 9.7 以前で使用可能）を使用して Snapshot コピーを削除できます。また、不要になった Snapshot コピーを削除することもできます。
+
+.作業を開始する前に
+使用中またはロック状態の Snapshot コピーを削除する場合は、 Snapshot コピーを使用しているアプリケーションからそのコピーを解放しておく必要があります。
+
+.このタスクについて
+* FlexClone ボリュームが親ボリューム内のベースの Snapshot コピーを使用している場合、その Snapshot コピーは削除できません。
++
+ベースの Snapshot コピーは、 FlexClone ボリュームの作成に使用された Snapshot コピーです。ベースのSnapshotコピーには常にステータスが表示されます。 `busy` とアプリケーション依存関係 `busy,vclone` をクリックします。
+
+* SnapMirror 関係で使用されているロックされた Snapshot コピーは削除できません。
++
+この Snapshot コピーはロックされており、次回の更新に必要です。
+
+* SnapVault 関係で使用されている SnapLock DP ボリュームの Snapshot コピーは、 Snapshot コピーの有効期限を過ぎるまでは削除できません。
+* SnapVault 関係にある SnapLock DP ボリュームの（ WORM 状態にコミットされている） Snapshot コピーは、 Snapshot コピーの有効期限を過ぎるまでは削除できません。
+
+
+.手順
+. [* ストレージ *>* ボリューム *] をクリックします。
+. SVM * フィールドのドロップダウンメニューで、 * すべての SVM * を選択します。
+. 目的のボリュームを展開します。
+. Show More Details * リンクをクリックすると、ボリュームに関する詳細情報が表示されます。
+. [* Snapshot Copies * （ Snapshot コピー * ） ] タブをクリックします。
++
+選択したボリュームで利用できる Snapshot コピーのリストが表示されます。
+
+. 削除する Snapshot コピーを選択します。
+. [ 削除（ Delete ） ] をクリックします。
+. 確認のチェックボックスをオンにし、 * 削除 * をクリックします。
+
+
+* 関連情報 *
+
+xref:reference_volumes_window.adoc[Volumes （ボリューム）ウィンドウ]
+
+https://docs.netapp.com/ontap-9/index.jsp["ONTAP 9 ドキュメンテーション・センター"]

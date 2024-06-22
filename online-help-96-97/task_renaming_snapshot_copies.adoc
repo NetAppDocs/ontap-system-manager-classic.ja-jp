@@ -1,0 +1,38 @@
+---
+permalink: online-help-96-97/task_renaming_snapshot_copies.html 
+sidebar: sidebar 
+keywords: rename, snapshot, copy, system, manager, online, help 
+summary: 整理や管理をしやすくするため、 System Manager を使用して Snapshot コピーの名前を変更できます。 
+---
+= Snapshot コピーの名前を System Manager - ONTAP 9.7 以前のバージョンに変更します
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+整理や管理をしやすくするため、 ONTAP System Manager クラシック（ ONTAP 9.7 以前で使用可能）を使用して Snapshot コピーの名前を変更できます。
+
+.このタスクについて
+SnapVault 関係にある SnapLock DP ボリュームの（ WORM 状態にコミットされている） Snapshot コピーの名前は変更できません。
+
+.手順
+. [* ストレージ *>* ボリューム *] をクリックします。
+. SVM * フィールドのドロップダウンメニューで、 * すべての SVM * を選択します。
+. 目的のボリュームをクリックします。
+. Show More Details * リンクをクリックすると、ボリュームに関する詳細情報が表示されます。
+. [* Snapshot Copies * （ Snapshot コピー * ） ] タブをクリックします。
++
+選択したボリュームで利用できる Snapshot コピーのリストが表示されます。
+
+. 名前を変更する Snapshot コピーを選択し、 * その他の操作 * > * 名前の変更 * をクリックします。
+. 新しい名前を指定し、 * 名前の変更 * をクリックします。
++
+有効な文字は、 ASCII 文字、数字、ハイフン（ - ）、アンダースコア（ _ ）、ピリオド（ . ）、およびプラス記号（ + ）です。
+
+. [* Volumes] ウィンドウの [* Snapshot copies*] タブで、 Snapshot コピー名を確認します。
+
+
+* 関連情報 *
+
+xref:reference_volumes_window.adoc[Volumes （ボリューム）ウィンドウ]

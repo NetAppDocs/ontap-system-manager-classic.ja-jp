@@ -1,0 +1,168 @@
+---
+permalink: online-help-96-97/concept_kerberos_realm_services.html 
+sidebar: sidebar 
+keywords: online, help, kerberos, realm, service, system, manager, svm, edit, security, strong, nfs, authentication, microsoft, ntlm, ntlm v2, client 
+summary: System Manager を使用して、 Kerberos Realm サービスを作成および管理できます。 
+---
+= System Manager - ONTAP 9.7 以前を使用して Kerberos Realm サービスを管理します
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+ONTAP System Manager クラシック（ ONTAP 9.7 以前で使用可能）を使用して、 Kerberos Realm サービスを作成および管理できます。
+
+
+
+== Kerberos Realm の設定を作成します
+
+クライアントアクセスに Kerberos 認証を使用する場合は、既存の Kerberos Realm を使用するように Storage Virtual Machine （ SVM ）を設定する必要があります。System Manager を使用して Kerberos Realm 設定を作成し、 SVM が NFS に Kerberos セキュリティサービスを使用できるようにすることができます。
+
+.作業を開始する前に
+* CIFS 共有を使用する場合は CIFS ライセンス、 LDAP サーバを使用する場合は NFS ライセンスがインストールされている必要があります。
+* Active Directory （ Windows 2003 または Windows 2008 ）と DES MD5 暗号化機能が使用可能である必要があります。
+* NTP を設定することで、タイムゾーンを設定し、クラスタ内で時間を同期させておく必要があります。
++
+これにより、認証エラーを回避できるほか、ログファイルにクラスタ全体で一貫したタイムスタンプが記録されるようになります。
+
+
+
+.このタスクについて
+Kerberos Realm を作成するときは、 Kerberos Realm の作成ウィザードで次の属性を設定する必要があります。
+
+* Kerberos Realm を指定します
+* KDC の IP アドレスとポート番号
++
+デフォルトのポート番号は 88. です。
+
+* Kerberos Key Distribution Center （ KDC ；キー配布センター）ベンダー
+* KDC ベンダーが Microsoft でない場合の管理サーバの IP アドレス
+* パスワードサーバの IP アドレス
+* KDC ベンダーが Microsoft の場合は、 Active Directory サーバ名と IP アドレス
+
+
+.手順
+. [ * ストレージ * > * SVMs * ] をクリックします。
+. SVM を選択し、 * SVM 設定 * をクリックします。
+. [* サービス * （ * Services * ） ] ペインで、 [* Kerberos Realm * （ * Kerberos Realm * ） ] をクリック
+. Kerberos Realm * ウィンドウで、 * Create * をクリックします。
+. ウィザードの指示に従って、情報を入力または選択します。
+. 詳細を確認し、 [* 終了 ] をクリックしてウィザードを完了します。
+
+
+
+
+== Kerberos Realm の設定を編集します
+
+System Manager を使用して、 Kerberos Realm の設定を Storage Virtual Machine （ SVM ）レベルで編集できます。
+
+.このタスクについて
+Kerberos Realm 編集ウィザードを使用して、次の属性を変更できます。
+
+* KDC の IP アドレスとポート番号を指定します
+* KDC ベンダーが Microsoft でない場合の管理サーバの IP アドレス
+* パスワードサーバの IP アドレス
+* KDC ベンダーが Microsoft の場合は、 Active Directory サーバの名前と IP アドレス
+
+
+.手順
+. [ * ストレージ * > * SVMs * ] をクリックします。
+. SVM を選択し、 * SVM 設定 * をクリックします。
+. [* サービス * （ * Services * ） ] ペインで、 [* Kerberos Realm * （ * Kerberos Realm * ） ] をクリック
+. Kerberos Realm * ウィンドウで、変更する Kerberos Realm の設定を選択し、 * Edit * をクリックします。
+. ウィザードの指示に従って、情報を入力または選択します。
+. 詳細を確認し、 [* 終了 ] をクリックしてウィザードを完了します。
+
+
+
+
+== Kerberos Realm の設定を削除します
+
+System Manager を使用して Kerberos Realm 設定を削除できます。
+
+.手順
+. [ * ストレージ * > * SVMs * ] をクリックします。
+. SVM を選択し、 * SVM 設定 * をクリックします。
+. [* サービス * （ * Services * ） ] ペインで、 [* Kerberos Realm * （ * Kerberos Realm * ） ] をクリック
+. Kerberos Realm * ウィンドウで、削除する Kerberos Realm 設定を 1 つ以上選択し、 * Delete * をクリックします。
+. 確認のチェックボックスをオンにし、 * 削除 * をクリックします。
+
+
+
+
+== NFS で Kerberos を使用してセキュリティを強化します
+
+Kerberos を使用して SVM と NFS クライアント間の認証を強化すると、セキュアな NFS 通信を実現することができます。NFS に Kerberos を設定すると、 NFS クライアントとストレージシステム間の通信の整合性とセキュリティが向上します。
+
+
+
+== CIFS の Kerberos 認証
+
+Kerberos 認証では、クライアントは CIFS サーバへの接続時に使用可能な最も高いセキュリティレベルをネゴシエートします。ただし、クライアントが Kerberos 認証を使用できない場合は、 Microsoft NTLM または NTLM V2 を使用して CIFS サーバでの認証が行われます。
+
+
+
+== Kerberos Realm ウィンドウ
+
+Kerberos Realm ウィンドウを使用して、 Storage Virtual Machine （ SVM ）と NFS クライアント間の認証を提供して、セキュアな NFS 通信を実現できます。
+
+
+
+=== コマンドボタン
+
+* * 作成 * 。
++
+Kerberos Realm 作成ウィザードを開きます。このウィザードで、ユーザ情報を取得するように Kerberos Realm を設定できます。
+
+* * 編集 * 。
++
+Kerberos Realm 編集ウィザードを開きます。このウィザードで、 SVM の認証と許可に必要な Kerberos Realm の設定を編集できます。
+
+* * 削除 *
++
+Kerberos Realm の削除ダイアログボックスを開きます。このダイアログボックスで、 Kerberos Realm の設定を削除できます。
+
+* * 更新 *
++
+ウィンドウ内の情報を更新します。
+
+
+
+
+
+=== Kerberos Realm リスト
+
+タブ形式で Kerberos Realm の詳細を表示します。
+
+* * レルム *
++
+Kerberos Realm の名前を示します。
+
+* * KDC ベンダー *
++
+Kerberos KDC （キー配布センター）ベンダーの名前を示します。
+
+* * KDC IP アドレス *
++
+設定で使用される KDC IP アドレスを示します。
+
+
+
+
+
+=== 詳細領域
+
+詳細領域には、選択した Kerberos Realm 設定の KDC の IP アドレスとポート番号、 KDC ベンダー、管理サーバの IP アドレスとポート番号、 Active Directory サーバとサーバの IP アドレスなどの情報が表示されます。
+
+* 関連情報 *
+
+xref:task_setting_time_zone_for_cluster.adoc[クラスタのタイムゾーンを設定します]
+
+link:https://www.netapp.com/pdf.html?item=/media/10720-tr-4067.pdf["ネットアップテクニカルレポート 4067 ：『 NFS in NetApp ONTAP 』"^]
+
+link:https://www.netapp.com/pdf.html?item=/media/19384-tr-4616.pdf["ネットアップテクニカルレポート 4616 ：『 NFS Kerberos in ONTAP with Microsoft Active Directory 』"^]
+
+link:https://www.netapp.com/pdf.html?item=/media/19423-tr-4835.pdf["ネットアップテクニカルレポート 4835 ：『 How to Configure LDAP in ONTAP 』"^]
+
+https://docs.netapp.com/us-en/ontap/nfs-admin/index.html["NFS の管理"^]

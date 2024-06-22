@@ -1,0 +1,14 @@
+---
+permalink: nfs-config-esxi/task_configuring_esxi_host.html 
+sidebar: sidebar 
+keywords: configure, configuring, esxi, host, port, vswitches, practice, setting, correct, aggregate, provision, volume, configure the esxi host 
+summary: ESXi ホストの設定では、ポートと vSwitch を設定し、 ESXi ホストのベストプラクティス設定を使用します。これらの設定が正しいことを確認したら、アグリゲートを作成して新しいボリュームのプロビジョニング先を決定できます。 
+---
+= ESXi ホストを設定
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+ESXi ホストの設定では、ポートと vSwitch を設定し、 ESXi ホストのベストプラクティス設定を使用します。これらの設定が正しいことを確認したら、アグリゲートを作成して新しいボリュームのプロビジョニング先を決定できます。

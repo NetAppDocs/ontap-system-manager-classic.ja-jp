@@ -1,0 +1,27 @@
+---
+permalink: online-help-96-97/task_changing_deduplication_schedule.html 
+sidebar: sidebar 
+keywords: change, deduplication, schedule, online, help, system, manager 
+summary: System Manager を使用して、重複排除を手動で実行するか、自動で実行するか、指定したスケジュールで実行するかを選択して、重複排除スケジュールを変更できます。 
+---
+= System Manager - ONTAP 9.7 以前を使用して、重複排除スケジュールを変更します
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+重複排除を手動で実行するか、自動で実行するか、指定したスケジュールで実行するかを選択することで、 ONTAP System Manager クラシック（ ONTAP 9.7 以前で利用可能）を使用して重複排除スケジュールを変更できます。
+
+.手順
+. [* ストレージ *>* ボリューム *] をクリックします。
+. SVM * フィールドのドロップダウンメニューで、 * すべての SVM * を選択します。
+. 重複排除スケジュールを変更する読み取り / 書き込みボリュームを選択します。
+. [ * 編集 ] をクリックし、 [ * Storage Efficiency * ] タブをクリックします。
+. 重複排除スケジュールを必要に応じて変更します。
+. [ 保存して閉じる ] をクリックします。
+
+
+* 関連情報 *
+
+xref:reference_volumes_window.adoc[Volumes （ボリューム）ウィンドウ]

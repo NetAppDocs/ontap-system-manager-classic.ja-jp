@@ -1,0 +1,14 @@
+---
+permalink: nfs-config/task_creating_protocol_enabled_svm.html 
+sidebar: sidebar 
+keywords: nfs-enabled, svm, create, creating, nfs, volume, export, policy, root, client, access, create a new nfs-enabled svm 
+summary: NFS 対応 SVM をセットアップするには、新しい SVM を作成して NFS ボリュームとエクスポートを設定し、 SVM ルートボリュームのデフォルトのエクスポートポリシーを開き、 UNIX 管理ホストからの NFS アクセスを確認します。その後、 NFS クライアントアクセスを設定することができます。 
+---
+= NFS 対応 SVM を新規に作成
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+NFS 対応 SVM をセットアップするには、新しい SVM を作成して NFS ボリュームとエクスポートを設定し、 SVM ルートボリュームのデフォルトのエクスポートポリシーを開き、 UNIX 管理ホストからの NFS アクセスを確認します。その後、 NFS クライアントアクセスを設定することができます。

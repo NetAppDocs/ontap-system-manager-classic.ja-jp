@@ -1,0 +1,30 @@
+---
+permalink: volume-move/task_updating_ndmp_backup_after_moving_volume.html 
+sidebar: sidebar 
+keywords: volume, move, tape, ndmp, configuration, moving, baseline, migrate, backup, lif, contain, update ndmp backup after moving a volume 
+summary: 移動したボリュームが特定の設定の NDMP を使用してテープにバックアップされていた場合、ボリュームの移動後に次のいずれかの操作を実行して、ボリュームのバックアップを引き続き正常に続行することができます。 ベースラインを作成するか、移動したボリュームを含むノードにバックアップ LIF を移行します。 
+---
+= ボリューム移動後に NDMP バックアップを更新する
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+移動したボリュームが特定の設定の NDMP を使用してテープにバックアップされていた場合、ボリュームの移動後に次のいずれかの操作を実行して、ボリュームのバックアップを引き続き正常に続行することができます。 ベースラインを作成するか、移動したボリュームを含むノードにバックアップ LIF を移行します。
+
+.このタスクについて
+* この手順は、バックアップアプリケーションが Cluster Aware Backup （ CAB ）拡張をサポートしておらず、バックアッププロセスがノードを対象とした NDMP を使用している場合にのみ必要です。
++
+バックアップアプリケーションが CAB をサポートしており、 SVM を対象とした NDMP モードを使用するように設定されている場合は、この手順を省略できます。
+
+* どちらか一方の操作を実行する必要があります。両方を実行することはできません。
+
+
+
+
+== 手順
+
+* バックアップアプリケーションから、新しいベースラインを作成します。
+* バックアッププロセスに設定されている LIF を特定し、その LIF をボリュームが属するノードに移行します。
+

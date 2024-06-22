@@ -1,0 +1,14 @@
+---
+permalink: smb-config/task_creating_protocol_enabled_svm.html 
+sidebar: sidebar 
+keywords: cifs-enabled, svm, involve, cifs, volume, share, add, map, dns, server, verify, windows, administration, host, configure, cifs, client, access, create a new cifs-enabled svm 
+summary: CIFS 対応 SVM を新規にセットアップするには、新しい SVM を作成して CIFS ボリュームと共有を設定し、 DNS サーバでマッピングを追加し、 Windows 管理ホストからの CIFS アクセスを確認します。その後、CIFSクライアントアクセスを設定できます。 
+---
+= CIFS対応SVMを新規作成する
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+CIFS 対応 SVM を新規にセットアップするには、新しい SVM を作成して CIFS ボリュームと共有を設定し、 DNS サーバでマッピングを追加し、 Windows 管理ホストからの CIFS アクセスを確認します。その後、CIFSクライアントアクセスを設定できます。

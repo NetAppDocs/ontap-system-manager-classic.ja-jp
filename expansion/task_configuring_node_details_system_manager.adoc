@@ -1,0 +1,45 @@
+---
+permalink: expansion/task_configuring_node_details_system_manager.html 
+sidebar: sidebar 
+keywords: system, manager, configure, node, management, lif, service, processor, setting, add, configure the node details in system manager 
+summary: System Manager を使用して、新しく追加したノードのノード管理 LIF およびサービスプロセッサを設定できます。 
+---
+= System Manager でノードの詳細を設定
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+System Manager を使用して、新しく追加したノードのノード管理 LIF およびサービスプロセッサを設定できます。
+
+.作業を開始する前に
+* デフォルトの IPspace に、 LIF の作成に使用する十分な数のポートが必要です。
+* すべてのポートが動作している必要があります。
+
+
+.手順
+. ノード管理を設定します。
++
+.. [IP アドレス *] フィールドに IP アドレスを入力します。
+.. ノード管理用のポートを * Port * フィールドで選択します。
+.. ネットマスクとゲートウェイの詳細を入力します。
+
+
+. サービスプロセッサを設定します。
++
+.. デフォルト値を上書きするには、 * デフォルト値を上書き * （ Override defaults * ）チェックボックスを選択します。
+.. IP アドレス、ネットマスク、およびゲートウェイの詳細を入力します。
+
+
+. Submit and Proceed * をクリックして、ノードのネットワーク設定を完了します。
+. ノードの詳細を * Summary * ページで確認します。
+
+
+
+
+== 次に何をするか
+
+* クラスタが保護されている場合は、ピア関係や保護状態に問題が生じないように、新しく追加したノードに必要な数のクラスタ間 LIF を作成します。
+* クラスタで SAN データプロトコルが有効になっている場合は、データ処理用の SAN データ LIF を必要な数だけ作成します。
+

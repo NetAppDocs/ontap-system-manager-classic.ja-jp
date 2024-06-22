@@ -1,0 +1,27 @@
+---
+permalink: online-help-96-97/task_resetting_cifs_domain_controllers.html 
+sidebar: sidebar 
+keywords: reset, cifs, domain, controller, system, manager, online, help 
+summary: System Manager を使用して、指定したドメインについて、ドメインコントローラへの CIFS 接続をリセットできます。ドメインコントローラ情報をリセットしないと、原因が接続エラーを発生させる可能性があります。 
+---
+= System Manager - ONTAP 9.7 以前を使用して、 CIFS ドメインコントローラをリセットします
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+ONTAP System Manager クラシック（ ONTAP 9.7 以前で使用可能）を使用して、指定したドメインのドメインコントローラへの CIFS 接続をリセットできます。ドメインコントローラ情報をリセットしないと、原因が接続エラーを発生させる可能性があります。
+
+.このタスクについて
+優先ドメインコントローラのリストにドメインを追加したり、リストからドメインを削除したりした場合は、ストレージシステムの使用可能なドメインコントローラの検出情報を更新する必要があります。ONTAP では、コマンドラインインターフェイス（ CLI ）を使用して、ストレージシステムの使用可能なドメインコントローラの検出情報を更新できます。
+
+.手順
+. [ * ストレージ * > * SVMs * ] をクリックします。
+. SVM を選択し、 * SVM 設定 * をクリックします。
+. [ * ドメイン * ] タブで、 [ * リセット * ] をクリックします。
+
+
+* 関連情報 *
+
+xref:reference_cifs_window.adoc[[CIFS]ウィンドウ]

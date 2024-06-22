@@ -1,0 +1,36 @@
+---
+permalink: online-help-96-97/task_assigning_disks_to_nodes.html 
+sidebar: sidebar 
+keywords: system, manager, assign, disk, node, online, help 
+summary: System Manager を使用して未割り当てディスクの所有権を特定のノードに割り当てることで、アグリゲートやストレージプールの容量を拡張することができます。 
+---
+= System Manager - ONTAP 9.7 以前を使用して、ディスクをノードに割り当てます
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+ONTAP System Manager クラシック（ ONTAP 9.7 以前で使用可能）を使用して未割り当てディスクの所有権を特定のノードに割り当てることで、アグリゲートやストレージプールの容量を拡張することができます。
+
+.このタスクについて
+* ディスクの割り当ては、次の条件に当てはまる場合に実行できます。
++
+** 選択したディスクのコンテナタイプは「 unassigned 」である必要があります。
+** ディスクが HA ペア内のノードに接続されている。
+** ディスクがノードで認識されている必要があります。
+
+
+* MetroCluster 構成の場合、 System Manager でディスクを割り当てることはできません。
++
+代わりにコマンドラインインターフェイスを使用してください。
+
+
+
+.手順
+. Storage * > * Aggregates & Disks * > * Disks * をクリックします。
+. [* Disks （ディスク） ] ウィンドウで、 [* Inventory （インベントリ） ] タブを選択します。
+. 割り当てるディスクを選択し、 * assign * をクリックします。
+. ディスクの割り当て * ダイアログボックスで、ディスクを割り当てるノードを選択します。
+. [*Assign*] をクリックします。
+

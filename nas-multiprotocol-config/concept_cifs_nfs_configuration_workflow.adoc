@@ -1,0 +1,16 @@
+---
+permalink: nas-multiprotocol-config/concept_cifs_nfs_configuration_workflow.html 
+sidebar: sidebar 
+keywords: configure, smb, cif, nfs, creating, create, aggregate, volume, share, export, verify, unix, windows, administration, host, nfs, client, multiprotocol, configuration, workflow, multiprotocol configuration workflow 
+summary: SMB / CIFS と NFS の両方を設定するには、必要に応じてアグリゲートの作成と新しい SVM の作成または既存の SVM の設定を行ってから、ボリューム、共有、およびエクスポートを作成し、 UNIX および Windows の管理ホストからアクセスできることを確認します。その後、 SMB / CIFS クライアントと NFS クライアントへのアクセスを開始できます。 
+---
+= マルチプロトコルの設定ワークフロー
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+SMB / CIFS と NFS の両方を設定するには、必要に応じてアグリゲートの作成と新しい SVM の作成または既存の SVM の設定を行ってから、ボリューム、共有、およびエクスポートを作成し、 UNIX および Windows の管理ホストからアクセスできることを確認します。その後、 SMB / CIFS クライアントと NFS クライアントへのアクセスを開始できます。
+
+image::../media/cifs_nfs_multiprotocol.gif[ONTAP での NFS と CIFS のセットアップ手順の概要を示します。]

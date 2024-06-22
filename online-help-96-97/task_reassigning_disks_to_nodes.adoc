@@ -1,0 +1,56 @@
+---
+permalink: online-help-96-97/task_reassigning_disks_to_nodes.html 
+sidebar: sidebar 
+keywords: system, manager, reassign, disks, node, online, help, node, aggregate, storage, pool 
+summary: System Manager を使用してスペアディスクを別のノードに再割り当てすることで、アグリゲートやストレージプールの容量を拡張することができます。 
+---
+= System Manager - ONTAP 9.7 以前を使用して、ディスクをノードに再割り当てします
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+ONTAP System Manager クラシック（ ONTAP 9.7 以前で使用可能）を使用して、スペアディスクの所有権をノード間で再割り当てし、アグリゲートやストレージプールの容量を拡張することができます。
+
+.このタスクについて
+* ディスクの再割り当ては、次の条件に当てはまる場合に実行できます。
++
+** 選択したディスクのコンテナタイプは「 'srep' 」または「 hared' 」である必要があります。
+** ディスクが HA 構成のノードに接続されている。
+** ディスクがノードで認識されている必要があります。
+
+
+* 次の条件に当てはまる場合は、ディスクを再割り当てすることはできません。
++
+** 選択されたディスクのコンテナタイプは「 'hared' 」であり、データパーティションはスペアではありません。
+** ディスクがストレージプールに関連付けられている。
+
+
+* 共有ディスクに関連付けられたノードでストレージフェイルオーバーが有効になっていない場合は、共有ディスクのデータパーティションを再割り当てすることはできません。
+* パーティションディスクについては、ディスクのデータパーティションのみを再割り当てできます。
+* MetroCluster 構成の場合、 System Manager でディスクを再割り当てすることはできません。
++
+MetroCluster 構成用にディスクを再割り当てする場合は、コマンドラインインターフェイスを使用してください。
+
+
+
+[NOTE]
+====
+以降のONTAPリリースでは、ONTAP CLIを使用してディスク所有権を削除し、新しい所有者を割り当てます。
+
+====
+.手順
+. Storage * > * Aggregates & Disks * > * Disks * をクリックします。
+. [* Disks （ディスク） ] ウィンドウで、 [* Inventory （インベントリ） ] タブを選択します。
+. 再割り当てするディスクを選択し、 * assign * をクリックします。
+. 警告 * （ * Warning * ）ダイアログボックスで、 * 続行 * （ * Continue * ）をクリックします。
+. ディスクの割り当て * ダイアログボックスで、ディスクを再割り当てするノードを選択します。
+. [*Assign*] をクリックします。
+
+
+.関連情報
+* link:https://docs.netapp.com/us-en/ontap/disks-aggregates/remove-ownership-disk-task.html["ONTAP CLIを使用したディスク所有権の削除（ONTAP 9.3以降）"]
+* link:https://docs.netapp.com/us-en/ontap/disks-aggregates/disk-autoassignment-policy-concept.html["ONTAP CLIを使用したディスクの自動割り当て（ONTAP 9.3以降）"]
+* link:https://docs.netapp.com/us-en/ontap/disks-aggregates/manual-assign-disks-ownership-manage-task.html["ONTAP CLIを使用したディスクの手動割り当て（ONTAP 9.3以降）"]
+

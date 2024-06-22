@@ -1,0 +1,49 @@
+---
+permalink: online-help-96-97/task_deleting_volumes.html 
+sidebar: sidebar 
+keywords: online, help, delete, volumes, system, manager, flexvol, volume 
+summary: ボリュームに含まれているデータが不要になった場合、またはボリュームに含まれているデータを別の場所にコピーした場合は、 System Manager を使用して FlexVol ボリュームを削除できます。ボリュームを削除すると、そのボリューム内のすべてのデータが破棄され、そのデータは回復できません。 
+---
+= System Manager - ONTAP 9.7 以前を使用してボリュームを削除します
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+ボリュームに含まれているデータが不要になった場合、またはボリュームに含まれているデータを別の場所にコピーした場合は、 ONTAP System Manager クラシック（ ONTAP 9.7 以前で使用可能）を使用して FlexVol ボリュームを削除できます。ボリュームを削除すると、そのボリューム内のすべてのデータが破棄され、そのデータは回復できません。
+
+.作業を開始する前に
+FlexVol ボリュームを削除するには、次の条件を満たしている必要があります。
+
+* ボリュームをアンマウントし、オフライン状態にする必要があります。
+* FlexVol ボリュームがクローンされている場合、 FlexClone ボリュームを親ボリュームからスプリットするか、破棄する必要があります。
+* ボリュームで SnapMirror 関係が確立されている場合は、その SnapMirror 関係を削除しておく必要があります。
+
+
+.このタスクについて
+FlexVol を削除する際は、次の制限事項に注意してください。
+
+* SnapLock Enterprise ボリューム全体または SnapLock Enterprise ボリュームのファイルは削除できますが、 SnapLock Enterprise ボリュームのファイル内のデータだけを削除することはできません。
+* データがボリュームにコミットされている場合、 SnapLock Compliance ボリュームは削除できません。
+* FlexVol に qtree とボリュームの両方が含まれている場合、 qtree はディレクトリとして表示されます。ボリュームを削除する際に誤って qtree を削除しないように注意してください。
+* 元のボリュームに FlexCache ボリュームが関連付けられている場合は、元のボリュームを削除する前に FlexCache ボリュームを削除する必要があります。
+
+
+.手順
+. [* ストレージ *>* ボリューム *] をクリックします。
+. SVM * フィールドのドロップダウンメニューから、削除するボリュームが配置されている Storage Virtual Machine （ SVM ）を選択します。
+. 削除するボリュームを選択します。
++
+[NOTE]
+====
+削除する正しいボリュームを選択したことを確認してください。ボリュームを削除すると、そのボリューム内のすべてのデータが破棄され、そのデータは回復できません。
+
+====
+. [ 削除（ Delete ） ] をクリックします。
+. 確認のチェックボックスをオンにし、 * 削除 * をクリックします。
+
+
+* 関連情報 *
+
+xref:reference_volumes_window.adoc[Volumes （ボリューム）ウィンドウ]

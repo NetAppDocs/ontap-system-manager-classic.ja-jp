@@ -1,0 +1,58 @@
+---
+permalink: expansion/concept_configuring_node_management_lifs.html 
+sidebar: sidebar 
+keywords: controller, module, physical, install, power, configure, node-mangement, lif, configure node-management lifs 
+summary: コントローラモジュールを物理的に設置したら、各モジュールの電源をオンにして、そのノード管理 LIF を設定できます。 
+---
+= ノード管理 LIF を設定
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+コントローラモジュールを物理的に設置したら、各モジュールの電源をオンにして、そのノード管理 LIF を設定できます。
+
+.このタスクについて
+この手順は両方のノードで実行する必要があります。
+
+.手順
+. シリアルコンソールからコントローラモジュールにアクセスします。
+. コントローラモジュールの電源をオンにし、ノードがブートしてコンソールにクラスタセットアップウィザードが表示されるまで待ちます。
++
+[listing]
+----
+Welcome to the cluster setup wizard.
+
+You can enter the following commands at any time:
+  "help" or "?" - if you want to have a question clarified,
+  "back" - if you want to change previously answered questions, and
+  "exit" or "quit" - if you want to quit the cluster setup wizard.
+   Any changes you made before quitting will be saved.
+
+You can return to cluster setup at any time by typing "cluster setup".
+To accept a default or omit a question, do not enter a value.
+----
+. Web ベースのクラスタセットアップウィザードの指示に従って、事前に収集したネットワーク情報を使用してノード管理 LIF を設定します。
+. を入力します `exit` ノード管理LIFの設定が完了したら、セットアップウィザードを終了して管理タスクを実行します。
++
+[listing]
+----
+Use your web browser to complete cluster setup by accessing
+https://10.63.11.29
+
+Otherwise, press Enter to complete cluster setup using the command line interface:
+exit
+----
+. ノードに `admin` ユーザ。パスワードは必要ありません。
++
+[listing]
+----
+Tue Mar 4 23:13:33 UTC 2015
+login: admin
+******************************************************
+* This is a serial console session. Output from this *
+* session is mirrored on the SP console session.     *
+----
+. 新しく設置した 2 台目のコントローラモジュールに対して、手順全体を繰り返します。
+

@@ -1,0 +1,17 @@
+---
+permalink: nfs-config/concept_adding_protocol_volume_to_protocol_enabled_svm.html 
+sidebar: sidebar 
+keywords: add, nfs, volume, svm, configure, configuring, export, policy, verify, access, unix, administration, host, client, access, add an nfs volume to an nfs-enabled svm 
+summary: NFS 対応 SVM に NFS ボリュームを追加するには、ボリュームを作成して設定し、エクスポートポリシーを作成し、 UNIX 管理ホストからのアクセスを確認します。その後、 NFS クライアントアクセスを設定することができます。 
+---
+= NFS 対応 SVM に NFS ボリュームを追加
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+NFS 対応 SVM に NFS ボリュームを追加するには、ボリュームを作成して設定し、エクスポートポリシーを作成し、 UNIX 管理ホストからのアクセスを確認します。その後、 NFS クライアントアクセスを設定することができます。
+
+.作業を開始する前に
+SVM で NFS の設定が完了している必要があります。

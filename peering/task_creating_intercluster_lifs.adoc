@@ -1,0 +1,36 @@
+---
+permalink: peering/task_creating_intercluster_lifs.html 
+sidebar: sidebar 
+keywords: creating, create, intercluster, logical, interface, lif, enable, network, communicate, ipspace, peer, relationship, create intercluster lif, Beginning with ontap 9.3 
+summary: ONTAP 9.3 以降 ONTAP では、 ONTAP System Manager の「クラシック」インターフェイスを使用してクラスタ間論理インターフェイス（ LIF ）を作成し、その LIF をクラスタネットワークがノードと通信できるようにすることができます。クラスタ間 LIF は、ピア関係を作成する各クラスタの各ノードで、ピアリングに使用する各 IPspace 内に作成する必要があります。 
+---
+= クラスタ間 LIF の作成（ ONTAP 9.3 以降）
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+ONTAP 9.3 以降では、 ONTAP 9.7 までの間、 ONTAP System Manager の _classic_interface を使用してクラスタ間論理インターフェイス（ LIF ）を作成し、そのインタークラスタネットワークがノードと通信できるようにします。クラスタ間 LIF は、ピア関係を作成する各クラスタの各ノードで、ピアリングに使用する各 IPspace 内に作成する必要があります。
+
+.このタスクについて
+たとえば、 4 ノードクラスタを IPspace A 上でクラスタ X とピアリングし、 IPspace Y 上でクラスタ Y とピアリングする場合、合計 8 個のクラスタ間 LIF が必要です。 IPspace A に 4 つ（ノードごとに 1 つ）、 IPspace Y に 4 つ（ノードごとに 1 つ）。
+
+この手順は、ピア関係を作成する両方のクラスタで実行する必要があります。
+
+.手順
+. [ * Configuration * ] > [* Advanced Cluster Setup* ] をクリックします。
+. [ 高度なクラスタ機能の設定 *] ウィンドウで、 [ クラスタピアリング *] オプションの横にある [* Proceed] をクリックします。
+. IPspace * リストから IPspace を選択します。
+. 各ノードの IP アドレス、ポート、ネットワークマスク、およびゲートウェイの詳細を入力します。
++
+image::../media/intercluster_lif_creation_93.gif[この図には説明が付随しています。]
+
+. [Submit and Continue] をクリックします。
+
+
+
+
+== 次に何をするか
+
+クラスタピアリングを続行するには、クラスタピアリングウィンドウでクラスタの詳細を入力する必要があります。

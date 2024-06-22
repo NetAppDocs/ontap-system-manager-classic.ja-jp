@@ -1,0 +1,58 @@
+---
+permalink: volume-disaster-recovery/task_resynchronizing_source_volume.html 
+sidebar: sidebar 
+keywords: source, volume, online, resynchronize, data, destination, replicate, resynchronize the source volume 
+summary: ソースボリュームがオンライン状態になったら、デスティネーションボリュームとソースボリュームの間でデータを再同期して、デスティネーションボリュームの最新のデータをレプリケートする必要があります。 
+---
+= ソースボリュームを再同期
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+ソースボリュームがオンライン状態になったら、デスティネーションボリュームとソースボリュームの間でデータを再同期して、デスティネーションボリュームの最新のデータをレプリケートする必要があります。
+
+.作業を開始する前に
+ソースボリュームはオンラインである必要があります。
+
+.このタスクについて
+このタスクは、 * デスティネーション * クラスタから実行する必要があります。
+
+次の図に示すように、アクティブなデスティネーションボリュームから読み取り専用のソースボリュームにデータがレプリケートされます。
+
+image::../media/reverse_resync_2555.gif[次の図に示すように、アクティブなデスティネーションボリュームから読み取り専用のソースボリュームにデータがレプリケートされます]
+
+.手順
+. 実行している System Manager のバージョンに応じて、次のいずれかの手順を実行します。
++
+** ONTAP 9.4 以前： ［ * 保護 * ］ > ［ * 関係 * ］ をクリックします。
+** ONTAP 9.5 以降： * Protection * > * Volume Relationships * をクリックします。
+
+
+. ソースボリュームとデスティネーションボリュームの間の SnapMirror 関係を選択します。
+. SnapMirror 関係に対して設定されている転送スケジュールとポリシーを書き留めます。
+. [* Operations] * > [* Reverse Resync] をクリックします。
+. 確認のチェックボックスをオンにし、 * 逆再同期 * をクリックします。
++
+image::../media/reverse_resync_4eea.gif[逆再同期画面]
+
++
+ONTAP 9.3以降では、関係のSnapMirrorポリシーがに設定されます。 `MirrorAllSnapshots` ミラースケジュールはに設定されています。 `None`。
+
++
+ONTAP 9.2以前を実行している場合は、関係のSnapMirrorポリシーがに設定されます。 `DPDefault` ミラースケジュールはに設定されています。 `None`。
+
+. ソースクラスタで、元の SnapMirror 関係の保護設定と同じになるように SnapMirror ポリシーとスケジュールを指定します。
++
+.. 実行している System Manager のバージョンに応じて、次のいずれかの手順を実行します。
++
+*** ONTAP 9.4 以前： ［ * 保護 * ］ > ［ * 関係 * ］ をクリックします。
+*** ONTAP 9.5 以降： * Protection * > * Volume Relationships * をクリックします。
+
+
+.. 再同期するソースボリュームとデスティネーションボリュームの間の SnapMirror 関係を選択し、 * Edit * をクリックします。
+.. SnapMirror ポリシーとスケジュールを選択し、 * OK * をクリックします。
+
+
+

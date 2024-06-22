@@ -1,0 +1,30 @@
+---
+permalink: fc-config-windows/task_updating_hba_driver_firmware_bios.html 
+sidebar: sidebar 
+keywords: fc, host, bus, adapter, hba, windows, run, support, driver, firmware, bios, version, update, update the hba driver firmware and bios 
+summary: Windows ホストの FC ホストバスアダプタ（ HBA ）でサポート対象外のバージョンのドライバ、ファームウェア、 BIOS が実行されている場合は、更新する必要があります。 
+---
+= HBA のドライバ、ファームウェア、 BIOS を更新
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Windows ホストの FC ホストバスアダプタ（ HBA ）でサポート対象外のバージョンのドライバ、ファームウェア、 BIOS が実行されている場合は、更新する必要があります。
+
+.作業を開始する前に
+構成に対してサポートされているドライバ、ファームウェア、 BIOS のバージョンを Interoperability Matrix ツールで確認しておく必要があります。
+
+https://mysupport.netapp.com/matrix["NetApp Interoperability Matrix Tool で確認できます"]
+
+.このタスクについて
+ドライバ、ファームウェア、 BIOS 、 HBA ユーティリティは HBA ベンダーから提供されます。
+
+.手順
+. HBA ベンダーの HBA ユーティリティを使用して、インストールされている HBA のドライバ、ファームウェア、 BIOS のバージョンを確認します。
+. 必要に応じて、 HBA ベンダーのサポートサイトから新しいドライバ、ファームウェア、 BIOS をダウンロードしてインストールします。
++
+インストール手順と必要なインストールユーティリティは、ダウンロードファイルに含まれています。
+
+

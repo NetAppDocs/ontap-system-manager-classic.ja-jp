@@ -1,0 +1,39 @@
+---
+permalink: online-help-96-97/task_breaking_snapmirror_relationships.html 
+sidebar: sidebar 
+keywords: snapmirror, break, relationship, dp, rw, online, help 
+summary: SnapMirror ソースを使用できなくなり、クライアントアプリケーションからミラーデスティネーションのデータにアクセスできるようにする場合は、 SnapMirror 関係を解除する必要があります。 
+---
+= System Manager - ONTAP 9.7 以前を使用して SnapMirror 関係を解除します
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+ONTAP System Manager クラシック（ ONTAP 9.7 以前で使用可能）を使用して、 SnapMirror 関係を解除できます。SnapMirror ソースを使用できなくなり、クライアントアプリケーションからミラーデスティネーションのデータにアクセスできるようにする場合は、 SnapMirror 関係を解除する必要があります。SnapMirror 関係を解除すると、デスティネーションボリュームのタイプが「データ保護」（ DP ）から「読み書き可能」（ RW ）に変わります。
+
+.作業を開始する前に
+* SnapMirror デスティネーションが休止状態またはアイドル状態になっている必要があります。
+* デスティネーションボリュームを Storage Virtual Machine （ SVM ）ネームスペースにマウントしておく必要があります。
+
+
+.このタスクについて
+* デスティネーションボリュームでデータを提供しながら、ソースを修理または交換したり、ソースを更新したり、システムの元の構成を再確立したりできます。
+* ONTAP システムと SolidFire ストレージシステムの間の SnapMirror 関係を解除できます。
+* FlexGroup ボリューム関係を解除する場合は、ページを更新して、関係の更新後のステータスを確認する必要があります。
+
+
+.手順
+. [* 保護 *>] 、 [* ボリューム関係 *] の順にクリックします。
+. 解除するミラー関係を選択します。
+. [ 操作（ Operations ） ] > [ * 分割（ * Break ） ] をクリックする。
+. 確認のチェックボックスをオンにし、 * ブレーク * をクリックします。
+
+
+.結果
+データ保護 SnapMirror 関係が解除されます。デスティネーションボリュームのタイプがデータ保護（ DP ）の読み取り専用から読み書き可能（ RW ）に変更されます。あとで使用できるように、データ保護ミラー関係のベースの Snapshot コピーが保存されます。
+
+* 関連情報 *
+
+xref:reference_protection_window.adoc[保護ウィンドウ]

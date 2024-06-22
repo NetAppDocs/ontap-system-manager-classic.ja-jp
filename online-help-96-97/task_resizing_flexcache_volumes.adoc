@@ -1,0 +1,40 @@
+---
+permalink: online-help-96-97/task_resizing_flexcache_volumes.html 
+sidebar: sidebar 
+keywords: system, manager, flexcache, resize, volume, online, help 
+summary: System Manager 9.6 以降では、既存のリソースのサイズを変更するか、または新しいリソースを追加して、 FlexCache ボリュームのサイズを変更できます。 
+---
+= FlexCache のサイズを変更しています
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+System Manager 9.6 以降では、既存のリソースのサイズを変更するか、または新しいリソースを追加して、 FlexCache ボリュームのサイズを変更できます。
+
+.作業を開始する前に
+* FlexCache ボリュームのサイズを変更するには、既存のアグリゲートに十分な空きスペースが必要です。
+* FlexCache ボリュームを拡張するには、拡張に使用するアグリゲートに十分な空きスペースが必要です。
+
+
+.手順
+. [* ストレージ *>* ボリューム *] をクリックします。
+. SVM * フィールドのドロップダウンメニューで、 * すべての SVM * を選択します。
+. サイズを変更する FlexCache ボリュームを選択し、 * その他の操作 * > * サイズ変更 * をクリックします。
+. FlexCache ボリュームのサイズ変更 * ウィンドウで、 FlexCache ボリュームのサイズを変更するサイズを指定します。
++
+デフォルトでは、既存のアグリゲートを使用して FlexCache ボリュームのサイズが変更されます。System Manager 9.6 以降では、ボリュームに対して許容される最大サイズがフィールドの横に表示されます。
+
++
+[NOTE]
+====
+新しいリソースを追加して FlexCache ボリュームを拡張する場合は、をクリックします image:../media/advanced_options.gif[""] （アドバンストオプション）。を参照してください link:https://docs.netapp.com/us-en/ontap-sm-classic/online-help-96-97/task_specifying_advanced_options_for_flexcache_volume.html["FlexCache ボリュームのアドバンストオプションの指定"]。
+
+====
+. FlexCache ボリュームのサイズを変更するには、 * Save * （保存）をクリックします。
+
+
+* 関連情報 *
+
+xref:reference_volumes_window.adoc[Volumes （ボリューム）ウィンドウ]

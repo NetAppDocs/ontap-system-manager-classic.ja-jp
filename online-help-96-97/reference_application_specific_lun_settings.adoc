@@ -1,0 +1,715 @@
+---
+permalink: online-help-96-97/reference_application_specific_lun_settings.html 
+sidebar: sidebar 
+keywords: system, manager, oracle, sql, lun, application, specific, online, help 
+summary: System Manager では、 AFF クラスタで FC SAN 向けに最適化された LUN を作成する際、 Oracle や SQL などのアプリケーションがサポートされます。LUN サイズなどの LUN 設定は、各アプリケーションに固有なルールに従って決まります。SQL および Oracle の場合、 LUN 設定は自動的に作成されます。 
+---
+= System Manager - ONTAP 9.7 以前でのアプリケーション固有の LUN 設定
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+ONTAP System Manager クラシック（ ONTAP 9.7 以前で使用可能）では、 AFF クラスタで FC SAN 向けに最適化された LUN を作成する際に、 Oracle や SQL などのアプリケーションがサポートされます。LUN サイズなどの LUN 設定は、各アプリケーションに固有なルールに従って決まります。SQL および Oracle の場合、 LUN 設定は自動的に作成されます。
+
+クラスタに複数のノードがある場合、 System Manager は API で選択された最初の 2 つのノードだけを使用して LUN を作成します。2 つのノードにはそれぞれデータアグリゲートがすでに作成されています。アグリゲートの使用可能容量と同じサイズのボリュームがそれぞれ作成されます。ボリュームはシンプロビジョニングされ、 LUN のスペースリザベーションは無効になっています。
+
+ストレージ効率化ポリシーは、デフォルトでは「毎日」に設定され、サービス品質（ QoS ）は「 best_effort 」に設定されます。クラスタでは、アクセス時間（ atime ）の更新がデフォルトで有効になっていますが、ボリュームの作成時は System Manager によって無効に設定され、ファイルの読み取りや書き込みが実行されてもディレクトリのアクセス時間フィールドは更新されません。
+
+[NOTE]
+====
+アクセス時間の更新を有効にすると、クラスタのデータ提供パフォーマンスが低下する原因になります。
+
+====
+
+
+== SQL の LUN 設定
+
+デフォルトでは、 LUN とボリュームは SQL Server の 1 つのインスタンス用にプロビジョニングされ、それぞれ 1TB の 2 つのデータベースと 24 個の物理コアで構成されます。SQL Server 用の一定のルールに従って LUN とボリュームのスペースがプロビジョニングされます。HA ペア間で LUN の負荷分散が実行されます。データベースの数は変更できます。データベースごとに 8 つのデータ LUN と 1 つのログ LUN が作成され、SQL インスタンスごとに一時的な LUN が 1 つ作成されます。
+
+次の表に、 SQL のデフォルト設定でスペースがどのようにプロビジョニングされるかを示します。
+
+|===
+| ノード | アグリゲート | LUNタイプ | ボリューム名 | LUN 名 | LUN サイズの計算式 | LUN サイズ（ GB ） 
+
+
+ a| 
+ノード 1
+ a| 
+node1 _ aggr1
+ a| 
+データ
+ a| 
+DB01_data01 のストレージシステム
+ a| 
+DB01_data01 のストレージシステム
+ a| 
+データベースサイズ ÷ 8
+ a| 
+一二五
+
+
+
+ a| 
+ a| 
+ a| 
+データ
+ a| 
+DB01_data02
+ a| 
+DB01_data02
+ a| 
+データベースサイズ ÷ 8
+ a| 
+一二五
+
+
+
+ a| 
+ a| 
+ a| 
+データ
+ a| 
+DB01_data03
+ a| 
+DB01_data03
+ a| 
+データベースサイズ ÷ 8
+ a| 
+一二五
+
+
+
+ a| 
+ a| 
+ a| 
+データ
+ a| 
+DB01_data04
+ a| 
+DB01_data04
+ a| 
+データベースサイズ ÷ 8
+ a| 
+一二五
+
+
+
+ a| 
+ a| 
+ a| 
+データ
+ a| 
+DB02_data01 のようになります
+ a| 
+DB02_data01 のようになります
+ a| 
+データベースサイズ ÷ 8
+ a| 
+一二五
+
+
+
+ a| 
+ a| 
+ a| 
+データ
+ a| 
+DB02_data02
+ a| 
+DB02_data02
+ a| 
+データベースサイズ ÷ 8
+ a| 
+一二五
+
+
+
+ a| 
+ a| 
+ a| 
+データ
+ a| 
+DB02_data03
+ a| 
+DB02_data03
+ a| 
+データベースサイズ ÷ 8
+ a| 
+一二五
+
+
+
+ a| 
+ a| 
+ a| 
+データ
+ a| 
+DB02_data04
+ a| 
+DB02_data04
+ a| 
+データベースサイズ ÷ 8
+ a| 
+一二五
+
+
+
+ a| 
+ a| 
+ a| 
+ログ
+ a| 
+DB01_log のコマンドです
+ a| 
+DB01_log のコマンドです
+ a| 
+データベースサイズ÷20
+ a| 
+50です
+
+
+
+ a| 
+ a| 
+ a| 
+温度
+ a| 
+SQL_TEMP
+ a| 
+SQL_TEMP
+ a| 
+データベースサイズ÷3
+ a| 
+330
+
+
+
+ a| 
+ノード 2
+ a| 
+node2 _ aggr1
+ a| 
+データ
+ a| 
+DB01_data05
+ a| 
+DB01_data05
+ a| 
+データベースサイズ ÷ 8
+ a| 
+一二五
+
+
+
+ a| 
+ a| 
+ a| 
+データ
+ a| 
+DB01_data06
+ a| 
+DB01_data06
+ a| 
+データベースサイズ ÷ 8
+ a| 
+一二五
+
+
+
+ a| 
+ a| 
+ a| 
+データ
+ a| 
+DB01_DATA07
+ a| 
+DB01_DATA07
+ a| 
+データベースサイズ ÷ 8
+ a| 
+一二五
+
+
+
+ a| 
+ a| 
+ a| 
+データ
+ a| 
+DB01_data08
+ a| 
+DB01_data08
+ a| 
+データベースサイズ ÷ 8
+ a| 
+一二五
+
+
+
+ a| 
+ a| 
+ a| 
+データ
+ a| 
+DB02_data05
+ a| 
+DB02_data05
+ a| 
+データベースサイズ ÷ 8
+ a| 
+一二五
+
+
+
+ a| 
+ a| 
+ a| 
+データ
+ a| 
+DB02_data06
+ a| 
+DB02_data06
+ a| 
+データベースサイズ ÷ 8
+ a| 
+一二五
+
+
+
+ a| 
+ a| 
+ a| 
+データ
+ a| 
+DB02_DATA07
+ a| 
+DB02_DATA07
+ a| 
+データベースサイズ ÷ 8
+ a| 
+一二五
+
+
+
+ a| 
+ a| 
+ a| 
+データ
+ a| 
+DB02_data08
+ a| 
+DB02_data08
+ a| 
+データベースサイズ ÷ 8
+ a| 
+一二五
+
+
+
+ a| 
+ a| 
+ a| 
+ログ
+ a| 
+DB02_log
+ a| 
+DB02_log
+ a| 
+データベースサイズ÷20
+ a| 
+50です
+
+|===
+
+
+== Oracle の LUN 設定
+
+デフォルトでは、 LUN とボリュームは 2TB の 1 つのデータベース用にプロビジョニングされます。Oracle 用の一定のルールに従って LUN とボリュームのスペースがプロビジョニングされます。デフォルトでは、 Oracle Real Application Clusters （ RAC ）は選択されません。
+
+次の表に、 Oracle のデフォルト設定でスペースがどのようにプロビジョニングされるかを示します。
+
+|===
+| ノード | アグリゲート | LUNタイプ | ボリューム名 | LUN 名 | LUN サイズの計算式 | LUN サイズ（ GB ） 
+
+
+ a| 
+ノード 1
+ a| 
+node1 _ aggr1
+ a| 
+データ
+ a| 
+ORA_vol01
+ a| 
+ORA_lundata01
+ a| 
+データベースサイズ ÷ 8
+ a| 
+250
+
+
+
+ a| 
+ a| 
+ a| 
+データ
+ a| 
+ORA_VOL02
+ a| 
+ORA_lundata02
+ a| 
+データベースサイズ ÷ 8
+ a| 
+250
+
+
+
+ a| 
+ a| 
+ a| 
+データ
+ a| 
+ORA_VOL03
+ a| 
+ORA_lundata03
+ a| 
+データベースサイズ ÷ 8
+ a| 
+250
+
+
+
+ a| 
+ a| 
+ a| 
+データ
+ a| 
+ORA_VOL04
+ a| 
+ORA_lundata04
+ a| 
+データベースサイズ ÷ 8
+ a| 
+250
+
+
+
+ a| 
+ a| 
+ a| 
+ログ
+ a| 
+ORA_VOL05
+ a| 
+ORA_lunlog1
+ a| 
+データベースサイズ÷40
+ a| 
+50です
+
+
+
+ a| 
+ a| 
+ a| 
+バイナリ
+ a| 
+ORA_VOL06
+ a| 
+ORA_ORabin1.
+ a| 
+データベースサイズ÷40
+ a| 
+50です
+
+
+
+ a| 
+ノード 2
+ a| 
+node2 _ aggr1
+ a| 
+データ
+ a| 
+ORA_VOL07
+ a| 
+ORA_lundata05
+ a| 
+データベースサイズ ÷ 8
+ a| 
+250
+
+
+
+ a| 
+ a| 
+ a| 
+データ
+ a| 
+ORA_VOL08
+ a| 
+ORA_lundata06
+ a| 
+データベースサイズ ÷ 8
+ a| 
+250
+
+
+
+ a| 
+ a| 
+ a| 
+データ
+ a| 
+ORA_VOL09
+ a| 
+ORA_lundata07
+ a| 
+データベースサイズ ÷ 8
+ a| 
+250
+
+
+
+ a| 
+ a| 
+ a| 
+データ
+ a| 
+ORA_VOL10
+ a| 
+ORA_lundata08
+ a| 
+データベースサイズ ÷ 8
+ a| 
+250
+
+
+
+ a| 
+ a| 
+ a| 
+ログ
+ a| 
+ORA_VOL11
+ a| 
+ORA_lunlog2
+ a| 
+データベースサイズ÷40
+ a| 
+50です
+
+|===
+Oracle RAC については、 LUN はグリッドファイル用にプロビジョニングされます。Oracle RAC でサポートされる RAC ノード数は 2 つだけです。
+
+次の表に、 Oracle RAC のデフォルト設定でスペースがどのようにプロビジョニングされるかを示します。
+
+|===
+| ノード | アグリゲート | LUNタイプ | ボリューム名 | LUN 名 | LUN サイズの計算式 | LUN サイズ（ GB ） 
+
+
+ a| 
+ノード 1
+ a| 
+node1 _ aggr1
+ a| 
+データ
+ a| 
+ORA_vol01
+ a| 
+ORA_lundata01
+ a| 
+データベースサイズ ÷ 8
+ a| 
+250
+
+
+
+ a| 
+ a| 
+ a| 
+データ
+ a| 
+ORA_VOL02
+ a| 
+ORA_lundata02
+ a| 
+データベースサイズ ÷ 8
+ a| 
+250
+
+
+
+ a| 
+ a| 
+ a| 
+データ
+ a| 
+ORA_VOL03
+ a| 
+ORA_lundata03
+ a| 
+データベースサイズ ÷ 8
+ a| 
+250
+
+
+
+ a| 
+ a| 
+ a| 
+データ
+ a| 
+ORA_VOL04
+ a| 
+ORA_lundata04
+ a| 
+データベースサイズ ÷ 8
+ a| 
+250
+
+
+
+ a| 
+ a| 
+ a| 
+ログ
+ a| 
+ORA_VOL05
+ a| 
+ORA_lunlog1
+ a| 
+データベースサイズ÷40
+ a| 
+50です
+
+
+
+ a| 
+ a| 
+ a| 
+バイナリ
+ a| 
+ORA_VOL06
+ a| 
+ORA_ORabin1.
+ a| 
+データベースサイズ÷40
+ a| 
+50です
+
+
+
+ a| 
+ a| 
+ a| 
+グリッド（ Grid ）
+ a| 
+ORA_VOL07
+ a| 
+ORA_lungrid1
+ a| 
+10 GB
+ a| 
+10
+
+
+
+ a| 
+ノード 2
+ a| 
+node2 _ aggr1
+ a| 
+データ
+ a| 
+ORA_VOL08
+ a| 
+ORA_lundata05
+ a| 
+データベースサイズ ÷ 8
+ a| 
+250
+
+
+
+ a| 
+ a| 
+ a| 
+データ
+ a| 
+ORA_VOL09
+ a| 
+ORA_lundata06
+ a| 
+データベースサイズ ÷ 8
+ a| 
+250
+
+
+
+ a| 
+ a| 
+ a| 
+データ
+ a| 
+ORA_VOL10
+ a| 
+ORA_lundata07
+ a| 
+データベースサイズ ÷ 8
+ a| 
+250
+
+
+
+ a| 
+ a| 
+ a| 
+データ
+ a| 
+ORA_VOL11
+ a| 
+ORA_lundata08
+ a| 
+データベースサイズ ÷ 8
+ a| 
+250
+
+
+
+ a| 
+ a| 
+ a| 
+ログ
+ a| 
+ORA_VOL12
+ a| 
+ORA_lunlog2
+ a| 
+データベースサイズ÷40
+ a| 
+50です
+
+
+
+ a| 
+ a| 
+ a| 
+バイナリ
+ a| 
+ORA_VOL13
+ a| 
+ORA_ORabin2
+ a| 
+データベースサイズ÷40
+ a| 
+50です
+
+|===
+
+
+== その他の種類のアプリケーションの LUN 設定
+
+各 LUN はボリューム内にプロビジョニングされます。LUN のスペースは、指定したサイズに基づいてプロビジョニングされます。ノード間ですべての LUN の負荷分散が実行されます。

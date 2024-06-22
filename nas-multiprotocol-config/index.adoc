@@ -1,0 +1,53 @@
+---
+permalink: nas-multiprotocol-config/index.html 
+sidebar: sidebar 
+keywords: smb, cifs, nfs, access, volume, exist, storage, virtual, machine, svm 
+summary: 新規または既存の Storage Virtual Machine （ SVM ）の新しいボリュームに対する SMB / CIFS アクセスと NFS アクセスの両方を簡単に設定できます。 
+---
+= SMB と NFS のマルチプロトコル構成の概要
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+ONTAP System Manager の従来のインターフェイス（ ONTAP 9.7 以前）を使用すると、新規または既存の Storage Virtual Machine （ SVM ）の新しいボリュームに対する SMB アクセスと NFS アクセスを簡単に設定できます。
+
+この手順は、ボリュームへのアクセスを設定する場合に使用します。
+
+* NFSv4 または NFSv4.1 ではなく、 NFSv3 を使用して NFS アクセスを行う。
+* すべての選択肢について検討するのではなく、ベストプラクティスに従う。
+* データネットワークでデフォルトの IPspace 、デフォルトのブロードキャストドメイン、およびデフォルトのフェイルオーバーグループを使用する。
++
+データネットワークがフラット構成であれば、これらのデフォルトのオブジェクトを使用することで、リンク障害の発生時に LIF が確実に正しくフェイルオーバーされます。デフォルトのオブジェクトを使用しない場合は、を参照してください link:https://docs.netapp.com/us-en/ontap/networking/index.html["Network Management の略"^] LIF パスのフェイルオーバーを設定する方法については、を参照してください。
+
+* LDAP を使用する場合は、 Active Directory から提供されます。
+
+
+ONTAP NFS および SMB プロトコルの機能の範囲に関する詳細については、次のドキュメントを参照してください。
+
+* https://docs.netapp.com/us-en/ontap/nfs-admin/index.html["NFS の管理"^]
+* https://docs.netapp.com/us-en/ontap/smb-admin/index.html["SMBの管理"^]
+
+
+
+
+== ONTAP でこれを行うその他の方法
+
+|===
+
+
+| 実行するタスク | 参照先 
+
+
+| 再設計された System Manager （ ONTAP 9.7 以降で使用可能） | link:https://docs.netapp.com/us-en/ontap/task_nas_provision_nfs_and_smb.html["NFS と SMB の両方を使用して Windows と Linux の両方に NAS ストレージをプロビジョニングする"^] 
+
+
+| ONTAP のコマンドラインインターフェイス | link:https://docs.netapp.com/us-en/ontap/smb-config/index.html["CLIヲシヨウシタSMBセツテイノカイヨウ"^]
+
+link:https://docs.netapp.com/us-en/ontap/nfs-config/index.html["CLI を使用した NFS の設定の概要"^]
+
+link:https://docs.netapp.com/us-en/ontap/nfs-admin/security-styles-their-effects-concept.html["セキュリティ形式とその影響とは"^]
+
+link:https://docs.netapp.com/us-en/ontap/nfs-admin/case-sensitivity-file-directory-multiprotocol-concept.html["マルチプロトコル環境でのファイル名とディレクトリ名の大文字と小文字の区別"^] 
+|===

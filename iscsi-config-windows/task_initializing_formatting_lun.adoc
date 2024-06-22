@@ -1,0 +1,33 @@
+---
+permalink: iscsi-config-windows/task_initializing_formatting_lun.html 
+sidebar: sidebar 
+keywords: lun, access, windows, host, partition, file, system, initialize, format, file, system, initialize and format the lun 
+summary: Windows ホストから初めてアクセスした時点では、新しい LUN にはパーティションやファイルシステムは設定されていません。LUN を初期化し、必要に応じてファイルシステムでフォーマットする必要があります。 
+---
+= LUN を初期化してフォーマット
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Windows ホストから初めてアクセスした時点では、新しい LUN にはパーティションやファイルシステムは設定されていません。LUN を初期化し、必要に応じてファイルシステムでフォーマットする必要があります。
+
+.作業を開始する前に
+Windows ホストで LUN が検出されている必要があります。
+
+.このタスクについて
+Windows のディスク管理では、 LUN がディスクとして表示されます。
+
+ディスクは、 GPT または MBR パーティションテーブルを使用して、ベーシックディスクとして初期化することができます。
+
+LUN は NTFS などのファイルシステムでフォーマットするのが一般的ですが、 raw ディスクを使用するアプリケーションもあります。
+
+.手順
+. Windows ディスク管理を開始します。
+. LUN を右クリックし、必要なディスクまたはパーティションのタイプを選択します。
+. ウィザードの指示に従います。
++
+LUN を NTFS としてフォーマットする場合は、「 * 簡易フォーマットを実行する * 」チェックボックスを選択する必要があります。
+
+

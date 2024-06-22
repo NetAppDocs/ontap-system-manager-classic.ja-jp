@@ -1,0 +1,51 @@
+---
+permalink: online-help-96-97/concept_guidelines_working_with_volumes_that_contain_luns.html 
+sidebar: sidebar 
+keywords: guidelines, flexvol, volume, lun, change, default, settings, snapshot, copy, simplify, administration 
+summary: LUN を含む FlexVol を操作する場合、 Snapshot コピーのデフォルト設定を変更する必要があります。LUN のレイアウトを最適化して管理を簡易化することもできます。 
+---
+= System Manager ONTAP 9.7 以前を使用する場合の LUN を含む FlexVol の操作に関するガイドライン
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+ONTAP System Manager クラシック（ ONTAP 9.7 以前で使用可能）では、 LUN を含む FlexVol を操作する場合、 Snapshot コピーのデフォルト設定を変更する必要があります。LUN のレイアウトを最適化して管理を簡易化することもできます。
+
+Snapshot コピーは、 SnapMirror 、 SyncMirror 、ダンプとリストア、 ndmpcopy など、多くのオプション機能で必要となります。
+
+ボリュームを作成すると、 ONTAP によって次の処理が自動的に実行されます。
+
+* Snapshot コピー用にスペースの 5% をリザーブします
+* Snapshot コピーをスケジュールします
+
+
+ONTAP 内で Snapshot コピーを作成する内部スケジュールメカニズムでは、 LUN 内のデータの整合性が保証されません。したがって、次のタスクを実行して、 Snapshot コピーの各設定を変更する必要があります。
+
+* Snapshot コピーの自動スケジュールを無効にします。
+* 既存の Snapshot コピーをすべて削除します。
+* Snapshot コピー用にリザーブされるスペースの割合をゼロに設定します。
+
+
+LUN を含むボリュームを作成するときは、次のガイドラインに従う必要があります。
+
+* システムのルートボリュームには LUN を作成しないでください。
++
+ONTAP は、このボリュームを使用してストレージシステムを管理します。デフォルトのルートボリュームは /vol/vol0 です。
+
+* SAN ボリュームを使用して LUN を格納します。
+* LUN を含むボリュームには、他のファイルやディレクトリを配置しないようにします。
++
+これができず、 LUN とファイルを同じボリュームに格納する場合は、別個の qtree を使用して LUN を格納します。
+
+* 複数のホストが同じボリュームを共有する場合は、そのボリュームに qtree を作成し、同じホストのすべての LUN を格納します。
++
+これは、 LUN の管理と追跡を簡素化するためのベストプラクティスです。
+
+* 管理しやすくするために、 LUN およびボリュームに、それらの所有権または使用方法を反映した名前を付けます。
+
+
+* 関連情報 *
+
+https://docs.netapp.com/ontap-9/index.jsp["ONTAP 9 ドキュメンテーション・センター"]

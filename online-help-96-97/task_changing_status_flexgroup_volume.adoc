@@ -1,0 +1,28 @@
+---
+permalink: online-help-96-97/task_changing_status_flexgroup_volume.html 
+sidebar: sidebar 
+keywords: flexgroup, volume, status, change, online, help 
+summary: FlexGroup ボリューム FlexGroup をオフラインにするとき、オンラインに戻すとき、または FlexGroup ボリュームへのアクセスを制限するときに、 System Manager を使用して、 FlexGroup ボリュームのステータスを変更できます。 
+---
+= System Manager - ONTAP 9.7 以前を使用して、 FlexGroup ボリュームのステータスを変更します
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+ONTAP ボリュームをオフラインにするとき、 FlexGroup ボリュームをオンラインに戻すとき、または FlexGroup ボリュームへのアクセスを制限するときに、 FlexGroup System Manager クラシック（ ONTAP 9.7 以前で使用可能）を使用して FlexGroup ボリュームのステータスを変更できます。
+
+.このタスクについて
+System Manager では、 FlexGroup ボリュームのコンスティチュエントレベルの管理はサポートされません。
+
+.手順
+. [* ストレージ *>* ボリューム *] をクリックします。
+. SVM * フィールドのドロップダウンメニューで、 * すべての SVM * を選択します。
+. ステータスを変更する FlexGroup ボリュームを選択します。
+. [ * その他の操作 * > * ステータスを * に変更 ] をクリックし、必要なステータスを選択して FlexGroup ボリュームのステータスを更新します。
+
+
+* 関連情報 *
+
+xref:reference_volumes_window.adoc[Volumes （ボリューム）ウィンドウ]

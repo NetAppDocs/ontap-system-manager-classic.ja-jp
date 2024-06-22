@@ -1,0 +1,40 @@
+---
+permalink: online-help-96-97/task_provisioning_basic_template.html 
+sidebar: sidebar 
+keywords: sap, hana, provisioning, basic, template, online, help, system, manager 
+summary: System Manager を使用して、 SAP HANA の基本テンプレートを簡単にプロビジョニングできます。 
+---
+= System Manager - ONTAP 9.7 以前を使用して、基本テンプレートをプロビジョニングします
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+ONTAP System Manager クラシック（ ONTAP 9.7 以前で使用可能）を使用して、 SAP HANA の基本テンプレートを簡単にプロビジョニングできます。
+
+.このタスクについて
+クラスタ管理者は、基本テンプレートを設定してアプリケーションをプロビジョニングできます。ここでは、 * SAP HANA Server * を設定する例を示します。
+
+.手順
+. [* アプリケーションと階層 *>*Applications* ] をクリックします
+. Basic * タブで、 * SAP HANA Server * テンプレートを選択します。
+. [** データベースの詳細 **] セクションで、次の項目を指定します。
++
+** データベース名
+** データベースサイズ
+** ログサイズ
+** tempdb サイズ
+** サーバコアの数
+** HA コントローラノードのスパニング
+
+
+. [Provision Storage] をクリックします
+
+
+.結果
+SAP HANA Server アプリケーションがプロビジョニングされます。
+
+* 関連情報 *
+
+link:reference_application_provisioning_settings.html["フィールドの説明については、「アプリケーションのプロビジョニングの設定」を参照してください"]

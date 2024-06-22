@@ -1,0 +1,38 @@
+---
+permalink: online-help-96-97/task_mirroring_aggregates.html 
+sidebar: sidebar 
+keywords: mirror, aggregate, system, manager, data, lun, array, online, help 
+summary: System Manager を使用して単一のアグリゲート内のデータをリアルタイムでミラーすることで、データを保護し、耐障害性を高めることができます。アグリゲートをミラーすると、ディスクおよびアレイ LUN への接続における単一点障害が排除されます。 
+---
+= System Manager ONTAP 9.7 以前を使用してアグリゲートをミラーリングします
+:allow-uri-read: 
+:experimental: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+ONTAP System Manager 従来型（ ONTAP 9.7 以前で利用可能）を使用すると、単一のアグリゲート内でデータをリアルタイムでミラーリングすることで、データを保護し、耐障害性を高めることができます。アグリゲートをミラーすると、ディスクおよびアレイ LUN への接続における単一点障害が排除されます。
+
+.作業を開始する前に
+アグリゲートをミラーリングするには、他のプールに十分な空きディスクが必要です。
+
+.このタスクについて
+キャッシュソースがストレージプールの場合、 Flash Pool アグリゲートをミラーすることはできません。
+
+.手順
+. 次のいずれかの方法を選択します。
++
+** [* アプリケーションと階層 *>* ストレージ階層 *] をクリックします。
+** Storage * > * Aggregates & Disks * > * Aggregates * の順にクリックします
+
+
+. ミラーリングするアグリゲートを選択し、メニューをクリックします。 More Actions [Mirror]
++
+[NOTE]
+====
+SyncMirror は FabricPool 対応アグリゲートではサポートされていません。
+
+====
+. このアグリゲートをミラーリング * （ Mirror This aggregate ）ダイアログボックスで、 * ミラー * （ * Mirror * ）をクリックしてミラーリングを開始します。
+

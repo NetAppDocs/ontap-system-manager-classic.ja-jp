@@ -1,0 +1,46 @@
+---
+section: smb-config
+title: SMB / CIFS の設定
+entries:
+- title: 概要
+  url: "/smb-config/index.html"
+- title: SMB / CIFS の設定ワークフロー
+  url: "/smb-config/concept_cifs_nfs_configuration_workflow.html"
+  entries:
+  - title: アグリゲートを作成する
+    url: "/smb-config/task_creating_aggregate.html"
+  - title: 新しいボリュームをプロビジョニングする場所を決定します
+    url: "/smb-config/task_deciding_where_to_provision_new_volume.html"
+- title: CIFS対応SVMを新規作成する
+  url: "/smb-config/task_creating_protocol_enabled_svm.html"
+  entries:
+  - title: CIFS ボリュームと共有を含む新しい SVM を作成
+    url: "/smb-config/task_creating_new_svm.html"
+  - title: DNS サーバでの SMB サーバのマッピング
+    url: "/smb-config/task_mapping_smb_server_dns_server.html"
+  - title: SMB クライアントアクセスを確認
+    url: "/smb-config/task_verifying_smb_client_access.html"
+  - title: CIFS クライアントアクセスを設定して確認
+    url: "/smb-config/task_configuring_verifying_client_access.html"
+- title: 既存の SVM への SMB / CIFS アクセスを設定
+  url: "/smb-config/task_configuring_access_to_existing_svm.html"
+  entries:
+  - title: 既存のSVMにCIFSアクセスを追加する
+    url: "/smb-config/concept_adding_nas_access_to_existing_svm.html"
+  - title: DNS サーバでの SMB サーバのマッピング
+    url: "/smb-config/task_mapping_smb_server_dns_server.html"
+  - title: SMB クライアントアクセスを確認
+    url: "/smb-config/task_verifying_smb_client_access.html"
+  - title: CIFS クライアントアクセスを設定して確認
+    url: "/smb-config/task_configuring_verifying_client_access.html"
+- title: CIFS 対応 SVM に CIFS ボリュームを追加
+  url: "/smb-config/concept_adding_protocol_volume_to_protocol_enabled_svm.html"
+  entries:
+  - title: ボリュームを作成して設定
+    url: "/smb-config/task_creating_configuring_volume.html"
+  - title: 共有を作成して権限を設定
+    url: "/smb-config/task_creating_share_setting_its_permissions.html"
+  - title: SMB クライアントアクセスを確認
+    url: "/smb-config/task_verifying_smb_client_access.html"
+  - title: CIFS クライアントアクセスを設定して確認
+    url: "/smb-config/task_configuring_verifying_client_access.html"

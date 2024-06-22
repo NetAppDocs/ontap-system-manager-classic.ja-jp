@@ -1,0 +1,66 @@
+---
+permalink: expansion/task_verifying_health_system.html 
+sidebar: sidebar 
+keywords: expand, cluster, verify, component, healthy, config, advisor, tool, run, ontap, cli, command, verify the health of the system 
+summary: クラスタを拡張する前に、 Config Advisor ツールを実行し、複数の ONTAP CLI コマンドを実行して、クラスタのすべてのコンポーネントが正常であることを確認する必要があります。 
+---
+= システムの健全性を確認
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+クラスタを拡張する前に、 Config Advisor ツールを実行し、複数の ONTAP CLI コマンドを実行して、クラスタのすべてのコンポーネントが正常であることを確認する必要があります。
+
+.手順
+. 最新バージョンの Config Advisor がインストールされていることを確認します。
++
+** ラップトップに Config Advisor がインストールされていない場合は、ダウンロードします。
++
+https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["ネットアップのダウンロード： Config Advisor"]
+
+** Config Advisor をお持ちの場合は、起動して、 * ヘルプ * > * アップデートの確認 * をクリックし、プロンプトに従ってアップグレードします。
++
+[NOTE]
+====
+アップグレード中は、以前のバージョンのツールをアンインストールしたり、データフォルダを削除したりしないでください。以前のバージョンは自動的にアンインストールされて最新バージョンに置き換えられます。また、データフォルダの名前を最新のフォルダに変更し、フォルダ内のすべてのコンテンツを保持します。
+
+====
+
+
+. Config Advisor を実行して、ケーブル接続と構成を確認します。
++
+.. ラップトップをクラスタの管理ネットワークに接続します。
+.. [*Collect Data] をクリックします。
++
+Config Advisor に、見つかった問題が表示されます。
+
+.. 問題が見つかった場合は、解決してからツールを再実行します。
+
+
+. 次のコマンドを使用して、システムの健全性を確認します。
++
+.. を使用して、クラスタが健全な状態であることを確認します。 `system health status show` コマンドとステータスの確認 `ok`。
++
+[listing]
+----
+cluster1::> system health status show
+Status
+---------------
+ok
+----
+.. を使用して、クラスタ内のすべてのノードが健全な状態であることを確認します。 `cluster show` コマンドを実行し、各ノードの健全性が `true`。
++
+[listing]
+----
+cluster1::> cluster show
+Node                  Health  Eligibility
+--------------------- ------- ------------
+cluster1-1            true    true
+cluster1-2            true    true
+2 entries were displayed.
+----
+
+
+

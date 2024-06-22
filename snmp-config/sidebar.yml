@@ -1,0 +1,21 @@
+---
+section: snmp-config
+title: SNMP設定
+entries:
+- title: 概要
+  url: "/snmp-config/index.html"
+- title: SNMPの設定ワークフロー
+  url: "/snmp-config/concept_snmp_configuration_workflow.html"
+  entries:
+  - title: SNMP が有効になっていることを確認します
+    url: "/snmp-config/task_verifying_snmp_is_enabled.html"
+  - title: SNMP コミュニティを追加します
+    url: "/snmp-config/task_adding_snmp_community.html"
+  - title: SNMPv3 セキュリティユーザを追加します
+    url: "/snmp-config/task_adding_snmpv3_security_user.html"
+  - title: SNMP トラップホストを追加します。
+    url: "/snmp-config/task_adding_snmp_traphost.html"
+  - title: テスト用の SNMP トラップ
+    url: "/snmp-config/task_testing_snmp_traps.html"
+  - title: SNMP ポーリングのテスト
+    url: "/snmp-config/task_testing_snmp_polling.html"

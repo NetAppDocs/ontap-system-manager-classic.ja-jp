@@ -1,0 +1,44 @@
+---
+section: fc-config-rhel
+title: Red Hat Enterprise Linux 向けの FC の設定
+entries:
+- title: 概要
+  url: "/fc-config-rhel/index.html"
+- title: FC 構成とプロビジョニングのワークフロー
+  url: "/fc-config-rhel/concept_fc_configuration_workflow.html"
+  entries:
+  - title: FC 構成がサポートされていることを確認します
+    url: "/fc-config-rhel/task_verifying_that_iscsi_fc_configuration_is_supported.html"
+  - title: FC 構成ワークシートに記入
+    url: "/fc-config-rhel/reference_completing_iscsi_configuration_worksheet.html"
+  - title: HBA ユーティリティを HBA ベンダーからインストール
+    url: "/fc-config-rhel/task_installing_hba_utility_from_hba_vendor.html"
+  - title: HBA のドライバ、ファームウェア、 BIOS を更新
+    url: "/fc-config-rhel/task_updating_hba_driver_firmware_bios.html"
+  - title: Linux Unified Host Utilities をインストールし、 I/O パフォーマンスを最適化します
+    url: "/fc-config-rhel/task_installing_linux_unified_host_utilities_optimizing_i_o_performance.html"
+  - title: 各ホスト FC ポートの WWPN を記録します
+    url: "/fc-config-rhel/task_record_wwpn_for_each_host_fc_port.html"
+  - title: DM-Multipath を設定します
+    url: "/fc-config-rhel/task_configuring_dm_multipath.html"
+  - title: アグリゲートを作成する
+    url: "/fc-config-rhel/task_creating_aggregate.html"
+  - title: ボリュームをプロビジョニングする場所を決定します
+    url: "/fc-config-rhel/task_deciding_where_to_provision_volume.html"
+    entries:
+    - title: 既存の SVM で FC サービスが実行されていることを確認する
+      url: "/fc-config-rhel/task_verifying_that_fc_service_is_running_on_existing_svm.html"
+    - title: LUNを作成する
+      url: "/fc-config-rhel/task_creating_lun_its_containing_volume.html"
+    - title: 既存の SVM で FC を設定
+      url: "/fc-config-rhel/task_configuring_iscsi_fc_creating_lun_on_existing_svm.html"
+    - title: 新しいSVMを作成
+      url: "/fc-config-rhel/task_creating_svm.html"
+  - title: ホストと LIF WWPN で FC スイッチをゾーニング
+    url: "/fc-config-rhel/task_zoning_fc_switches_by_host_lif_wwpns.html"
+  - title: 新しい SCSI デバイス（ LUN ）とマルチパスデバイスを検出
+    url: "/fc-config-rhel/task_discovering_new_scsi_devices_dm_multipath_devices.html"
+  - title: マルチパスデバイスで論理ボリュームを設定し、ファイルシステムを作成
+    url: "/fc-config-rhel/task_configuring_logical_volumes_on_multipath_devices_creating_file_system.html"
+  - title: ホストによるマルチパスデバイスに対する読み取りと書き込みを確認
+    url: "/fc-config-rhel/task_verifying_that_host_can_write_to_read_fom_lun.html"

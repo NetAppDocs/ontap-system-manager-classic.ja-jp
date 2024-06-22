@@ -1,0 +1,29 @@
+---
+section: peering
+title: クラスタと SVM のピア関係設定
+entries:
+- title: 概要
+  url: "/peering/index.html"
+- title: クラスタピアリングの前提条件
+  url: "/peering/reference_prerequisites_for_cluster_peering.html"
+- title: クラスタと SVM のピア関係作成ワークフロー
+  url: "/peering/concept_cluster_peering_workflow.html"
+  entries:
+  - title: クラスタピアリングを準備
+    url: "/peering/task_preparing_for_cluster_peering.html"
+  - title: ピア関係の設定（ ONTAP 9.3 以降）
+    url: "/peering/concept_creating_peer_relationships_93_later.html"
+    entries:
+    - title: クラスタ間 LIF の作成（ ONTAP 9.3 以降）
+      url: "/peering/task_creating_intercluster_lifs.html"
+    - title: クラスタピア関係を作成する（ ONTAP 9.3 以降）
+      url: "/peering/task_creating_cluster_peer_relationship_starting_with_ontap_9_3.html"
+    - title: SVM ピア関係を作成
+      url: "/peering/task_creating_svm_peers.html"
+  - title: ピア関係の設定（ ONTAP 9.2 以前）
+    url: "/peering/concept_creating_peer_relationship_between_clusters_92_earlier.html"
+    entries:
+    - title: すべてのノードにクラスタ間インターフェイスを作成（ ONTAP 9.2 以前）
+      url: "/peering/task_creating_intercluster_interfaces_on_all_nodes.html"
+    - title: クラスタピア関係を作成する（ ONTAP 9.2 以前）
+      url: "/peering/task_creating_cluster_peer_relationships_92_earlier.html"

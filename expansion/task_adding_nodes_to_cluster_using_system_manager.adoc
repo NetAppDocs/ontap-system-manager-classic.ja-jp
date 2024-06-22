@@ -1,0 +1,69 @@
+---
+permalink: expansion/task_adding_nodes_to_cluster_using_system_manager.html 
+sidebar: sidebar 
+keywords: system, manager, increase, size, capabilities, capability, storage, node, automatic, ontap, add nodes to a cluster using system manager 
+summary: System Manager を使用して、既存のクラスタにノードを追加し、ストレージシステムのサイズと容量を拡張できます。この機能は、クラスタバージョンが ONTAP 9.2 の場合、 System Manager で自動的に有効になります。 
+---
+= System Manager を使用して、クラスタにノードを追加します
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+System Manager を使用して、既存のクラスタにノードを追加し、ストレージシステムのサイズと容量を拡張できます。この機能は、クラスタバージョンが ONTAP 9.2 の場合、 System Manager で自動的に有効になります。
+
+.作業を開始する前に
+* 互換性がある新しいノードをクラスタに接続しておく必要があります。
++
+Default ブロードキャストドメイン内のポートだけが Network ウィンドウに表示されます。
+
+* クラスタのすべてのノードが動作している必要があります。
+* すべてのノードのバージョンが同じである必要があります。
+
+
+.ステップ
+. 互換性がある新しいノードをクラスタに追加します。
++
+[cols="1,3"]
+|===
+
+
+| 実行する作業 | 手順 
+
+
+ a| 
+System Manager にログインしていません
+ a| 
+.. System Manager にログインします。
++
+[NOTE]
+====
+System Manager にログインすると、互換性がある新しいノードが自動的に検出されます。互換性がある新しいノードをクラスタに追加するように System Manager から通知されます。
+
+====
+.. [ クラスタへのノードの追加 ] をクリックします。
+.. ノードの名前を変更します。
+.. ノードライセンスを指定します。
+.. Submit and Proceed* をクリックします。
+
+
+
+
+ a| 
+System Manager にログインしています
+ a| 
+.. 実行している System Manager のバージョンに応じて、次のいずれかの手順を実行します。
++
+*** ONTAP 9.4 以前： * Configuration * > * Cluster Expansion * をクリックします。
+*** ONTAP 9.5以降：*[設定]*>*[クラスタ]*>*[拡張]*をクリックします。
+System Manager によって、新しく追加したノードが検索されます。警告が表示された場合は、処理を続行する前に修正する必要があります。互換性がある新しいノードが検出された場合は、次の手順に進みます。
+
+
+.. ノードの名前を変更します。
+.. ノードライセンスを指定します。
+.. Submit and Proceed* をクリックします。
+
+
+|===
+

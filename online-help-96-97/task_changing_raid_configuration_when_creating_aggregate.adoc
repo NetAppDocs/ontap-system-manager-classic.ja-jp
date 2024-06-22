@@ -1,0 +1,40 @@
+---
+permalink: online-help-96-97/task_changing_raid_configuration_when_creating_aggregate.html 
+sidebar: sidebar 
+keywords: system, manager, raid, configuration, aggregate, online, help 
+summary: アグリゲートを作成するときに、そのアグリゲートの RAID タイプや RAID グループサイズのオプションのデフォルト値を System Manager で変更することができます。 
+---
+= System Manager - ONTAP 9.7 以前を使用してアグリゲートを作成する際に RAID 構成を変更します
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+アグリゲートを作成する際、 ONTAP の System Manager クラシック（ ONTAP 9.7 以前で使用可能）を使用して、アグリゲートの RAID タイプオプションと RAID グループサイズオプションのデフォルト値を変更できます。
+
+.このタスクについて
+アグリゲートディスクのディスクタイプが FSAS または MSATA で、ディスクサイズが 10TB 以上の場合、選択できる RAID タイプは RAID-TEC のみです。
+
+.手順
+. 次のいずれかの方法を選択します。
++
+** [* アプリケーションと階層 *>* ストレージ階層 *] をクリックします。
+** Storage * > * Aggregates & Disks * > * Aggregates * の順にクリックします
+
+
+. [ ストレージ階層 * ] ウィンドウで、 [ アグリゲートの追加 ] をクリックします。
+. Create Aggregate * （アグリゲートの作成）ダイアログボックスで、次の手順を実行します。
++
+.. [ 変更（ Change ） ] をクリックします。
+.. RAID 構成の変更 * ダイアログボックスで、 RAID タイプと RAID グループサイズを指定します。
++
+共有ディスクでは、 RAID DP と RAID-TEC の 2 つの RAID タイプがサポートされます。
+
++
+推奨される RAID グループサイズは HDD の場合が 12~20 ディスク、 SSD の場合が 20~28 ディスクです。
+
+.. [ 保存（ Save ） ] をクリックします。
+
+
+

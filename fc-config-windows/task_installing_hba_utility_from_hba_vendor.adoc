@@ -1,0 +1,36 @@
+---
+permalink: fc-config-windows/task_installing_hba_utility_from_hba_vendor.html 
+sidebar: sidebar 
+keywords: hba, utility, view, worldwide, port, name, wwpn, fc, port, troubleshoot, fc, issue, install the hba utility from the hba vendor 
+summary: HBA ユーティリティを使用して、各 FC ポートの World Wide Port Name （ WWPN ）を確認することができます。このユーティリティは、 FC の問題のトラブルシューティングにも役立ちます。 
+---
+= HBA ユーティリティを HBA ベンダーからインストール
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+HBA ユーティリティを使用して、各 FC ポートの World Wide Port Name （ WWPN ）を確認することができます。このユーティリティは、 FC の問題のトラブルシューティングにも役立ちます。
+
+.このタスクについて
+各 HBA ベンダーが自社の FC HBA 用 HBA ユーティリティを提供しています。ホストのオペレーティングシステムと CPU に対応した正しいバージョンをダウンロードする必要があります。
+
+次に、 HBA ユーティリティの一部を示します。
+
+* Emulex HBA Manager 。以前は OneCommand Manager と呼ばれていました
+* QLogic HBA 用の QLogic QConvergeConsole
+
+
+.手順
+. HBA ベンダーの Web サイトから該当するユーティリティをダウンロードします。
+. インストールプログラムを実行し、プロンプトに従ってインストールを完了します。
+
+
+* 関連情報 *
+
+https://www.broadcom.com/support/download-search?tab=search["Broadcom （ Emulex ）サポートドキュメントおよびダウンロード"]
+
+https://www.broadcom.com/products/storage/fibre-channel-host-bus-adapters/emulex-hba-manager["Emulex HBA Manager の略"]
+
+http://driverdownloads.qlogic.com/QLogicDriverDownloads_UI/OEM_Product_List.aspx?oemid=372["QLogic ：ネットアップのダウンロード"]

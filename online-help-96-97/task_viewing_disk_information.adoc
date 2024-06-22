@@ -1,0 +1,24 @@
+---
+permalink: online-help-96-97/task_viewing_disk_information.html 
+sidebar: sidebar 
+keywords: view, disk, information, system, manager, name, online, help 
+summary: System Manager のディスクウィンドウでは、ディスクの名前、サイズ、およびコンテナの詳細、およびデータディスクとキャッシュディスクに関するグラフィカルな情報を確認できます。 
+---
+= System Manager - ONTAP 9.7 以前を使用してディスクの情報を表示します
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+ONTAP System Manager クラシック（ ONTAP 9.7 以前で利用可能）のディスクウィンドウを使用して、ディスクの名前、サイズ、およびコンテナの詳細、およびデータディスクとキャッシュディスクに関するグラフィカルな情報を表示できます。
+
+.手順
+. Storage * > * Aggregates & Disks * > * Disks * をクリックします。
+. 表示されているディスクのリストから、情報を表示するディスクを選択します。
+. ディスクの詳細を確認します。
+
+
+* 関連情報 *
+
+xref:reference_disks_window.adoc[ディスクウィンドウ]

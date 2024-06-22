@@ -1,0 +1,16 @@
+---
+permalink: snmp-config/concept_snmp_configuration_workflow.html 
+sidebar: sidebar 
+keywords: configure, configuring, snmp, enabling, enable, optional, snmpv1, snmpv2c, snmpv3, user, traphost, test, poll, trap, snmp configuration workflow 
+summary: SNMP の設定には、 SNMP の有効化、 SNMPv1 または SNMPv2c コミュニティの設定（オプション）、 SNMPv3 ユーザの追加、 SNMP トラップホストの追加、 SNMP ポーリングとトラップのテストが含まれます。 
+---
+= SNMPの設定ワークフロー
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+SNMP の設定には、 SNMP の有効化、 SNMPv1 または SNMPv2c コミュニティの設定（オプション）、 SNMPv3 ユーザの追加、 SNMP トラップホストの追加、 SNMP ポーリングとトラップのテストが含まれます。
+
+image::../media/snmp_config_workflow.gif[次の図は SNMP 設定ワークフローのフローチャートを示したものです。ワークフローの各手順はトピックに対応しています。]

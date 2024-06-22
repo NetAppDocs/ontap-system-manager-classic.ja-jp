@@ -1,0 +1,48 @@
+---
+permalink: iscsi-config-windows/index.html 
+sidebar: sidebar 
+keywords: iscsi, service, storage, virtual, machine, svm, provision, lun, isvsi, initiator, windows, host, computer 
+summary: ONTAP System Manager の従来のインターフェイス（ ONTAP 9.7 以前）を使用すると、 Storage Virtual Machine （ SVM ）に iSCSI サービスを簡単にセットアップし、 LUN をプロビジョニングし、 Windows ホストコンピュータで iSCSI イニシエータを使用して LUN を使用できるようにすることができます。 
+---
+= Windows 向けの iSCSI 構成の概要
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+ONTAP System Manager の従来のインターフェイス（ ONTAP 9.7 以前）を使用すると、 Storage Virtual Machine （ SVM ）に iSCSI サービスを簡単にセットアップし、 LUN をプロビジョニングし、 Windows ホストコンピュータで iSCSI イニシエータを使用して LUN を使用できるようにすることができます。
+
+これらの手順は、次の前提に基づいています。
+
+* Windows Server 2008 または Windows Server 2012 で Microsoft iSCSI ソフトウェアイニシエータを使用している。
+* ネットワークで IPv4 アドレスを使用している。
+* 次のいずれかの方法で論理インターフェイスにアドレスを割り当てる。
++
+** 定義したサブネットから自動で割り当てられます
+** 既存のサブネットから選択したアドレスを使用して、手動で割り当てます
+** 既存のサブネットに追加するアドレスを使用して、手動で割り当てます
+
+
+* iSCSI SAN ブートを設定しない。
+
+
+ONTAP で特定のホストを設定する方法の詳細については、を参照してください https://docs.netapp.com/us-en/ontap-sanhost/index.html["ONTAP SAN ホスト構成"]。
+
+SAN の管理の詳細については、を参照してください https://docs.netapp.com/us-en/ontap/san-admin/index.html["ONTAP 9 SAN の管理の概要"]
+
+
+
+== ONTAP でこれを行うその他の方法
+
+|===
+
+
+| 実行するタスク | 参照先 
+
+
+| 再設計された System Manager （ 9.7 以降で使用可能） | https://docs.netapp.com/us-en/ontap/task_san_provision_windows.html["Windows サーバ用の SAN ストレージをプロビジョニングする"] 
+
+
+| ONTAP コマンドラインインターフェイス（ CLI ） | https://docs.netapp.com/us-en/ontap/san-admin/lun-setup-workflow-concept.html["CLI での LUN セットアップのワークフロー"] 
+|===

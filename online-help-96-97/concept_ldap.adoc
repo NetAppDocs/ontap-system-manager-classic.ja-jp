@@ -1,0 +1,109 @@
+---
+permalink: online-help-96-97/concept_ldap.html 
+sidebar: sidebar 
+keywords: ldap, system, manager, configure, server, online, help, user, information 
+summary: System Manager を使用して、ユーザ情報を一元的に管理する LDAP サーバを設定できます。 
+---
+= ONTAP 9.7 以前の System Manager で LDAP サーバを設定します
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+ONTAP System Managerクラシック（ONTAP 9.7以前で使用可能）を使用して、ユーザ情報を一元的に管理するLDAPサーバを設定できます。
+
+
+
+== LDAP クライアント設定を表示します
+
+System Manager を使用して、クラスタ内の Storage Virtual Machine （ SVM ）に対して設定されている LDAP クライアントを表示することができます。
+
+.手順
+. * をクリックしますimage:../media/nas_bridge_202_icon_settings_olh_96_97.gif[""]*
+. [* セットアップ * （ * Setup * ） ] ペインで、 [* LDAP] をクリックします。
++
+LDAP クライアントのリストが LDAP ウィンドウに表示されます。
+
+
+
+
+
+== LDAP サービスを使用する
+
+LDAP サーバを使用すると、ユーザ情報を一元的に管理できます。ユーザデータベースを LDAP サーバに保存する場合、既存の LDAP データベースのユーザ情報を検索するように Storage Virtual Machine （ SVM ）を設定できます。
+
+.このタスクについて
+ONTAP は、 NFS と CIFS 間のユーザ認証、ファイルアクセス認証、ユーザ検索、およびマッピングサービスで LDAP をサポートしています。
+
+
+
+== LDAP ウィンドウ
+
+LDAP ウィンドウを使用して、ユーザ認証、ファイルアクセス認証、およびユーザ検索用の LDAP クライアントを表示したり、 NFS と CIFS 間のサービスをクラスタレベルでマッピングしたりできます。
+
+
+
+=== コマンドボタン
+
+* * 追加 * 。
++
+LDAP クライアントの作成および設定を行うための Create LDAP Client ダイアログボックスを開きます。
+
+* * 編集 * 。
++
+LDAP クライアント設定を編集できる Edit LDAP Client ダイアログボックスを開きます。アクティブな LDAP クライアントを編集することもできます。
+
+* * 削除 *
++
+LDAP クライアント設定を削除するための Delete LDAP Client （複数可）ダイアログボックスを開きます。アクティブな LDAP クライアントを削除することもできます。
+
+* * 更新 *
++
+ウィンドウ内の情報を更新します。
+
+
+
+
+
+=== LDAP クライアントリスト
+
+LDAP クライアントの詳細を表形式で表示します。
+
+* * LDAP クライアント構成 *
++
+指定した LDAP クライアント設定の名前を表示します。
+
+* * Storage Virtual Machine *
++
+LDAP クライアント設定ごとに Storage Virtual Machine （ SVM ）の名前を表示します。
+
+* * スキーマ *
++
+LDAP クライアントごとにスキーマを表示します。
+
+* * 最小バインドレベル *
++
+LDAP クライアントごとに最小バインドレベルを表示します。
+
+* * Active Directory ドメイン *
++
+LDAP クライアント設定ごとに Active Directory ドメインを表示します。
+
+* * LDAPサーバ*
++
+LDAP クライアント設定ごとに LDAP サーバを表示します。
+
+* * 優先される Active Directory サーバ *
++
+LDAP クライアント設定ごとに優先される Active Directory サーバを表示します。
+
+
+
+* 関連情報 *
+
+xref:task_adding_ldap_client_configuration.adoc[LDAP クライアント設定を追加しています]
+
+xref:task_deleting_ldap_client_configuration.adoc[LDAP クライアント設定を削除します]
+
+xref:task_editing_ldap_client_configuration.adoc[LDAP クライアント設定の編集]

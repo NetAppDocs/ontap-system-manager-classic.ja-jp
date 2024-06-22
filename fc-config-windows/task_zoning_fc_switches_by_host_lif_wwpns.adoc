@@ -1,0 +1,44 @@
+---
+permalink: fc-config-windows/task_zoning_fc_switches_by_host_lif_wwpns.html 
+sidebar: sidebar 
+keywords: zone, zoning, fc, switch, enable, host, connect, storage, limit, path, management, interface, zone the fc switches by the host and lif wwpns 
+summary: FC スイッチをゾーニングすることで、ホストをストレージに接続し、パスの数を制限することができます。スイッチのゾーニングはスイッチの管理インターフェイスで設定します。 
+---
+= ホストと LIF WWPN で FC スイッチをゾーニング
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+FC スイッチをゾーニングすることで、ホストをストレージに接続し、パスの数を制限することができます。スイッチのゾーニングはスイッチの管理インターフェイスで設定します。
+
+.作業を開始する前に
+* スイッチの管理者クレデンシャルが必要です。
+* ホストの各イニシエータポートの WWPN と、 LUN を作成した Storage Virtual Machine （ SVM ）の各 FC LIF の WWPN を確認しておく必要があります。
+
+
+.このタスクについて
+スイッチのゾーニングの詳細については、スイッチベンダーのマニュアルを参照してください。
+
+ゾーンは、物理ポートではなく WWPN に基づいて作成する必要があります。各イニシエータポートを別々のゾーンに配置し、各イニシエータに対応するターゲットポートをすべて配置する必要があります。
+
+ホストから LUN へのパスの数を制限するために、 LUN は igroup の一部のイニシエータにマッピングされます。
+
+* ONTAP では、デフォルトで選択的 LUN マップを使用して、 LUN を所有するノードとその HA パートナーのパス経由でのみ LUN にアクセスできるようにします。
+* LUN がクラスタ内の別のノードに移動された場合でも LUN を使用できるように、すべてのノードですべての FC LIF をゾーニングする必要があります。
+* ボリュームまたは LUN を移動する場合は、移動する前に選択的 LUN マップのレポートノードリストを変更する必要があります。
+
+
+次の図では、ホストを 4 ノードクラスタに接続しています。ゾーンは 2 つあり、 1 つは実線、もう 1 つは点線で示されます。各ゾーンには、ホストのイニシエータが 1 つと各ストレージノードの LIF が 1 つずつ含まれています。
+
+image::../media/scm_en_drw_dual_fabric_zoning_fc_windows.gif[ホストを示す図,two FC switches,and four storage nodes. Lines represent the two zones.]
+
+ストレージノードの物理 FC ポートの WWPN ではなく、ターゲット LIF の WWPN を使用する必要があります。LIFのWWPNがすべて範囲に含まれている `2x:xx:00:a0:98:xx:xx:xx`、ここで `x` は任意の16進数です。物理ポートのWWPNがすべて範囲に含まれている `50:0a:09:8x:xx:xx:xx:xx`。
+
+.手順
+. FC スイッチの管理プログラムにログインし、ゾーニング設定のオプションを選択します。
+. 新しいゾーンを作成し、 1 つ目のイニシエータおよびそのイニシエータと同じ FC スイッチに接続するすべての FC LIF を含めます。
+. ホストの FC イニシエータごとにゾーンを作成します。
+. ゾーンを保存し、新しいゾーニング設定をアクティブ化します。
+

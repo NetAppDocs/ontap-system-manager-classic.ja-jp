@@ -1,0 +1,25 @@
+---
+permalink: online-help-96-97/task_creating_nfs_datastore_for_vmware.html 
+sidebar: sidebar 
+keywords: create, nfs, datastore, vmware, online, help, system, manager 
+summary: System Manager の VMware 用 NFS データストアの作成ウィザードを使用して、 VMware 用の NFS データストアを作成できます。NFS データストアのボリュームを作成し、 NFS データストアにアクセスする ESX サーバを指定できます。 
+---
+= System Manager ONTAP 9.7 以前を使用して、 VMware 用の NFS データストアを作成します
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+VMware 用 NFS データストアの作成ウィザードは、 ONTAP System Manager クラシック（ ONTAP 9.7 以前で使用可能）で使用して、 VMware 用の NFS データストアを作成できます。NFS データストアのボリュームを作成し、 NFS データストアにアクセスする ESX サーバを指定できます。
+
+.作業を開始する前に
+NFS サービスのライセンスが有効になっている必要があります。
+
+.手順
+. [* ストレージ *>* ボリューム *] をクリックします。
+. SVM * フィールドのドロップダウンメニューで、 * すべての SVM * を選択します。
+. ボリュームを選択し、 * その他の操作 * > * VMware 用ストレージのプロビジョニング * をクリックします。
+. VMware 用 NFS データストアの作成ウィザードで、必要に応じて情報を入力または選択します。
+. 詳細を確認し、 [* 終了 ] をクリックしてウィザードを完了します。
+

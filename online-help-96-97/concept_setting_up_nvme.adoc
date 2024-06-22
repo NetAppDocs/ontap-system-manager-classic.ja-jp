@@ -1,0 +1,20 @@
+---
+permalink: online-help-96-97/concept_setting_up_nvme.html 
+sidebar: sidebar 
+keywords: NVMe, protocol, online, help, svm, system, manager, namespace, host, subsystem 
+summary: System Manager を使用して、 SVM に NVMe プロトコルを設定できます。SVM で NVMe プロトコルを有効にすると、ネームスペースをプロビジョニングしてホストとサブシステムに割り当てることができます。 
+---
+= System Manager ONTAP 9.7 以前を使用して NVMe をセットアップします
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+ONTAP System Managerクラシック（ONTAP 9.7以前で使用可能）を使用して、SVMにNVMeプロトコルを設定できます。SVM で NVMe プロトコルを有効にすると、ネームスペースをプロビジョニングしてホストとサブシステムに割り当てることができます。
+
+ONTAP 9.5 以降では、 NVMe プロトコルを使用する HA ペアの各ノードに対して、少なくとも 1 つの NVMe LIF を設定する必要があります。定義できる NVMe LIF の数はノードごとに 2 つまでです。NVMe LIF は、 System Manager を使用して SVM の設定を作成または編集するときに設定します。
+
+次の図は、 NVMe を設定するためのワークフローを示しています。
+
+image::../media/nvme_setup_workflow.gif[NVMe のセットアップワークフロー]

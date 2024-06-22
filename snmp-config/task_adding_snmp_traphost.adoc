@@ -1,0 +1,36 @@
+---
+permalink: snmp-config/task_adding_snmp_traphost.html 
+sidebar: sidebar 
+keywords: system, manager, add, traphost, snmp, notification, trap, protocol, generate, cluster, data, host, add an snmp traphost 
+summary: ONTAP 9.7 以前の ONTAP System Manager の「クラシック」インターフェイスを使用して、クラスタでトラップが生成されたときに SNMP 通知（ SNMP トラッププロトコルデータユニット）を受信するトラップホスト（ SNMP マネージャ）を追加できます。 
+---
+= SNMP トラップホストを追加します。
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+ONTAP 9.7以前では、ONTAP System Manager_classic_interfaceを使用して、クラスタでトラップが生成されたときにSNMP通知（SNMPトラッププロトコルデータユニット）を受信するトラップホスト（SNMPマネージャ）を追加できます。
+
+.作業を開始する前に
+IPv6 アドレスを使用して SNMP トラップホストを設定するには、クラスタで IPv6 を有効にする必要があります。
+
+.このタスクについて
+SNMP トラップと SNMP トラップはデフォルトで有効になっています。SNMP トラップでサポートされるデフォルトのイベントについては、 SNMP サポートに関するネットアップテクニカルレポート TR-4220 を参照してください。
+
+http://www.netapp.com/us/media/tr-4220.pdf["ネットアップテクニカルレポート 4220 ：『 SNMP Support in Data ONTAP 』"^]
+
+.手順
+. SNMP ウィンドウで *edit* をクリックして、 * Edit SNMP Settings * ダイアログボックスを開きます。
+. [[stp2-verify-enable-traps] [* Trap Hosts] タブで、 [* トラップを有効にする *] チェックボックスがオンになっていることを確認し、 [* 追加 ] をクリックします。
+. [[step3-enter-traphost - ip]] トラップホストの IP アドレスを入力し、 * Trap Hosts * ペインで * OK * をクリックします。
++
+SNMP トラップホストの IP アドレスには、 IPv4 または IPv6 を使用できます。
+
++
+image::../media/snmp_add_traphost.gif[この図は、 Edit SNMP Settings ダイアログボックスを示しています,Traphosts tab,in which the traphost status "enabled" is checked and the example traphost IP address "192.0.2.0" is entered.]
+
+. 別のトラップホストを追加するには、を繰り返します <<step2-verify-enable-traps,ステップ2>> および <<step3-enter-traphost-ip,手順 3>>。
+. トラップホストの追加が完了したら、 * Edit SNMP Settings * （ SNMP 設定の編集）ダイアログボックスで * OK * をクリックします。
+

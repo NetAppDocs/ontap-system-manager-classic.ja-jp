@@ -1,0 +1,35 @@
+---
+permalink: online-help-96-97/task_viewing_flexgroup_volume_information.html 
+sidebar: sidebar 
+keywords: flexgroup, volume, graphical, online, help, system, manager 
+summary: System Manager を使用して FlexGroup ボリュームに関する情報を表示できます。FlexGroup ボリュームの割り当てスペース、保護ステータス、およびパフォーマンスがグラフィカルに表示されます。 
+---
+= System Manager - ONTAP 9.7 以前を使用して、 FlexGroup ボリュームの情報を表示します
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+ONTAP システムマネージャクラシック（ ONTAP 9.7 以前で使用可能）を使用して、 FlexGroup ボリュームに関する情報を表示できます。FlexGroup ボリュームの割り当てスペース、保護ステータス、およびパフォーマンスがグラフィカルに表示されます。
+
+.このタスクについて
+また、 FlexGroup ボリュームに使用できる Snapshot コピーや FlexGroup ボリュームのデータ保護関係のほか、レイテンシ、 IOPS 、およびスループットを基準に、 FlexGroup ボリュームの平均パフォーマンス指標、読み取りパフォーマンス指標、書き込みパフォーマンス指標も確認できます。
+
+.手順
+. [* ストレージ *>* ボリューム *] をクリックします。
+. SVM * フィールドのドロップダウンメニューで、 * すべての SVM * を選択します。
+. 表示された FlexGroup のリストで、情報を表示する FlexGroup ボリュームを選択します。
++
+FlexGroup ボリュームに関する情報、 FlexGroup ボリュームに割り当てられているスペース、 FlexGroup ボリュームの保護ステータス、および FlexGroup ボリュームに関するパフォーマンス情報が表示されます。
+
+. Show More Details * リンクをクリックすると、 FlexGroup ボリュームの詳細が表示されます。
+. FlexGroup ボリュームの Snapshot コピーを表示するには、「 * Snapshot copies * 」タブをクリックします。
+. データ保護 * タブをクリックして、 FlexGroup ボリュームのデータ保護関係を表示します。
+. Storage Efficiency * タブをクリックして、 Storage Efficiency の設定を表示します。
+. パフォーマンス * タブをクリックして、レイテンシ、 IOPS 、およびスループットを基準に、 FlexGroup ボリュームの平均パフォーマンス指標、読み取りパフォーマンス指標、書き込みパフォーマンス指標を表示します。
+
+
+* 関連情報 *
+
+xref:reference_volumes_window.adoc[Volumes （ボリューム）ウィンドウ]

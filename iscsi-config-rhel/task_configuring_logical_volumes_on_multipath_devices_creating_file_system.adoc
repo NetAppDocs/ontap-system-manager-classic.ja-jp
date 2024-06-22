@@ -1,0 +1,27 @@
+---
+permalink: iscsi-config-rhel/task_configuring_logical_volumes_on_multipath_devices_creating_file_system.html 
+sidebar: sidebar 
+keywords: linux, host, access, iscsi, device, lun, partition, file, system, multipath, volume, file, system, configure, logical, creating, create, configure logical volumes on multipath devices and creating a file system 
+summary: Linux ホストから新しい SCSI デバイス（ LUN ）に最初にアクセスした時点では、パーティションやファイルシステムはありません。パーティショニングされたマルチパスデバイスを使用する場合は、最初に基盤となる SCSI デバイスをパーティショニングする必要があります。また、マルチパスデバイスに論理ボリュームを作成したり、必要に応じてファイルシステムを作成したりすることもできます。 
+---
+= マルチパスデバイスで論理ボリュームを設定し、ファイルシステムを作成
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Linux ホストから新しい SCSI デバイス（ LUN ）に最初にアクセスした時点では、パーティションやファイルシステムはありません。パーティショニングされたマルチパスデバイスを使用する場合は、最初に基盤となる SCSI デバイスをパーティショニングする必要があります。また、マルチパスデバイスに論理ボリュームを作成したり、必要に応じてファイルシステムを作成したりすることもできます。
+
+.作業を開始する前に
+SCSI デバイスと対応するマルチパスデバイスが Linux ホストで検出されている必要があります。
+
+.このタスクについて
+最小限の設定として、 SCSI デバイスで DM-Multipath が設定されている必要があります。DM-Multipath 以外の設定は任意です。以下の手順は、パーティショニング、マルチパスデバイスでの論理ボリュームの設定、ファイルシステムの作成など、追加の設定を行う場合の一般的なガイドラインです。Linux コマンドの詳細については、 Red Hat Enterprise Linux のドキュメントとマニュアルページを参照してください。
+
+.手順
+. パーティショニングされたマルチパスデバイスを使用するには、最初に `fdisk` または `parted` ユーティリティ。
+. を使用して対応するマルチパスパーティションを作成する `kpartx` ユーティリティ。
+. 論理ボリュームマネージャ（ LVM ）のコマンドを使用して、対応するマルチパスデバイスに論理ボリュームを作成します。
+. を使用して、論理ボリュームまたはマルチパスデバイスにext4やXFSなどのファイルシステムを作成します。 `mkfs` ユーティリティ。
+

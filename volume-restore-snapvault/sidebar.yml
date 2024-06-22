@@ -1,0 +1,15 @@
+---
+section: volume-restore-snapvault
+title: SnapVault を使用したボリュームリストアの管理
+entries:
+- title: 概要
+  url: "/volume-restore-snapvault/index.html"
+- title: ボリュームリストアのワークフロー
+  url: "/volume-restore-snapvault/concept_volume_restore_workflow.html"
+  entries:
+  - title: SnapVault バックアップのデスティネーションボリュームを特定します
+    url: "/volume-restore-snapvault/task_identifying_snapvault_backup_destination_volume.html"
+  - title: SnapVault バックアップからデータをリストアする
+    url: "/volume-restore-snapvault/task_restoring_data_from_snapvault_backup.html"
+  - title: リストア処理を検証
+    url: "/volume-restore-snapvault/task_verifying_restore_operation.html"

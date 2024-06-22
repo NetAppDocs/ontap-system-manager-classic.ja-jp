@@ -1,0 +1,40 @@
+---
+permalink: online-help-96-97/task_creating_flexclone_volumes.html 
+sidebar: sidebar 
+keywords: create, flexclone, volume, system, manager, online, help 
+summary: 既存の FlexVol の書き込み可能なポイントインタイムコピーが必要なときは、 System Manager を使用して FlexClone ボリュームを作成できます。たとえば、テスト用にボリュームのコピーを作成したり、他のユーザに本番環境のデータへのアクセスは許可せずにテスト用のボリュームへのアクセスを提供したりすることができます。 
+---
+= System Manager - ONTAP 9.7 以前を使用して FlexClone ボリュームを作成します
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+既存の FlexVol の書き込み可能なポイントインタイムコピーが必要なときは、 ONTAP System Manager クラシック（ ONTAP 9.7 以前で使用可能）を使用して FlexClone ボリュームを作成できます。たとえば、テスト用にボリュームのコピーを作成したり、他のユーザに本番環境のデータへのアクセスは許可せずにテスト用のボリュームへのアクセスを提供したりすることができます。
+
+.作業を開始する前に
+* ストレージシステムに FlexClone ライセンスがインストールされている必要があります。
+* クローニングするボリュームがオンラインであり、ルート以外のボリュームである必要があります。
+
+
+.このタスクについて
+SnapMirror デスティネーションの FlexClone ボリュームの作成に使用されるベースの Snapshot コピーは、ビジー状態としてマークされて削除できません。最新の Snapshot コピー以外の Snapshot コピーから FlexClone ボリュームを作成する場合に、その Snapshot コピーがすでにソースボリュームからなくなっていると、 SnapMirror によるデスティネーションボリュームの更新はすべて失敗します。
+
+.手順
+. [* ストレージ *>* ボリューム *] をクリックします。
+. SVM * フィールドのドロップダウンメニューで、 * すべての SVM * を選択します。
+. クローニングする FlexVol ボリュームをボリュームのリストから選択します。
+. [ * その他の操作 * > * クローン * > * 作成 * > * ボリューム * ] をクリックします。
+. 作成する FlexClone ボリュームの名前を入力します。
+. *オプション：新しいFlexCloneボリュームに対してシンプロビジョニングを有効にする場合は、「*シンプロビジョニング*」を選択します。
++
+デフォルトでは、この設定は親ボリュームの設定と同じになります。
+
+. Snapshot コピーを作成するか既存の Snapshot コピーを選択して、 FlexClone ボリュームを作成するためのベースの Snapshot コピーとして使用します。
+. [* Clone* ] をクリックします。
+
+
+* 関連情報 *
+
+xref:reference_volumes_window.adoc[Volumes （ボリューム）ウィンドウ]

@@ -1,0 +1,57 @@
+---
+permalink: peering/index.html 
+sidebar: sidebar 
+keywords: cluster, administrator, create, authenticated, peer, relationship, svm, enable, communicate, replicate, data 
+summary: クラスタ管理者は、異なるクラスタのボリューム間でデータがレプリケートされるように、認証されたクラスタと SVM 間のピア関係を作成してクラスタ間の相互通信を可能にすることができます。 
+---
+= クラスタと SVM のピアリングの概要
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+クラスタ管理者は、異なるクラスタのボリューム間でデータがレプリケートされるように、認証されたクラスタと SVM 間のピア関係を作成してクラスタ間の相互通信を可能にすることができます。  この手順を実行するには、 ONTAP 9.7 以前の ONTAP 9 リリースで使用可能な ONTAP の System Manager の _classic_interface を使用します。
+
+次の条件に該当する場合は、 ONTAP System Manager の _classic_ interface を使用して、クラスタピア関係と SVM ピア関係を作成します。
+
+* ONTAP 9.7 以前の ONTAP 9 リリースを実行しているクラスタを使用している場合。
+* 認証されたクラスタピア関係を必要としている。
+* すべての選択肢について検討するのではなく、ベストプラクティスに従う。
+* ONTAP のコマンドラインインターフェイス（ CLI ）や自動スクリプトツールではなく、 System Manager を使用する。
+
+
+
+
+== ONTAP でこれを行うその他の方法
+
+ONTAP 9.3 の ONTAP System Manager では、クラスタ間および SVM 間のピア関係をより簡単に設定できるようになりました。クラスタピアリングの手順および SVM ピアリング手順は、 ONTAP 9 のすべてのバージョンに使用できます。使用している ONTAP のバージョンに適した手順を使用してください。
+
+|===
+
+
+| 実行するタスク | 参照先 
+
+
+ a| 
+再設計された System Manager （ ONTAP 9.7 以降で使用可能）
+ a| 
+* https://docs.netapp.com/us-en/ontap/concept_administration_overview.html["System Manager を使用したクラスタ管理"^]
+
+
+
+
+ a| 
+ONTAP コマンドラインインターフェイス（ CLI ）
+ a| 
+* https://docs.netapp.com/us-en/ontap/peering/index.html["CLI を使用したクラスタと SVM のピアリングの概要"^]
++
+コマンドラインインターフェイスを使用して、クラスタピア関係と SVM ピア関係を設定してください。
+
+* https://docs.netapp.com/us-en/ontap/networking/index.html["Network Management の略"^]
++
+サブネット、クラスタ間 LIF 、ルート、ファイアウォールポリシーなど、ネットワークコンポーネントを設定するには、コマンドラインインターフェイスを使用してください
+
+
+
+|===

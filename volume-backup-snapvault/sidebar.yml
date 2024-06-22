@@ -1,0 +1,17 @@
+---
+section: volume-backup-snapvault
+title: SnapVault を使用したボリュームのバックアップ
+entries:
+- title: 概要
+  url: "/volume-backup-snapvault/index.html"
+- title: SnapVault バックアップの設定ワークフロー
+  url: "/volume-backup-snapvault/concept_snapvault_configuration_workflow.html"
+  entries:
+  - title: クラスタピア関係と SVM ピア関係を確認
+    url: "/volume-backup-snapvault/task_verify_cluster_peer_relationship.html"
+  - title: SnapVault 関係の作成（ ONTAP 9.3 以降）
+    url: "/volume-backup-snapvault/task_creating_snapvault_relationship_93_later.html"
+  - title: SnapVault 関係を作成（ ONTAP 9.2 以前）
+    url: "/volume-backup-snapvault/task_creating_snapvault_relationship_92_earlier.html"
+  - title: SnapVault 関係を監視
+    url: "/volume-backup-snapvault/task_monitoring_snapvault_relationship.html"

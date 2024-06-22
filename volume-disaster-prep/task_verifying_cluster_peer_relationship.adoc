@@ -1,0 +1,49 @@
+---
+permalink: volume-disaster-prep/task_verifying_cluster_peer_relationship.html 
+sidebar: sidebar 
+keywords: set, up, volume, disaster, recovery, verify, source, destination, cluster, communicate, peer, relationship, verify the cluster peer relationship and svm peer relationship 
+summary: ディザスタリカバリの設定を開始する前に、ソースクラスタとデスティネーションクラスタがピアとして設定され、ピア関係を通じて相互に通信していることを確認する必要があります。 
+---
+= クラスタピア関係と SVM ピア関係を確認
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+ディザスタリカバリの設定を開始する前に、ソースクラスタとデスティネーションクラスタがピアとして設定され、ピア関係を通じて相互に通信していることを確認する必要があります。
+
+
+
+== 手順
+
+* ONTAP 9.3 以降を実行している場合は、次の手順に従ってクラスタピア関係と SVM ピア関係を確認します。
++
+.. [ * Configuration * ] > [* Cluster Peers* ] をクリックします。
+.. ピアクラスタが認証済みで使用可能であることを確認します。
++
+image::../media/cluster_pper_930_disaster.gif[クラスタ・ディザスタ 930]
+
+.. [ * Configuration * > * SVM peers * ] をクリックします。
+.. デスティネーション SVM がソース SVM とピア関係にあることを確認します。
+
+
+* ONTAP 9.2 以前を実行している場合は、次の手順を実行してクラスタピア関係と SVM ピア関係を確認します。
++
+.. [* 構成 * （ Configurations * ） ] タブをクリックします。
+.. [* Cluster Details] ペインで、 [* Cluster Peers* ] をクリックします。
+.. ピアクラスタが認証済みで使用可能であることを確認します。
++
+image::../media/cluster_peer_health_disaster.gif[クラスタピアの健常性が災害しました]
+
+.. SVM * タブをクリックし、ソース SVM を選択します。
+.. ピア Storage Virtual Machines * 領域で、デスティネーション SVM がソース SVM とピア関係にあることを確認します。
++
+この領域にピア関係にある SVM が表示されない場合は、 SnapMirror 関係を作成するときに SVM ピア関係を作成できます。
+
+
+
++
+xref:task_creating_snapmirror_relationships_92_earlier.adoc[SnapMirror 関係の作成（ ONTAP 9.2 以前）]
+
+

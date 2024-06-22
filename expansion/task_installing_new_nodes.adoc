@@ -1,0 +1,14 @@
+---
+permalink: expansion/task_installing_new_nodes.html 
+sidebar: sidebar 
+keywords: cluster, install, controller, configure, node-management, run, ontap, repurpose, hardware-level, ha, address, maintenance, mode, join, install the new node 
+summary: クラスタの準備が完了したら、コントローラを設置し、ノード管理 LIF を設定する必要があります。 
+---
+= 新しいノードをインストール
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+クラスタの準備が完了したら、コントローラを設置し、ノード管理 LIF を設定する必要があります。コントローラが既存のクラスタと同じ ONTAP バージョンを実行していない場合、または転用したコントローラであるためにハードウェアレベルで HA が実現されていない場合は、メンテナンスモードで問題に対処する必要があります。最後に、ノードをクラスタに追加します。

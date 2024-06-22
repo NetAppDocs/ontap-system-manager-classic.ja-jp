@@ -1,0 +1,37 @@
+---
+permalink: online-help-96-97/task_extending_expiry_date_snapshot_copies.html 
+sidebar: sidebar 
+keywords: extend, expiry, date, snapshot, copy, system, manager, online, help 
+summary: System Manager を使用して、ボリューム内の Snapshot コピーの有効期限を延長できます。 
+---
+= System Manager - ONTAP 9.7 以前を使用して、 Snapshot コピーの有効期限を延長します
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+ONTAP System Manager クラシック（ ONTAP 9.7 以前で使用可能）を使用して、ボリューム内の Snapshot コピーの有効期限を延長できます。
+
+.作業を開始する前に
+システムに SnapLock ライセンスがインストールされている必要があります。
+
+.このタスクについて
+有効期限を延長できるのは、 SnapLock for SnapVault 関係のデスティネーションとして設定されているデータ保護（ DP ）ボリューム内の Snapshot コピーだけです。
+
+.手順
+. [* ストレージ *>* ボリューム *] をクリックします。
+. SVM * フィールドのドロップダウンメニューで、 * すべての SVM * を選択します。
+. ボリュームを選択します。
+. Show More Details * をクリックすると、ボリュームに関する詳細情報が表示されます。
+. [* Snapshot Copies * （ Snapshot コピー * ） ] タブをクリックします。
++
+選択したボリュームで利用できる Snapshot コピーのリストが表示されます。
+
+. 変更する Snapshot コピーを選択し、 * 有効期限の延長 * をクリックします。
+. [ 有効期限の延長 *] ダイアログボックスで、有効期限を指定します。
++
+値は 1~70 年、または Infinite Volume の範囲で指定する必要があります。
+
+. [OK] をクリックします。
+

@@ -1,0 +1,106 @@
+---
+permalink: online-help-96-97/task_setting_up_saml_authentication.html 
+sidebar: sidebar 
+keywords: set, up, saml, authentication, security, assertion, markup, idp, online, help, system, manager,  language, secure, identity, provide, 
+summary: リモートユーザが System Manager にログインする前にセキュアな Identity Provider （ IdP ；アイデンティティプロバイダ）を使用して認証されるように、 Security Assertion Markup Language （ SAML ；セキュリティアサーションマークアップ言語）認証をセットアップできます。 
+---
+= System Manager - ONTAP 9.7 以前を使用して SAML 認証をセットアップします
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+ONTAP System Managerクラシック（ONTAP 9.7以前で使用可能）を使用して、Security Assertion Markup Language（SAML）認証をセットアップできます。リモートユーザは、 System Manager にログインする前に、セキュアなアイデンティティプロバイダ（ IdP ）を通じて認証されます。
+
+image::../media/mfa_workflow.gif[MFA ワークフロー]
+
+
+
+== SAML 認証を有効にする
+
+System Manager では、セキュアなアイデンティティプロバイダ（ IdP ）を使用してリモートユーザがログインできるように、 Security Assertion Markup Language （ SAML ）認証を設定できます。
+
+.作業を開始する前に
+* リモート認証に使用する IdP を設定する必要があります。
++
+[NOTE]
+====
+設定済みの IdP から提供されたドキュメントを参照してください。
+
+====
+* IdP の URI が必要です。
+
+
+.このタスクについて
+次のIdPがSystem Managerで検証されました。
+
+* Active Directoryフェデレーションサービス
+* Cisco Duo（次のONTAPバージョンで検証済み）
++
+** 9.7P21以降の9.7リリース
+** 9.8P17以降の9.8リリース
+** 9.9.1P13以降の9.9リリース
+** 9.10.1P9以降の9.10リリース
+** 9.11.1P4以降の9.11リリース
+** 9.12.1以降のリリース
+
+
+* Shibboleth
+
+
+[NOTE]
+====
+SAML 認証を有効にした場合、 System Manager の GUI にアクセスできるのはリモートユーザだけです。ローカルユーザは、 SAML 認証を有効にしたあとで System Manager GUI にアクセスできません。
+
+====
+.手順
+. [ * Configuration * ] > [* Cluster *] > [* Authentication *] をクリックします。
+. Enable SAML authentication * チェックボックスをオンにします。
+. SAML 認証を使用するように System Manager を設定します。
++
+.. IdP の URI を入力します。
+.. ホストシステムの IP アドレスを入力します。
+.. *オプション：*必要に応じて、ホストシステムの証明書を変更します。
+
+
+. [* Retrieve Host Metadata* （ホストメタデータの取得） ] をクリックして、ホスト URI とホストメタデータの情報を取得します。
+. ホスト URI またはホストメタデータの詳細をコピーし、 IdP にアクセスして、ホスト URI またはホストメタデータの詳細と信頼ルールを IdP ウィンドウで指定します。
++
+[NOTE]
+====
+設定済みの IdP から提供されたドキュメントを参照してください。
+
+====
+. [ 保存（ Save ） ] をクリックします。
++
+IdP のログインウィンドウが表示されます。
+
+. IdP のログインウィンドウを使用して System Manager にログインします。
++
+IdP の設定後にユーザが完全修飾ドメイン名（ FQDN ）、 IPv6 、またはクラスタ管理 LIF を使用してログインしようとすると、 IdP の設定で指定したホストシステムの IP アドレスに IP アドレスが自動的に変更されます。
+
+
+
+
+
+== SAML 認証を無効にする
+
+System Manager へのリモートアクセスを無効にしたり、 Security Assertion Markup Language （ SAML ）の設定を編集したりするときは、 SAML 認証を無効にできます。
+
+.このタスクについて
+SAML 認証を無効にしても SAML の設定は削除されません。
+
+.手順
+. [ * Configuration * ] > [* Cluster *] > [* Authentication *] をクリックします。
+. SAML 認証を有効にする * チェックボックスをオフにします。
+. [ 保存（ Save ） ] をクリックします。
++
+System Manager が再起動します。
+
+. クラスタのクレデンシャルを使用して System Manager にログインする
+
+
+* 関連情報 *
+
+xref:task_accessing_cluster_by_using_system_manager_brower_based_gui.adoc[ONTAP System Manager のブラウザベースのグラフィカルインターフェイスを使用したクラスタへのアクセス]

@@ -1,0 +1,43 @@
+---
+permalink: iscsi-config-windows/task_deciding_where_to_provision_volume.html 
+sidebar: sidebar 
+keywords: provision, volume, lun, add, exist, storage, virtual, machine, svm, create, configure, iscsi, exist, decide where to provision the volume 
+summary: LUN を格納するボリュームをプロビジョニングする前に、そのボリュームを既存の Storage Virtual Machine に追加するか、そのボリューム用に新しい SVM を作成するかを決める必要があります。既存の SVM に追加する場合は、 iSCSI の設定も必要になる可能性があります。 
+---
+= ボリュームをプロビジョニングする場所を決定します
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+LUN を格納するボリュームをプロビジョニングする前に、そのボリュームを既存の Storage Virtual Machine （ SVM ）に追加するか、そのボリューム用に新しい SVM を作成するかを決める必要があります。既存の SVM に追加する場合は、 iSCSI の設定も必要になる可能性があります。
+
+.このタスクについて
+既存の SVM ですでに必要なプロトコルが設定されていて、ホストからアクセスできる LIF がある場合は、既存の SVM を使用すると簡単です。
+
+データまたは管理をストレージクラスタの他のユーザから分離する場合は、新しい SVM を作成できます。プロトコルの区別だけで異なる SVM を使用してもメリットはありません。
+
+
+
+== 手順
+
+* すでに iSCSI 用に設定されている SVM にボリュームをプロビジョニングする場合は、 iSCSI サービスが実行されていることを確認してから、 SVM に LUN を作成する必要があります。
++
+link:task_verifying_iscsi_is_running_on_existing_vserver.html["既存の SVM での iSCSI サービスの実行状況の確認"]
+
++
+link:task_creating_lun_its_containing_volume.html["LUNの作成"]
+
+* iSCSI が有効になっているが設定はまだ完了していない既存の SVM にボリュームをプロビジョニングする場合は、既存の SVM で iSCSI を設定します。
++
+link:task_configuring_iscsi_fc_creating_lun_on_existing_svm.html["既存の SVM で iSCSI を設定"]
+
++
+これは、別のプロトコルを設定する際に手順を使用して SVM を作成しなかった場合に該当します。
+
+* 新しい SVM にボリュームをプロビジョニングする場合は、 SVM を作成します。
++
+link:task_creating_svm.html["新しい SVM を作成"]
+
+

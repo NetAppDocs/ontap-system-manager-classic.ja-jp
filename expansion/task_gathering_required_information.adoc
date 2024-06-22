@@ -1,0 +1,70 @@
+---
+permalink: expansion/task_gathering_required_information.html 
+sidebar: sidebar 
+keywords: expand, cluster, network, information, require, configure, node-management, lif, service, ip, adress, node, gather the required network information 
+summary: クラスタを拡張する前に、あとで両方のノードのノード管理 LIF およびサービスプロセッサの IP アドレスを設定する際に必要となるネットワーク情報を入手する必要があります。 
+---
+= 必要なネットワーク情報を収集
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+クラスタを拡張する前に、あとで両方のノードのノード管理 LIF およびサービスプロセッサの IP アドレスを設定する際に必要となるネットワーク情報を入手する必要があります。
+
+.手順
+. クラスタに追加するノードごとに 1 つ、計 2 つのノード管理 LIF を設定するために、次の詳細を取得します。
++
+** IP アドレス
+** ネットワークマスク
+** ゲートウェイ
+** ポート
+
+
+. サイトにノード管理 LIF の DNS エントリがある場合は、新しいノードに DNS エントリが作成されていることを確認します。
+. 次のコマンドを使用して、クラスタでSPの自動ネットワーク設定と手動ネットワーク設定のどちらを使用しているかを確認します。 `system service-processor network auto-configuration show` コマンドを実行します
++
+サブネット名が `SP IPv4 Subnet Name` または `SP IPv6 Subnet Name` 列に表示されます。クラスタは自動SPネットワークを使用しています。両方の列が空白であれば、クラスタは手動 SP ネットワークを使用しています。
+
++
+次の出力では、 sub1 サブネットが表示されていることから、 cluster1 SP が自動ネットワーク設定を使用していることがわかります。
+
++
+[listing]
+----
+cluster1::> system service-processor network auto-configuration show
+Cluster Name         SP IPv4 Subnet Name          SP IPv6 Subnet Name
+-------------------- ---------------------------- -------------------
+cluster1             sub1                            -
+----
++
+次の出力では、サブネットのフィールドが空白であることから、 cluster1 SP が手動ネットワーク設定を使用していることがわかります。
+
++
+[listing]
+----
+cluster1::> system service-processor network auto-configuration show
+Cluster Name         SP IPv4 Subnet Name          SP IPv6 Subnet Name
+-------------------- ---------------------------- -------------------
+cluster1             -                            -
+----
+. SP のネットワーク設定に応じて、次のいずれかの操作を実行します。
++
+** SP が手動ネットワーク設定を使用している場合は、あとで新しいノードで SP を設定するときに使用する 2 つの IP アドレスを取得します。
+** SPが自動ネットワーク設定を使用している場合は、次のコマンドを使用して、SPが使用するサブネットに、2つの新しいノードに使用可能なIPアドレスがあることを確認します。 `network subnet show` コマンドを実行します
+次の出力では、 sub1 サブネットに使用可能な 2 つのアドレスがあることがわかります。
+
+
++
+[listing]
+----
+cluster1::>  network subnet show
+IPspace: Default
+Subnet                     Broadcast                   Avail/
+Name      Subnet           Domain    Gateway           Total   Ranges
+--------- ---------------- --------- --------------- --------- ---------------
+sub1      10.53.33.1/18    Default   10.53.0.1          2/4    10.53.33.3-10.53.33.6
+...
+----
+

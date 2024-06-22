@@ -1,0 +1,97 @@
+---
+permalink: online-help-96-97/task_setting_up_branchcache.html 
+sidebar: sidebar 
+keywords: cifs, svm, system, manager, online, help, branchcache, set, up, modify, settings, delete 
+summary: System Manager を使用すると、 CIFS 対応の Storage Virtual Machine （ SVM ）で BranchCache を設定して、要求元のクライアントのローカルコンピュータにコンテンツをキャッシュすることができます。 
+---
+= System Manager ONTAP 9.7 以前を使用して BranchCache を設定します
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+ONTAP System Manager クラシック（ ONTAP 9.7 以前で使用可能）を使用して、 CIFS 対応の Storage Virtual Machine （ SVM ）で BranchCache を設定し、要求元のクライアントのローカルコンピュータにコンテンツをキャッシュすることができます。
+
+.作業を開始する前に
+* CIFS のライセンスが有効になっていて、 CIFS サーバが設定されている必要があります。
+* BranchCache バージョン 1 の場合、 SMB 2.1 以降が有効になっている必要があります。
+* BranchCache バージョン 2 の場合、 SMB 3.0 が有効になっていて、リモートの Windows クライアントで BranchCache 2 がサポートされている必要があります。
+
+
+.このタスクについて
+* BranchCache は SVM で設定できます。
+* CIFS サーバ上のすべての SMB 共有に格納されたすべてのコンテンツに対してキャッシュサービスを提供する場合は、すべての共有の BranchCache 設定を作成できます。
+* CIFS サーバ上の選択した SMB 共有に格納されたコンテンツに対してキャッシュサービスを提供する場合は、共有ごとの BranchCache 設定を作成できます。
+
+
+.手順
+. [ * ストレージ * > * SVMs * ] をクリックします。
+. SVM を選択し、 * SVM 設定 * をクリックします。
+. [*Branch*] タブで、 [*SetUp*] をクリックします。
+. [* BranchCache セットアップ * ] ダイアログボックスで、次の情報を入力します。
++
+.. ハッシュストアのパスを指定します。
++
+ハッシュデータを格納する既存のディレクトリのパスを指定できます。デスティネーションパスは読み取り / 書き込み可能である必要があります。Snapshot ディレクトリなどの読み取り専用パスは指定できません。
+
+.. ハッシュデータストアの最大サイズ（ KB 、 MB 、 GB 、 TB 、または PB ）を指定します。
++
+ハッシュデータがこの値を超えると、古いハッシュが削除されて新しいハッシュを格納するスペースが確保されます。ハッシュストアのデフォルトサイズは 1GB です。
+
+.. BranchCache 設定の動作モードを指定します。
++
+デフォルトの動作モードは「すべての共有」に設定されています。
+
+.. クライアントが BranchCache サーバを偽装できないようにするためのサーバキーを指定できます。
++
+サーバキーを特定の値に設定すると、複数のサーバが同じファイルの BranchCache データを提供している場合に、クライアントがその同じサーバキーを使用してサーバのハッシュを使用できるようになります。サーバキーにスペースを含める場合は、サーバキーを引用符で囲む必要があります。
+
+.. 必要な BranchCache のバージョンを選択します。
++
+デフォルトでは、クライアントでサポートされるすべてのバージョンが選択されます。
+
+
+
+. [ セットアップ ] をクリックします。
+
+
+
+
+== BranchCache 設定を変更します
+
+System Manager の CIFS ウィンドウを使用して、 CIFS 対応の Storage Virtual Machine （ SVM ）に対して設定されている BranchCache 設定を変更することができます。ハッシュストアのパス、ハッシュストアのサイズ、動作モード、およびサポートする BranchCache のバージョンを変更できます。
+
+.手順
+. [ * ストレージ * > * SVMs * ] をクリックします。
+. SVM を選択し、 * SVM 設定 * をクリックします。
+. [*Branch*] タブで、 [*Edit*] をクリックします。
+. [* BranchCache 設定の変更 * ] ダイアログボックスで、必要な情報を変更します。
++
+** ハッシュストアパス
++
+ハッシュストアのパスを変更する際、前のハッシュストアのキャッシュ済みハッシュデータを保持することもできます。
+
+** ハッシュストアサイズ
+** 動作モード
+** BranchCache バージョン
+
+
+. * 変更 * をクリックします。
+
+
+
+
+== BranchCache 設定を削除します
+
+BranchCache 用に設定された Storage Virtual Machine （ SVM ）でキャッシュサービスを提供する必要がなくなった場合、 System Manager を使用して BranchCache 設定を削除できます。
+
+.手順
+. [ * ストレージ * > * SVMs * ] をクリックします。
+. SVM を選択し、 * SVM 設定 * をクリックします。
+. [*Branch*] タブで、 [*Delete*] をクリックします。
+. 確認のチェックボックスをオンにし、 * 削除 * をクリックします。
++
+ハッシュストアから既存のハッシュを削除することもできます。
+
+

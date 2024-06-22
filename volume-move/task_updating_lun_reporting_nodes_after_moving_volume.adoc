@@ -1,0 +1,40 @@
+---
+permalink: volume-move/task_updating_lun_reporting_nodes_after_moving_volume.html 
+sidebar: sidebar 
+keywords: volume, move, lun, ha, pair, remote, node, lun, map, slm, reporting-node, partner, lun reporting nodes 
+summary: LUN を含むボリュームを別の HA ペアに移動した場合は、すべてのリモートノードを選択的 LUN マップ（ SLM ）のレポートノードリストから削除する必要があります。これにより、 LUN マップには所有者ノードとその HA パートナーだけが含まれるようになり、最適化された LUN パスのみが使用されるようになります。 
+---
+= ボリュームを移動したら、 LUN レポートノードを更新します
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+LUN を含むボリュームを別の HA ペアに移動した場合は、すべてのリモートノードを選択的 LUN マップ（ SLM ）のレポートノードリストから削除する必要があります。これにより、 LUN マップには所有者ノードとその HA パートナーだけが含まれるようになり、最適化された LUN パスのみが使用されるようになります。
+
+.このタスクについて
+この手順は、ボリュームを HA ペアから別の HA ペアに移動した場合にのみ必要です。ボリュームが同じ HA ペアの別のノードにある場合は、この手順を省略できます。
+
+.手順
+. を使用して、すべてのリモートノードをレポートノードリストから削除します。 `lun mapping remove-reporting-nodes` コマンドにを指定します `-remote-nodes` パラメータ
++
+[listing]
+----
+cluster1::> lun mapping remove-reporting-nodes -vserver SVM1 -volume vol1 -igroup ig1 -remote-nodes true
+----
+. を使用して、LUNマップに所有者ノードとそのパートナーのみが含まれていることを確認します。 `lun mapping show` コマンドにを指定します `-fields reporting-nodes` パラメータ
++
+[listing]
+----
+cluster1::> lun mapping show -vserver SVM1 -volume vol1 -fields reporting-nodes
+vserver  path        igroup   reporting-nodes
+-------- ----------- -------- ---------------------------------------------
+SVM1     /vol/vol1   ig1      cluster1-3,cluster1-4
+----
+. ホストオペレーティングシステムの古いデバイスのエントリを削除します。
+. ホストから再スキャンを実行して、ホストの使用可能なパスを更新します。
++
+ホストを再スキャンする手順については、ホストのマニュアルを参照してください。
+
+

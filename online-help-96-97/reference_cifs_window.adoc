@@ -1,0 +1,146 @@
+---
+permalink: online-help-96-97/reference_cifs_window.html 
+sidebar: sidebar 
+keywords: cifs, window, configuration, tab, domain, symlink, branchcache, online, help 
+summary: CIFS ウィンドウを使用して、 CIFS サーバの設定、ドメインコントローラの管理、 UNIX シンボリックマッピングの管理、 BranchCache の設定を行うことができます。 
+---
+= System Manager の CIFS ウィンドウ - ONTAP 9.7 以前
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+ONTAP System ManagerのCIFSウィンドウ（ONTAP 9.7以前で使用可能）を使用して、CIFSサーバの設定、ドメインコントローラの管理、UNIXシンボリックマッピングの管理、およびBranchCacheの設定を行うことができます。
+
+
+
+== [ 構成 ] タブ
+
+Configuration タブでは、 CIFS サーバを作成および管理できます。
+
+* * サーバ *
++
+CIFS サーバのステータス、サーバの名前、認証モード、 Active Directory ドメインの名前、および SMB マルチチャネルのステータスを示します。
+
+* * ホームディレクトリ *
++
+ホームディレクトリのパス、および PC のユーザ名とホームディレクトリのマップ方法を決定する形式を示します。
+
+* * コマンドボタン *
++
+** セットアップ（ Setup ）
++
+CIFS セットアップウィザードを開きます。このウィザードで、 Storage Virtual Machine （ SVM ）の CIFS を設定できます。
+
+** オプション（ Options ）
++
+CIFS Options dialog box を開きます。このダイアログボックスで、 SMB 3.0 署名の有効化と無効化、 SMB 3.0 暗号化の有効化と無効化、および Windows Internet Name Service （ WINS ）サーバの追加を行うことができます。
+
++
+SMB 署名は、 CIFS サーバとクライアント間のネットワークトラフィックを侵害から保護します。
+
+** 削除
++
+CIFS サーバを削除できます。
+
+** 更新
++
+ウィンドウ内の情報を更新します。
+
+
+
+
+
+
+
+== [ ドメイン ] タブ
+
+ドメインタブでは、 CIFS ドメインコントローラの表示とリセット、優先ドメインコントローラの追加と削除を行うことができます。このタブを使用して、 CIFS グループポリシーの設定も管理できます。
+
+* * サーバ *
++
+CIFS 対応の SVM の検出された認証サーバと優先ドメインコントローラに関する情報が表示されます。
+
++
+検出された情報のリセット、優先ドメインコントローラの追加、ドメインコントローラの削除、ドメインコントローラのリストの更新も可能です。
+
+* * グループポリシー *
++
+CIFS サーバのグループポリシーの設定を表示、有効化、無効化できます。グループポリシーのステータスが変更になった場合にリロードすることもできます。
+
+
+
+
+
+== [symlinks] タブをクリック
+
+symlinks タブでは、 CIFS ユーザに対する UNIX シンボリックリンクのマッピングを管理できます。
+
+* * パスマッピング *
++
+CIFS のシンボリックリンクマッピングのリストが表示されます。
+
+* * コマンドボタン *
++
+** 作成
++
+Create New symlink Path Mappings ダイアログボックスを開きます。このダイアログボックスで、 UNIX シンボリックリンクマッピングを作成できます。
+
+** 編集
++
+シンボリックリンクパスマッピングの編集ダイアログボックスを開きます。このダイアログボックスで、 CIFS 共有およびパスを変更できます。
+
+** 削除
++
+シンボリックリンクのマッピングを削除できます。
+
+** 更新
++
+ウィンドウ内の情報を更新します。
+
+
+
+
+
+
+
+== [Branch] タブ
+
+BranchCache タブでは、 CIFS 対応の SVM の BranchCache の設定と管理を行うことができます。
+
+BranchCache サービスのステータス、ハッシュストアのパス、ハッシュストアのサイズのほか、 BranchCache の動作モード、サーバキー、バージョンなどを確認できます。
+
+* * コマンドボタン *
++
+** セットアップ（ Setup ）
++
+BranchCache のセットアップダイアログボックスを開きます。このダイアログボックスで、 CIFS サーバの BranchCache を設定できます。
+
+** 編集
++
+BranchCache 設定の変更ダイアログボックスを開きます。このダイアログボックスで、 BranchCache 設定のプロパティを変更できます。
+
+** 削除
++
+BranchCache 設定を削除できます。
+
+** 更新
++
+ウィンドウ内の情報を更新します。
+
+
+
+
+
+* 関連情報 *
+
+xref:task_setting_up_cifs.adoc[CIFSノセツトアツフ]
+
+xref:task_editing_cifs_general_properties.adoc[CIFS の一般プロパティの編集]
+
+xref:task_adding_home_directory_paths.adoc[ホームディレクトリパスを追加しています]
+
+xref:task_deleting_home_directory_paths.adoc[ホームディレクトリパスを削除しています]
+
+xref:task_resetting_cifs_domain_controllers.adoc[CIFS ドメインコントローラをリセットしています]

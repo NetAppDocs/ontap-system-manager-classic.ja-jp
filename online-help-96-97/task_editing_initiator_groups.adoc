@@ -1,0 +1,26 @@
+---
+permalink: online-help-96-97/task_editing_initiator_groups.html 
+sidebar: sidebar 
+keywords: edit, initiator, group, system, manager, online, help, port, set, dialog, box 
+summary: System Manager のイニシエータグループの編集ダイアログボックスを使用して、既存のイニシエータグループとそのオペレーティングシステムの名前を変更できます。イニシエータをイニシエータグループに追加したり、イニシエータグループから削除したりできます。また、イニシエータグループに関連付けられているポートセットを変更することもできます。 
+---
+= System Manager - ONTAP 9.7 以前を使用してイニシエータグループを編集します
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+ONTAP System Manager classic （ ONTAP 9.7 以前で利用可能）の * イニシエータグループの編集 * ダイアログボックスを使用して、既存のイニシエータグループとそのオペレーティングシステムの名前を変更できます。イニシエータをイニシエータグループに追加したり、イニシエータグループから削除したりできます。また、イニシエータグループに関連付けられているポートセットを変更することもできます。
+
+.手順
+. [ * ストレージ * > * LUNs * ] をクリックします。
+. [* イニシエータ・グループ ] タブで ' 変更するイニシエータ・グループを選択し '[* 編集 *] をクリックします
+. 必要な変更を行います。
+. [ 保存して閉じる ] をクリックします。
+. イニシエータグループに対して行った変更を、 [* イニシエータグループ ] タブで確認します。
+
+
+* 関連情報 *
+
+xref:reference_luns_window.adoc[LUN ウィンドウ]

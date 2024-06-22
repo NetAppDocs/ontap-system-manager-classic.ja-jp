@@ -1,0 +1,14 @@
+---
+permalink: expansion/task_preparing_cluster_for_expansion.html 
+sidebar: sidebar 
+keywords: prepare, cluster, expansion, node-locked, license, verify, system, health, configuration, generate autosupport, message, prepare the cluster for expansion 
+summary: クラスタを拡張する準備をするには、ノードロックライセンスを追加し、システムヘルスを確認し、クラスタの設定をバックアップし、 AutoSupport メッセージを生成する必要があります。 
+---
+= クラスタを拡張する準備をします
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+クラスタを拡張する準備として、ノードロックライセンスを追加し、システムの健全性を確認し、クラスタの設定をバックアップし、 AutoSupport メッセージを生成する必要があります。

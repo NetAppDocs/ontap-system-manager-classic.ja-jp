@@ -1,0 +1,96 @@
+---
+permalink: online-help-96-97/concept_fc_fcoe_protocol.html 
+sidebar: sidebar 
+keywords: system, manager, configure, fc, fcoe, protocol, online, help, change, node, name, fibre, channel, san, start, stop 
+summary: System Manager を使用して、 FC / FCoE プロトコルを設定できます。 
+---
+= System Manager - ONTAP 9.7 以前で FC / FCoE プロトコルを設定します
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+ONTAP System Manager クラシック（ ONTAP 9.7 以前で使用可能）を使用して、 FC / FCoE プロトコルを設定できます。
+
+
+
+== FC サービスまたは FCoE サービスを開始または停止する
+
+FC サービスを使用すると、 LUN で使用する FC ターゲットアダプタを管理できます。System Manager を使用して FC サービスを開始して、アダプタをオンラインにし、ストレージシステム上の LUN にアクセスできるようにすることができます。FC サービスを停止すると FC アダプタはオフラインになり、 LUN にアクセスできなくなります。
+
+.作業を開始する前に
+* FC ライセンスがインストールされている必要があります。
+* ターゲットストレージシステムに FC アダプタが存在する必要があります。
+
+
+.手順
+. [ * ストレージ * > * SVMs * ] をクリックします。
+. SVM を選択し、 * SVM 設定 * をクリックします。
+. [* Protocols] ペインで、 [*FC/FCoE*] をクリックします。
+. 必要に応じて、 [ スタート * ] または [ * 停止 * ] をクリックします。
+
+
+
+
+== FC または FCoE のノード名を変更します
+
+ストレージシステムシャーシを交換し、同じファイバチャネル SAN で再利用した場合、状況によっては、交換したストレージシステムのノード名が重複することがあります。ストレージシステムのノード名は System Manager を使用して変更できます。
+
+.手順
+. [ * ストレージ * > * SVMs * ] をクリックします。
+. SVM を選択し、 * SVM 設定 * をクリックします。
+. [* Protocols] ペインで、 [*FC/FCoE*] をクリックします。
+. [ 編集（ Edit ） ] をクリックします。
+. 新しい名前を入力し、「 * OK * 」をクリックします。
+
+
+
+
+== FCoE プロトコル
+
+Fibre Channel over Ethernet （ FCoE ）は、ストレージシステムにホストを接続するための新しいモデルです。従来の FC プロトコルと同様、 FCoE は既存の FC 管理と制御を維持しますが、ハードウェアトランスポートとして 10 ギガビットイーサネットネットワークを使用します。
+
+FCoE 接続を設定するには、サポートされる Converged Network Adapter （ CNA ；統合ネットワークアダプタ）がホストに 1 つ以上あり、サポートされる Data Center Bridging （ DCB ）イーサネットスイッチに接続されている必要があります。CNA は統合ポイントであり、 HBA とイーサネットアダプタの両方として機能します。
+
+一般に、従来の FC 接続を使用する場合と同じ方法で、 FCoE 接続を設定して使用できます。
+
+
+
+== FC/FCoE ウィンドウ
+
+FC サービスは、 FC / FCoE ウィンドウを使用して開始または停止できます。
+
+
+
+=== コマンドボタン
+
+* * 編集 * 。
++
+ノード名の編集ダイアログボックスを開きます。このダイアログボックスで、 FC または FCoE のノード名を変更できます。
+
+* * 開始 *
++
+FC / FCoE サービスを開始します。
+
+* * 停止 *
++
+FC / FCoE サービスを停止します。
+
+* * 更新 *
++
+ウィンドウ内の情報を更新します。
+
+
+
+
+
+=== FC/FCoE の詳細
+
+詳細領域には、 FC / FCoE サービスのステータス、ノード名、および FC / FCoE アダプタに関する情報が表示されます。
+
+* 関連情報 *
+
+xref:task_configuring_fc_fcoe_protocol_on_svms.adoc[SVM で FC プロトコルと FCoE プロトコルを設定します]
+
+https://docs.netapp.com/us-en/ontap/san-admin/index.html["SAN 管理"^]

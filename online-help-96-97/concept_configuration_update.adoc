@@ -1,0 +1,143 @@
+---
+permalink: online-help-96-97/concept_configuration_update.html 
+sidebar: sidebar 
+keywords: configuration, update, system, manager, administration, detail, storage, virtual, machine, svm, online, help, window, tab, node, command, button 
+summary: System Manager を使用して、 Storage Virtual Machine （ SVM ）管理の詳細を設定できます。 
+---
+= System Manager を使用した構成の更新 - ONTAP 9.7 以前
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+ONTAP System Managerクラシック（ONTAP 9.7以前で使用可能）を使用して、Storage Virtual Machine（SVM）管理の詳細を設定できます。
+
+
+
+== SVM の管理の詳細を設定する
+
+System Manager を使用して、 Storage Virtual Machine （ SVM ）管理の詳細を簡単に設定することができます。必要に応じて、 SVM の管理を SVM 管理者に委譲することもできます。
+
+.このタスクについて
+SVM 管理者は、委譲された SVM の管理に System Manager を使用できません。SVMs を管理するには、コマンドラインインターフェイス（ CLI ）を使用する必要があります。
+
+.手順
+. [ * Configuration * ] > [* Cluster*] > [* Configuration Updates* ] をクリックします。
+. [* SVM * ] タブでノードを選択し、 [ * 管理の詳細の設定 * ] をクリックします。
+. [管理者の詳細]セクションで、 `vsadmin` ユーザアカウント
+. SVM 管理用に専用の LIF を作成する場合は、 * SVM 管理用の LIF を作成する * を選択して、ネットワークの詳細を指定します。
++
+データプロトコルと管理プロトコルでは同じ LIF を共有できないため、 SAN プロトコルでは専用の SVM 管理 LIF が必要になります。SVM 管理 LIF は、データポート上にのみ作成できます。
+
+. ネットワークの詳細を指定します。
++
+|===
+| 状況 | 作業 
+
+
+ a| 
+サブネットを使用して IP アドレスを指定します
+ a| 
+.. サブネットを使用する * を選択します。
+.. Add Details ダイアログボックスで、 IP アドレスを割り当てるサブネットを選択します。
++
+クラスタ間 LIF の場合、選択した IPspace に関連付けられているサブネットだけが表示されます。
+
+.. インターフェイスに特定の IP アドレスを割り当てる場合は、 * 特定の IP アドレスを使用する * を選択して、 IP アドレスを入力します。
++
+指定した IP アドレスがサブネット内にない場合、追加されます。
+
+.. [OK] をクリックします。
+
+
+
+
+ a| 
+サブネットを使用せずに手動で IP アドレスを指定します
+ a| 
+.. サブネットなし * を選択します。
+.. [ 詳細の追加 ] ダイアログボックスで、次の手順を実行します。
++
+... IP アドレスとネットワークマスクまたはプレフィックスを指定します。
+... オプション：ゲートウェイを指定します。
++
+IP アドレスファミリーに基づいて、デスティネーションフィールドにデフォルト値が設定されます。
+
+... デフォルト値を使用しない場合は、新しいデスティネーションの値を指定します。
+ルートが存在しない場合は、ゲートウェイとデスティネーションに基づいて新しいルートが自動的に作成されます。
+
+
+.. [OK] をクリックします。
+
+
+|===
+. データ LIF を作成するポートを指定します。
++
+.. [* 参照 ] をクリックします。
+.. [ ネットワークポートまたはアダプタの選択 *] ダイアログボックスでポートを選択し、 [OK] をクリックします。
+
+
+
+
+
+
+== 設定の更新ウィンドウ
+
+Configuration Updates ウィンドウを使用すると、クラスタ、 Storage Virtual Machine （ SVM ）、およびノードの設定の詳細を更新できます。
+
+
+
+=== タブ
+
+* * ノード * ：
++
+ノードの詳細を設定できます。
+
+* * SVM *
++
+SVM の詳細を設定できます。
+
+
+
+
+
+=== [ ノード（ Nodes ） ] タブ
+
+
+
+=== コマンドボタン
+
+* * ノード名の編集 *
++
+ノード名の編集ダイアログボックスを開きます。このダイアログボックスで、ノードの名前を変更できます。
+
+* * ノード管理 LIF を作成 *
++
+ノード管理 LIF の作成ダイアログボックスを開きます。このダイアログボックスで、特定のノードを管理するためのノード管理 LIF を作成できます。
+
+* * AutoSupport * を編集します
++
+Edit AutoSupport Settings ダイアログボックスを開きます。このダイアログボックスで、 E メール通知の送信元の E メールアドレスを指定したり、ホスト名の複数の E メールアドレスを追加したりできます。
+
+
+
+
+
+=== SVM タブをクリックします
+
+
+
+=== コマンドボタン
+
+* * 管理の詳細を設定 *
++
+Configure Administration Details （管理の詳細の設定）ダイアログボックスを開きます。このダイアログボックスで、 SVM の管理の詳細を設定できます。
+
+
+
+* 関連情報 *
+
+xref:task_creating_cluster.adoc[クラスタを作成]
+
+xref:task_setting_up_network_when_ip_address_range_is_disabled.adoc[IP アドレス範囲を無効にした状態でのネットワークの設定]

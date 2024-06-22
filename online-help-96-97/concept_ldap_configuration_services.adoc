@@ -1,0 +1,94 @@
+---
+permalink: online-help-96-97/concept_ldap_configuration_services.html 
+sidebar: sidebar 
+keywords: ldap, configuration, service, system, manager, online, help, storage, virtual, machine, ldap, client, window 
+summary: System Manager を使用して、 LDAP 設定を管理できます。 
+---
+= System Manager - ONTAP 9.7 以前を使用して LDAP 構成を管理します
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+ONTAP システムマネージャクラシック（ ONTAP 9.7 以前で使用可能）を使用して、 LDAP 設定を管理できます。
+
+
+
+== アクティブな LDAP クライアントを編集します
+
+System Manager でアクティブな LDAP クライアントを Storage Virtual Machine （ SVM ）に関連付けると、 LDAP をネームサービスとして使用したり、またはネームマッピングに使用したりすることができます。
+
+.手順
+. [ * ストレージ * > * SVMs * ] をクリックします。
+. SVM を選択し、 * SVM 設定 * をクリックします。
+. [* サービス * （ * Services * ） ] ペインで、 [* LDAP 構成 * （ * LDAP Configuration * ） ] をクリック
+. [* LDAP 設定 * （ * LDAP Configuration * ） ] ウィンドウで、 [ * 編集（ * Edit ） ] をクリックします
+. [ * アクティブ LDAP クライアント * ] ダイアログボックスで、編集する LDAP クライアントを選択し、次のアクションを実行します。
++
+** Active Directory ドメインサーバを変更する。
+** 優先される Active Directory サーバを変更する。
+
+
+. [OK] をクリックします。
+. [*LDAP 設定 *] ウィンドウで、行った変更が更新されていることを確認します。
+
+
+
+
+== アクティブな LDAP クライアントを削除します
+
+Storage Virtual Machine （ SVM ）をアクティブな LDAP クライアントに関連付けないようにする場合は、 System Manager を使用して、そのクライアントを削除できます。
+
+.手順
+. [ * ストレージ * > * SVMs * ] をクリックします。
+. SVM を選択し、 * SVM 設定 * をクリックします。
+. SVM の設定 * タブをクリックします。
+. [* サービス * （ * Services * ） ] ペインで、 [* LDAP 構成 * （ * LDAP Configuration * ） ] をクリック
+. [ 削除（ Delete ） ] をクリックします。
+. 確認のチェックボックスをオンにし、 * 削除 * をクリックします。
+
+
+
+
+== LDAP Configuration ウィンドウ
+
+LDAP Configuration ウィンドウを使用して、アクティブな LDAP クライアントを Storage Virtual Machine （ SVM ）レベルで編集または削除できます。
+
+
+
+=== コマンドボタン
+
+* * 編集 * 。
++
+Active LDAP クライアントダイアログボックスを開きます。このダイアログボックスで、 Active Directory ドメインサーバや優先される Active Directory サーバなど、アクティブな LDAP クライアントのプロパティを編集できます。
+
+* * 削除 *
++
+Delete Active LDAP Client ダイアログボックスを開きます。このダイアログボックスで、アクティブな LDAP クライアントを削除できます。
+
+* * 更新 *
++
+ウィンドウ内の情報を更新します。
+
+
+
+
+
+=== LDAP Configuration 領域
+
+アクティブな LDAP クライアントの詳細を表示します。
+
+* * LDAP クライアント名 *
++
+アクティブな LDAP クライアントの名前を表示します。
+
+* * Active Directory ドメイン・サーバ *
++
+アクティブな LDAP クライアントの Active Directory ドメインを表示します。
+
+* * 優先される Active Directory サーバ *
++
+アクティブな LDAP クライアントの優先される Active Directory サーバを表示します。
+
+

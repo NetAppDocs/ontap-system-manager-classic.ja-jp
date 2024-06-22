@@ -1,0 +1,88 @@
+---
+permalink: volume-backup-snapvault/task_creating_snapvault_relationship_92_earlier.html 
+sidebar: sidebar 
+keywords: create, snapvault, relationship, source, volume, cluster, destination, peer, backup, create the snapvault relationship, ontap 9.2 or earlier 
+summary: SnapVault バックアップを作成するには、ピア関係にあるそれぞれのクラスタのソースボリュームとデスティネーションボリュームの間で SnapVault 関係を作成する必要があります。 
+---
+= SnapVault 関係を作成（ ONTAP 9.2 以前）
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+SnapVault バックアップを作成するには、ピア関係にあるそれぞれのクラスタのソースボリュームとデスティネーションボリュームの間で SnapVault 関係を作成する必要があります。
+
+.作業を開始する前に
+* デスティネーションクラスタのクラスタ管理者のユーザ名とパスワードが必要です。
+* デスティネーションアグリゲートの使用可能なスペースを確保する必要があります。
+
+
+.このタスクについて
+このタスクは * source * cluster で実行する必要があります。
+
+.手順
+. [ * ストレージ * > * SVMs * ] をクリックします。
+. SVM を選択し、 * SVM 設定 * をクリックします。
+. [* Volumes （ボリューム） ] タブをクリックします
+. バックアップするボリュームを選択し、 *Protect をクリックします。
+. [ 保護関係の作成 * （ Create Protection Relationship Relationship * ） ] ダイアログボックスで、 [ 関係タイプ * （ Relationship Type * ） ] ドロップダウンリストから [ * ボールト * （ * Vault * ） ] を選択する。
+. デスティネーションボリューム * セクションで、ピアクラスタを選択します。
+. デスティネーションボリュームの SVM を指定します。
++
+|===
+| SVM の状態 | 作業 
+
+
+ a| 
+ピアリング完了
+ a| 
+ピア関係にある SVM をリストから選択します。
+
+
+
+ a| 
+ピアリングされていません
+ a| 
+.. SVM を選択します。
+.. [* Authenticate] をクリックします。
+.. ピアクラスタのクラスタ管理者のクレデンシャルを入力し、 * Create * をクリックします。
+
+
+|===
+. 新しいデスティネーションボリュームを作成します。
++
+.. 「 * New Volume * （新規ボリューム）」オプションを選択します。
+.. デフォルトのボリューム名を使用するか、新しいボリューム名を入力します。
+.. デスティネーションアグリゲートを選択します。
+.. [ 重複排除を有効にする *] チェックボックスがオンになっていることを確認します。
+
+
++
+image::../media/dest_vol_snapvault.gif[デスティネーションボリュームの SnapVault]
+
+. [構成の詳細]*セクションで、 `XDPDefault` を使用します。
+. 保護スケジュールをスケジュールのリストから選択します。
+. ベース Snapshot コピーを転送するために * Initialize Relationship * チェックボックスが選択されていることを確認し、 * Create * をクリックします
++
+image::../media/config_details_snapvault.gif[Config Details SnapVault の略]
+
++
+指定したバックアップポリシーとスケジュールを使用して関係が作成されます。関係が初期化されて、ソースボリュームからデスティネーションボリュームへのデータのベースライン転送が開始されます。
+
++
+[ ステータス ] セクションには、各ジョブのステータスが表示されます。
+
++
+image::../media/create_snapvault_success.gif[SnapVault の作成が完了しました]
+
+. SnapVault関係のステータスが `Snapmirrored` 状態。
++
+.. ボリュームリストからボリュームを選択し、 * データ保護 * をクリックします。
+.. 下部の*[データ保護]*タブで、作成したSnapMirror関係がリストに表示され、関係の状態が `Snapmirrored` タイプはです。 `Vault`。
++
+image::../media/data_protection_window_sv.gif[データ保護ウィンドウ sv]
+
+
+
+

@@ -1,0 +1,219 @@
+---
+permalink: iscsi-config-esxi/reference_completing_iscsi_configuration_worksheet.html 
+sidebar: sidebar 
+keywords: network, address, storage, configuration, information, perform, iscsi, task, complete, complete the iscsi configuration worksheet 
+summary: iSCSI の設定タスクを実行するには、ネットワークアドレスおよびストレージ構成情報が必要です。 
+---
+= iSCSI 構成ワークシートへの記入
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+iSCSI の設定タスクを実行するには、ネットワークアドレスおよびストレージ構成情報が必要です。
+
+
+
+== ターゲットのネットワークアドレス
+
+iSCSI ターゲットは Storage Virtual Machine （ SVM ）です。
+
+クラスタ内の各ノードの iSCSI データ LIF 用に、 2 つの IP アドレスを含むサブネットが必要です。高可用性を実現するには、 2 つのネットワークが必要です。SVM の作成時に LIF を作成すると、 ONTAP によって固有の IP アドレスが割り当てられます。
+
+iSCSI トラフィックは、可能であれば別々の物理ネットワークまたは VLAN に分離します。
+
+image::../media/network_fc_or_iscsi_express_iscsi_esxi.gif[この図は 4 つのノードを示しています,two switches,and a host. Each node has two LIFs]
+
+LIF のサブネット：
+
+|===
+| ノードまたは LIF ：ポートの接続先スイッチ | IP アドレス | ネットワークマスク | ゲートウェイ | VLAN ID | ホームポート 
+
+
+ a| 
+ノード 1 / LIF ：スイッチ 1 に接続
+ a| 
+ a| 
+ a| 
+ a| 
+ a| 
+
+
+
+ a| 
+ノード 2 / LIF ：スイッチ 1 に接続
+ a| 
+ a| 
+ a| 
+ a| 
+ a| 
+
+
+
+ a| 
+ノード3 / LIF：スイッチ1に接続
+ a| 
+ a| 
+ a| 
+ a| 
+ a| 
+
+
+
+ a| 
+ノード4 / LIF：スイッチ1に接続
+ a| 
+ a| 
+ a| 
+ a| 
+ a| 
+
+
+
+ a| 
+ノード1 / LIF：スイッチ2に接続
+ a| 
+ a| 
+ a| 
+ a| 
+ a| 
+
+
+
+ a| 
+ノード2 / LIF：スイッチ2に接続
+ a| 
+ a| 
+ a| 
+ a| 
+ a| 
+
+
+
+ a| 
+ノード3 / LIF：スイッチ2に接続
+ a| 
+ a| 
+ a| 
+ a| 
+ a| 
+
+
+
+ a| 
+ノード4 / LIF：スイッチ2に接続
+ a| 
+ a| 
+ a| 
+ a| 
+ a| 
+
+|===
+
+
+== ストレージ構成
+
+アグリゲートと SVM がすでに作成されている場合は、名前をここに記録します。作成されていない場合は必要に応じて作成できます。
+
+|===
+| LUN の所属先ノードを指定します 
+
+
+ a| 
+アグリゲート名
+
+
+
+ a| 
+SVM 名
+
+|===
+
+
+== LUNノシヨウホウ
+
+|===
+| LUNサイズ 
+
+
+ a| 
+LUN 名（オプション）
+
+
+
+ a| 
+LUN 概要（オプション）
+
+|===
+
+
+== SVM情報
+
+既存の SVM を使用しない場合、新規に作成するために次の情報が必要です。
+
+[cols="1a,1a"]
+|===
+2+| SVM 名 
+
+
+ a| 
+SVM IPspace
+
+
+
+ a| 
+SVM ルートボリューム用のアグリゲート
+
+
+
+ a| 
+SVM のユーザ名（オプション）
+
+
+
+ a| 
+SVM のパスワード（オプション）
+
+
+
+ a| 
+SVM の管理 LIF （オプション）
+
+
+
+ a| 
+ a| 
+サブネット
+
+
+
+ a| 
+ a| 
+IP アドレス
+
+
+
+ a| 
+ a| 
+ネットワークマスク
+
+
+
+ a| 
+ a| 
+ゲートウェイ
+
+
+
+ a| 
+ a| 
+ホームノード
+
+
+
+ a| 
+ a| 
+ホームポート
+
+|===

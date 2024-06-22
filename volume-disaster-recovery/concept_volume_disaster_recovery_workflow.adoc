@@ -1,0 +1,28 @@
+---
+permalink: volume-disaster-recovery/concept_volume_disaster_recovery_workflow.html 
+sidebar: sidebar 
+keywords: volume, disaster recovery, workflow, activating, activate, destination, configuring, configure, access, reactivate, reactivating, original, source, volume disaster recovery workflow 
+summary: ボリュームのディザスタリカバリのワークフローには、デスティネーションボリュームのアクティブ化、データアクセスのためのデスティネーションボリュームの設定、および元のソースボリュームの再アクティブ化が含まれます。 
+---
+= ボリュームディザスタリカバリのワークフロー
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+ボリュームのディザスタリカバリのワークフローには、デスティネーションボリュームのアクティブ化、データアクセスのためのデスティネーションボリュームの設定、および元のソースボリュームの再アクティブ化が含まれます。
+
+image::../media/snapmirror_failover_resync_workflow_eg.gif[この図は SnapMirror のクラスタ間フェイルオーバーと再同期のフローチャートを示したものです。ワークフローの各手順はトピックに対応しています。]
+
+追加情報を使用すると、ボリュームレベルのディザスタリカバリ関係を管理したり、別のディザスタリカバリ方式でデータリソースの可用性を保護したりできます。
+
+* xref:../volume-backup-snapvault/index.html[SnapVault を使用したボリュームのバックアップ]
++
+異なる ONTAP クラスタにあるボリューム間のバックアップヴォールト関係を設定する簡単な方法について説明しています。
+
+* xref:../volume-restore-snapvault/index.html[SnapVault を使用したボリュームリストアの管理]
++
+ONTAP でバックアップヴォールトからボリュームをリストアする簡単な方法について説明しています。
+
+

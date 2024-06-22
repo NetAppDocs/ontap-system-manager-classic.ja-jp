@@ -1,0 +1,38 @@
+---
+permalink: nfs-config-esxi/index.html 
+sidebar: sidebar 
+keywords: nfs, access, esxi, host, datastores, ontap, volume, configuration, overview, vsc 
+summary: ONTAP System Manager の従来のインターフェイス（ ONTAP 9.7 以前）を使用すると、 ESXi ホストから ONTAP ボリュームを使用するデータストアへの NFS アクセスを簡単に設定できます。 
+---
+= VSCを使用したESXi向けのNFS設定の概要
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+ONTAP System Manager の従来のインターフェイス（ ONTAP 9.7 以前）を使用すると、 ESXi ホストから ONTAP ボリュームを使用するデータストアへの NFS アクセスを簡単に設定できます。
+
+次の場合にこの手順を使用します。
+
+* サポートされているバージョンの Virtual Storage Console for VMware vSphere （ VSC ）を使用してデータストアをプロビジョニングし、ボリュームを作成している。
++
+** VSC 7.0 以降、 VSC はの一部です https://docs.netapp.com/us-en/ontap-tools-vmware-vsphere/index.html["VMware vSphere 向け ONTAP ツール"^] VSC 、 vStorage APIs for Storage Awareness （ VASA ） Provider 、および Storage Replication Adapter （ SRA ） for VMware vSphere の機能を搭載した仮想アプライアンス。
+** 必ずを確認してください https://imt.netapp.com/matrix/["NetApp Interoperability Matrix Tool で確認できます"^] 現在の ONTAP リリースと VSC リリースの互換性を確認するため。
+
+
+* データネットワークでデフォルトの IPspace 、デフォルトのブロードキャストドメイン、およびデフォルトのフェイルオーバーグループを使用する。
++
+データネットワークがフラット構成であれば、これらのデフォルトのオブジェクトによって、リンク障害の発生時に LIF が正しくフェイルオーバーされます。デフォルトのオブジェクトを使用しない場合は、を参照してください https://docs.netapp.com/us-en/ontap/networking/index.html["Network Management の略"^] LIF パスのフェイルオーバーを設定する方法については、を参照してください。
+
+* Plug-in for VMware VAAI を使用する必要がある。
++
+** VMware vStorage APIs for Array Integration （ VAAI ）を使用すると、コピーオフロードとスペースリザベーションを実行できます。Plug-in for VMware VAAI では、 ESXi ホストを経由する必要がないため、ホストのパフォーマンスが向上するためにこの機能を使用します。これにより、 ONTAP でスペース効率と時間効率に優れたクローニングを利用できます。
+** VMware VAAI をデータストアのプロビジョニングに使用するのがベストプラクティスです。
+** NFS Plug-in for VMware VAAI は、から入手できます https://mysupport.netapp.com/site/global/dashboard["ネットアップサポート"^] サイト
+
+
+* VMware VAAI を使用する場合、 NFS アクセスは NFSv3 および NFSv4 経由になります。
+
+
+詳細については、を参照してください https://docs.netapp.com/us-en/netapp-solutions/virtualization/vsphere_ontap_ontap_for_vsphere.html["TR-4597 ：『 VMware vSphere for ONTAP 』"^] および VSC リリースのドキュメントを参照してください。

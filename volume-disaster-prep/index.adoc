@@ -1,0 +1,45 @@
+---
+permalink: volume-disaster-prep/index.html 
+sidebar: sidebar 
+keywords: content, protect, source, volume, peer, ontap, cluster, preparation, disaster, recovery, configure, monitor, snapmirror, relationship, background, task, volume disaster recovery preparation overview 
+summary: ディザスタリカバリに備えて、ピア関係にある ONTAP クラスタのソースボリュームを簡単に保護することができます。このコンテンツは、ボリュームのディザスタリカバリのためにピア関係にあるクラスタ間の SnapMirror 関係を設定および監視する場合にご利用ください。タスクの背景にある概念については、本書では詳しく説明していません。 
+---
+= ボリュームのディザスタリカバリの準備の概要
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+ディザスタリカバリに備えて、ピア関係にある ONTAP クラスタのソースボリュームを簡単に保護することができます。この手順は、ボリュームのディザスタリカバリのためにピア関係にあるクラスタ間の SnapMirror 関係を設定および監視する場合に使用します。タスクの背景にある概念などを詳しく確認する必要はありません。
+
+SnapMirror を使用すると、ブロックレベルの非同期データ保護をスケジュールに従って実行できます。Snapshot コピーがレプリケートされるだけでなく、 qtree や LUN を含むボリュームなど、重複排除やデータ圧縮を実行している NAS または SAN のボリュームもレプリケートできます。SnapMirror の設定情報はデータベースに格納され、 ONTAP がクラスタ内のすべてのノードにレプリケートします。
+
+この手順は、ボリュームレベルのディザスタリカバリ用の SnapMirror 関係を作成する場合に使用します。想定している状況は次のとおりです。
+
+* クラスタで ONTAP 9 を実行している。
+* クラスタ管理者である。
+* クラスタピア関係と SVM ピア関係を設定済みである。
++
+link:../peering/index.html["クラスタと SVM のピア関係設定"]
+
+* ソースとデスティネーションの両方のクラスタで SnapMirror ライセンスを有効にしている。
+* デフォルトのポリシーとスケジュールを使用し、カスタムポリシーは作成しない。
+* すべての選択肢（ ONTAP 9.7 以前）について検討するのではなく、ベストプラクティスを使用する場合
+
+
+
+
+== ONTAP でこれを行うその他の方法
+
+|===
+
+
+| 実行するタスク | 参照先 
+
+
+| 再設計された System Manager （ ONTAP 9.7 以降で使用可能） | link:https://docs.netapp.com/us-en/ontap/task_dp_prepare_mirror.html["ミラーとバックアップを準備"^] 
+
+
+| ONTAP のコマンドラインインターフェイス | link:https://docs.netapp.com/us-en/ontap/peering/create-cluster-relationship-93-later-task.html["クラスタピア関係を作成する（ ONTAP 9.3 以降）"^] 
+|===

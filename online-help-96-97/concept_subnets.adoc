@@ -1,0 +1,64 @@
+---
+permalink: online-help-96-97/concept_subnets.html 
+sidebar: sidebar 
+keywords: system, manager, manage, subnet, online, help, edit, settings, modify, delete, ip, address 
+summary: System Manager を使用して、サブネットを管理できます。 
+---
+= System Manager - ONTAP 9.7 以前を使用してサブネットを管理します
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+ONTAP System Manager クラシック（ ONTAP 9.7 以前で使用可能）を使用して、サブネットを管理できます。
+
+
+
+== サブネットの設定を編集します
+
+[role="lead"]
+System Manager を使用して、名前、サブネットアドレス、 IP アドレスの範囲、およびサブネットのゲートウェイアドレスなどのサブネットの属性を変更できます。
+
+.このタスクについて
+* クラスタ IPspace 内のサブネットの編集は System Manager では実行できません。
++
+代わりにコマンドラインインターフェイス（ CLI ）を使用してください。
+
+* ゲートウェイアドレスを変更してもルートは更新されません。
++
+CLI を使用してルートを更新してください。
+
+
+
+.手順
+. [ * ネットワーク * > * サブネット * ] をクリックします。
+. 変更するサブネットを選択し、 * Edit * をクリックします。
++
+サブネット内の LIF を使用したままであっても、そのサブネットを変更できます。
+
+. Edit Subnet * ダイアログボックスで、必要に応じてサブネット属性を変更します。
+. [ 保存して閉じる ] をクリックします。
+
+
+
+
+== サブネットを削除します
+
+System Manager を使用して、不要になったサブネットを削除したり、そのサブネットに割り当てられていた IP アドレスを再割り当てしたりすることができます。
+
+.作業を開始する前に
+削除するサブネット内の IP アドレスを使用する LIF がないことを確認しておきます。
+
+.このタスクについて
+クラスタ IPspace のサブネットの削除は System Manager では実行できません。代わりにコマンドラインインターフェイス（ CLI ）を使用してください。
+
+.手順
+. [ * ネットワーク * > * サブネット * ] をクリックします。
+. 削除するサブネットを選択し、 * Delete * をクリックします。
+. 確認のチェックボックスをオンにし、 * 削除 * をクリックします。
+
+
+* 関連情報 *
+
+xref:reference_network_window.adoc[[ ネットワーク ] ウィンドウ]

@@ -1,0 +1,21 @@
+---
+permalink: online-help-96-97/task_viewing_initiator_groups.html 
+sidebar: sidebar 
+keywords: view, initiator, group, lun, system, manager, online, help 
+summary: System Manager のイニシエータグループタブを使用して、すべてのイニシエータグループとそれらのイニシエータグループにマッピングされているイニシエータ、およびイニシエータグループにマッピングされている LUN と LUN ID を表示できます。 
+---
+= System Manager - ONTAP 9.7 以前を使用してイニシエータグループを表示します
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+ONTAP System Manager クラシック（ ONTAP 9.7 以前で使用可能）の * イニシエータグループ * タブを使用すると、これらのイニシエータグループにマッピングされているすべてのイニシエータグループとイニシエータグループ、およびイニシエータグループにマッピングされている LUN と LUN ID を表示できます。
+
+.手順
+. [ * ストレージ * > * LUNs * ] をクリックします。
+. イニシエータグループ * をクリックし、上部ペインに表示されているイニシエータグループを確認します。
+. イニシエータを表示するイニシエータグループを選択します。イニシエータは下部ペインの * Initiators * タブに表示されます。
+. イニシエータグループを選択すると、マッピングされている LUN が表示されます。マッピングされている LUN のリストは下部ペインの * マッピングされている LUN * に表示されます。
+

@@ -1,0 +1,53 @@
+---
+permalink: online-help-96-97/task_updating_cifs_group_policy_configuration.html 
+sidebar: sidebar 
+keywords: update, cifs, group, policy, configuration, online, help, enable, disable, modify, reload, set, up 
+summary: CLI を使用してポリシー設定を変更した場合は、変更後にグループポリシーを更新する必要があります。System Manager の CIFS ウィンドウを使用して、グループポリシーを更新できます。 
+---
+= ONTAP 9.7 以前の System Manager を使用して、 CIFS グループポリシーの設定を管理します
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+ONTAP System Manager クラシック（ ONTAP 9.7 以前で使用可能）の CIFS ウィンドウを使用して、グループポリシーを更新および管理できます。
+
+
+
+== CIFS グループポリシー設定を更新する
+
+CLI を使用してポリシー設定を変更した場合は、変更後にグループポリシーを更新する必要があります。
+
+.手順
+. [ * ストレージ * > * SVMs * ] をクリックします。
+. SVM を選択し、 * SVM 設定 * をクリックします。
+. [* ドメイン *] タブをクリックします。
+. [* グループポリシー *] 領域で、更新するグループポリシー設定を選択し、 [*Update*] をクリックします。
+
+
+
+
+== CIFS のグループポリシー設定を有効または無効にします
+
+CIFS のグループポリシー設定は、 System Manager の CIFS ウィンドウで有効または無効にできます。
+
+.手順
+. [ * ストレージ * > * SVMs * ] をクリックします。
+. SVM を選択し、 * SVM 設定 * をクリックします。
+. [* ドメイン *] タブをクリックします。
+. [* グループポリシー *] 領域で、有効または無効にするグループポリシー設定を選択し、必要に応じて [*Enable*] または [*Disable*] をクリックします。
+
+
+
+
+== CIFS グループポリシーをリロードします
+
+CIFS グループポリシーのステータスが変更になった場合は、ポリシーをリロードする必要があります。System Manager の CIFS ウィンドウを使用して、グループポリシーをリロードできます。
+
+.手順
+. [ * ストレージ * > * SVMs * ] をクリックします。
+. SVM を選択し、 * SVM 設定 * をクリックします。
+. [* ドメイン *] タブをクリックします。
+. [* グループポリシー *] 領域で、リロードするグループポリシー設定を選択し、 [*Reload*] をクリックします。
+

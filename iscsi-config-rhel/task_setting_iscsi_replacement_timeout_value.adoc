@@ -1,0 +1,26 @@
+---
+permalink: iscsi-config-rhel/task_setting_iscsi_replacement_timeout_value.html 
+sidebar: sidebar 
+keywords: support, multipath, modify, replacement, timeout, value, iscsi, configuration, file, set, set the iscsi replacement timeout value 
+summary: マルチパスをサポートするには、 iSCSI 構成ファイルの交換タイムアウト値を変更する必要があります。 
+---
+= iSCSI 交換タイムアウト値を設定
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+マルチパスをサポートするには、 iSCSI 構成ファイルの交換タイムアウト値を変更する必要があります。
+
+.ステップ
+. 交換タイムアウト値を `/etc/iscsi/iscsid.conf` ファイルをデフォルトの120から5に設定します。
++
+置き換えのタイムアウト値は、の次のようになります。 `iscsid.conf`：
+
++
+[listing]
+----
+node.session.timeo.replacement_timeout = 5
+----
+

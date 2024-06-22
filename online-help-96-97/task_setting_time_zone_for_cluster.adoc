@@ -1,0 +1,37 @@
+---
+permalink: online-help-96-97/task_setting_time_zone_for_cluster.html 
+sidebar: sidebar 
+keywords: system, manager, set, up, time, zone, cluster, modify, server, ntp 
+summary: System Manager の Edit Date and Time ダイアログボックスを使用して、クラスタのタイムゾーンを手動で設定または変更できます。クラスタにタイムサーバを追加することもできます。 
+---
+= System Manager - ONTAP 9.7 以前を使用して、クラスタのタイムゾーンを設定します
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+ONTAP System Manager classic （ ONTAP 9.7 以前で使用可能）の日付と時刻の編集ダイアログボックスを使用して、クラスタのタイムゾーンを手動で設定または変更できます。クラスタにタイムサーバを追加することもできます。
+
+.このタスクについて
+クラスタでは Network Time Protocol （ NTP ；ネットワークタイムプロトコル）が常に有効になっています。NTPは無効にできますが、推奨されません。
+
+NTP サーバの IP アドレスを追加できます。このサーバは、クラスタ全体で時間を同期するために使用されます。
+
+タイムサーバには IPv4 アドレスまたは IPv6 アドレスを指定できます。
+
+.手順
+. * をクリックしますimage:../media/nas_bridge_202_icon_settings_olh_96_97.gif[""]*
+. [* セットアップ * ] パネルで、 [ * 日付と時刻 * ] をクリックします。
+. [ 編集（ Edit ） ] をクリックします。
+. [ * 日付と時刻の編集 * ] ダイアログボックスで、タイムゾーンを選択します。
+. タイムサーバの IP アドレスを指定し、 * Add * をクリックします。
+. [OK] をクリックします。
+. [ * 日付と時刻 * （ * Date and Time * ） ] ウィンドウで、時刻設定に加えた変更を確認します。
+
+
+* 関連情報 *
+
+xref:reference_date_time_window.adoc[[ 日付と時刻 ] ウィンドウ]
+
+xref:task_creating_kerberos_realm_configurations.adoc[Kerberos Realm 設定を作成します]

@@ -1,0 +1,33 @@
+---
+permalink: snmp-config/task_verifying_snmp_is_enabled.html 
+sidebar: sidebar 
+keywords: system, manager, verify, snmp, enable, cluster, verify that snmp is enabled 
+summary: ONTAP 9.7 以前では、 ONTAP System Manager の「クラシック」インターフェイスを使用して、クラスタで SNMP が有効になっているかどうかを確認できます。 
+---
+= SNMP が有効になっていることを確認します
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+ONTAP 9.7 以前では、 ONTAP System Manager の _classic_ インターフェイスを使用して、クラスタで SNMP が有効になっているかどうかを確認できます。
+
+.このタスクについて
+ONTAP のすべてのバージョンで、 SNMPv3 はクラスタレベルでデフォルトで有効になっており、 SNMPv1 と SNMPv2c はデフォルトで無効になっています。SNMPv1 と SNMPv2c は、 SNMP コミュニティを作成すると有効になります。
+
+データ LIF では、 SNMP はデフォルトで無効になっています。データ LIF で SNMP を有効にする方法については、を参照してください https://docs.netapp.com/us-en/ontap/networking/index.html["Network Management の略"^]。
+
+.手順
+. 溝アイコンをクリックします。
+. [*Setup*] ペインで、 [*SNMP*] ウィンドウに移動します。
++
+image::../media/snmp_verify_enabled.gif[SNMP 設定画面の部分的な図。 SNMP のステータスとトラップの有効ステータスが表示されます。]
+
++
+クラスタの現在の SNMP ステータスを確認できます。
+
++
+SNMP が有効になっていない場合は、 *Enable* をクリックします。
+
+

@@ -1,0 +1,36 @@
+---
+permalink: iscsi-config-windows/task_verifying_iscsi_is_running_on_existing_vserver.html 
+sidebar: sidebar 
+keywords: exist, storage, virtual, machine, svm, iscsi, run, verify, verify that the iscsi service is running on an existing svm 
+summary: 既存の Storage Virtual Machine （ SVM ）を使用する場合、 SVM で iSCSI サービスが実行されていることを確認する必要があります。 
+---
+= 既存の SVM で iSCSI サービスが実行されていることを確認します
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+既存の Storage Virtual Machine （ SVM ）を使用する場合、 SVM で iSCSI サービスが実行されていることを確認する必要があります。
+
+.作業を開始する前に
+新しい LUN を作成する既存の SVM を選択しておく必要があります。
+
+.手順
+. SVMs ウィンドウに移動します。
+. SVM の設定 * タブをクリックします。
+. [*Protocols* ] ペインで、 [*iSCSI*] をクリックします。
+. iSCSI サービスが実行されていることを確認します。
++
+image::../media/vserver_service_iscsi_running_iscsi_windows.gif[緑のアイコンと iSCSI サービスが実行中というテキストが表示された iSCSI プロトコルページ]
+
+. SVM に対して表示されている iSCSI インターフェイスを記録します。
+
+
+
+
+== 次に何をするか
+
+iSCSI サービスが実行されていない場合は、 iSCSI サービスを開始するか、新しい SVM を作成します。
+
+ノードあたりの iSCSI インターフェイスの数が 2 つより少ない場合は、 SVM で iSCSI の構成を更新するか、 iSCSI 用に新しい SVM を作成します。

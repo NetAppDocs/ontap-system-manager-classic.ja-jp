@@ -1,0 +1,35 @@
+---
+permalink: nfs-config-esxi/task_provisioning_datastore_creating_its_containing_lun_volume.html 
+sidebar: sidebar 
+keywords: datastore, virtual, machine, vmdk, esxi, host, provision, storage, cluster, provision a datastore and create its containing volume 
+summary: データストアには、 ESXi ホストの仮想マシンとその VMDK が格納されます。ESXi ホストのデータストアは、ストレージクラスタのボリュームにプロビジョニングします。 
+---
+= データストアをプロビジョニングしてその格納先ボリュームを作成する
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+データストアには、 ESXi ホストの仮想マシンとその VMDK が格納されます。ESXi ホストのデータストアは、ストレージクラスタのボリュームにプロビジョニングします。
+
+.作業を開始する前に
+Virtual Storage Console for VMware vSphere for（VSC）をインストールし、ESXiホストを管理するvCenter Serverに登録しておく必要があります。
+
+VSCに、指定したSVMにボリュームを作成するための十分なクラスタまたはクレデンシャルが必要です。
+
+.このタスクについて
+VSC では、データストアを自動でプロビジョニングすることができ、指定した SVM にボリュームを作成することもできます。
+
+.手順
+. vSphere Web Client * Home * ページで、 * Hosts and Clusters * をクリックします。
+. ナビゲーションペインで、データストアをプロビジョニングするデータセンターを展開します。
+. ESXi ホストを右クリックし、 * NetApp VSC * > * Provision Datastore * を選択します。
++
+また、プロビジョニング時にクラスタを右クリックして、クラスタ内のすべてのホストでデータストアを使用できるようにすることもできます。
+
+. ウィザードで必要な情報を指定します。
++
+image::../media/vsc_datastore_provisioning_wizard_nfs.gif[VSC データストアプロビジョニングウィザードの最初のページの図。]
+
+

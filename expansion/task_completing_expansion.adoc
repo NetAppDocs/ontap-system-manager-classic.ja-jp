@@ -1,0 +1,14 @@
+---
+permalink: expansion/task_completing_expansion.html 
+sidebar: sidebar 
+keywords: node, cluster, configuring, configure, autosupport, network, expansion, lun, path, complete, complete the expansion 
+summary: 両方のノードをクラスタに追加したら、 AutoSupport を設定し、 SP ネットワークを完了して、新しく追加したノードの設定を完了する必要があります。 
+---
+= 拡張を完了
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+両方のノードをクラスタに追加したら、 AutoSupport を設定し、 SP ネットワークを完了して、新しく追加したノードの設定を完了する必要があります。その後、拡張したクラスタを検証し、 AutoSupport メッセージを生成して拡張を完了します。クラスタが SAN を使用している場合は、 LUN パスを更新する必要があります。

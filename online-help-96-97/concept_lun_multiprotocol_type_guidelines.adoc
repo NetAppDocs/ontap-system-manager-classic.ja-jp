@@ -1,0 +1,147 @@
+---
+permalink: online-help-96-97/concept_lun_multiprotocol_type_guidelines.html 
+sidebar: sidebar 
+keywords: guidelines, lun, multiprotocol, type, operating, system, host, layout, data, minimum, maximum, size, online, help 
+summary: LUN マルチプロトコルタイプ、つまりオペレーティングシステムのタイプは、 LUN にアクセスするホストのオペレーティングシステムを指定します。また、 LUN のデータレイアウト、および LUN の最小サイズと最大サイズも決定します。 
+---
+= System Manager - ONTAP 9.7 以前で LUN マルチプロトコルタイプを使用する場合のガイドライン
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+ONTAP System Manager クラシック（ ONTAP 9.7 以前で使用可能）では、 LUN マルチプロトコルタイプまたはオペレーティングシステムタイプによって、 LUN にアクセスするホストのオペレーティングシステムが指定されます。また、 LUN のデータレイアウト、および LUN の最小サイズと最大サイズも決定します。
+
+[NOTE]
+====
+ONTAP のすべてのバージョンがすべての LUN マルチプロトコルタイプをサポートするわけではありません最新の情報については、 Interoperability Matrix Tool を参照してください。
+
+====
+次の表に、 LUN マルチプロトコルタイプの値と各タイプの使用に関するガイドラインを示します。
+
+|===
+| LUN マルチプロトコルタイプ | を使用する状況 
+
+
+ a| 
+AIX の場合
+ a| 
+ホストオペレーティングシステムが AIX の場合。
+
+
+
+ a| 
+HP-UX
+ a| 
+ホストオペレーティングシステムが HP-UX の場合。
+
+
+
+ a| 
+Hyper-V
+ a| 
+Windows Server 2008 または Windows Server 2012 の Hyper-V を使用していて、 LUN に Virtual Hard Disk （ VHD ；仮想ハードディスク）が格納されている場合。LUN タイプに hyper_v を使用している場合は、 igroup の OS タイプにも hyper_v を使用する必要があります。
+
+[NOTE]
+====
+raw LUN の場合、 LUN マルチプロトコルタイプで使用する子オペレーティングシステムのタイプを使用できます。
+
+====
+
+
+ a| 
+Linux の場合
+ a| 
+ホストオペレーティングシステムが Linux の場合。
+
+
+
+ a| 
+NetWare
+ a| 
+ホストオペレーティングシステムが NetWare の場合。
+
+
+
+ a| 
+OpenVMS
+ a| 
+ホストオペレーティングシステムが OpenVMS の場合。
+
+
+
+ a| 
+Solaris の場合
+ a| 
+ホストオペレーティングシステムが Solaris であり、 Solaris EFI ラベルを使用していない場合。
+
+
+
+ a| 
+Solaris EFI
+ a| 
+Solaris EFI ラベルを使用している場合。
+
+[NOTE]
+====
+Solaris EFI ラベルと他の LUN マルチプロトコルタイプを併用すると、 LUN が正しくアライメントされなくなることがあります。
+
+====
+
+
+ a| 
+VMware
+ a| 
+ESX Server を使用していて、 LUN に VMFS を設定する予定がある場合。
+
+[NOTE]
+====
+LUN に RDM を設定する場合は、ゲストオペレーティングシステムを LUN マルチプロトコルタイプとして使用できます。
+
+====
+
+
+ a| 
+Windows 2003 MBR の場合
+ a| 
+ホストオペレーティングシステムが MBR パーティショニング方法を使用する Windows Server 2003 の場合。
+
+
+
+ a| 
+Windows 2003 GPT
+ a| 
+GPT パーティショニング方法を使用する必要があり、 GPT を使用する機能がホストにある場合。Windows Server 2003 Service Pack 1 以降は、 GPT パーティショニング方法を使用できます。また、 64 ビットバージョンの Windows はすべて、 GPT パーティショニング方法をサポートしています。
+
+
+
+ a| 
+Windows 2008 以降
+ a| 
+ホストオペレーティングシステムが Windows Server 2008 以降であり、 MBR パーティショニング方法と GPT パーティショニング方法の両方がサポートされている場合。
+
+
+
+ a| 
+Xen
+ a| 
+Xen を使用していて、 LUN に Dom0 を使用して Linux LVM を設定する予定がある場合。
+
+[NOTE]
+====
+raw LUN の場合、 LUN マルチプロトコルタイプで使用するゲストオペレーティングシステムのタイプを使用できます。
+
+====
+|===
+* 関連情報 *
+
+xref:task_creating_luns.adoc[LUN を作成しています]
+
+https://mysupport.netapp.com/NOW/products/interoperability["ネットアップの相互運用性"]
+
+https://library.netapp.com/ecm/ecm_download_file/ECMP1148981["『 Solaris Host Utilities 6.1 Installation and Setup Guide 』"]
+
+https://library.netapp.com/ecm/ecm_download_file/ECMP1148983["Solaris Host Utilities 6.1 Quick Command Reference"]
+
+https://library.netapp.com/ecm/ecm_download_file/ECMP1148982["Solaris Host Utilities 6.1 Release Notes"]

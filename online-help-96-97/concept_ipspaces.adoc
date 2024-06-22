@@ -1,0 +1,54 @@
+---
+permalink: online-help-96-97/concept_ipspaces.html 
+sidebar: sidebar 
+keywords: ipspace, edit,rename, system, manager, manage, online, help 
+summary: System Manager を使用して、 IPspace を作成および管理できます。 
+---
+= System Manager を使用して ONTAP 9.7 以前を管理します
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+ONTAP System Manager クラシック（ ONTAP 9.7 以前で使用可能）を使用して、 IPspace を作成および管理できます。
+
+
+
+== IPspace を編集します
+
+System Manager を使用して、既存の IPspace の名前を変更できます。
+
+.このタスクについて
+* すべての IPspace 名はクラスタ内で一意である必要があり、ローカルやローカルホストなど、システムで予約されている名前ではない必要があります。
+* システム定義の「デフォルト」の IPspace と「クラスタ」の IPspace は変更できません。
+
+
+.手順
+. Network * > * IPspaces * をクリックします。
+. 変更する IPspace を選択し、 * Edit * をクリックします。
+. IPspace の編集 * ダイアログボックスで、 IPspace の新しい名前を指定します。
+. [ 名前の変更 *] をクリックします。
+
+
+
+
+== IPspace を削除します
+
+System Manager を使用して、不要になった IPspace を削除できます。
+
+.作業を開始する前に
+削除する IPspace に関連付けられているブロードキャストドメイン、ネットワークインターフェイス、ピア関係、または Storage Virtual Machine （ SVM ）がないようにします。
+
+.このタスクについて
+システム定義の「デフォルト」の IPspace と「クラスタ」の IPspace は削除できません。
+
+.手順
+. Network * > * IPspaces * をクリックします。
+. 削除する IPspace を選択し、 * Delete * をクリックします。
+. 確認のチェックボックスをオンにし、 * はい * をクリックします。
+
+
+* 関連情報 *
+
+https://docs.netapp.com/us-en/ontap/networking/index.html["Network Management の略"]

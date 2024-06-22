@@ -1,0 +1,51 @@
+---
+permalink: volume-backup-snapvault/task_monitoring_snapvault_relationship.html 
+sidebar: sidebar 
+keywords: periodically, monitor, status, snapvault, relationship, ensure, data, back, up, volume, schedule, monitor the snapvault relationship 
+summary: SnapVault 関係のステータスを定期的に監視して、デスティネーションボリュームへのデータのバックアップが指定したスケジュールに従って実行されていることを確認する必要があります。 
+---
+= SnapVault 関係を監視
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+SnapVault 関係のステータスを定期的に監視して、デスティネーションボリュームへのデータのバックアップが指定したスケジュールに従って実行されていることを確認する必要があります。
+
+.このタスクについて
+このタスクは、 * デスティネーション * クラスタから実行する必要があります。
+
+.手順
+. 実行している System Manager のバージョンに応じて、次のいずれかの手順を実行します。
++
+** ONTAP 9.4 以前： ［ * 保護 * ］ > ［ * 関係 * ］ をクリックします。
+** ONTAP 9.5 以降： * Protection * > * Volume Relationships * をクリックします。
+
+
+. ソースボリュームとデスティネーションボリューム間の SnapVault 関係を選択し、 * Details * Bottom タブでステータスを確認します。
++
+SnapVault 関係の健全性ステータス、転送エラー、および遅延時間が表示されます。
+
++
+** [Is Healthy]フィールドには `Yes`。
++
+データ転送に失敗するほとんどの場合、このフィールドには `No`。ただし、エラーが発生した場合は、フィールドに `Yes`。「詳細」セクションの転送エラーを確認して、データ転送が失敗していないことを確認する必要があります。
+
+** [Relationship State]フィールドには、 `Snapmirrored`。
+** 遅延時間は転送スケジュールの間隔よりも短い必要があります。
++
+たとえば、転送スケジュールが 1 日ごとの場合、遅延時間は 1 日未満でなければなりません。
+
++
+SnapVault 関係に問題がある場合は、トラブルシューティングを行ってください。SnapMirror 関係のトラブルシューティング手順は、 SnapVault 関係にも適用できます。
+
++
+http://www.netapp.com/us/media/tr-4015.pdf["ネットアップテクニカルレポート 4015 ：v SnapMirror Configuration and Best Practices for ONTAP 9.1 、 9.2 』"^]
+
++
+image::../media/monitor_sv.gif[sv を監視します]
+
+
+
+

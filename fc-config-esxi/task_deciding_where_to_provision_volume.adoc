@@ -1,0 +1,40 @@
+---
+permalink: fc-config-esxi/task_deciding_where_to_provision_volume.html 
+sidebar: sidebar 
+keywords: provision, volume, contain, lun, exist, storage, virtual, machine, svm, configure, fc, exist, svm, decide where to provision the volume 
+summary: LUN を格納するボリュームをプロビジョニングする前に、そのボリュームを既存の Storage Virtual Machine に追加するか、そのボリューム用に新しい SVM を作成するかを決める必要があります。既存の SVM に追加する場合は、 FC の設定も必要になる可能性があります。 
+---
+= ボリュームをプロビジョニングする場所を決定します
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+LUN を格納するボリュームをプロビジョニングする前に、そのボリュームを既存の Storage Virtual Machine （ SVM ）に追加するか、そのボリューム用に新しい SVM を作成するかを決める必要があります。既存の SVM に追加する場合は、 FC の設定も必要になる可能性があります。
+
+.このタスクについて
+既存の SVM ですでに必要なプロトコルが設定されていて、ホストからアクセスできる LIF がある場合は、既存の SVM を使用すると簡単です。
+
+データまたは管理をストレージクラスタの他のユーザから分離する場合は、新しい SVM を作成できます。プロトコルの区別だけで異なる SVM を使用してもメリットはありません。
+
+
+
+== 手順
+
+* すでに FC 用に設定されている SVM にボリュームをプロビジョニングする場合は、 FC サービスが実行されていることを確認する必要があります。
++
+link:task_verifying_that_fc_service_is_running_on_existing_svm.html["既存の SVM での FC サービスの実行状況の確認"]
+
+* FC が有効になっているが設定はまだ完了していない既存の SVM にボリュームをプロビジョニングする場合は、既存の SVM で iSCSI を設定します。
++
+link:task_configuring_iscsi_fc_creating_lun_on_existing_svm.html["既存の SVM で FC を設定"]
+
++
+これは、別のプロトコルを設定する際にこの手順に従って SVM を作成していない場合に該当します。
+
+* 新しい SVM にボリュームをプロビジョニングする場合は、 SVM を作成します。
++
+link:task_creating_svm.html["新しい SVM を作成"]
+
+

@@ -1,0 +1,45 @@
+---
+permalink: iscsi-config-windows/task_recording_iscsi_node_name.html 
+sidebar: sidebar 
+keywords: record, iscsi, initiator, node, program, windows, host, record the iscsi intiator node name, name 
+summary: Windows ホストの iSCSI イニシエータプログラムから iSCSI イニシエータノード名を記録しておく必要があります。 
+---
+= iSCSI イニシエータノード名を記録
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Windows ホストの iSCSI イニシエータプログラムから iSCSI イニシエータノード名を記録しておく必要があります。
+
+.手順
+. [* iSCSI Initiator Properties* （ iSCSI イニシエータのプロパティ） ] ダイアログボックスを開きます。
++
+|===
+| 使用するポート | に移動します 
+
+
+ a| 
+Windows Server 2012 、 Windows Server 2012 R2 、または Windows Server 2016
+ a| 
+* サーバー・マネージャー * > * ダッシュボード * > * ツール * > * iSCSI イニシエータ * > * 構成 *
+
+
+
+ a| 
+Windows Server 2008 、 Windows Server 2008 R2
+ a| 
+* スタート *>* 管理ツール *>* iSCSI イニシエータ *
+
+|===
+. イニシエータ名 * または * イニシエータノード名 * の値をテキストファイルにコピーするか、メモします。
++
+ダイアログボックスの正確なラベルは、 Windows のバージョンによって異なります。iSCSI イニシエータノード名は次のようになります。
+
++
+[listing]
+----
+iqn.1991-05.com.microsoft:server3
+----
+

@@ -1,0 +1,53 @@
+---
+permalink: online-help-96-97/task_creating_flexcache_volumes.html 
+sidebar: sidebar 
+keywords: online, help, create, flexcache, volume, system, manager 
+summary: System Manager 9.6 以降では、 FlexCache ボリュームを作成できます。 
+---
+= FlexCache ボリュームを作成します
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+System Manager 9.6 以降では、 FlexCache ボリュームを作成できます。
+
+.このタスクについて
+FlexCache を作成するには、 FlexCache 容量ライセンスが必要です。
+
+.手順
+. [* ストレージ *>* ボリューム *] をクリックします。
+. [* Volumes （ * ボリューム） ] ウィンドウで、 [* Create * （作成） ] > [* FlexCache * （ * ボリューム） ] をクリックします
++
+Create FlexCache （ボリュームの作成）ウィンドウが表示されます。
+
+. *オプション：* Origin Volume *領域の次のフィールドには、FlexCache ボリュームを作成する元のボリュームの値が表示されます。これらは変更できます。
++
+** * クラスタ * ：ドロップダウン・メニューを使用して、元のボリュームに関連付けられたクラスタを選択します。
+** * SVM * ：ドロップダウンメニューを使用して、元のボリュームが格納されている SVM を選択します。
++
+ピア関係が許可されているがまだ設定されていない SVM を選択した場合、 System Manager でピア関係を設定できます。
+
+** * 音量 * ：ドロップダウンメニューを使用してボリューム名を選択するか、フィールドに名前を入力します。
+
+
+. FlexCache Volume * 領域の以下のフィールドには、作成する FlexCache ボリュームのデフォルト値が表示されます。これらは変更できます。
++
+** * SVM * ：ドロップダウンメニューを使用して、 FlexCache ボリュームを作成する SVM を選択します。FlexCache ライセンスの容量がフルまたはほぼフルの場合は、 * Manage FlexCache license* を選択してライセンスを変更できます。
+** * 新しいボリューム名 * ： FlexCache ボリュームの名前を入力します。
+** * サイズ * ： FlexCache ボリュームのサイズと単位を指定します。
++
+サイズのフィールドは、最初にデフォルトで設定されています。ライセンス容量を超えるサイズは指定できません。
+
+
+
+. [ 保存（ Save ） ] をクリックして、 FlexCache ボリュームを作成します。
++
+ボリュームのリストに FlexCache ボリュームを表示するには、 * Volumes * ウィンドウに戻ります。
+
+
+
+* 関連情報 *
+
+xref:reference_volumes_window.adoc[Volumes （ボリューム）ウィンドウ]

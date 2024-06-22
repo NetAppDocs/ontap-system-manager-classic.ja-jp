@@ -1,0 +1,54 @@
+---
+permalink: expansion/task_installing_controllers.html 
+sidebar: sidebar 
+keywords: install, controller, exist, cluster, installation, setup, instruction, install the controllers 
+summary: 既存のクラスタに追加するコントローラを設置する場合は、該当するセットアップガイドの最初の 3 つの手順に従う必要があります。 
+---
+= コントローラを取り付けます
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+既存のクラスタに追加するコントローラを設置する場合は、該当する _Installation and Setup Instructions _ の最初の 3 つの手順に従う必要があります。
+
+[NOTE]
+.このタスクについて
+====
+ONTAP 9.0 以降では、新しいハードウェアで HA モードがデフォルトで有効になります。
+
+====
+.手順
+. クラスタに追加するコントローラモジュールの FAS モデル番号に対応したセットアップガイドを入手します。
++
+** 新しいコントローラモジュールについては、同梱されています。
+** 転用されたコントローラモジュールの場合は、ドキュメントをダウンロードできます。
+https://mysupport.netapp.com/site/docs-and-kb["NetApp のドキュメント"]
+
+
+. 次の例外を除き、 _ インストールの準備 _ セクションに従います。
++
+** ソフトウェアまたはワークシートのダウンロードに関する指示はスキップできます。
+** _Installation and Setup Instructions _ に記載されていない場合でも、シリアルコンソール接続を確立する必要があります。
++
+ノード管理 LIF の設定にノードシェル CLI を使用する必要があるため、シリアルコンソールが必要です。
+
++
+ONTAP のセクションにシリアルコンソールに関する記述がない場合は、 7-Mode のセクションを参照してください。
+
+
+
+. [Install hardware_] セクションに従います。
+. Cable storage_ セクションに従います。
+. Complete System Setup_ セクションのほとんどをスキップしますが、次の例外があります。
++
+** 指示があった場合は、すべてのディスクシェルフの電源をオンにし、 ID を確認する必要があります。
+** ノードにアクセスできるように、シリアルコンソールをケーブル接続する必要があります。
++
+ONTAP のセクションにシリアルコンソールに関する記述がない場合は、 7-Mode のセクションを参照してください。
+
+
+
+. Complete configuration_ssection をスキップします
+

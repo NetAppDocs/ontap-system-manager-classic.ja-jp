@@ -1,0 +1,28 @@
+---
+permalink: online-help-96-97/task_viewing_flexclone_volumes_hierarchy.html 
+sidebar: sidebar 
+keywords: flexclone, volume, system, manager, parent, volume, online, help 
+summary: System Manager を使用して FlexClone ボリュームとその親ボリュームの階層を表示できます。 
+---
+= FlexClone ボリューム階層 ONTAP 9.7 以前を表示します
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+ONTAP System Manager クラシック（ ONTAP 9.7 以前で使用可能）を使用して、 FlexClone ボリュームとその親ボリュームの階層を表示できます。
+
+.手順
+. [* ストレージ *>* ボリューム *] をクリックします。
+. SVM * フィールドのドロップダウンメニューで、 * すべての SVM * を選択します。
+. ボリュームのリストから必要なボリュームを選択します。
+. [ * その他のアクション * > * クローン * > * 階層の表示 * ] をクリックします。
+
+
+.結果
+少なくとも 1 つの FlexClone 子ボリュームを持つボリュームが表示されます。FlexClone ボリュームは、それぞれの親ボリュームの子として表示されます。
+
+* 関連情報 *
+
+xref:reference_volumes_window.adoc[Volumes （ボリューム）ウィンドウ]

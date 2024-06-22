@@ -1,0 +1,97 @@
+---
+permalink: online-help-96-97/concept_kerberos_interface_services.html 
+sidebar: sidebar 
+keywords: kerberos, interface, service, system, manager, manage, online, help, edit, configuration, buttons, command, window 
+summary: System Manager を使用して、 Kerberos インターフェイスサービスを管理できます。 
+---
+= System Manager - ONTAP 9.7 以前を使用して、 Kerberos インターフェイスサービスを管理します
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Kerberos インターフェイスサービスの管理には、 ONTAP System Manager クラシック（ ONTAP 9.7 以前で使用可能）を使用できます。
+
+
+
+== Kerberos 設定を編集します
+
+System Manager を使用して、 Kerberos を有効にしたり、 Storage Virtual Machine （ SVM ）に関連付けられた Kerberos の設定を編集したりできます。これにより、 SVM で、 NFS の Kerberos セキュリティサービスを使用できます。
+
+.作業を開始する前に
+* SVM レベルで Kerberos Realm を少なくとも 1 つ設定しておく必要があります。
+* SVM 上に少なくとも 2 つのデータ LIF が必要です。
++
+データ LIF の 1 つは、 SPN が UNIX と CIFS 関連の Kerberos トラフィック両方に使用します。もう 1 つのデータ LIF は、 Kerberos 以外のトラフィックのアクセスに使用されます。
+
++
+[NOTE]
+====
+CIFS サーバは、基本の NFS Kerberos アクセスには必要ありません。マルチプロトコルアクセス時、または名前のマッピングのために Active Directory を LDAP サーバとして使用するときに必要になります。
+
+====
+
+
+.このタスクについて
+Microsoft Active Directory Kerberos を使用する場合は、ドメインで使用する SPN の最初の 15 文字は一意である必要があります。Microsoft Active Directory では、 SPN に最大 15 文字の制限があり、重複する SPN は許可されません。
+
+.手順
+. [ * ストレージ * > * SVMs * ] をクリックします。
+. SVM を選択し、 * SVM 設定 * をクリックします。
+. [*Services*] ペインで、 [*Kerberos Interface*] をクリックします。
+. [* Kerberos インターフェイス * ] ウィンドウで、インターフェイスを選択し、 [ * 編集 ] をクリックします。
+. Kerberos 構成の編集 * （ Edit Kerberos Configuration * ）ダイアログボックスで、必要な変更を加え、 * OK * をクリックします。
+
+
+
+
+== Kerberos インターフェイスウィンドウ
+
+Kerberos インターフェイスウィンドウを使用して、 Kerberos を有効にしたり、 Storage Virtual Machine （ SVM ）の Kerberos 設定を編集したりできます。
+
+
+
+=== コマンドボタン
+
+* * 編集 * 。
++
+Kerberos 設定の編集ダイアログボックスを開きます。このダイアログボックスで、 Kerberos を有効にしたり、 SVM に関連付けられている Kerberos 設定を編集したりできます。
+
+* * 更新 *
++
+ウィンドウ内の情報を更新します。
+
+
+
+
+
+=== Kerberos インターフェイスリスト
+
+Kerberos 設定の詳細を表示します。
+
+* * インターフェイス名 *
++
+SVM の Kerberos 設定に関連付けられている論理インターフェイスを示します。
+
+* * サービスプリンシパル名 *
++
+Kerberos 設定に一致する SPN （サービスプリンシパル名）を示します。
+
+* * レルム *
++
+Kerberos 設定に関連付けられている Kerberos Realm の名前を示します。
+
+* * Kerberos ステータス *
++
+Kerberos が有効になっているかどうかを示します。
+
+
+
+* 関連情報 *
+
+link:https://www.netapp.com/pdf.html?item=/media/10720-tr-4067.pdf["ネットアップテクニカルレポート 4067 ：『 NFS in NetApp ONTAP 』"^]
+
+link:https://www.netapp.com/pdf.html?item=/media/19384-tr-4616.pdf["ネットアップテクニカルレポート 4616 ：『 NFS Kerberos in ONTAP with Microsoft Active Directory 』"^]
+
+link:https://www.netapp.com/pdf.html?item=/media/19423-tr-4835.pdf["ネットアップテクニカルレポート 4835 ：『 How to Configure LDAP in ONTAP 』"^]

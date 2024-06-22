@@ -1,0 +1,32 @@
+---
+permalink: fc-config-esxi/task_updating_hba_firmware.html 
+sidebar: sidebar 
+keywords: fc, host, bus, adapter, hba, esx, support, driver, firmware, bio, update, update the hba driver firmware and bios 
+summary: ESX ホストの FC ホストバスアダプタでサポート対象外のバージョンのドライバ、ファームウェア、 BIOS が実行されている場合は、更新する必要があります。 
+---
+= HBA のドライバ、ファームウェア、 BIOS を更新
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+ESX ホストの FC ホストバスアダプタ（ HBA ）でサポート対象外のバージョンのドライバ、ファームウェア、 BIOS が実行されている場合は、更新する必要があります。
+
+.作業を開始する前に
+構成に対してサポートされているドライバ、ファームウェア、 BIOS のバージョンをで確認しておく必要があります https://mysupport.netapp.com/matrix["NetApp Interoperability Matrix Tool で確認できます"]。
+
+.このタスクについて
+ドライバ、ファームウェア、 BIOS 、 HBA ユーティリティは HBA ベンダーから提供されます。
+
+.手順
+. ESXi のバージョンに対応した ESXi ホストのコンソールコマンドを使用して、インストールされている HBA のドライバ、ファームウェア、 BIOS のバージョンを確認します。
+. 必要に応じて、 HBA ベンダーのサポートサイトから新しいドライバ、ファームウェア、 BIOS をダウンロードしてインストールします。
++
+インストール手順と必要なインストールユーティリティは、ダウンロードファイルに含まれています。
+
+
+
+* 関連情報 *
+
+http://kb.vmware.com/kb/1002413["VMware の技術情報アーティクル 1002413 ：「 Identifying the firmware of a Qlogic or Emulex FC HBA"]

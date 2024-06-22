@@ -1,0 +1,27 @@
+---
+permalink: peering/task_creating_svm_peers.html 
+sidebar: sidebar 
+keywords: storage, virtual, machine, svm, peer, enable, establish, relationship, data, protection, create, create svm peer relationship 
+summary: ONTAP 9.3 以降では、 ONTAP 9.7 まで ONTAP System Manager の「クラシック」インターフェイスを使用して SVM ピア関係を作成できます。Storage Virtual Machine （ SVM ）ピアリングでは、データ保護のために 2 つの SVM 間のピア関係を確立できます。 
+---
+= SVM ピア関係を作成
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+ONTAP 9.3 以降では、 ONTAP 9.7 までの間、 ONTAP の System Manager の _classic_interface を使用して SVM ピア関係を作成できます。Storage Virtual Machine （ SVM ）ピアリングでは、データ保護のために 2 つの SVM 間のピア関係を確立できます。
+
+.手順
+. イニシエータ SVM を選択します。
+. 許可される SVM のリストからターゲット SVM を選択します。
+. * SVM ピアリングの開始 * をクリックします。
+. [* Continue （続行） ] をクリックします
+
+
+
+
+== 次に何をするか
+
+クラスタ間 LIF 、クラスタピア関係、および SVM ピア関係は、概要ウィンドウで確認できます。

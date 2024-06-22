@@ -1,0 +1,29 @@
+---
+permalink: online-help-96-97/task_setting_snapshot_copy_reserve.html 
+sidebar: sidebar 
+keywords: set, up, snapshot, copy, reserve, system, manager, online, help 
+summary: System Manager を使用して、 Snapshot コピー用にボリュームのスペースを予約できます。Snapshot コピーリザーブを設定すると、 Snapshot コピー用ディスクスペースが十分に確保され、アクティブなファイルシステムのスペースが Snapshot コピーによって使用されることがなくなります。 
+---
+= System Manager - ONTAP 9.7 以前を使用して、 Snapshot コピーリザーブを設定します
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+ONTAP System Manager クラシック（ ONTAP 9.7 以前で使用可能）を使用して、ボリューム内の Snapshot コピー用にスペース（割合で測定）を予約できます。Snapshot コピーリザーブを設定すると、 Snapshot コピー用ディスクスペースが十分に確保され、アクティブなファイルシステムのスペースが Snapshot コピーによって使用されることがなくなります。
+
+.このタスクについて
+Snapshot コピー用にデフォルトで予約されているスペースは、 SAN ボリュームと VMware ボリュームについては 5% です。
+
+.手順
+. [* ストレージ *>* ボリューム *] をクリックします。
+. SVM * フィールドのドロップダウンメニューで、 * すべての SVM * を選択します。
+. Snapshot コピーリザーブを設定するボリュームを選択します。
+. [ * その他の操作 * > * スナップショットの管理 * > * 構成設定 * ] をクリックします。
+. Snapshot コピー用に確保するボリュームスペースの割合を入力または選択し、 * OK * をクリックします。
+
+
+* 関連情報 *
+
+xref:reference_volumes_window.adoc[Volumes （ボリューム）ウィンドウ]

@@ -1,0 +1,57 @@
+---
+permalink: online-help-96-97/task_creating_portsets.html 
+sidebar: sidebar 
+keywords: system, manager, port, set, create, online, help, lun, delete, edit, manage 
+summary: ONTAP System Manager クラシックを使用して、ポートセットを作成、削除、および編集できます。 
+---
+= ONTAP 9.7 以前のシステムでポートセットを管理します
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+ONTAP System Manager クラシック（ ONTAP 9.7 以前で使用可能）を使用して、ポートセットを作成、削除、および編集できます。
+
+
+
+== ポートセットを作成します
+
+ONTAP System Manager クラシックを使用して、ポートセットを作成し、 LUN へのアクセスを制限できます。
+
+.手順
+. [ * ストレージ * > * LUNs * ] をクリックします。
+. [ * ポートセット * ] タブで、 [ * 作成 ] をクリックします。
+. [Create portset *] ダイアログボックスで、プロトコルのタイプを選択します。
+. ポートセットに関連付けるネットワークインターフェイスを選択してください。
+. [ 作成（ Create ） ] をクリックします。
+
+
+
+
+== ポートセットを削除します
+
+System Manager を使用して、不要になったポートセットを削除できます。
+
+.手順
+. [ * ストレージ * > * LUNs * ] をクリックします。
+. [ * ポートセット * ] タブで、 1 つまたは複数のポートセットを選択し、 [ * 削除 * ] をクリックします。
+. 削除を確認するには、 * Delete * をクリックします。
+
+
+
+
+== ポートセットを編集します
+
+System Manager のポートセットタブを使用して、ポートセットに関連する設定を編集できます。
+
+.手順
+. [ * ストレージ * > * LUNs * ] をクリックします。
+. [ * ポートセット * ] タブで、編集するポートセットを選択し、 [ * 編集 ] をクリックします。
+. [ ポートセットの編集 *] ダイアログボックスで、必要な変更を行います。
+. [ 保存して閉じる ] をクリックします。
+
+
+* 関連情報 *
+
+xref:task_configuring_iscsi_protocol_on_svms.adoc[SVM で iSCSI プロトコルを設定します]

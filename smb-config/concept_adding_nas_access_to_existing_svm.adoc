@@ -1,0 +1,87 @@
+---
+permalink: smb-config/concept_adding_nas_access_to_existing_svm.html 
+sidebar: sidebar 
+keywords: add, cifs, smb, access, exist, svm, involve, creating, create, data, lif, configuring, configure, server, provision, volume, sharing, share, permission, add cifs access to an existing svm 
+summary: 既存の SVM への CIFS / SMB アクセスを追加するには、データ LIF を作成し、 CIFS サーバを設定し、ボリュームをプロビジョニングして共有し、共有権限を設定します。 
+---
+= 既存のSVMにCIFSアクセスを追加する
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+既存の SVM への CIFS / SMB アクセスを追加するには、データ LIF を作成し、 CIFS サーバを設定し、ボリュームをプロビジョニングして共有し、共有権限を設定します。
+
+.作業を開始する前に
+* SVM で使用する次のネットワークコンポーネントを確認しておく必要があります。
++
+** データ論理インターフェイス（ LIF ）を作成するノードとそのノード上の特定のポート
+** データ LIF の IP アドレスをプロビジョニングするサブネット、または必要に応じてデータ LIF に割り当てる特定の IP アドレス
+** この SVM を追加する Active Directory （ AD ）ドメインと SVM を追加するために必要なクレデンシャル
+
+
+* 外部ファイアウォールがある場合は、ネットワークサービスへのアクセスを許可するように適切に設定しておく必要があります。
+* SVMでCIFSプロトコルが許可されている必要があります。
++
+これは、手順のあとに SAN プロトコルを設定する SVM を作成していない場合に該当します。
+
+
+
+.手順
+. SVM のプロトコルを設定するための領域に移動します。
++
+.. 設定する SVM を選択します。
+.. [* 詳細 * （ * Details * ） ] ペインで、 [ * プロトコル * （ * Protocols ） ] の横の [* CIFS* ] をクリックします。
++
+image::../media/svm_add_protocol_cifs.gif[この図には説明が付随しています。]
+
+
+
+. CIFS プロトコルの設定 * ダイアログボックスの * データ LIF の設定 * セクションで、 SVM 用のデータ LIF を作成します。
++
+.. LIF に IP アドレスを割り当てます。指定したサブネットから自動で割り当てるか、手動で入力して割り当てます。
+.. 「 * Browse 」をクリックして、 LIF に関連付けるノードとポートを選択します。
++
+image::../media/svm_setup_cifs_nfs_page_lif_multi_nas_smb.gif[この図には説明が付随しています。]
+
+
+
+. CIFS Server Configuration * セクションで CIFS サーバを定義し、 AD ドメインにアクセスするように設定します。
++
+.. CIFS サーバに AD ドメイン内で一意の名前を指定します。
+.. CIFS サーバを追加できる AD ドメインの FQDN を指定します。
+.. AD ドメイン内の CN=Computers 以外の組織単位（ OU ）を関連付ける場合は、その OU を入力します。
+.. OU に CIFS サーバを追加するための十分な権限がある管理用アカウントの名前とパスワードを指定します。
+.. この SVM 上のすべての共有に対する不正アクセスを防止するには、 SMB 3.0 を使用してデータを暗号化するオプションを選択します。
+
+
++
+image::../media/svm_setup_cifs_nfs_page_cifs_ad_smb.gif[この図には説明が付随しています。]
+
+. CIFS / SMB アクセス用にボリュームを作成し、共有をプロビジョニングします。
++
+.. CIFS / SMB クライアントからボリュームにアクセスするときに使用する共有の名前を指定します。
++
+入力した共有の名前はボリューム名としても使用されます。
+
+.. ボリュームのサイズを指定します。
++
+image::../media/svm_setup_cifs_nfs_page_cifs_share_smb.gif[CIFS 共有の設定に使用する領域のスクリーンショット]
+
+
+
++
+ボリュームのアグリゲートを指定する必要はありません。ボリュームは利用可能なスペースが最も多いアグリゲートに自動的に配置されます。
+
+. *オプション*：共有ACLを変更して、共有へのアクセスを制限します。
++
+.. [*permission] フィールドで、 [*Change] をクリックします。
+.. Everyone グループを選択し、 * Remove * をクリックします。
+.. *オプション*：* Add *をクリックし、SVMを含むWindows Active Directoryドメインで定義されている管理者グループの名前を入力します。
+.. 新しい管理者グループを選択し、 * Full Control * を選択します。
+.. [ 保存して閉じる ] をクリックします。
+
+
+. [ 送信して閉じる *] をクリックし、 [OK] をクリックします。
+

@@ -1,0 +1,24 @@
+---
+permalink: nfs-config-esxi/task_verifying_that_nfs_is_enabled_on_existing_svm.html 
+sidebar: sidebar 
+keywords: verify, nfs, enable, configure, access, esxi, verify that nfs is enabled on an existing SVM 
+summary: 既存の SVM を使用する場合は、まずその SVM で NFS が有効になっていることを確認する必要があります。その後、 Virtual Storage Console を使用して NFS アクセスを設定し、 ESXi で NFS が有効になっていることを確認できます。 
+---
+= 既存のSVMでNFSが有効になっていることを確認
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+既存の SVM を使用する場合は、まずその SVM で NFS が有効になっていることを確認する必要があります。その後、 Virtual Storage Console を使用して NFS アクセスを設定し、 ESXi で NFS が有効になっていることを確認できます。
+
+.手順
+. SVMs ウィンドウに移動します。
+. SVM の設定 * タブをクリックします。
+. [*Protocols* ] ペインで、 [*NFS*] をクリックします。
+. NFS が有効と表示されていることを確認します。
++
+NFS が有効になっていない場合は、有効にするか、新しい SVM を作成する必要があります。
+
+

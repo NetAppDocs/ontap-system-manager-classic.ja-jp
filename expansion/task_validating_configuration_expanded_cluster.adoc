@@ -1,0 +1,73 @@
+---
+permalink: expansion/task_validating_configuration_expanded_cluster.html 
+sidebar: sidebar 
+keywords: expand, cluster, validate, configuration, config, advisor, command, health, replication, ring, validate the configuration of the expanded cluster 
+summary: クラスタを拡張したら、 Config Advisor を実行し、クラスタの健全性とクラスタレプリケーションリングを確認するコマンドを使用して、構成を検証する必要があります。 
+---
+= 拡張したクラスタの構成を検証
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+クラスタを拡張したら、 Config Advisor を実行し、クラスタの健全性とクラスタレプリケーションリングを確認するコマンドを使用して、構成を検証する必要があります。
+
+.手順
+. Config Advisor を実行して構成の健全性を確認します。
++
+.. Config Advisor を起動し、 * データ収集 * をクリックします。
++
+Config Advisor に、見つかった問題が表示されます。
+
+.. 問題が見つかった場合は、解決してからツールを再実行します。
+
+
+. を使用して、クラスタ内のすべてのノードが正常な状態であることを確認します。 `cluster show` コマンドを実行します
++
+[listing]
+----
+cluster-1::> cluster show
+Node                  Health  Eligibility
+--------------------- ------- ------------
+cluster1-1            true    true
+cluster1-2            true    true
+cluster1-3            true    true
+cluster1-4            true    true
+4 entries were displayed.
+----
+. クラスタレプリケーションリングが、クラスタ内のすべてのノードで同じエポック、データベースエポック、およびデータベーストランザクション番号を使用していることを確認します。
++
+トランザクション番号を比較する最も簡単な方法は、一度に 1 つのユニット名について表示することです。
+
++
+.. を使用して権限レベルをadvancedに設定します。 `set -privilege advanced` コマンドを実行します
+.. を使用して、最初のユニット名に関するクラスタリング情報を表示します。 `cluster ring show` コマンドにを指定します `-unitname mgmt` パラメータを入力し、Epoch、DB Epoch、DB Trnxsの各列の数値がすべてのノードで同じであることを確認します。
++
+[listing]
+----
+cluster-1::*> cluster ring show -unitname mgmt
+Node      UnitName Epoch    DB Epoch DB Trnxs Master    Online
+--------- -------- -------- -------- -------- --------- ---------
+cluster1-1
+          mgmt     2        2        959      cluster1-1
+                                                        master
+cluster1-2
+          mgmt     2        2        959      cluster1-2
+                                                        secondary
+cluster1-3
+          mgmt     2        2        959      cluster1-3
+                                                        master
+cluster1-4
+          mgmt     2        2        959      cluster1-3
+                                                        secondary
+4 entries were displayed.
+----
+.. コマンドを `-unitname vldb` パラメータ
+.. コマンドを `-unitname vifmgr` パラメータ
+.. コマンドを `-unitname bcomd` パラメータ
+.. コマンドを `-unitname crs` パラメータ
+.. を使用して権限レベルをadminに戻します。 `set -privilege admin` コマンドを実行します
+
+
+

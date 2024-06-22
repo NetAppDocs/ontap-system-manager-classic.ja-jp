@@ -1,0 +1,33 @@
+---
+permalink: smb-config/task_configuring_verifying_client_access.html 
+sidebar: sidebar 
+keywords: client, access, share, setting, ntfs, file, permission, windows, explorer, modify, share, acl, system, manager, affect, group, volume, configure, verify, vonfigure and verify cifs client access 
+summary: 準備ができたら、エクスプローラで NTFS ファイル権限を設定し、 System Manager で共有 ACL を変更して、選択したクライアントに共有へのアクセスを許可することができます。設定が完了したら、該当するユーザまたはグループがボリュームにアクセスできることを確認してください。 
+---
+= CIFS クライアントアクセスを設定して確認
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+準備ができたら、エクスプローラで NTFS ファイル権限を設定し、 System Manager で共有 ACL を変更して、選択したクライアントに共有へのアクセスを許可することができます。設定が完了したら、該当するユーザまたはグループがボリュームにアクセスできることを確認してください。
+
+.手順
+. 共有へのアクセスを許可するクライアントとユーザまたはグループを決定します。
+. Windows クライアントで、管理者ロールを使用して、ファイルおよびフォルダに対する権限をユーザまたはグループに付与します。
++
+.. NTFS 権限を管理するための十分な管理権限がある管理者として Windows クライアントにログインします。
+.. エクスプローラでドライブを右クリックし、 * プロパティ * を選択します。
+.. [ * セキュリティ * ] タブを選択し、必要に応じてグループおよびユーザーのセキュリティ設定を調整します。
+
+
+. System Manager で、共有 ACL を変更して、 Windows のユーザまたはグループに共有へのアクセスを許可します。
++
+.. [ * 共有 ] ウィンドウに移動します。
+.. 共有を選択し、 * 編集 * をクリックします。
+.. [ * アクセス権 * ] タブを選択し、ユーザーまたはグループに共有へのアクセス権を付与します。
+
+
+. Windows クライアントで、共有およびファイルへのアクセスを許可したいずれかのユーザとしてログインし、共有にアクセスしてファイルを作成できることを確認します。
+

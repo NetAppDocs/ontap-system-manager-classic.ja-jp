@@ -1,0 +1,37 @@
+---
+permalink: nfs-config/task_configuring_verifying_client_access_new_svm.html 
+sidebar: sidebar 
+keywords: client, access, unix, file, permission, administration, host, add, export, rule, system, manager, user, group, volume, configure, configure and verify nfs client access, create a new nfs-enabled svm 
+summary: 準備ができたら、 UNIX 管理ホストで UNIX ファイル権限を設定し、 System Manager でエクスポートルールを追加して、選択したクライアントに共有へのアクセスを許可することができます。設定が完了したら、該当するユーザまたはグループがボリュームにアクセスできることを確認してください。 
+---
+= NFS クライアントアクセスを設定して確認（ NFS 対応 SVM を新規に作成）
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+準備ができたら、 UNIX 管理ホストで UNIX ファイル権限を設定し、 System Manager でエクスポートルールを追加して、選択したクライアントに共有へのアクセスを許可することができます。設定が完了したら、該当するユーザまたはグループがボリュームにアクセスできることを確認してください。
+
+.手順
+. 共有へのアクセスを許可するクライアントとユーザまたはグループを決定します。
+. UNIX 管理ホストで、 root ユーザを使用して、ボリュームに対する UNIX の所有権と権限を設定します。
+. System Manager で、エクスポートポリシーにルールを追加して、 NFS クライアントに共有へのアクセスを許可します。
++
+.. Storage Virtual Machine （ SVM ）を選択し、 * SVM Settings * をクリックします。
+.. [* Policies * （ポリシー * ） ] ペインで、 [* Export Policies （エクスポートポリシー * ） ] をクリックします。
+.. ボリュームと同じ名前のエクスポートポリシーを選択します。
+.. [* エクスポートルール * ] タブで、 [* 追加 ] をクリックし、クライアントのセットを指定します。
+.. 管理ホストへのアクセスを許可するルールの後でこのルールが実行されるように、 * ルールインデックス * には * 2 * を選択します。
+.. 「 * NFSv3 」を選択します。
+.. 必要なアクセスの詳細を指定し、 * OK. * をクリックします
++
+読み取り/書き込みのフルアクセスをクライアントに付与するには、サブネットを入力します。 `10.1.1.0/24` [Client Specification]*と入力し、[Allow Superuser Access]*を除くすべてのアクセスチェックボックスを選択します。
+
++
+image::../media/export_rule_for_clients_nfs_nfs.gif[このスクリーンショットは上記の説明のものです。]
+
+
+
+. UNIX クライアントで、ボリュームへのアクセスを許可したいずれかのユーザとしてログインし、ボリュームをマウントしてファイルを作成できることを確認します。
+

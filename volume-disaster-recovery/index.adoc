@@ -1,0 +1,41 @@
+---
+permalink: volume-disaster-recovery/index.html 
+sidebar: sidebar 
+keywords: content, destination, activate, volume, disaster, reactivate, source, ontap, volume disaster recovery overview 
+summary: ONTAP System Manager クラシックインターフェイス（ ONTAP 9.7 以前）を使用して、災害発生後にデスティネーションボリュームを簡単にアクティブ化し、 ONTAP でソースボリュームを再アクティブ化できます。 
+---
+= ボリュームディザスタリカバリの概要
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+ONTAP System Manager クラシックインターフェイス（ ONTAP 9.7 以前）を使用して、災害発生後にデスティネーションボリュームを簡単にアクティブ化し、 ONTAP でソースボリュームを再アクティブ化できます。
+
+この手順は、ボリュームレベルのディザスタリカバリを実行する場合に使用します。想定している状況は次のとおりです。
+
+* クラスタで ONTAP 9 を実行している。
+* クラスタ管理者である。
+* SnapMirror 関係の設定は次のとおりです xref:../volume-disaster-prep/index.html[ボリュームのディザスタリカバリの準備]
+* ソースクラスタのクラスタ管理者が、ウィルス感染によるデータ破損や誤操作によるデータ削除など、何らかの理由でソースボリュームのデータを使用できなくなったと報告している。
+* ONTAP のコマンドラインインターフェイスや自動スクリプトツールではなく、 System Manager を使用する。
+* ONTAP 9.7 以降では、 ONTAP System Manager の UI ではなく、 ONTAP 9.7 以前のリリースで System Manager のクラシックインターフェイスを使用する。
+* すべての選択肢について検討するのではなく、ベストプラクティスに従う。
+* 背景にある概念について詳しく確認する必要はありません。
+
+
+
+
+== ONTAP でこれを行うその他の方法
+
+[cols="2"]
+|===
+| 実行するタスク | 参照するコンテンツ 
+
+
+| 再設計された System Manager （ ONTAP 9.7 以降で使用可能） | link:https://docs.netapp.com/us-en/ontap/task_dp_serve_data_from_destination.html["SnapMirror デスティネーションからのデータの提供"^] 
+
+
+| ONTAP のコマンドラインインターフェイス | link:https://docs.netapp.com/us-en/ontap/data-protection/make-destination-volume-writeable-task.html["デスティネーションボリュームをアクティブ化"^] 
+|===

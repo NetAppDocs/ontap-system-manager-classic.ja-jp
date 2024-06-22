@@ -1,0 +1,26 @@
+---
+permalink: nfs-config-esxi/task_configuring_esxi_host_best_practice_settings.html 
+sidebar: sidebar 
+keywords: ensure, esxi, practice, setting, correct, host, loss, nfs, connection, storage, configure, configure the esxi host best practice settings 
+summary: ESXi ホストが NFS 接続またはストレージの損失を正しく管理できるように、 ESXi ホストのベストプラクティス設定が正しいことを確認する必要があります。 
+---
+= ESXi ホストのベストプラクティスを設定
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+ESXi ホストが NFS 接続またはストレージの損失を正しく管理できるように、 ESXi ホストのベストプラクティス設定が正しいことを確認する必要があります。
+
+.手順
+. VMware vSphere Web Client * Home * ページで、 * vCenter * > * Hosts * をクリックします。
+. ホストを右クリックし、 * Actions * > * NetApp VSC * > * Set Recommended Values * を選択します。
+. NetApp Recommended Settings * ダイアログボックスで、すべてのオプションが選択されていることを確認し、 * OK * をクリックします。
++
+MPIO 設定は NFS には適用されません。ただし、他のプロトコルを使用する場合は、すべてのオプションが選択されていることを確認してください。
+
++
+vCenter Web Client にタスクの進捗状況が表示されます。
+
+

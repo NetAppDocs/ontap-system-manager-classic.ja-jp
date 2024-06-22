@@ -1,0 +1,77 @@
+---
+permalink: nfs-config/task_configuring_ldap_existing_svm.html 
+sidebar: sidebar 
+keywords: storage, virtual, machine, svm, information, active, directory-based, lightweight, directory, access, protocol, ldap, client, user, information, configure ldap, configure nfs access to an existing svm 
+summary: Storage Virtual Machine （ SVM ）が Active Directory ベースの Lightweight Directory Access Protocol （ LDAP ）からユーザ情報を取得するように設定する場合は、 LDAP クライアントを作成し、 SVM に対して有効にして、ユーザ情報の他のソースよりも LDAP を優先するように設定する必要があります。 
+---
+= LDAP を設定（既存の SVM への NFS アクセスを設定）
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Storage Virtual Machine （ SVM ）が Active Directory ベースの Lightweight Directory Access Protocol （ LDAP ）からユーザ情報を取得するように設定する場合は、 LDAP クライアントを作成し、 SVM に対して有効にして、ユーザ情報の他のソースよりも LDAP を優先するように設定する必要があります。
+
+.作業を開始する前に
+* LDAP 設定で Active Directory （ AD ）を使用している必要があります。
++
+別の種類の LDAP を使用する場合は、他のドキュメントに従って、コマンドラインインターフェイス（ CLI ）を使用して LDAP を設定する必要があります。詳細については、を参照してください link:https://docs.netapp.com/us-en/ontap/nfs-config/using-ldap-concept.html["LDAP の使用方法の概要"^]。
+
+* AD ドメインと AD サーバ、およびバインドに使用する認証レベル、バインドユーザとパスワード、ベース DN 、 LDAP ポートの情報を確認しておく必要があります。
+
+
+.手順
+. SVMs ウィンドウに移動します。
+. 必要な SVM を選択します
+. SVM の設定 * タブをクリックします。
+. SVM で使用する LDAP クライアントを設定します。
++
+.. [* サービス * （ * Services * ） ] ペインで、 [* LDAP クライアント * （ * LDAP Client * ） ] をクリック
+.. [* LDAP Client Configuration* （ * LDAP クライアント設定 * ） ] ウィンドウで、 [ * 追加 * ] をクリックします。
+.. [LDAPクライアントの作成]*ウィンドウの*[全般]*タブで、LDAPクライアント設定の名前を入力します（例： `vs0client1`。
+.. AD ドメインまたは AD サーバのいずれかを追加します。
++
+image::../media/ldap_client_creation_general_tab_nfs.gif[この図には説明が付随しています。]
+
+.. バインド * をクリックして、認証レベル、バインドユーザーとパスワード、ベース DN 、およびポートを指定します。
++
+image::../media/ldap_client_creation_binding_tab_nfs.gif[この図には説明が付随しています。]
+
+.. [ 保存して閉じる ] をクリックします。
+
+
++
+新しいクライアントが作成され、 SVM で使用できるようになります。
+
+. 新しい LDAP クライアントを SVM に対して有効にします。
++
+.. ナビゲーションペインで、 * LDAP 設定 * をクリックします。
+.. [ 編集（ Edit ） ] をクリックします。
+.. 作成したクライアントが * LDAP クライアント名 * で選択されていることを確認します。
+.. [* LDAP クライアントを有効にする *] を選択し、 [OK] をクリックします。
++
+image::../media/ldap_svm_configuration_active_ldap_client_nfs.gif[この図には説明が付随しています。]
+
+
+
++
+SVM で新しい LDAP クライアントが使用されます。
+
+. Network Information Service （ NIS ）やローカルのユーザとグループなど、ユーザ情報の他のソースよりも LDAP を優先するように設定します。
++
+.. SVMs ウィンドウに移動します。
+.. SVM を選択し、 * Edit * をクリックします。
+.. [*Services*] タブをクリックします。
+.. [*Name Service Switch*] で、データベースタイプの優先ネームサービススイッチソースとして *ldap* を指定します。
+.. [ 保存して閉じる ] をクリックします。
+
+
++
+image::../media/name_services_ldap_priority_nfs.gif[この図には説明が付随しています。]
+
++
+[+]
+この SVM で、ネームサービスおよびネームマッピングに使用するユーザ情報のソースとして LDAP が優先されるようになります。
+
+

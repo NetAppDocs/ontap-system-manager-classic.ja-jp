@@ -1,0 +1,31 @@
+---
+permalink: online-help-96-97/task_editing_protection_policies.html 
+sidebar: sidebar 
+keywords: edit, protection, policies, online, help, system, manager 
+summary: System Manager を使用して、保護ポリシーを変更し、変更後のポリシーをデータ保護関係に適用することができます。 
+---
+= 保護ポリシーを編集しています
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+System Manager を使用して、保護ポリシーを変更し、変更後のポリシーをデータ保護関係に適用することができます。
+
+.このタスクについて
+保護ポリシーはクラスタレベルでは表示されません。
+
+.手順
+. [ * ストレージ * > * SVMs * ] をクリックします。
+. Storage Virtual Machine （ SVM ）を選択し、 * SVM Settings * をクリックします。
+. [* Policies * （ポリシー * ） ] ペインで、 [* Protection Policies （保護ポリシー * ） ] をクリックします。
+. 編集する保護ポリシーを選択し、 * 編集 * をクリックします。
+. 転送の優先順位を変更し、ネットワーク圧縮を有効または無効にします。
+. 非同期ミラーポリシーの場合は、すべてのソース Snapshot コピーをバックアップします。
+. バックアップポリシーまたはミラーバックアップポリシーの場合は、 SnapMirror ラベルと保持数を変更します。
++
+ミラーバックアップポリシーの sm_created ラベルは削除できません。
+
+. [ 保存（ Save ） ] をクリックします。
+

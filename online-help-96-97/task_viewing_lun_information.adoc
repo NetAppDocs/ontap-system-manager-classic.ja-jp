@@ -1,0 +1,20 @@
+---
+permalink: online-help-96-97/task_viewing_lun_information.html 
+sidebar: sidebar 
+keywords: view, lun, information, manangement, online, help 
+summary: System Manager の LUN の管理タブでは、名前、ステータス、サイズ、タイプなど、 LUN に関する詳細を確認できます。 
+---
+= System Manager - ONTAP 9.7 以前を使用して、 LUN の情報を表示します
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+ONTAP システムマネージャクラシック（ ONTAP 9.7 以前で使用可能）の * LUN 管理 * タブを使用して、名前、ステータス、サイズ、タイプなど、 LUN に関する詳細を表示できます。
+
+.手順
+. [ * ストレージ * > * LUNs * ] をクリックします。
+. LUN 管理 * タブで、表示された LUN のリストから、情報を表示する LUN を選択します。
+. LUN の詳細を「 * LUNs * 」ウィンドウで確認します。
+

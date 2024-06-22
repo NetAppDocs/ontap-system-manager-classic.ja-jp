@@ -1,0 +1,25 @@
+---
+permalink: iscsi-config-esxi/task_enabling_iscsi_software_adapter.html 
+sidebar: sidebar 
+keywords: iscsi, software, adapter, create, connection, esx, host, operating, system, enable, enable the iscsi software adapter, esxi 
+summary: ESX ホストでの iSCSI 接続の作成には、 iSCSI ソフトウェアアダプタを使用します。オペレーティングシステムに組み込まれていますが、使用する前に有効にする必要があります。 
+---
+= iSCSI ソフトウェアアダプタを有効にします
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+ESXi ホストで iSCSI 接続が作成されます。オペレーティングシステムに組み込まれていますが、使用する前に有効にする必要があります。
+
+.作業を開始する前に
+VMware vSphere Client がワークステーションにインストールされているか、 vSphere Web Client にアクセスできる必要があります。
+
+.手順
+. vSphere Client にログインします。
+. インベントリペインから ESX ホストを選択します。
+. [* 構成 *>* ストレージアダプタ *] をクリックします。
+. iSCSI ソフトウェアアダプタを選択し、 * Properties * > * Configure * をクリックします。
+. [ 有効 ] を選択し、 [OK] をクリックします。
+

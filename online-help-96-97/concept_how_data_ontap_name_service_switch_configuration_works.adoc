@@ -1,0 +1,127 @@
+---
+permalink: online-help-96-97/concept_how_data_ontap_name_service_switch_configuration_works.html 
+sidebar: sidebar 
+keywords: ontap, name, service, switch, configuration, works, unix, system, online, help 
+summary: ONTAP では、 UNIX システムの /etc/nsswitch.conf ファイルに相当するテーブルにネームサービス設定情報が格納されます。このテーブルを環境に応じて適切に設定するためには、その機能と ONTAP でテーブルがどのように使用されるかを理解しておく必要があります。 
+---
+= System ManagerでのONTAP ネームサービススイッチの設定について- ONTAP 9.7以前
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+ONTAP System Managerクラシック（ONTAP 9.7以前で使用可能）では、ネームサービスの設定情報が次の表に格納されます。 `/etc/nsswitch.conf` UNIXシステム上のファイル。このテーブルを環境に応じて適切に設定するためには、その機能と ONTAP でテーブルがどのように使用されるかを理解しておく必要があります。
+
+ONTAP ネームサービススイッチテーブルは、 ONTAP が特定の種類のネームサービス情報を取得する際にどのネームサービスソースをどの順番で参照するかを決定します。ONTAP では、 SVM ごとに個別のネームサービススイッチテーブルが保持されます。
+
+
+
+== データベースタイプ
+
+テーブルには、次の各データベースタイプについてネームサービスのリストが格納されます。
+
+|===
+| データベースタイプ | ネームサービスソースの用途 | 有効なソース 
+
+
+ a| 
+ホスト
+ a| 
+ホスト名の IP アドレスへの変換
+ a| 
+ファイル、 DNS
+
+
+
+ a| 
+グループ
+ a| 
+ユーザグループ情報を検索しています
+ a| 
+files 、 nis 、 ldap が表示されます
+
+
+
+ a| 
+パスワード
+ a| 
+ユーザ情報を検索しています
+ a| 
+files 、 nis 、 ldap が表示されます
+
+
+
+ a| 
+ネットグループ
+ a| 
+ネットグループ情報の検索
+ a| 
+files 、 nis 、 ldap が表示されます
+
+
+
+ a| 
+namemap
+ a| 
+ユーザ名のマッピング
+ a| 
+ファイル、 LDAP
+
+|===
+
+
+== ソースタイプ
+
+ソースタイプによって、該当する情報を取得するために使用するネームサービスソースが決まります。
+
+|===
+| ソースタイプ | 情報の検索先 | 使用するコマンド 
+
+
+ a| 
+ファイル
+ a| 
+ローカルのソースファイル
+ a| 
+`vserver services name-service unix-user`
+
+`vserver services name-service unix-group`
+
+`vserver services name-service netgroup`
+
+`vserver services name-service dns hosts`
+
+
+
+ a| 
+NIS
+ a| 
+SVM の NIS ドメイン設定で指定された外部の NIS サーバ
+ a| 
+`vserver services name-service nis-domain`
+
+
+
+ a| 
+LDAP
+ a| 
+SVM の LDAP クライアント設定で指定された外部の LDAP サーバ
+ a| 
+`vserver services name-service ldap`
+
+
+
+ a| 
+DNS
+ a| 
+SVM の DNS 設定で指定された外部の DNS サーバ
+ a| 
+`vserver services name-service dns`
+
+|===
+データアクセスとSVM管理者の両方の認証にNISまたはLDAPを使用する場合も、を追加する必要があります `files` また、NISまたはLDAP認証が失敗した場合のフォールバックとしてローカルユーザを設定します。
+
+* 関連情報 *
+
+xref:task_editing_svm_settings.adoc[SVM の設定を編集します]

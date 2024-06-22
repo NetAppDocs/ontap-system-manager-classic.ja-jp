@@ -1,0 +1,39 @@
+---
+permalink: online-help-96-97/task_cloning_luns.html 
+sidebar: sidebar 
+keywords: clone, lun, create, multiple, copy, system, manager, online, help 
+summary: LUN クローンを使用すると、 LUN の読み書き可能なコピーを複数作成できます。System Manager を使用して、テスト用に LUN の一時的なコピーを作成できます。また、追加のユーザに本番環境のデータへのアクセスを許可することなく、それらのユーザが利用できるデータのコピーを作成することも可能です。 
+---
+= System Manager ONTAP 9.7 以前を使用して LUN をクローニングします
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+ONTAP System Manager クラシック（ ONTAP 9.7 以前で使用可能）を使用すると、テスト用に LUN の一時的なコピーを作成できます。また、追加のユーザに本番環境のデータへのアクセスを許可することなく、それらのユーザが利用できるデータのコピーを作成することも可能です。LUN クローンを使用すると、 LUN の読み書き可能なコピーを複数作成できます。
+
+.作業を開始する前に
+* ストレージシステムに FlexClone ライセンスがインストールされている必要があります。
+* LUN でスペースリザベーションが無効になっている場合、格納先のボリュームにクローンへの変更に対応できる十分なスペースが必要です。
+
+
+.このタスクについて
+* LUN クローンの作成時、 System Manager では LUN クローンの自動削除がデフォルトで有効になっています。
++
+ONTAP でスペースの節約のために自動削除がトリガーされると、 LUN クローンが削除されます。
+
+* SnapLock 上の LUN はクローニングできません。
+
+
+.手順
+. [ * ストレージ * > * LUNs * ] をクリックします。
+. [* LUN 管理 * ] タブで、クローンを作成する LUN を選択し、 [* クローン * ] をクリックします。
+. デフォルト名を変更する場合は、 LUN クローンの新しい名前を指定します。
+. [* Clone* ] をクリックします。
+. 作成した LUN クローンが「 * LUNs 」ウィンドウに表示されていることを確認します。
+
+
+* 関連情報 *
+
+xref:reference_luns_window.adoc[LUN ウィンドウ]

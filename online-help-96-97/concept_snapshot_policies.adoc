@@ -1,0 +1,130 @@
+---
+permalink: online-help-96-97/concept_snapshot_policies.html 
+sidebar: sidebar 
+keywords: snapshot, manager, system, create, manage, policy, storage, online, help 
+summary: System Manager を使用して、ストレージシステムの Snapshot ポリシーを作成および管理できます。 
+---
+= System Manager - ONTAP 9.7以前を使用してSnapshotポリシーを管理します
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+ONTAP System Managerクラシック（ONTAP 9.7以前で使用可能）を使用して、ストレージシステム内のSnapshotポリシーを作成および管理できます。
+
+
+
+== Snapshot ポリシーについて
+
+Snapshot ポリシーはボリュームに適用されるポリシーで、 Snapshot コピーを作成するスケジュールと各スケジュールで作成可能な Snapshot コピーの最大数を指定します。Snapshot ポリシーには最大 5 つのスケジュールが含まれます。
+
+バックアップ関係では、 SnapMirror ラベル属性を使用して、ソースボリュームから Snapshot コピーが選択されます。バックアップポリシールールで設定されたラベルを持つ Snapshot コピーだけが SnapVault 処理でレプリケートされます。ソースボリュームに割り当てる Snapshot ポリシーに SnapMirror ラベル属性を含める必要があります。
+
+
+
+== Snapshot ポリシーを作成する
+
+System Manager で Snapshot ポリシーを作成して、自動的に作成される Snapshot コピーの最大数と頻度を指定できます。
+
+.手順
+. [* 保護 *>] 、 [* Snapshot ポリシー *] の順にクリックします。
+. [ 作成（ Create ） ] をクリックします。
+. Create Snapshot Policy * ダイアログボックスで、ポリシー名を指定します。
+. Add * をクリックし、スケジュール名、保持する Snapshot コピーの最大数、および SnapMirror ラベル名を指定します。
++
+指定したスケジュールで保持できる Snapshot コピーの最大数は、 254 個以下にする必要があります。
+
+. [OK] をクリックし、 [* 作成 ] をクリックします。
+
+
+
+
+== Snapshot ポリシーを編集します
+
+System Manager の Snapshot ポリシーの編集ダイアログボックスを使用して、既存の Snapshot ポリシーについて、スケジュール名、 SnapMirror ラベル、作成される Snapshot コピーの最大数などの詳細を変更できます。
+
+.手順
+. [* 保護 *>] 、 [* Snapshot ポリシー *] の順にクリックします。
+. [* Snapshot Policies*] ウィンドウで、変更する Snapshot ポリシーを選択し、 [*Edit*] をクリックします。
+. [ * スナップショット・ポリシーの編集 * ] ダイアログ・ボックスで、変更するスケジュールを選択し、 [ * 編集 * ] をクリックします。
+. [OK] をクリックします。
+. 選択した Snapshot ポリシーに対して行った変更を * Edit Snapshot Policy * （スナップショットポリシーの編集）ダイアログボックスで確認し、 * Save * （保存）をクリックします。
+
+
+
+
+== Snapshot ポリシーを削除する
+
+System Manager を使用して Snapshot ポリシーを削除できます。1 つ以上のボリュームで使用されている Snapshot ポリシーを削除すると、削除したポリシーで設定されていたそれらのボリュームの Snapshot コピーの作成は実行されなくなります。
+
+.作業を開始する前に
+対象の Snapshot ポリシーを使用している各ボリュームとの関連付けを解除しておきます。
+
+.手順
+. [* 保護 *>] 、 [* Snapshot ポリシー *] の順にクリックします。
+. Snapshot ポリシーを選択し、 * Delete * をクリックします。
+. 確認のチェックボックスをオンにし、 * 削除 * をクリックします。
+
+
+
+
+== Snapshot ポリシーウィンドウ
+
+Snapshot Policies ウィンドウを使用して、 Snapshot ポリシーの追加、編集、削除など、 Snapshot ポリシータスクを管理できます。
+
+
+
+=== コマンドボタン
+
+* * 作成 * 。
++
+Create Snapshot Policy ダイアログボックスを開きます。このダイアログボックスでは、バックアップスケジュールを追加したり、ポリシーで保持する Snapshot コピーの最大数を指定したりできます。
+
+* * 編集 * 。
++
+Edit Snapshot Policy ダイアログボックスを開きます。このダイアログボックスで、 Snapshot コピーを作成する頻度と保持する Snapshot コピーの最大数を変更できます。
+
+* * 削除 *
++
+削除ダイアログボックスを開きます。このダイアログボックスで、選択した Snapshot ポリシーを削除できます。
+
+* * として表示
++
+Snapshot ポリシーをリストまたはツリーとして表示できます。
+
+* * ステータス *
++
+選択した Snapshot ポリシーを有効または無効にするために使用できるメニューを開きます。
+
+* * 更新 *
++
+ウィンドウ内の情報を更新します。
+
+
+
+
+
+=== Snapshot ポリシーリスト
+
+* * ポリシー / スケジュール名 *
++
+Snapshot ポリシーとポリシー内のスケジュールの名前を示します。
+
+* * Storage Virtual Machine *
++
+Snapshot コピーが属する Storage Virtual Machine （ SVM ）の名前を示します。
+
+* * ステータス *
++
+Snapshot ポリシーのステータスを示します。有効または無効にできます。
+
+* * 保持するスナップショットの最大数 *
++
+保持する Snapshot コピーの最大数を指定します。
+
+* * SnapMirror ラベル *
++
+バックアップスケジュールで生成される Snapshot コピーの SnapMirror ラベル属性の名前を示します。
+
+

@@ -1,0 +1,31 @@
+---
+permalink: iscsi-config-esxi/task_binding_iscsi_ports_to_iscsi_software_adapter.html 
+sidebar: sidebar 
+keywords: port, create, iscsi, associate, software, adapter, support, multipath, bind, bind iscsi ports to the iscsi software adapter 
+summary: iSCSI 用に作成したポートは、マルチパスをサポートするために iSCSI ソフトウェアアダプタに関連付ける必要があります。 
+---
+= iSCSI ポートを iSCSI ソフトウェアアダプタにバインド
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+iSCSI 用に作成したポートは、マルチパスをサポートするために iSCSI ソフトウェアアダプタに関連付ける必要があります。
+
+.作業を開始する前に
+* iSCSI VMkernel ポートが作成されている必要があります。
+* ESXi ホストで iSCSI ソフトウェアアダプタが有効になっている必要があります。
+
+
+.このタスクについて
+iSCSI ポートは vSphere Client を使用してバインドできます。
+
+詳細な手順については、使用している ESXi 5 のバージョンに対応する VMware vSphere Storage_ を参照してください。
+
+http://www.vmware.com["VMware"]
+
+.手順
+. vSphere Client の iSCSI ソフトウェアアダプタ * アダプタの詳細 * ダイアログボックスの * ネットワークポートバインド * タブを使用して、最初の iSCSI ポートを iSCSI ソフトウェアアダプタにバインドします。
+. 2 つ目の iSCSI ポートを iSCSI ソフトウェアアダプタにバインドします。
+

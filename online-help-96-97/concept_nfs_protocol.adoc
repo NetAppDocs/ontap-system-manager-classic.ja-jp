@@ -1,0 +1,73 @@
+---
+permalink: online-help-96-97/concept_nfs_protocol.html 
+sidebar: sidebar 
+keywords: nfs, protocol, system, manager, authenticate, client, asses, data, svm, online, help 
+summary: System Manager を使用して、 SVM のデータにアクセスする NFS クライアントを認証できます。 
+---
+= System Manager - ONTAP 9.7 以前で NFS プロトコルを設定します
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+ONTAP System Manager クラシック（ ONTAP 9.7 以前で使用可能）を使用して、 SVM 上のデータにアクセスする NFS クライアントを認証できます。
+
+
+
+== NFS設定の編集
+
+System Manager を使用して、 NFS 設定を編集できます。たとえば、 NFSv3 、 NFSv4 、および NFSv4.1 を有効または無効にしたり、 NFSv4 クライアントに対して読み取り委譲および書き込み委譲を有効または無効にしたり、 NFSv4 ACL を有効にしたりすることができます。また、デフォルトの Windows ユーザを編集することもできます。
+
+.手順
+. [ * ストレージ * > * SVMs * ] をクリックします。
+. SVM を選択し、 * SVM 設定 * をクリックします。
+. [*Protocols* ] ペインで、 [*NFS*] をクリックします。
+. *NFS* ウィンドウで、 * Edit * をクリックします。
+. NFS 設定の編集 * ダイアログボックスで、必要な変更を行います。
+. [ 保存して閉じる ] をクリックします。
+
+
+
+
+== [NFS]ウィンドウ
+
+NFS ウィンドウを使用して、 NFS 設定を表示および設定できます。
+
+* * サーバーステータス *
++
+NFS サービスのステータスが表示されます。このサービスは、 Storage Virtual Machine （ SVM ）で NFS プロトコルが設定されている場合に有効になります。
+
++
+[NOTE]
+====
+Data ONTAP 8.1.x を実行する NFS 対応のストレージシステムから ONTAP 8.3 以降にアップグレードした場合、 ONTAP 8.3 以降で NFS サービスが有効になります。ただし、 NFSv2 のサポートは廃止されたため、 NFSv3 または NFSv4 のサポートを有効にする必要があります。
+
+====
+
+
+
+
+=== コマンドボタン
+
+* * 有効 *
++
+NFS サービスを有効にします。
+
+* * 無効 *
++
+NFS サービスを無効にします。
+
+* * 編集 * 。
++
+NFS 設定の編集ダイアログボックスを開きます。このダイアログボックスで、 NFS 設定を編集できます。
+
+* * 更新 *
++
+ウィンドウ内の情報を更新します。
+
+
+
+* 関連情報 *
+
+https://docs.netapp.com/us-en/ontap/nfs-admin/index.html["NFS の管理"^]

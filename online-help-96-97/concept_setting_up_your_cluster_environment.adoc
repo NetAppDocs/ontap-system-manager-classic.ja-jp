@@ -1,0 +1,16 @@
+---
+permalink: online-help-96-97/concept_setting_up_your_cluster_environment.html 
+sidebar: sidebar 
+keywords: set, up, cluster, environment, system, manager, cli, command, line, interface, cluster, ip, address 
+summary: クラスタは、 System Manager またはコマンドラインインターフェイス（ CLI ）を使用して作成できます。System Manager を使用してクラスタを作成するには、クラスタネットワークのいずれかのノードでノード管理 IP アドレスを設定する必要があります。CLI を使用してクラスタを作成した場合、設定に System Manager を使用できます。 
+---
+= クラスタ環境をセットアップする
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+クラスタは、 System Manager またはコマンドラインインターフェイス（ CLI ）を使用して作成できます。System Manager を使用してクラスタを作成するには、クラスタネットワークのいずれかのノードでノード管理 IP アドレスを設定する必要があります。CLI を使用してクラスタを作成した場合、設定に System Manager を使用できます。
+
+image::../media/guided_cluster_setup.gif[クラスタセットアップガイド]

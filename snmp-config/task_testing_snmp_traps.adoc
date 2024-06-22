@@ -1,0 +1,23 @@
+---
+permalink: snmp-config/task_testing_snmp_traps.html 
+sidebar: sidebar 
+keywords: communication, traphost, automatic, validate, add, snmp, traphost, correct, trap, test, test snmp traps 
+summary: ONTAP 9.7 以前では、 ONTAP System Manager の「クラシック」インターフェイスを使用して SNMP トラップをテストできます。追加したトラップホストとの通信は自動では検証されないため、 SNMP トラップホストがトラップを正しく受信できることを確認する必要があります。 
+---
+= テスト用の SNMP トラップ
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+ONTAP 9.7 以前では、 ONTAP System Manager の _classic_ インターフェイスを使用して SNMP トラップをテストできます。追加したトラップホストとの通信は自動では検証されないため、 SNMP トラップホストがトラップを正しく受信できることを確認する必要があります。
+
+.手順
+. [*SNMP*] 画面に移動します。
+. トラップホストのテスト * をクリックして、トラップホストを追加したクラスタからトラップを生成します。
+. トラップホストの場所で、トラップを受信したことを確認します。
++
+SNMP トラップホストの管理に通常使用するソフトウェアを使用してください。
+
+

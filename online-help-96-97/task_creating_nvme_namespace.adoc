@@ -1,0 +1,51 @@
+---
+permalink: online-help-96-97/task_creating_nvme_namespace.html 
+sidebar: sidebar 
+keywords: system, manager, create, nvme, namespace, svm, logical, blocks, online, help 
+summary: System Manager を使用して、 1 つ以上の NVMe ネームスペースを作成し、各ネームスペースを Storage Virtual Machine （ SVM ）内のホストまたはホストセットに接続できます。NVMe ネームスペースは、論理ブロックにフォーマット可能な大容量のメモリです。各ネームスペースを 1 つの NVMe サブシステムにマッピングできます。 
+---
+= System Manager - ONTAP 9.7 以前を使用して NVMe ネームスペースを作成します
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+ONTAP System Manager クラシック（ ONTAP 9.7 以前で使用可能）を使用して、 1 つ以上の NVMe ネームスペースを作成し、各ネームスペースを Storage Virtual Machine （ SVM ）内のホストまたはホストセットに接続できます。NVMe ネームスペースは、論理ブロックにフォーマット可能な大容量のメモリです。各ネームスペースを 1 つの NVMe サブシステムにマッピングできます。
+
+.作業を開始する前に
+SVM に NVMe プロトコルを設定しておく必要があります。ネームスペースをマッピングするには、ネームスペースを所有するノードに NVMe をデータプロトコルとする LIF が少なくとも 1 つ存在している必要があります。
+
+.手順
+. Storage * > * NVMe * > * NVMe * 名前空間 * をクリックします。
+. ネームスペースを配置する SVM を選択します。
+. HA ペアの各ノードに対して少なくとも 1 つの NVMe LIF が設定されていることを確認します。作成できる NVMe LIF の数はノードごとに 2 つまでです。
+. ネームスペースのサイズ（ 1MB~16TB ）を設定します。
+. ブロックサイズを入力します。
++
+System Manager 9.5 では、ブロックサイズはデフォルトで 4KB に設定され、このフィールドは表示されません。
+
++
+System Manager 9.6 では、 4KB または 512 バイトのいずれかのブロックサイズを指定できます。
+
+. 既存のボリュームを選択するか、アグリゲートを選択して新しいボリュームを作成します。
++
+SVM 内にネームスペース（最大 250 個）を追加する場合は、 + 記号をクリックします。
+
+. このネームスペースに関連付ける NVMe サブシステムを選択します。
++
+次のオプションから選択できます。
+
++
+** なし：サブシステムはマッピングされません。
+** 既存のサブシステムを使用する：選択した SVM に対応するサブシステムが表示されます。
+** 新しいサブシステムを作成する：新しいサブシステムを作成し、新しいネームスペースすべてにマッピングします。
+
+
+. ホストオペレーティングシステムを選択します。
+. [Submit （送信） ] をクリックします。
+
+
+* 関連情報 *
+
+xref:reference_nvme_namespaces_window.adoc[NVMe ネームスペースウィンドウ]

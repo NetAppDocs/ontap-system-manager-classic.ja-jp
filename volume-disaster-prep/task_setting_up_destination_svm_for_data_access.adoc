@@ -1,0 +1,49 @@
+---
+permalink: volume-disaster-prep/task_setting_up_destination_svm_for_data_access.html 
+sidebar: sidebar 
+keywords: minimize, data, access, disruption, activating, activate, destination, volume, configuration, cifs, policies, policy, nas, environment, initiator, group, svm, set up the destination svm for data access 
+summary: デスティネーションボリュームが格納された SVM で必要な設定を行うことで、デスティネーションボリュームをアクティブ化する際のデータアクセスの中断を最小限に抑えることができます。 NAS 環境については LIF 、 CIFS 共有、エクスポートポリシーなど、 SAN 環境については LIF やイニシエータグループなどを設定する必要があります。 
+---
+= データアクセス用のデスティネーション SVM をセットアップ
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+デスティネーションボリュームが格納された SVM で必要な設定を行うことで、デスティネーションボリュームをアクティブ化する際のデータアクセスの中断を最小限に抑えることができます。 NAS 環境については LIF 、 CIFS 共有、エクスポートポリシーなど、 SAN 環境については LIF やイニシエータグループなどを設定する必要があります。
+
+.このタスクについて
+このタスクは、デスティネーションボリュームが格納された SVM の * デスティネーション * クラスタで実行する必要があります。
+
+
+
+== 手順
+
+* NAS 環境：
++
+.. NAS LIFを作成する
+.. ソースと同じ共有名を使用して CIFS 共有を作成します。
+.. 適切な NFS エクスポートポリシーを作成します。
+.. 適切なクォータルールを作成します。
+
+
+* SAN 環境の場合：
++
+.. SAN LIFを作成する
+.. *オプション：*ポートセットを設定します。
+.. イニシエータグループを設定する。
+.. FC を使用する場合、 SAN クライアントから LIF にアクセスできるように FC スイッチをゾーニングします。
+
+
+
+
+
+
+== 次に何をするか
+
+ソースボリュームが格納された SVM に変更を加えた場合は、デスティネーションボリュームが格納された SVM にそれらの変更を手動でレプリケートする必要があります。
+
+* 関連情報 *
+
+https://docs.netapp.com/ontap-9/index.jsp["ONTAP 9 ドキュメンテーション・センター"]

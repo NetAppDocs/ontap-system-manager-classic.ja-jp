@@ -1,0 +1,39 @@
+---
+permalink: online-help-96-97/task_moving_flexvol_volumes.html 
+sidebar: sidebar 
+keywords: move, flexvol, volume, aggregate, system, manager, online, help 
+summary: System Manager を使用して、容量利用率やパフォーマンスを向上させるために、 FlexVol を別のアグリゲートまたは別のノードに無停止で移動できます。 
+---
+= System Manager - ONTAP 9.7 以前を使用して FlexVol ボリュームを移動します
+:allow-uri-read: 
+:experimental: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+ONTAP System Manager classic （ ONTAP 9.7 以前でサポート）を使用すると、無停止で FlexVol ボリュームを別のアグリゲートまたは別のノードに移動して、容量利用率とパフォーマンスを向上させることができます。
+
+.作業を開始する前に
+データ保護ボリュームを移動する場合は、ボリュームを移動する前にデータ保護のミラー関係を初期化する必要があります。
+
+.このタスクについて
+* Flash Pool アグリゲートでホストされているボリュームを移動する場合は、 HDD 階層に格納されているデータのみがデスティネーションアグリゲートに移動されます。
++
+このボリュームに関連付けられているキャッシュデータはデスティネーションアグリゲートに移動されません。そのため、ボリュームの移動後にパフォーマンスが低下する可能性があります。
+
+* SnapLock アグリゲートからボリュームを移動することはできません。
+* ディザスタリカバリ用に設定された SVM から FabricPool 対応アグリゲートにボリュームを移動することはできません。
+
+
+.手順
+. 次のいずれかの方法を選択します。
++
+** [* アプリケーションと階層 *>* ストレージ階層 *] をクリックします。
+** Storage * > * Aggregates & Disks * > * Aggregates * の順にクリックします
+
+
+. ボリュームを含むアグリゲートを選択し、メニューをクリックします。 More Actions [Volume Move]
+. ウィザードの指示に従って、情報を入力または選択します。
+. 詳細を確認し、 [* 終了 ] をクリックしてウィザードを完了します。
+

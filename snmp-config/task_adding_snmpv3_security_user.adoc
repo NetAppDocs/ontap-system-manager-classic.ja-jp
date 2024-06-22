@@ -1,0 +1,52 @@
+---
+permalink: snmp-config/task_adding_snmpv3_security_user.html 
+sidebar: sidebar 
+keywords: snmpv3, offer, advance, security, passphrase, encryption, system, manager, cluster, level, snmp, utilities, utility, traphost, authentication, privacy, setting, add an snmpv3 security user 
+summary: ONTAP 9.7 以前では、 ONTAP System Manager の「クラシック」インターフェイスを使用して、クラスタレベルで SNMPv3 ユーザを追加できます。 
+---
+= SNMPv3 セキュリティユーザを追加します
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+ONTAP 9.7 以前では、 ONTAP System Manager の _classic_ インターフェイスを使用して、クラスタレベルで SNMPv3 ユーザを追加できます。
+
+SNMPv3 ユーザは、管理者が指定した認証およびプライバシー設定を使用して、トラップホスト（ SNMP マネージャ）から SNMP ユーティリティを実行できます。SNMPv3 は、パスフレーズと暗号化を使用して高度なセキュリティを提供します。
+
+.このタスクについて
+クラスタレベルで SNMPv3 ユーザを追加すると、このユーザは「 mgmt 」ファイアウォールポリシーが適用されているすべての LIF を介してクラスタにアクセスできるようになります。
+
+.手順
+. SNMP ウィンドウで、 * Edit * をクリックして、 * Edit SNMP Settings * ダイアログボックスを開きます。
+. *SNMPv3* タブで、 * Add * をクリックして、 * Add SNMPv3 User * ダイアログボックスを開きます。
+. 次の値を入力します。
++
+.. SNMPv3 ユーザの名前を入力します。
++
+セキュリティユーザ名は最大 31 文字で、次の特殊文字は使用できません。
+
++
+`, / : " ' |`
+
+.. [エンジンID]で、デフォルト値を選択します。 `Local Engine ID`。
++
+エンジン ID は、 SNMPv3 メッセージの認証キーおよび暗号キーの生成に使用されます。
+
+.. 認証プロトコルを選択し、認証パスワードを入力します。
++
+パスワードは 8 文字以上にする必要があります。
+
+.. オプション：プライバシープロトコルを選択し、パスワードを入力します。
+
+
++
+image::../media/snmp_cfg_v3user_step3.gif[この図は、 Edit SNMP Settings ダイアログボックス内の Add SNMP3 User diaglg ボックスを示しています,in which the example user name "snmpv3user" is entered,the Engine ID is "LocalEngineID"]
+
+. [Add SNMPv3 User*] ダイアログボックスで、 *OK* をクリックします。
++
+追加するたびに「 * OK 」をクリックすると、複数のセキュリティユーザー名を追加できます。たとえば、異なる権限を必要とする複数のアプリケーションを SNMP を使用して監視する場合は、監視や管理の機能ごとに SNMPv3 ユーザを追加する必要があります。
+
+. ユーザー名の追加が完了したら、 * SNMP 設定の編集 * ダイアログボックスの * OK * をクリックします。
+

@@ -1,0 +1,52 @@
+---
+permalink: volume-disaster-recovery/task_verifying_destination_volume_status.html 
+sidebar: sidebar 
+keywords: break, snapmirror, relationship, verify, destination, volume, access, source, verify the destination volume status 
+summary: SnapMirror 関係を解除したら、デスティネーションボリュームに読み取り / 書き込みアクセスが設定されていること、およびデスティネーションボリュームの設定がソースボリュームと同じであることを確認する必要があります。 
+---
+= デスティネーションボリュームのステータスを確認
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+SnapMirror 関係を解除したら、デスティネーションボリュームに読み取り / 書き込みアクセスが設定されていること、およびデスティネーションボリュームの設定がソースボリュームと同じであることを確認する必要があります。
+
+.このタスクについて
+このタスクは、 * デスティネーション * クラスタから実行する必要があります。
+
+.手順
+. [* Volumes （ボリューム） ] ウィンドウに移動します。
+. [ボリューム]*リストからデスティネーションボリュームを選択し、デスティネーションボリュームのタイプがであることを確認します。 `rw`読み取り/書き込みアクセスを示します。
+. デスティネーションボリュームのシンプロビジョニング、重複排除、圧縮、自動拡張などの設定がソースボリュームと同じになっていることを確認します。
++
+SnapMirror 関係の作成後にメモしたボリューム設定情報を使用して、デスティネーションボリュームの設定を確認することができます。
+
+. ボリュームの設定が一致しない場合は、必要に応じてデスティネーションボリュームの設定を変更します。
++
+.. [ 編集（ Edit ） ] をクリックします。
+.. 必要に応じて、環境の一般設定、 Storage Efficiency 設定、および高度な設定を変更します。
+.. [ 保存して閉じる ] をクリックします。
++
+image::../media/volume_edit_dest_vol_unix.gif[ボリュームの編集ダイアログボックスのスクリーンショット。]
+
+.. ボリューム * リストの列が適切な値に更新されていることを確認します。
+
+
+. デスティネーションボリュームの Snapshot コピーの作成を有効にします。
++
+.. ONTAP のバージョンに応じて、次のいずれかの方法で「 * ボリューム Snapshot コピーの設定 * 」ページに移動します。
++
+ONTAP 9.3 以降：デスティネーションボリュームを選択し、 * Actions * > * Manage Snapshots * > * Configure * をクリックします。
+
++
+ONTAP 9.2 以前：デスティネーションボリュームを選択し、 * Snapshot コピー * > * 設定 * をクリックします。
+
+.. Enable scheduled Snapshot Copies （スケジュールされた Snapshot コピーを有効にする）チェックボックスをオンにし、 * OK * をクリックします。
+
+
++
+image::../media/configure_snapshot_policy.gif[ボリュームの Snapshot コピーを設定しています]
+
+
