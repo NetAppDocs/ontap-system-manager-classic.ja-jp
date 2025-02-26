@@ -32,8 +32,6 @@ https://mysupport.netapp.com/matrix["NetApp Interoperability Matrix Tool で確�
 
 +
 *** 除外するネットアップ以外のSCSIデバイスがある場合は、のblacklistセクションにデバイスのWorld Wide Identifier（WWID）を入力します。 `multipath.conf` ファイル。
-
-
 +
 ネットアップ以外のSCSIデバイスのWWIDを表示するには、除外するデバイスで次のコマンドを入力します。 `SCSI_device_name` は、次のデバイスを指定します。
 
@@ -62,7 +60,6 @@ blacklist {
             devnode     "^cciss.*"
 }
 ----
-+
 *** 除外するデバイスがない場合は、 `multipath.conf` ファイル。
 
 
