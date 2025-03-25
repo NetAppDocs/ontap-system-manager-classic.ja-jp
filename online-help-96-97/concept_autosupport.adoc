@@ -5,7 +5,12 @@ keywords: autosupport, notification, message, monitor, system, health, storage, 
 summary: System Manager を使用して、ストレージシステムのヘルスモニタに役立つ AutoSupport 通知を設定できます。 
 ---
 = System Manager - ONTAP 9.7 以前を使用して、 AutoSupport 通知を管理します
+:hardbreaks:
 :allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
 
 
 ONTAP System Manager クラシック（ ONTAP 9.7 以前で使用可能）を使用して、ストレージシステムの健常性の監視に役立つ AutoSupport 通知を設定できます。

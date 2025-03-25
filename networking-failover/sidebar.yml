@@ -1,0 +1,10 @@
+---
+section: networking-failover
+title: NASパスのフェイルオーバー ワークフロー（ONTAP 9.7以前）
+entries:
+- title: NASパスのフェイルオーバーについて（ONTAP 9.7以前）
+  url: "/networking-failover/set_up_nas_path_failover_9_to_97_cli.html"
+- title: NASパスのフェイルオーバー ワークフロー（ONTAP 9.7以前）
+  url: "/networking-failover/workflow__nas_path_failover_overview_manual.html"
+- title: NASパスのフェイルオーバー設定用ワークシート（ONTAP 9 .7以前）
+  url: "/networking-failover/worksheet_for_nas_path_failover_configuration_manual.html"

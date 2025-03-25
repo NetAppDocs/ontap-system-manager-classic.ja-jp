@@ -41,6 +41,11 @@ sidebar:
   - title: System Manager 9.6 および 9.7 を使用したクラスタ管理
     entries:
     - section: online-help-96-97
+  - title: ONTAP 9.7以前のネットワーク管理
+    entries:
+    - section: networking-failover
+    - section: networking-bd
+    - section: networking
   - title: ONTAP のドキュメント
     url: https://docs.netapp.com/us-en/ontap/
   - title: 法的通知

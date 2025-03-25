@@ -1,0 +1,20 @@
+---
+section: networking-bd
+title: ブロードキャストドメイン（ONTAP 9.7以前）
+entries:
+- title: ブロードキャストドメインの概要（ONTAP 9 .7以前）
+  url: "/networking-bd/configure_broadcast_domains_97_overview.html"
+- title: ブロードキャストドメインに使用できるポートの確認（ONTAP 9 .7以前）
+  url: "/networking-bd/determine_which_ports_can_be_used_for_a_broadcast_domains.html"
+- title: ブロードキャストドメインの作成（ONTAP 9 .7以前）
+  url: "/networking-bd/create_a_broadcast_domain97.html"
+- title: ブロードキャストドメインのポートを追加または削除する（ONTAP 9.7以前）
+  url: "/networking-bd/add_or_remove_ports_from_a_broadcast_domain97.html"
+- title: ブロードキャストドメインのスプリット（ONTAP 9 .7以前）
+  url: "/networking-bd/split_broadcast_domains97.html"
+- title: ブロードキャストドメインのマージ（ONTAP 9.7以前）
+  url: "/networking-bd/merge_broadcast_domains97.html"
+- title: ブロードキャストドメイン（ONTAP 9.7以前）のポートのMTU値を変更する
+  url: "/networking-bd/change_the_mtu_value_for_ports_in_a_broadcast_domain97.html"
+- title: ブロードキャストドメインを表示する（ONTAP 9.7以前）
+  url: "/networking-bd/display_broadcast_domains97.html"

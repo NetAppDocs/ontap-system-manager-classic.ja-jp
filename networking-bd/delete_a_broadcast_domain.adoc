@@ -1,0 +1,57 @@
+---
+sidebar: sidebar 
+permalink: networking-bd/delete_a_broadcast_domain.html 
+keywords: 'delete, deleting, remove, removing, broadcast, domain, delete a broadcast domain, delete unnecessary broadcast domains; this moves associated ports to the "default" IPspace' 
+summary: 不要なブロードキャストドメインを削除します。これにより、関連付けられているポートは「 Default 」 IPspace に移動します 
+---
+= ブロードキャストドメインを削除する
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
+
+
+[role="lead"]
+不要になったブロードキャストドメインは削除できます。これにより、指定したブロードキャストドメインに関連付けられているポートが「デフォルト」のIPspaceに移動されます。
+
+.作業を開始する前に
+削除するブロードキャストドメインに、関連付けられているサブネット、ネットワークインターフェイス、またはSVMがないようにします。
+
+.このタスクについて
+* システムで作成された「Cluster」ブロードキャストドメインは削除できません。
+* ブロードキャストドメインを削除すると、そのブロードキャストドメインに関連するフェイルオーバーグループがすべて削除されます。
+
+
+実行する手順は、使用するインターフェイス（System ManagerまたはCLI）によって異なります。
+
+[role="tabbed-block"]
+====
+.System Manager
+--
+* ONTAP 9.12.0以降では、System Managerを使用してブロードキャストドメイン*を削除できます
+
+ブロードキャストドメインにポートが含まれている場合、またはブロードキャストドメインがサブネットに関連付けられている場合は、deleteオプションは表示されません。
+
+.手順
+. [ネットワーク]>[概要]>[ブロードキャストドメイン*]を選択します。
+. 削除するブロードキャストドメインの横にある*> Delete *を選択します image:icon_kabob.gif["メニューオプションアイコン"] 。
+
+
+--
+.CLI
+--
+*ブロードキャストドメイン*を削除するには、CLIを使用してください
+
+.ステップ
+ブロードキャストドメインを削除します。
+
+`network port broadcast-domain delete -broadcast-domain _broadcast_domain_name_ [-ipspace _ipspace_name_]`
+
+次のコマンドは、ipspace1というIPspaceのブロードキャストドメインdefault-1を削除します。
+
+`network port broadcast-domain delete -broadcast-domain _Default-1_ -ipspace _ipspace1_`
+
+--
+====

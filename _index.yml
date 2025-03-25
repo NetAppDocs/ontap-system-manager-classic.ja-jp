@@ -4,8 +4,10 @@ indexpage:
   summary: ONTAP System Manager はシンプルかつ幅広い機能を備えた製品で、 ONTAP クラスタの構成と管理を簡単に行うことができます。System
     Manager を使用すると、ボリューム、 LUN 、 qtree 、共有、エクスポートの作成などの一般的なストレージタスクが簡易化され、 時間を節約し、エラーを防止します。
   keywords: ontap, netapp, documentation, system, manager
-  lead: System Managerのクラシックインターフェイスは、ONTAP 9.7以前のONTAP 9リリースで使用できます。このサイトでは、System
-    Managerクラシックを使用した設定ワークフローのドキュメントや、ONTAP 9.6および9.7のSystem Managerクラシックオンラインヘルプを参照できます。
+  lead: ONTAP 9.7以前のバージョンのSystem ManagerインターフェイスはSystem Managerクラシックと呼ばれ、ONTAP 9.8以降のバージョンのSystem
+    Managerインターフェイスとは異なるユーザナビゲーションを提供します。ONTAP 9.7以前のバージョンのSystem Managerを使用しているユーザ向けに、このドキュメントサイトでは、System
+    Managerクラシックを使用した設定ワークフローと、ONTAP 9.6および9.7用のSystem Managerクラシックオンラインヘルプを紹介しています。ONTAP
+    9.8では、ONTAPネットワークの基礎も大幅に変更されました。このドキュメントサイトでは、ONTAP 9.7以前のバージョンにのみ該当するネットワーク情報を提供しています。
   tiles:
   - title: はじめに
     links:
@@ -27,7 +29,7 @@ indexpage:
       url: "/smb-config/index.html"
   - title: SAN ストレージをプロビジョニング
     links:
-    - title: VSC を使用した ESXi の FC 構成
+    - title: VSC を使用した ESXi 向けの FC 構成
       url: "/fc-config-esxi/index.html"
     - title: Red Hat Enterprise Linux 向けの FC の設定
       url: "/fc-config-rhel/index.html"
@@ -61,6 +63,18 @@ indexpage:
       url: "/snmp-config/index.html"
     - title: System Manger 9.6 および 9.7 を使用してクラスタを管理する
       url: "/online-help-96-97/index.html"
+  - title: Network Management の略
+    links:
+    - title: NASパスのフェイルオーバー ワークフロー（ONTAP 9.7以前）
+      url: "/networking-failover/set_up_nas_path_failover_9_to_97_cli.html"
+    - title: ブロードキャストドメインの管理（ONTAP 9.7以前）
+      url: "/networking-bd/configure_broadcast_domains_97_overview.html"
+    - title: ノードからのNICの取り外し（ONTAP 9.7以前）
+      url: "/networking/remove_a_nic_from_the_node_97.html"
+    - title: LIFのロール（ONTAP 9.5以前）
+      url: "/networking/lif_roles95.html"
+    - title: DNSサービスの設定（ONTAP 9.7以前）
+      url: "/networking/configure_dns_services_manual.html"
   - title: リソースの追加
     links:
     - title: ONTAP 9 のドキュメント

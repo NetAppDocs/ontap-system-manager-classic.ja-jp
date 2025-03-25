@@ -1,0 +1,72 @@
+---
+sidebar: sidebar 
+permalink: networking/create_ipspaces.html 
+keywords: create, creation, creating, add, adding, ipspace, create ipspaces, ipspace create, ipspace show, create ipspaces, ipspace create, broadcast-domain move 
+summary: クラスタ内の各 SVM に IPspace を作成します 
+---
+= IPspaces を作成します
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
+
+
+[role="lead"]
+IPspaceは、Storage Virtual Machine（SVM）が配置される個別のIPアドレススペースです。SVMにセキュアなストレージ、管理、およびルーティングが必要な場合は、IPspaceを作成できます。IPspaceを使用すると、クラスタ内のSVMごとに個別のIPアドレススペースを作成できます。これにより、管理上分離されたネットワークドメインに属するクライアントは、同じIPアドレスサブネット範囲の重複するIPアドレスを使用してクラスタデータにアクセスできます。
+
+.このタスクについて
+IPspaceの数はクラスタ全体で512個に制限されています。6GBのRAMを搭載したノードを含むクラスタのIPspaceは、クラスタ全体で256個までに制限されます。ご使用のプラットフォームに適用されるその他の制限については、Hardware Universeを参照してください。
+
+https://hwu.netapp.com/["NetApp Hardware Universe の略"^]
+
+
+NOTE: 「all」はシステムで予約されている名前であるため、IPspace名を「all」にすることはできません。
+
+.作業を開始する前に
+このタスクを実行するには、クラスタ管理者である必要があります。
+
+.ステップ
+. IPspaceを作成します。
++
+....
+network ipspace create -ipspace ipspace_name
+....
++
+`ipspace_name`は、作成するIPspaceの名前です。次のコマンドは、クラスタにipspace1というIPspaceを作成します。
+
++
+....
+network ipspace create -ipspace ipspace1
+....
+. IPspaceを表示します。
++
+`network ipspace show`
+
++
+....
+IPspace             Vserver List          Broadcast Domains
+------------------- --------------------- ----------------------------
+Cluster             Cluster               Cluster
+Default             Cluster1              Default
+ipspace1            ipspace1              -
+....
++
+IPspaceが、そのIPspaceのシステムSVMとともに作成されます。システムSVMは管理トラフィックを伝送します。
+
+
+
+.終了後
+MetroCluster構成のクラスタにIPspaceを作成する場合は、IPspaceオブジェクトをパートナークラスタに手動でレプリケートする必要があります。IPspaceをレプリケートする前に作成されてIPspaceに割り当てられたSVMは、パートナークラスタにレプリケートされません。
+
+ブロードキャストドメインは「デフォルト」のIPspaceに自動的に作成され、次のコマンドを使用してIPspace間で移動できます。
+
+....
+network port broadcast-domain move
+....
+たとえば、ブロードキャストドメインを「default」から「ips1」に移動する場合は、次のコマンドを使用します。
+
+....
+network port broadcast-domain move -ipspace Default -broadcast-domain Default -to-ipspace ips1
+....

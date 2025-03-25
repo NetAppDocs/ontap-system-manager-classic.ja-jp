@@ -9069,7 +9069,6 @@ ONTAP System Manager のブラウザアクセスでサポートされるのは H
   <block id="33d698c5405b59cf282a091b0fab54f4" category="image-alt">この図は SnapVault バックアップの設定ワークフローのフローチャートを示したものです。ワークフローの各手順はトピックに対応しています。</block>
   <block id="6a34cf18fb7026d09fc129111db8a169" category="paragraph">バックアップしたデータをテストする場合やソースボリュームが失われた場合にデスティネーションボリュームからデータをリストアする方法については、別のドキュメントで説明しています。</block>
   <block id="580df0707800400af79839e20238fb6e" category="paragraph">ONTAP の SnapVault バックアップからボリュームをリストアする簡単な方法について説明しています</block>
-  <block id="5069c081842d21ed175ea7a6154fbacb" category="sidebar">System Managerのクラシックインターフェイスは、ONTAP 9.7以前のONTAP 9リリースで使用できます。このサイトでは、System Managerクラシックを使用した設定ワークフローのドキュメントや、ONTAP 9.6および9.7のSystem Managerクラシックオンラインヘルプを参照できます。</block>
   <block id="b82cad5226b405ad72908490db99b36c" category="sidebar">ONTAP System Manager Classic のドキュメント</block>
   <block id="b7ab6e81313c8d18114a457f193b6312" category="sidebar">ONTAP System Manager はシンプルかつ幅広い機能を備えた製品で、 ONTAP クラスタの構成と管理を簡単に行うことができます。System Manager を使用すると、ボリューム、 LUN 、 qtree 、共有、エクスポートの作成などの一般的なストレージタスクが簡易化され、 時間を節約し、エラーを防止します。</block>
   <block id="be11c74c1dd7f307bb80183a90dc2067" category="sidebar">はじめに</block>
@@ -9080,7 +9079,6 @@ ONTAP System Manager のブラウザアクセスでサポートされるのは H
   <block id="27dc49cb854bf08b0bbc4e74cdbe5316" category="sidebar">VSC を使用した ESXi 向けの NFS 設定</block>
   <block id="b5224505b319d9c81346246e1f3de1a7" category="sidebar">SMB および NFS マルチプロトコルの設定</block>
   <block id="d05c8dd88231b9c3216259d1e6814a77" category="sidebar">SMBの設定</block>
-  <block id="8e719802bed185197f99105e67d3034e" category="sidebar">VSC を使用した ESXi の FC 構成</block>
   <block id="7d30b55c54296bcdedf5a84c9b75594f" category="sidebar">Red Hat Enterprise Linux 向けの FC の設定</block>
   <block id="23617d02d88796301c4d82f522e259ea" category="sidebar">Windows 向けの FC 構成</block>
   <block id="50575298e52caf9a33c4f761e7f5b730" category="sidebar">VSC を使用した ESXi 向けの iSCSI 設定</block>
@@ -9311,4 +9309,641 @@ ONTAP System Manager のブラウザアクセスでサポートされるのは H
   <block id="34b038e21199a9f0fc12b3f94eb4fdb0" category="sidebar">NFS クライアントアクセスの設定と確認（ NFS 対応 SVM の新規作成）</block>
   <block id="c9400d1db93e0471869b3c666490fa71" category="sidebar">SVM ルートボリュームのエクスポートポリシーを開く（既存の SVM への NFS アクセスの設定）</block>
   <block id="17e1c570ca599dbf87546393bebca4a8" category="sidebar">NFS クライアントアクセスを設定して確認する（ NFS 対応 SVM への NFS ボリュームの追加）</block>
+  <block id="f068de0dc9fa18c23071832f9eb3a53b" category="summary">NFS または SMB サーバを作成する前に、 SVM 用の DNS サービスを設定してください</block>
+  <block id="827c1f58eabad1c045a0db679a4497d8" category="doc">DNSサービスの設定（ONTAP 9.7以前）</block>
+  <block id="25b12118e384a60668346d5b1770c323" category="paragraph">NFSまたはSMBサーバを作成する前に、SVM用のDNSサービスを設定する必要があります。通常、DNSネーム サーバは、NFSまたはSMBサーバが参加するドメインのActive Directory統合DNSサーバです。</block>
+  <block id="232fd7f26d973fe38def49233cd075bf" category="paragraph">Active Directory統合DNSサーバには、ドメインLDAPサーバとドメインコントローラサーバのサービスロケーションレコード（SRV）が格納されます。SVMがActive Directory LDAPサーバおよびドメインコントローラを見つけられない場合は、NFSまたはSMBサーバのセットアップに失敗します。</block>
+  <block id="fcea48ac44daed4236b24206a9380f46" category="paragraph">SVMは、ホストに関する情報を検索する際に、hostsネームサービスns-switchデータベースを使用して、使用するネームサービスとその順序を決定します。hostsデータベースでサポートされる2つのネームサービスは<block ref="45b963397aa40d4a0063e0d85e4fe7a1" prefix=" " category="inline-code"></block>、と<block ref="b3bf60b851ebaeb2768b01a32e2ef32f" prefix=" " category="inline-code"></block>です。</block>
+  <block id="4527704dc585750d6e7fe7d7aeabcf31" category="paragraph">SMBサーバを作成する前に、がソースの1つであることを確認する必要があります<block ref="b3bf60b851ebaeb2768b01a32e2ef32f" prefix=" " category="inline-code"></block>。</block>
+  <block id="9102f8ca573a7ea6314fe39fd73e71bb" category="admonition">mgwdプロセスおよびsecdプロセスのDNSネームサービスの統計を表示するには、統計UIを使用します。</block>
+  <block id="fa7cdcfa8b2a7478bb2a54d0f83a859a" category="list-text">ネームサービスデータベースの現在の設定を確認します<block ref="85cf4e6d42a71e693fd780c8b29accdd" prefix=" " category="inline-code"></block>。</block>
+  <block id="fa3ae76601a12e272a53977eeb41b643" category="paragraph">この例では、hostsネームサービスデータベースでデフォルトの設定が使用されています。</block>
+  <block id="847f8ec204eec763b02e0337ced420b1" category="paragraph"><block ref="bea8635ea997a67656a3063cc78f75e2" prefix="" category="inline-code"></block></block>
+  <block id="99232d5c50dac0086529798f398fe73a" category="list-text">必要に応じて、次の操作を実行します。</block>
+  <block id="bd268bded8420baee3fe731f1f2e049e" category="list-text">DNSネーム サービスを希望の順番でhostsネーム サービス データベースに追加するか、ソースの順番を変更します。</block>
+  <block id="bd24bb1d831cb3160d1f19b14408492b" category="paragraph">この例では、DNSおよびローカル ファイルをこの順番で使用するようにhostsデータベースを設定しています。</block>
+  <block id="3b305d126359f61f441d1c9b1407ee6e" category="paragraph"><block ref="840029861af4609db07d22153cf2d94e" prefix="" category="inline-code"></block></block>
+  <block id="2f31ce3b5802e173a34c2bb12e8d8985" category="list-text">ネーム サービスの設定が正しいことを確認します。</block>
+  <block id="9a020166160829712d09ad9ea961a02e" category="list-text">DNSサービスを設定します。</block>
+  <block id="053db3db6fc056eaea6e3b9cbb16fa54" category="paragraph"><block ref="e063fe914a8a273f79b0eaced2dec13a" prefix="" category="inline-code"></block></block>
+  <block id="31f0622ffb837190fe4ecd6525e69c35" category="admonition">vserver servicesコマンドは<block ref="5ff1d8ac91e1ec1e522d748d28734965" prefix=" " category="inline-code"></block>設定の自動検証を実行し、ONTAPがネームサーバに接続できない場合はエラーメッセージを報告します。</block>
+  <block id="7f5bc8f87538b8ea3a414dc8665d481e" category="list-text">DNSの設定が正しいこと、およびサービスが有効になっていることを確認します。</block>
+  <block id="3eb40b0aa4a335c40fe7ae415cdcb189" category="list-text">ネームサーバのステータスを検証します。</block>
+  <block id="0d0155381104939285af36f0f53fb627" category="paragraph"><block ref="c67cbbd7d42014f53a19904f42dfa281" prefix="" category="inline-code"></block></block>
+  <block id="7656300265b9c717a9f7447293499125" category="section-title">SVMでの動的DNSの設定</block>
+  <block id="fc273ec6012710999f8354d98772025c" category="paragraph">Active Directory統合DNSサーバをDNSにNFSまたはSMBサーバのDNSレコードを動的に登録する場合は、SVMに動的DNS（DDNS）を設定する必要があります。</block>
+  <block id="b6adff03d32e0b0dd896460087633e22" category="paragraph">SVMでDNSネームサービスが設定されている必要があります。セキュアなDDNSを使用する場合は、Active Directory統合DNSネームサーバを使用し、SVM用にNFSサーバまたはSMBサーバまたはActive Directoryアカウントを作成しておく必要があります。</block>
+  <block id="cd5fdd9d20e27e06e636100f9e3665ec" category="paragraph">完全修飾ドメイン名（FQDN）は一意である必要があります。</block>
+  <block id="a274cd8c658f823b928de4538a273063" category="list-text">NFSの場合、コマンドで<block ref="e5b541ecb67048e7daec7514922b92f9" prefix=" " category="inline-code"></block>に指定した値<block ref="80b9de329099e45ebd72f10946f105d1" prefix=" " category="inline-code"></block>がLIFに登録されたFQDNになります。</block>
+  <block id="02e516484836bf2255956aa5c23c38b3" category="list-text">SMBの場合、CIFSサーバのNetBIOS名およびCIFSサーバの完全修飾ドメイン名として指定した値が、LIFの登録FQDNになります。これはONTAPでは設定できません。次のシナリオでは、LIF FQDNは「CIFS_VS1.EXAMPLE.COM":」です。</block>
+  <block id="99e65bd556174dde23c5ca7b0afe1915" category="inline-link-macro">RFC 1123</block>
+  <block id="bc26173d39e2884f0f2c5df080b10ebc" category="admonition">DDNS更新に関するRFCルールに準拠していないSVM FQDNの設定エラーを回避するには、RFC準拠のFQDN名を使用してください。詳細については、を参照してください <block ref="ad2a4c28e616a75898ace6fcc3f3ebc5" category="inline-link-macro-rx"></block>。</block>
+  <block id="ad862497985cd77ff1f660a2b1a5dbfa" category="list-text">SVMでDDNSを設定します。</block>
+  <block id="dca9fa837ebb92308343005952b33e9f" category="paragraph"><block ref="99460e91312bd6a1252486de90b153b5" prefix="" category="inline-code"></block></block>
+  <block id="833ba41443ed9cf556f588d733a823de" category="paragraph"><block ref="235c647d12065bc5bfe5d54f2a31cb2a" prefix="" category="inline-code"></block></block>
+  <block id="17b0437c60f40b8bd47c198c724ddaad" category="paragraph">カスタマイズしたFQDNの一部としてアスタリスクを使用することはできません。たとえば、<block ref="7f3e634da883bc7ad9648453c1e6820a" prefix=" " category="inline-code"></block>は無効です。</block>
+  <block id="05504f3d150848e08b56dd51f228d1da" category="list-text">DDNSの設定が正しいことを確認します。</block>
+  <block id="c2b6f9545320175e44bd88861fdcdfad" category="paragraph"><block ref="312f6ab356480452dcfd99b7fc44c477" prefix="" category="inline-code"></block></block>
+  <block id="de73a1e9954790ff0901101e659f1bf5" category="summary">LIF を作成します。 LIF は、物理ポートまたは論理ポートに関連付けられた IP アドレスです。</block>
+  <block id="85590a77bfd01e233e534a520c5724c6" category="doc">ONTAPでLIF（ネットワークインターフェイス）を作成する</block>
+  <block id="ec7d87855b2f41d3b6c36ff49c461e98" category="paragraph">SVMは、1つ以上のネットワーク論理インターフェイス（LIF）を介してクライアントにデータを提供します。データへのアクセスに使用するポートにLIFを作成する必要があります。LIF（ネットワークインターフェイス）は、物理ポートまたは論理ポートに関連付けられたIPアドレスです。コンポーネントに障害が発生しても、LIFは別の物理ポートにフェイルオーバーまたは移行できるため、引き続きネットワークと通信できます。</block>
+  <block id="50802d3e5a25b93d471686a10da03dd8" category="paragraph-title">ベストプラクティス</block>
+  <block id="5bcb18cd3811711d3c8e7a250c84fbb6" category="paragraph">ONTAPに接続されたスイッチポートは、LIFの移行時の遅延を軽減するために、スパニングツリーエッジポートとして設定する必要があります。</block>
+  <block id="ddaa39224424042ba35394afbe714a70" category="list-text">このタスクを実行するには、クラスタ管理者である必要があります。</block>
+  <block id="6789dcbf206f0a4f22a16b71e5acd842" category="list-text">基盤となる物理または論理ネットワーク ポートの管理ステータスがupに設定されている必要があります。</block>
+  <block id="0b7a56152c376f386379636394d6eee1" category="list-text">サブネット名を使用してLIFのIPアドレスとネットワーク マスク値を割り当てる場合は、そのサブネットが存在している必要があります。</block>
+  <block id="8d7c6d693d91720dcea00ddb63dae543" category="paragraph">サブネットには、同じレイヤ3サブネットに属するIPアドレスのプールが含まれています。作成するには、System Managerまたはコマンドを使用し<block ref="0eec35ff52aa111a144d89156bcaed96" prefix=" " category="inline-code"></block>ます。</block>
+  <block id="dc9e8d63cbbdb8d5ea7b651eb84b063e" category="list-text">LIFで処理されるトラフィックのタイプを指定するメカニズムが変更されました。ONTAP 9 .5以前では、LIFで処理するトラフィックのタイプをロールで指定していました。ONTAP 9 .6以降では、LIFで処理するトラフィックのタイプをサービスポリシーを使用して指定します。</block>
+  <block id="0e2f314790eb6267c4448c40e54aaea9" category="list-text">NASプロトコルとSANプロトコルを同じLIFに割り当てることはできません。</block>
+  <block id="d63abfced299c6ffbd6200e985c6d340" category="paragraph">サポートされるプロトコルはSMB、NFS、FlexCache、iSCSI、およびFCです。iSCSIおよびFCを他のプロトコルと組み合わせることはできません。ただし、NASプロトコルとイーサネットベースのSANプロトコルは、同じ物理ポート上に存在できます。</block>
+  <block id="917d93a73123e18a54b6430b74261e40" category="list-text">SMBトラフィックを伝送するLIFを、ホームノードに自動的にリバートするように設定しないでください。この推奨事項は、Hyper-V over SMBまたはSQL Server over SMBでノンストップオペレーションを実現するソリューションをSMBサーバでホストする場合に必須です。</block>
+  <block id="9d233c1f0b092bc81ad068414cb64e53" category="list-text">同じネットワークポートにIPv4とIPv6の両方のLIFを作成できます。</block>
+  <block id="092185cac2efeb6454b5f317056077d4" category="list-text">SVMで使用するすべてのネームマッピングサービスとホスト名解決サービス（DNS、NIS、LDAP、Active Directoryなど）が、SVMのデータトラフィックを処理する少なくとも1つのLIFから到達可能でなければなりません。</block>
+  <block id="9ad4be6eef992b371fa173aecc5c7bd0" category="list-text">クラスタ内のノード間トラフィックを処理するLIFは、管理トラフィックを処理するLIFまたはデータトラフィックを処理するLIFと同じサブネット上には配置できません。</block>
+  <block id="b4fdad0f41f5d63611cc1226e8b16ef6" category="list-text">有効なフェイルオーバーターゲットのないLIFを作成すると、警告メッセージが表示されます。</block>
+  <block id="53c7c393b93df8cb5a9fbfa1f669b976" category="list-text">クラスタに多数のLIFがある場合は、クラスタでサポートされるLIFの容量を確認できます。</block>
+  <block id="cd942e7c6676928ecc4c39ce02efa758" category="list-text">System Manager：ONTAP 9.12.0以降では、ネットワークインターフェイスグリッドのスループットを表示します。</block>
+  <block id="2d783dafcb9a806c61739c4783f65a68" category="list-text">CLI：コマンドを使用し、各ノードでサポートされるLIFの容量を<block ref="6d38f68efafeeda72933275474c52475" prefix=" " category="inline-code"></block>コマンド（advanced権限レベル）で確認し<block ref="be57ee83c24450e6f6cbf92cb6031c11" prefix=" " category="inline-code"></block>ます。</block>
+  <block id="df6fd02001382d75cfbaa48f225d87e0" category="list-text">ONTAP 9 .7以降では、同じサブネットにSVM用の他のLIFがすでに存在する場合は、LIFのホームポートを指定する必要はありません。ONTAPは、同じサブネットにすでに設定されている他のLIFと同じブロードキャストドメイン内の指定したホームノード上の任意のポートを自動的に選択します。</block>
+  <block id="4832088a6467cdd27ab5e94be99fde92" category="paragraph">ONTAP 9 .4以降では、FC-NVMeがサポートされます。FC-NVMe LIFを作成する場合は、次の点に注意してください。</block>
+  <block id="cb246c73e23f19b4642bb424d4402935" category="list-text">LIFを作成するFCアダプタでNVMeプロトコルがサポートされている必要があります。</block>
+  <block id="183bb9f40117c65cde5613d5e0729ba9" category="list-text">データLIFで使用できるデータプロトコルはFC-NVMeのみです。</block>
+  <block id="f766fb2dec615453dd7fdf037100b8c5" category="list-text">SANをサポートするStorage Virtual Machine（SVM）ごとに、管理トラフィックを処理するLIFを1つ設定する必要があります。</block>
+  <block id="1975cc10ca1448345ac212d8f5aaa0e5" category="list-text">NVMe LIFとネームスペースは同じノードでホストされている必要があります。</block>
+  <block id="4834e2c9cccfb6e34f5abd7223de2356" category="list-text">データトラフィックを処理するNVMe LIFは、SVMごとに1つだけ設定できます。</block>
+  <block id="ae0df50a6255a9c9261d6b580219771e" category="list-text">サブネットを使用してネットワークインターフェイスを作成すると、選択したサブネットから使用可能なIPアドレスがONTAPによって自動的に選択され、ネットワークインターフェイスに割り当てられます。サブネットが複数ある場合はサブネットを変更できますが、IPアドレスは変更できません。</block>
+  <block id="f0a3b3545950846c431aae854b982efd" category="list-text">ネットワークインターフェイス用にSVMを作成（追加）するときに、既存のサブネットと同じ範囲のIPアドレスを指定することはできません。サブネットの競合エラーが表示されます。この問題は、SVM設定やクラスタ設定でクラスタ間ネットワーク インターフェイスを作成または変更する場合など、ネットワーク インターフェイスの他のワークフローでも発生します。</block>
+  <block id="17522c98bb6f67a1fc472441ee278f61" category="inline-xref-macro">RDMA経由のNFS用のLIFの設定^</block>
+  <block id="7c883993585be7ef062c0168cab6ae16" category="list-text">.10.1以降では、CLIコマンドにONTAP 9<block ref="168d50085a3c4e712aaa28cf90e2f228" prefix=" " category="inline-code"></block> over RDMA構成のパラメータが含まれて<block ref="e7f31f518110f3c17739edd51d047922" prefix=" " category="inline-code"></block>います。ONTAP 9.12.1以降では、NFS over RDMA構成用のネットワークインターフェイスの作成がSystem Managerでサポートされています。詳細については、を参照してください <block ref="9a76f9bf68e533534ddb17107f75c19e" category="inline-xref-macro-rx"></block>。</block>
+  <block id="cd13dd69b76cb5a8d8836c52e28ee458" category="list-text">ONTAP 9 .11.1以降では、オールフラッシュSANアレイ（ASA）プラットフォームでiSCSI LIFの自動フェイルオーバーを使用できます。</block>
+  <block id="eb3e6c35d448456277ecc4873989ccd5" category="paragraph">指定したSVMにiSCSI LIFがない場合、または指定したSVMの既存のすべてのiSCSI LIFですでにiSCSI LIFのフェイルオーバーが有効になっている場合は、新しく作成したiSCSI LIFでiSCSI LIFのフェイルオーバーが自動的に有効になります（フェイルオーバーポリシーがに設定され、auto-revertの値がに<block ref="b326b5062b2f0e69046810717534cb09" prefix=" " category="inline-code"></block>設定<block ref="9817175b2d67fda65aaaec8b8fcf2111" prefix=" " category="inline-code"></block>されます）。</block>
+  <block id="2e9d79bdadc3c1a3ea80a6d99ea9c771" category="paragraph">ONTAP 9 .11.1以降にアップグレードしたあとに、iSCSI LIFのフェイルオーバー機能が有効になっていないSVMに既存の<block ref="075ae3d2fc31640504f814f60e5ef713" prefix="(" category="inline-code"></block>iSCSI LIFがある場合に、同じSVMに新しいiSCSI LIFを作成すると、SVM内の既存のiSCSI LIFのフェイルオーバーポリシーが新しいiSCSI LIFで同じとみなされます）。</block>
+  <block id="ef934d4d8f2b4314965fe0a91d2aac87" category="inline-link-macro">ASAプラットフォームでのiSCSI LIFフェイルオーバー</block>
+  <block id="76eda67d6bf3f3490d9e9fbdd8ebdde8" category="paragraph"><block ref="76eda67d6bf3f3490d9e9fbdd8ebdde8" category="inline-link-macro-rx"></block></block>
+  <block id="ff75491cef38298812f55b5192a63322" category="paragraph">ONTAP 9 .7以降では、ONTAPの同じサブネットにすでにLIFが1つでも存在していれば、LIFのホームポートが自動的に選択されます。ONTAPは、そのサブネット内の他のLIFと同じブロードキャストドメイン内のホームポートを選択します。ホームポートは指定できますが、指定したIPspaceの該当するサブネットにLIFがない場合は必須ではありません。</block>
+  <block id="cc81ac9d702ccf6d3fb5a87328ac320e" category="paragraph">ONTAP 9 .12.0以降では、使用するインターフェイス（System ManagerまたはCLI）によって実行する手順が異なります。</block>
+  <block id="26ed02718973e705cd69ee6e109400e0" category="open-title">System Manager</block>
+  <block id="37d203a4d30c92c7e0433e138e21db41" category="paragraph">* System Managerを使用して、ネットワークインターフェイスを追加*</block>
+  <block id="deb6ad488690373fea929150f631f83c" category="list-text">Network &gt; Overview &gt; Network Interfaces *を選択します。</block>
+  <block id="c742c2b2ed01c0f1e79d77c9eeebbfd3" category="inline-image-macro">追加アイコン</block>
+  <block id="09f52291822d07847dc176bf99933cf8" category="list-text">を選択します <block ref="43f48618b8b157dea4d31396a9d4b622" category="inline-image-macro-rx" type="image"></block>。</block>
+  <block id="80b672eadb959ee067f798c949769797" category="list-text">次のいずれかのインターフェイスロールを選択します。</block>
+  <block id="f6068daa29dbb05a7ead1e3b5a48bbee" category="list-text">データ</block>
+  <block id="a5e7f0e3e9c9116082e3187550f2112f" category="list-text">クラスタ間</block>
+  <block id="f8fdb9cc1d709f265daea2bcde48e114" category="list-text">SVM管理</block>
+  <block id="11fc8c77734f91f1358121dc5f9f6343" category="list-text">プロトコルを選択します。</block>
+  <block id="cb781df6c6dcd5341f2c38def8e0721e" category="list-text">SMB/CIFS and NFS</block>
+  <block id="e4e1c13bb0b14f6cb7608cbecea948ef" category="list-text">iSCSI</block>
+  <block id="26bcb9f1cb6f391f4b2c18e676bb458d" category="list-text">NVMe/FC</block>
+  <block id="8b7c42123642e2e4ea7dd426aeb2de58" category="list-text">NVMe/TCP</block>
+  <block id="ca087c6b212e188bcd347b7df2d151a9" category="list-text">LIFの名前を指定するか、ここまでの選択内容から生成された名前をそのまま使用します。</block>
+  <block id="60fdbb38c75f5c6482244473f87d1a1c" category="list-text">ホーム ノードをそのまま使用するか、ドロップダウンを使用して選択します。</block>
+  <block id="9f5d454d522b09f8cb2c421adee76a83" category="list-text">選択したSVMのIPspaceでサブネットが1つでも設定されている場合、サブネットのドロップダウンが表示されます。</block>
+  <block id="1636f97e6bf0d009e6d54f431dd78331" category="list-text">サブネットを選択する場合はドロップダウンから選択します。</block>
+  <block id="4f251f06f399aea726037b03ba55a92e" category="list-text">サブネットを選択せずに次に進むと、ブロードキャスト ドメインのドロップダウンが表示されます。</block>
+  <block id="c77fd2236a05934d1482c13bc9c2cd4d" category="list-text">IPアドレスを指定します。IPアドレスが使用中の場合は、警告メッセージが表示されます。</block>
+  <block id="f2ccfb6eb1082f7276bb8c59544ba16d" category="list-text">サブネット マスクを指定します。</block>
+  <block id="dd8594a8467817eb4f593564094d8619" category="list-text">ホーム ポートをブロードキャスト ドメインから自動で選択するか（推奨）、ドロップダウン メニューから選択します。ホーム ポートのオプションは、ブロードキャスト ドメインとサブネットの選択に基づいて表示されます。</block>
+  <block id="877dcf4e4c0dcca42bb2ac810a06d5e7" category="list-text">ネットワーク インターフェイスを保存します。</block>
+  <block id="91af5705f16502125e8b2187e64202c0" category="open-title">CLI</block>
+  <block id="9264736930746a402294c277d922cca5" category="paragraph">* CLIを使用してLIFを作成してください*</block>
+  <block id="1ebcfad534ca6b48a25ad52ffad224cc" category="list-text">LIFに使用するブロードキャストドメインポートを決定します。</block>
+  <block id="f71d8c4bffdcfe0255989a522519e921" category="paragraph"><block ref="f8ae370acaa7702ed5f8a0f329fbbc89" prefix="" category="inline-code"></block></block>
+  <block id="f32118da3d70a4f320a9e03ff567af21" category="list-text">LIFに使用するサブネットに未使用のIPアドレスが十分にあることを確認します。</block>
+  <block id="ec9f06f6ad41803059b084ab6467f053" category="paragraph"><block ref="df45c041fbec4b88d2620f8f27969ca2" prefix="" category="inline-code"></block></block>
+  <block id="2307fb5b78b821211a9b011ea25ba45a" category="list-text">データへのアクセスに使用するポートに1つ以上のLIFを作成します。</block>
+  <block id="ffae5d6089597acdf7c65a5a7c0c7005" category="inline-link-macro">サブネットを作成する</block>
+  <block id="c54dbe39234f8280d6f1651be5a1c1a1" category="admonition">NetAppでは、データSVMのすべてのLIFに対してサブネットオブジェクトを作成することを推奨しています。これは特にMetroCluster構成で重要です。各サブネットオブジェクトにはブロードキャストドメインが関連付けられているため、サブネットオブジェクトを使用してONTAPがデスティネーションクラスタのフェイルオーバーターゲットを決定できます。手順については、を参照してください<block ref="ad8e74354bc7fdb3d5c3a1c355adf86b" category="inline-link-macro-rx"></block>。</block>
+  <block id="8d6c97487ddd2038e41c9e6af2e2c2b1" category="list-text"><block ref="42819bf7ae4bf9a7d2a14b2805ca0e83" prefix="" category="inline-code"></block>は、LIFに対してコマンドを実行したときにLIFが戻るノードです<block ref="d1e4afa40f7e9718bdad64b4f5db9abb" prefix=" " category="inline-code"></block>。</block>
+  <block id="c55a4f044dfec68d4e9f5b17072e3330" category="paragraph">auto-revertオプションを使用して、LIFをホームノードおよびホームポートに自動的にリバートするかどうかを指定することもできます。</block>
+  <block id="a216b55b3c0bf385e4630d18a1048d5b" category="list-text"><block ref="321ff01f394ce440009a9f460f09d191" prefix="" category="inline-code"></block>は、LIFに対してコマンドを実行したときにLIFが戻る物理ポートまたは論理ポートです<block ref="d1e4afa40f7e9718bdad64b4f5db9abb" prefix=" " category="inline-code"></block>。</block>
+  <block id="66538afe2f70d10ce8f5fa836c504d8e" category="list-text">オプションと<block ref="bba17324bbe2e8cea0c60e47268d4b36" prefix=" " category="inline-code"></block>オプションでIPアドレスを指定することも、オプションでサブネットからの割り当てを有効にすることも<block ref="8db950a15da003c155c149cbe4e043a2" prefix=" " category="inline-code"></block>できます<block ref="38df54fe961fa2bf2a7f82a5854fabad" prefix=" " category="inline-code"></block>。</block>
+  <block id="74d2e4c4ae33f4210672309e2da7aa67" category="list-text">サブネットを使用してIPアドレスとネットワークマスクを指定した場合、サブネットにゲートウェイが定義されていると、そのサブネットを使用してLIFを作成するときに、ゲートウェイへのデフォルトルートがSVMに自動的に追加されます。</block>
+  <block id="f3497351aae46692e603fedb2f2cd146" category="inline-link-macro">ONTAPコマンド リファレンス</block>
+  <block id="6e3363145085bfe2357613c9c430aae9" category="list-text">IPアドレスを手動で（サブネットを使用せずに）割り当てる場合、クライアントまたはドメインコントローラが別のIPサブネットにあるときに、ゲートウェイへのデフォルトルートの設定が必要になることがあります。の詳細については<block ref="21a17cd54b10a034d5fb8366f2a71517" prefix=" " category="inline-code"></block>、を<block ref="272a3f7563defec9b271835dc324d95b" category="inline-link-macro-rx"></block>参照してください。</block>
+  <block id="8c61a3dc9fe23290c557a2511c9b35e1" category="list-text"><block ref="28c988ac956ff7a16325cde07547fef0" prefix="" category="inline-code"></block>起動時、管理データベースのステータスが変わったとき、ネットワーク接続が確立されたときなどの状況で、データLIFがホームノードに自動的にリバートされるかどうかを指定できます。デフォルトの設定はです<block ref="68934a3e9455fa72420237eb05902327" prefix=" " category="inline-code"></block>が、環境内のネットワーク管理ポリシーに応じてに設定できます<block ref="b326b5062b2f0e69046810717534cb09" prefix=" " category="inline-code"></block>。</block>
+  <block id="307b6a8428f6f758ace66db2ccc5d91b" category="list-text"><block ref="950af4194b424bf604f7ce86c7eff452" prefix="" category="inline-code"></block>ONTAP 9 5以降では、オプションを使用してLIFのサービスポリシーを割り当てることができます<block ref="950af4194b424bf604f7ce86c7eff452" prefix=" " category="inline-code"></block>。LIFにサービスポリシーを指定すると、そのポリシーを使用してLIFのデフォルトロール、フェイルオーバーポリシー、およびデータプロトコルのリストが作成されます。.5では、クラスタ間およびONTAP 9ピアサービスでのみサービスポリシーがサポートされます。ONTAP 9 .6では、複数のデータサービスおよび管理サービスのサービスポリシーを作成できます。</block>
+  <block id="efe97ec1aaddc6abcc95f07658ec7a4c" category="list-text"><block ref="5d2f1b504fd65080a58edd34b33a0b73" prefix="" category="inline-code"></block>FCPまたはNVMe/FCプロトコルをサポートするLIFを作成できます。IP LIFを作成する場合、このオプションは必要ありません。</block>
+  <block id="0e8be86fb1fd96c9321d5e4107e3475b" category="list-text">*オプション*：-addressオプションでIPv6アドレスを割り当てます。</block>
+  <block id="30d51071f881a325c624c8b0d9543ceb" category="list-text">network ndp prefix showコマンドを使用して、さまざまなインターフェイスで学習されたRAプレフィックスのリストを表示します。</block>
+  <block id="76ffff692e8f2a4eea8bb8acb769b46a" category="paragraph">コマンドは<block ref="621563f27da2174dd6450a0ccd81978f" prefix=" " category="inline-code"></block>、advanced権限レベルで使用できます。</block>
+  <block id="0d710d73b461c89b1ba215412b9541e2" category="list-text">形式を使用し<block ref="371fe1c91d7ccdea2021e0fb5b75a7b3" prefix=" " category="inline-code"></block>て、IPv6アドレスを手動で作成します。</block>
+  <block id="2fede0e329f4e76a33495cab21d88e61" category="paragraph"><block ref="851f5ac9941d720844d143ed9cfcf60a" prefix="" category="inline-code"></block>は、さまざまなインターフェイスで学習されたプレフィックスです。</block>
+  <block id="3848d3a93d8d8ad3c6c94bb4323068cb" category="paragraph">を生成するには<block ref="b80bb7740288fda1f201890375a60c8f" prefix=" " category="inline-code"></block>、ランダムな64ビット16進数を選択します。</block>
+  <block id="668781a383497a3b4080e57467cebbec" category="list-text">LIFインターフェイスの設定が正しいことを確認します。</block>
+  <block id="d45f6cefbed50da176ce4d7e5929b922" category="paragraph"><block ref="6233fd2657a97d431cd74b2ae6f4956c" prefix="" category="inline-code"></block></block>
+  <block id="62bd47d83f665c91ba56dcaa0254344c" category="list-text">フェイルオーバーグループの設定が適切であることを確認します。</block>
+  <block id="9ce4adc4e6c330aa6eadbd7a695d2914" category="paragraph"><block ref="7ee8691cd7d47d7e0f05f48be6aa4e75" prefix="" category="inline-code"></block></block>
+  <block id="1eb3a40a1c16648aa07d98bba6880dae" category="list-text">設定したIPアドレスに到達できることを確認します。</block>
+  <block id="d4f4121e7645988826a9a59b4f88d9cd" category="cell">対象</block>
+  <block id="b2ab9468407024b9e52fcb8768240b7f" category="cell">使用方法</block>
+  <block id="3c40e603ab1c9e14602a6a53d041de45" category="cell">IPv4アドレス</block>
+  <block id="36ecf3f9704f42836a6f1084017a4efb" category="cell">ネットワークping</block>
+  <block id="681ecbfa9647e806effd6d73a57c33f5" category="cell">IPv6アドレス</block>
+  <block id="ececd851d593a37be8bb1a2009b6afdc" category="cell">network ping6</block>
+  <block id="ff7c0fcd6a31e735a61c001f75426961" category="paragraph-title">例</block>
+  <block id="f8f0bbecb07bf9393c191809861e2a52" category="paragraph">次のコマンドは、LIFを作成し、パラメータと<block ref="bba17324bbe2e8cea0c60e47268d4b36" prefix=" " category="inline-code"></block>パラメータを使用してIPアドレスとネットワークマスク値を指定し<block ref="38df54fe961fa2bf2a7f82a5854fabad" prefix=" " category="inline-code"></block>ます。</block>
+  <block id="f13c42e2942028683cdd7cf874120d74" category="paragraph">次のコマンドは、LIFを作成し、IPアドレスとネットワークマスク値を指定したサブネット（client1_sub）から割り当てます。</block>
+  <block id="3e1b8b018f7b75c483d6bcca99b92cf5" category="paragraph">次のコマンドでは、NVMe/FC LIFを作成してデータプロトコルを指定し<block ref="13116ea7c2875017f3b13faf27db2530" prefix=" " category="inline-code"></block>ます。</block>
+  <block id="a819f8586b7479e19e6badcf0dbbf9fe" category="summary">サブネットを作成して、 ONTAP ネットワーク設定用に IP アドレスの特定のブロックを割り当てたりリザーブしたりします</block>
+  <block id="f68dfd250c07b38a2267de86c6853714" category="paragraph">サブネットを作成してIPv4またはIPv6アドレスの特定のブロックを割り当て、あとでSVMのLIFを作成するときに使用することができます。</block>
+  <block id="d22a3359973fc99d4b1e919cf7b35682" category="paragraph">これにより、LIFごとにIPアドレスやネットワークマスク値を指定する代わりにサブネット名を指定することで、LIFを簡単に作成できます。</block>
+  <block id="331a370ed47c46150dee6428cbd327d0" category="paragraph">サブネットを追加するブロードキャストドメインとIPspaceがすでに存在している必要があります。</block>
+  <block id="394821118526283bc78aba0efc30c8b3" category="list-text">サブネット名はすべてIPspace内で一意である必要があります。</block>
+  <block id="ac218d46ce7b5a920599544a4d27e2ca" category="list-text">IPアドレスの範囲をサブネットに追加する場合は、異なるサブネットまたはホストが同じIPアドレスを使用しないように、ネットワーク内でIPアドレスが重複しないようにする必要があります。</block>
+  <block id="e055c5d18898815859452fc665e9b3f1" category="list-text">サブネットを定義するときにゲートウェイを指定した場合は、そのサブネットを使用してLIFを作成するときに、そのゲートウェイへのデフォルトルートがSVMに自動的に追加されます。サブネットを使用しない場合や、サブネットを定義するときにゲートウェイを指定しない場合は、コマンドを使用してSVMにルートを手動で追加する必要が<block ref="174fd4ec4d6994b777d4327cd4e8f15a" prefix=" " category="inline-code"></block>あります。</block>
+  <block id="f0a2b989304d28e556b9962a34329b9d" category="list-text">NetAppでは、データSVMのすべてのLIFに対してサブネットオブジェクトを作成することを推奨しています。これは特にMetroCluster構成で重要です。各サブネットオブジェクトにはブロードキャストドメインが関連付けられているため、サブネットオブジェクトを使用してONTAPがデスティネーションクラスタのフェイルオーバーターゲットを決定できます。</block>
+  <block id="58cbe3a9cb8955d83743c9ef6ceb5afb" category="paragraph">サブネットは、ONTAP System ManagerまたはONTAP CLIで作成できます。</block>
+  <block id="905ce8a8994f1eca61380b8b520beff8" category="list-text"><block ref="4ce27d02b48dd13802074a3df84fd406" prefix="" category="inline-code"></block>は、作成するレイヤ3サブネットの名前です。</block>
+  <block id="28ba03ccf8d5e3f1ddbdfce67b0e1f2e" category="paragraph">名前には、「Mgmt」のようなテキスト文字列を使用することも、192.0.2.0/24のような特定のサブネットIP値を使用することもできます。</block>
+  <block id="16818f92d72a16ca22d844e68b7d2171" category="list-text"><block ref="e0caec61aebb1b31c3b192c9eb2f9483" prefix="" category="inline-code"></block>は、サブネットが配置されるブロードキャストドメインの名前です。</block>
+  <block id="26766cea770806863e687a34ae8073db" category="list-text"><block ref="4ae3944df3ee772807922dcf9bb86c13" prefix="" category="inline-code"></block>は、ブロードキャストドメインが属するIPspaceの名前です。</block>
+  <block id="feed2f690371862aef573255017713b9" category="paragraph">このオプションの値を指定しないかぎり、「Default」IPspaceが使用されます。</block>
+  <block id="3f4680257d54111be7543f57db717b74" category="list-text"><block ref="d52f62729781815dc9ef1dcfdfe6349b" prefix="" category="inline-code"></block>は、サブネットのIPアドレスとマスクです。たとえば、192.0.2.0/24のように指定します。</block>
+  <block id="840ab25561ddd4cd4bc8c96750b96bfb" category="list-text"><block ref="efeadb39d096cbd607bf36aac6cf9b70" prefix="" category="inline-code"></block>は、サブネットのデフォルトルートのゲートウェイです。たとえば、192.0.2.1のように指定します。</block>
+  <block id="a4b51119ead306cd9ba30b3a4d28d031" category="list-text"><block ref="131cf1b220ade17f6a3248d54312f858" prefix="" category="inline-code"></block>は、サブネットに割り当てるIPアドレスのリストまたは範囲です。</block>
+  <block id="c0b17d69029b4e4fb6a70f84fb936299" category="paragraph">個 々 のアドレス、IPアドレスの範囲、またはその組み合わせをカンマで区切って指定できます。</block>
+  <block id="73754d3d89c10930f8797d81ee876f15" category="list-text">オプションの値<block ref="b326b5062b2f0e69046810717534cb09" prefix=" " category="inline-code"></block>を設定できます<block ref="2371ee49460c5795e25eb90f5168d85e" prefix=" " category="inline-code"></block>。</block>
+  <block id="89c251ab0c1c8e1a834a2a197934c26e" category="paragraph">指定した範囲のIPアドレスを現在使用しているサービスプロセッサまたはネットワークインターフェイスがある場合、このコマンドは失敗します。この値をtrueに設定すると、手動でアドレスを指定したインターフェイスが現在のサブネットに関連付けられ、コマンドが成功します。</block>
+  <block id="58b8cc02848a2d78050719bfae31651e" category="paragraph">次のコマンドは、Default IPspaceのブロードキャストドメインdefault-1にサブネットsub1を作成します。IPv4サブネットのIPアドレスとマスク、ゲートウェイ、およびIPアドレスの範囲を追加します。</block>
+  <block id="77eedf6887f3d77271dc53c9fd38269a" category="paragraph">次のコマンドは、「Default」IPspaceのブロードキャストドメインDefaultにサブネットsub2を作成します。IPv6アドレスの範囲を追加します。</block>
+  <block id="bd965e38a0c9cf27aa1bde099308e23f" category="paragraph-title">終了後</block>
+  <block id="2796ed324450a74d4e573575b14a73a6" category="paragraph">サブネット内のアドレスを使用して、SVMとインターフェイスをIPspaceに割り当てることができます。</block>
+  <block id="f28fce6e01986c8f135346f1efac44a7" category="paragraph">既存のサブネットの名前を変更する必要がある場合は、コマンドを使用し<block ref="c1115a716e0f2168a7f66f26d2eefc8b" prefix=" " category="inline-code"></block>ます。</block>
+  <block id="524f2128cdb9047c02d06179ce3c0cef" category="summary">クラスタ内の各 SVM に IPspace を作成します</block>
+  <block id="63e9ea12ee077b462ece911ea23131f4" category="paragraph">IPspaceは、Storage Virtual Machine（SVM）が配置される個別のIPアドレススペースです。SVMにセキュアなストレージ、管理、およびルーティングが必要な場合は、IPspaceを作成できます。IPspaceを使用すると、クラスタ内のSVMごとに個別のIPアドレススペースを作成できます。これにより、管理上分離されたネットワークドメインに属するクライアントは、同じIPアドレスサブネット範囲の重複するIPアドレスを使用してクラスタデータにアクセスできます。</block>
+  <block id="ca95c8635ad5fd68ac940e00a0da212c" category="paragraph">IPspaceの数はクラスタ全体で512個に制限されています。6GBのRAMを搭載したノードを含むクラスタのIPspaceは、クラスタ全体で256個までに制限されます。ご使用のプラットフォームに適用されるその他の制限については、Hardware Universeを参照してください。</block>
+  <block id="4c1c93397a0ad82f0b80502a6c7c0799" category="paragraph"><block ref="4c1c93397a0ad82f0b80502a6c7c0799" category="inline-link-rx"></block></block>
+  <block id="11914b786443f21c2c710d44f64c1480" category="admonition">「all」はシステムで予約されている名前であるため、IPspace名を「all」にすることはできません。</block>
+  <block id="e7396fa25a3c5f851dc80cdef84456d0" category="list-text">IPspaceを作成します。</block>
+  <block id="061a545e69527401190b860465cf4a79" category="paragraph"><block ref="4ae3944df3ee772807922dcf9bb86c13" prefix="" category="inline-code"></block>は、作成するIPspaceの名前です。次のコマンドは、クラスタにipspace1というIPspaceを作成します。</block>
+  <block id="bc7a6ad79915b0b669c03cdc4b13c6c5" category="list-text">IPspaceを表示します。</block>
+  <block id="f4e3ea14a86c053c771cffad27e184f6" category="paragraph"><block ref="a3fa89b248855f9b8841d3f32539f863" prefix="" category="inline-code"></block></block>
+  <block id="1e31c16448255a9e1d55e7b33ac21ee6" category="paragraph">IPspaceが、そのIPspaceのシステムSVMとともに作成されます。システムSVMは管理トラフィックを伝送します。</block>
+  <block id="42de8300ccf0587951996358a11fccf6" category="paragraph">MetroCluster構成のクラスタにIPspaceを作成する場合は、IPspaceオブジェクトをパートナークラスタに手動でレプリケートする必要があります。IPspaceをレプリケートする前に作成されてIPspaceに割り当てられたSVMは、パートナークラスタにレプリケートされません。</block>
+  <block id="f8019cdb211915da8e1a1ae3877a0696" category="paragraph">ブロードキャストドメインは「デフォルト」のIPspaceに自動的に作成され、次のコマンドを使用してIPspace間で移動できます。</block>
+  <block id="66d79f86985b2f2499dd8add3343d01c" category="paragraph">たとえば、ブロードキャストドメインを「default」から「ips1」に移動する場合は、次のコマンドを使用します。</block>
+  <block id="d6d258eaae41d54bb6c9c23c42a49cfb" category="summary">クライアントにデータを提供する SVM を作成します</block>
+  <block id="508d6390b1c65105c1577182bef9b59b" category="paragraph">クライアントにデータを提供するには、SVMを作成する必要があります。</block>
+  <block id="1704a195a161c4f9823222a8351ee926" category="list-text">SVMルートボリュームに設定するセキュリティ形式を確認しておく必要があります。</block>
+  <block id="8a3d9f7b85d48c2f56226bde38dea0a1" category="paragraph">このSVMにHyper-V over SMBまたはSQL Server over SMBソリューションを実装する場合は、ルートボリュームにNTFSセキュリティ形式を使用する必要があります。Hyper-VファイルまたはSQLデータベースファイルを格納するボリュームは、作成時にNTFSセキュリティに設定する必要があります。ルートボリュームのセキュリティ形式をNTFSに設定すると、UNIXセキュリティ形式またはmixedセキュリティ形式のデータボリュームを誤って作成しないようになります。</block>
+  <block id="a1d44fc603a8a7aba7f1314576a139c3" category="paragraph">&lt;stdin&gt;の未解決のディレクティブ- include：：../_include/SVM-limits.adoc[]</block>
+  <block id="e79dbb0b4d2ca45d8f4713711dd8c47c" category="paragraph">System Managerを使用してStorage VMを作成できます。</block>
+  <block id="f232ec1da86ae610f97011f01f800031" category="list-text">Storage VM*を選択します。</block>
+  <block id="425a1bcbacf8dcc29243de992d955eb3" category="list-text">をクリック <block ref="43f48618b8b157dea4d31396a9d4b622" category="inline-image-macro-rx" type="image"></block> してStorage VMを作成します。</block>
+  <block id="c6db4789357efa25f46351d850a42f00" category="list-text">Storage VMに名前を付けます。</block>
+  <block id="a7338288aa4590f3c9d5f7d2485c1c58" category="list-text">アクセスプロトコルを選択します。</block>
+  <block id="3bebcf8a5d3487ce07f92bb891563edc" category="list-text">SMB / CIFS、NFS</block>
+  <block id="70d9e3c68d42d6ec42ab792e06c44357" category="list-text">NVMe</block>
+  <block id="22ae78a2ef9f095fe6373bb7295efa3a" category="list-text">SMB / CIFSの有効化*を選択した場合は、次の設定を行います。</block>
+  <block id="e68ffd76c817b20de740406064a5984c" category="cell">フィールドまたはチェックボックス</block>
+  <block id="34e8ac1104cce23ef5971ddf76627eee" category="paragraph">管理者名</block>
+  <block id="b471bcc9afb249cff00077aeff376c11" category="paragraph">SMB / CIFS Storage VMの管理者ユーザ名を指定してください。</block>
+  <block id="dc647eb65e6711e155375218212b3964" category="paragraph">パスワード</block>
+  <block id="703b6c917b59c453905f6777f0563187" category="paragraph">SMB / CIFS Storage VMの管理者パスワードを指定してください。</block>
+  <block id="637e29e8db23b0832fae80848e4d4733" category="paragraph">サーバ名</block>
+  <block id="cdcfd099349a8285a8e7a1ca74271068" category="paragraph">SMB / CIFS Storage VMのサーバ名を指定してください。</block>
+  <block id="f490d3302e7cd81f3dafead6c8311b60" category="paragraph">Active Directoryドメイン</block>
+  <block id="8cf13cd851c58a9306128f0ad0941d79" category="paragraph">SMB / CIFS Storage VMにユーザ認証を提供するActive Directoryドメインを指定してください。</block>
+  <block id="ff309cf3107765153856990e03224d8c" category="paragraph">組織単位</block>
+  <block id="4425eb7547a089cc817e237749a91443" category="paragraph">SMB / CIFSサーバに関連付けられたActive Directoryドメイン内の組織単位を指定します。デフォルト値は「CN=Computers」で、変更できます。</block>
+  <block id="369873f8ef2eab73e01e08c2e3aedecb" category="paragraph">Storage VM内の共有へのアクセス時にデータを暗号化する</block>
+  <block id="0dd0999209a05468327ee3e3281ced03" category="paragraph">SMB 3.0を使用してデータを暗号化し、SMB / CIFS Storage VM内の共有に対する不正なファイルアクセスを防止するには、このチェックボックスを選択します。</block>
+  <block id="78cd2c7d5422ffdb6d9545211ca49eeb" category="paragraph">ドメイン</block>
+  <block id="44e86c21646cd6565c3fd1ca8c11f0d2" category="paragraph">SMB / CIFS Storage VMに対して表示されているドメインを追加、削除、または順序変更する。</block>
+  <block id="5983d82c47c0afe291746daa1c40b3ae" category="paragraph">ネームサーバ</block>
+  <block id="c503bd72fd9f98341f61070a2b337ac6" category="paragraph">SMB / CIFS Storage VMのネームサーバの追加、削除、または順序変更</block>
+  <block id="951cfb94bce19fdd877e24ccfec144b9" category="paragraph">デフォルト言語</block>
+  <block id="cd0ab8bd4d82650fa6882f32120db4f9" category="paragraph">Storage VMとそのボリュームのデフォルトの言語エンコード設定を指定します。Storage VM内の個々のボリュームの設定を変更する場合はCLIを使用してください。</block>
+  <block id="fbebc6739678d32573bdcc8e7d9712a2" category="paragraph">ネットワークインターフェイス</block>
+  <block id="addc2324c2ccf4577b40cd95c2b0adcd" category="paragraph">Storage VMに設定するネットワークインターフェイスごとに、既存のサブネットを選択するか（少なくとも1つ存在する場合）、または「*サブネットなし」と指定し、「* IPアドレス*」フィールドと「*サブネットマスク*」フィールドを入力します。使用する場合は、* Use the same subnet mask and gateway for all of the following interfaces*チェックボックスをオンにします。システムで自動的にホームポートを選択することも、使用するホームポートをリストから手動で選択することもできます。</block>
+  <block id="6f3b36f7d8c2187b5159cdb82423b93a" category="paragraph">管理者アカウントを管理する</block>
+  <block id="37fd1df845b96544bc823d9ee0d67cc1" category="paragraph">Storage VM管理者アカウントを管理する場合は、このチェックボックスを選択します。選択した場合、ユーザ名とパスワードを指定し、確認のためにもう一度パスワードを入力し、Storage VM管理用のネットワークインターフェイスを追加するかどうかを指定します。</block>
+  <block id="0d284df1be748e15793b8264348b675e" category="list-text">Enable NFS（FCの有効化）を選択した場合は、次の設定を行います。</block>
+  <block id="3de8b42b3601db654d1550084d657906" category="paragraph">Allow NFS client accessチェックボックス</block>
+  <block id="3badd390719f5de7be91359220a017d8" category="paragraph">NFS Storage VMに作成されたすべてのボリュームで、ルートボリュームパス「/」を使用してマウントとトラバースを行う必要がある場合は、このチェックボックスを選択します。中断のないマウントトラバーサルを許可するには、エクスポートポリシー「default」にルールを追加してください。</block>
+  <block id="1f4da964f8eab62e96e8cfe406e44364" category="paragraph">ルール</block>
+  <block id="c676e0b6d2fa06f7c150e74b7d7878ac" category="paragraph">をクリックし <block ref="43f48618b8b157dea4d31396a9d4b622" category="inline-image-macro-rx" type="image"></block> てルールを作成します。</block>
+  <block id="e0cc4684693f4e93cf56f3017cfaa481" category="list-text">クライアント仕様：ホスト名、IPアドレス、ネットグループ、またはドメインを指定します。</block>
+  <block id="15e1f930200c5ef680eccbc11fd982ca" category="list-text">Access Protocols：次のオプションを組み合わせて選択します。</block>
+  <block id="8d3f3d8ac4e0e2e8685821807920a78e" category="list-text">SMB / CIFS</block>
+  <block id="f24ce81f056d5acd59788df7f5ab36a1" category="list-text">FlexCache</block>
+  <block id="1d1a594959ec615f56516f5d0f5e8ddb" category="list-text">NFS</block>
+  <block id="5b12ee0369243579651edca43ff65c85" category="list-text">NFSv3</block>
+  <block id="08e90903fe145a9dcc2fb967259a1755" category="list-text">NFSv4</block>
+  <block id="86e42f76258fecb272d85febc7840cae" category="list-text">アクセスの詳細：各タイプのユーザについて、読み取り専用、読み取り/書き込み、またはスーパーユーザのいずれかのアクセスレベルを指定します。ユーザタイプは次のとおりです。</block>
+  <block id="b1c94ca2fbc3e78fc30069c8d0f01680" category="list-text">すべて</block>
+  <block id="3b8189b52f32bb0356f9ae582e04094d" category="list-text">all（匿名ユーザとして）</block>
+  <block id="c5541b475fdab9fce04884adff3b0359" category="list-text">Kerberos 5</block>
+  <block id="f22873ba6efee4accc10bd5a3d3ca9eb" category="list-text">Kerberos 5i</block>
+  <block id="a98fd9001be872cb9763c171625ee881" category="list-text">Kerberos 5p</block>
+  <block id="d11322c1a7a2383491c23f13113c59ea" category="list-text">NTLM</block>
+  <block id="7383d6f7ab3b52644d30a4a0e2ae3df1" category="paragraph">ルールを保存します。</block>
+  <block id="83163eeadc9ddb2ac656cb4f4245b264" category="list-text">[Enable iSCSI*]を選択した場合は、次の設定を行います。</block>
+  <block id="cb87cc4133d76efd12f5de622190e7c4" category="list-text">Enable FC（FCの有効化）を選択した場合は、次の設定を行います。</block>
+  <block id="8503a722b3fe068428f739c9dbd4d43f" category="paragraph">FCポートを設定</block>
+  <block id="8488410a80842f058100899223773ebb" category="paragraph">Storage VMに含めるノードのネットワークインターフェイスを選択してください。ノードごとに2つのネットワークインターフェイスを推奨します。</block>
+  <block id="7cfc92cd0570022bd7e56b7c286c6bac" category="list-text">[NVMe/FCを有効にする]*を選択した場合は、次の設定を行います。</block>
+  <block id="cdf900c4ac940fb389c02e3a3292fae5" category="list-text">[NVMe/TCPを有効にする]*を選択した場合は、次の設定を行います。</block>
+  <block id="345e93a96b6e66cb9274dbad975c0db2" category="list-text">変更を保存します。</block>
+  <block id="61157a0dbd65c93a06825f5c886c2bdc" category="paragraph">サブネットを作成するには、ONTAP CLIを使用してください。</block>
+  <block id="9e410dfb5a2299a2f9aeae2d14595de2" category="list-text">SVMのルートボリュームを格納するためのアグリゲートを決定します。</block>
+  <block id="d5e80ad93326693bccc06be4536713de" category="paragraph"><block ref="ab0abb3da82fd9575686e8f7abdfdcd5" prefix="" category="inline-code"></block></block>
+  <block id="4dfb9b40ea052c23a3a0f77d337cbdee" category="paragraph">ルートボリュームを格納するための1GB以上の空きスペースがあるアグリゲートを選択する必要があります。SVMでNASの監査を設定する場合は、ルートアグリゲートに少なくとも3GBの追加の空きスペースと、監査を有効にしたときに監査ステージングボリュームの作成に使用される追加のスペースが必要です。</block>
+  <block id="4e756dafef2428c97af05ef326dff6ed" category="admonition">既存のSVMでNASの監査がすでに有効になっている場合は、アグリゲートの作成が完了した直後にアグリゲートのステージングボリュームが作成されます。</block>
+  <block id="1d4025ba42560b66fc521994c2d4ab8a" category="list-text">SVMのルートボリュームを作成するアグリゲートの名前を控えます。</block>
+  <block id="21c7896623b02b15d2c661cc2e5a5255" category="list-text">SVMを作成するときに言語を指定する予定であり、使用する値がわからない場合は、指定する言語の値を確認し、その値を控えます。</block>
+  <block id="6f0db2c0e3209546c14d633363b336e8" category="paragraph"><block ref="7e3619f076c911dc84602d00403fd4c8" prefix="" category="inline-code"></block></block>
+  <block id="1d8404eb6271fc502c911b0db577288e" category="list-text">SVMを作成するときにSnapshotポリシーを指定する予定であり、ポリシーの名前がわからない場合は、使用可能なポリシーの一覧を表示し、使用するSnapshotポリシーの名前を確認して、その名前を控えます。</block>
+  <block id="3dae10567943cbfb6af5ecfc66d573a5" category="paragraph"><block ref="35445e40043671f182d2acb44ed589a4" prefix="" category="inline-code"></block></block>
+  <block id="8d20ed56563f9cbada635a4c622b9945" category="list-text">SVMを作成するときにクォータポリシーを指定する予定であり、ポリシーの名前がわからない場合は、使用可能なポリシーの一覧を表示し、使用するクォータポリシーの名前を確認して、その名前を控えます。</block>
+  <block id="bc9b110970671d35ec963b22428b4fc6" category="paragraph"><block ref="3bd8dda2d5ae5e5237187c31d2c74164" prefix="" category="inline-code"></block></block>
+  <block id="891942f01dbf46f03681746fb932d692" category="list-text">SVMを作成します。</block>
+  <block id="cb7bf213cd3b9774ed6dc06d7829f27f" category="paragraph"><block ref="27b483e7b9ee9e6551db297d8745aa90" prefix="" category="inline-code"></block></block>
+  <block id="c4c1eb91697ed5e319e37fb61374dd54" category="paragraph"><block ref="abf8f3d2a8f2bf44483e35c5cf5189ed" prefix="" category="inline-code"></block></block>
+  <block id="c75de7d8081e3cf501427ec47ca0cbf9" category="list-text">SVMの設定が正しいことを確認します。</block>
+  <block id="a08bac7bed1b7eaef93ae8eb19ca62e9" category="paragraph"><block ref="c69629cafced5cf16a105c3fc5369973" prefix="" category="inline-code"></block></block>
+  <block id="5fe6a4ff9e5b4c958267930735a5750b" category="paragraph">この例では、コマンドはIPspace「ipspace1」に「vs1」という名前のSVMを作成します。ルートボリュームは「vs1_root」という名前で、NTFSセキュリティ形式でaggr3に作成されます。</block>
+  <block id="28e9e84d4ea23f4e930e8628e9dd1d79" category="paragraph">&lt;stdin&gt;の未解決のディレクティブ-include::../_include/adaptive-qos-policy.adoc[]</block>
+  <block id="00168315e4762d2b2b9c5462bdf8c7cc" category="summary">LIF の特性はロールごとに異なります</block>
+  <block id="0c0b240863b39f03b5d2a93471991c0f" category="doc">LIFのロール（ONTAP 9.5以前）</block>
+  <block id="971dbc285b73d7c6f7ac90280984bb27" category="paragraph">LIFの特性はロールごとに異なります。LIFのロールによって、インターフェイスでサポートされるトラフィックの種類と、適用されるフェイルオーバールール、適用されるファイアウォールの制限、セキュリティ、ロードバランシング、および各LIFのルーティング動作が決まります。LIFのロールは、cluster、cluster management、data、intercluster、node management、undef（undefined）のいずれかです。undefロールはBGP LIFに使用されます。</block>
+  <block id="948b8964eebece7a2ddba6799f736a2c" category="paragraph">ONTAP 9.6以降では、LIFのロールは廃止されています。ロールではなく、LIFのサービスポリシーを指定する必要があります。サービスポリシーを使用してLIFを作成する場合、LIFのロールを指定する必要はありません。</block>
+  <block id="94e6cee7fe1a1375bf9dc65d4f0dd995" category="section-title">LIFのセキュリティ</block>
+  <block id="f86f4a50388930909d983126e43601d2" category="cell">Data LIF</block>
+  <block id="aff7b3c6a1a82a339ee68a62e5bf859e" category="cell">クラスタLIF</block>
+  <block id="e2578ec54f85b5b6333c94364b756a1c" category="cell">ノード管理LIF</block>
+  <block id="15a4d902a9e2eeb56724bdb94f9d1977" category="cell">クラスタ管理LIF</block>
+  <block id="54f7d853bcd07992f133218c21a038be" category="cell">クラスタ間LIF</block>
+  <block id="bbcca6fb4cc39c40c272284afd47fb0d" category="cell">プライベートIPサブネットが必要かどうか</block>
+  <block id="bafd7322c6e97d25b6299b5d6fe8920b" category="cell">いいえ</block>
+  <block id="94aa616ded63df1ddfd2db3f000298f5" category="cell">セキュアなネットワークが必要</block>
+  <block id="b484916e97900df1211612f037613d9a" category="cell">デフォルトのファイアウォールポリシー</block>
+  <block id="9fed7b9fa5681c8f3085940cc39e70e6" category="cell">非常に厳しい</block>
+  <block id="32f4d3b1db1c5f465cb22e4877370085" category="cell">完全にオープン</block>
+  <block id="87f8a6ab85c9ced3702b4ea641ad4bb5" category="cell">中</block>
+  <block id="bc7b428ef80f13f9db850081a0baf5f8" category="cell">ファイアウォールをカスタマイズ可能</block>
+  <block id="989edd27b2259c0a99bdf49486b0e282" category="section-title">LIFフェイルオーバー</block>
+  <block id="590f6d9a5885f042982c9a911f76abda" category="cell">デフォルトの動作</block>
+  <block id="f22315dd8ccfb0e386d9d87ebc2b1bba" category="cell">LIFのホームノードとSFO以外のパートナーノードと同じフェイルオーバーグループのポート</block>
+  <block id="83f96cdb7303472fdea7614250e0c3fd" category="cell">LIFのホームノードと同じフェイルオーバーグループ内のポートのみ</block>
+  <block id="d9ccc0630cdaf0a667836ce00d1db024" category="cell">同じフェイルオーバーグループ内の任意のポート</block>
+  <block id="498be304757715bc51f2f7d8b0b16b8a" category="cell">カスタマイズ可能</block>
+  <block id="0562bc2d0812b604322ccdfe52b44d18" category="section-title">LIFのルーティング</block>
+  <block id="98f8738f80b3c6ab46e13578531a5d7e" category="cell">デフォルトルートが必要になる状況</block>
+  <block id="c001ad4efcbb1955baa7f6162cab4143" category="cell">クライアントまたはドメインコントローラが異なるIPサブネット上にある場合</block>
+  <block id="6e7b34fa59e1bd229b207892956dc41c" category="cell">しない</block>
+  <block id="9081e9fd698e3464b29b10ce9eee9fd8" category="cell">プライマリトラフィックタイプのいずれかが別のIPサブネットへのアクセスを必要とする場合</block>
+  <block id="ec5334cfc1ff0a04b70f21168eccd32a" category="cell">管理者が別のIPサブネットから接続している場合</block>
+  <block id="44446842df9e28ad4397fd58ef039cd6" category="cell">他のクラスタ間LIFが別のIPサブネットにある場合</block>
+  <block id="56b69eb70b78df6fce9dd2059bf416b2" category="cell">特定のIPサブネットへの静的ルートが必要になる状況</block>
+  <block id="a2cc588f2ab07ad61b05400f593eeb0a" category="cell">ほとんどなし</block>
+  <block id="398406706598a44bad4df839c72c9fe0" category="cell">別のクラスタのノードのクラスタ間LIFが別 々 のIPサブネットにある場合</block>
+  <block id="423aabc92a5f3d53d90d88c84358b59b" category="cell">特定のサーバへの静的ホストルートが必要になる状況</block>
+  <block id="0ec028ac0f80b4414ca0b7d12cde6fb6" category="cell">ノード管理LIFの下に表示されているトラフィックタイプのいずれかを、ノード管理LIFではなくデータLIFを経由させる場合。これには、対応するファイアウォールの変更が必要です。</block>
+  <block id="e9d15683f03673a2edf8195d24964eb1" category="section-title">LIFのリバランシング</block>
+  <block id="0ec08ba45fa50a6f8cf3c5332d5f7b1a" category="cell">DNS：DNSサーバとして使用しますか？</block>
+  <block id="b6ecb378831203b6df90201c84ac0d36" category="cell">DNS：ゾーンとしてエクスポートしますか？</block>
+  <block id="05873a13cdcf394cb1781d50396d9033" category="section-title">LIFのプライマリトラフィックタイプ</block>
+  <block id="91c997ac411302de89a704da8c90a365" category="cell">主なトラフィックタイプ</block>
+  <block id="863fafa226fdca241847822df0d9cf40" category="cell">NFSサーバ、CIFSサーバ、NISクライアント、Active Directory、LDAP、WINS、DNSクライアントおよびサーバ、iSCSIおよびFCサーバ</block>
+  <block id="226a6d91c34879bfbe918926cd1f94c4" category="cell">クラスタ内</block>
+  <block id="1e14e7e2a6e253cfec1589d743aa33f6" category="cell">SSHサーバ、HTTPSサーバ、NTPクライアント、SNMP、AutoSupportクライアント、DNSクライアント、ソフトウェア更新のロード</block>
+  <block id="fad014a43df1d0597a1cda7f1426ea6b" category="cell">SSHサーバ、HTTPSサーバ</block>
+  <block id="3b013b6d96eafcc4e55a6beb603d64c4" category="cell">クラスタ間レプリケーション</block>
+  <block id="459c7b8e7f7af952393c9b24d0cbd35d" category="summary">ONTAP 9.7 以前では、障害のある NIC をスロットから取り外したり、メンテナンスのために NIC を別のスロットに移したりします</block>
+  <block id="c34df23c67ce2c224ace362d5c84f2c1" category="doc">ノードからのNICの取り外し（ONTAP 9.7以前）</block>
+  <block id="1578a0b8542e51d6976133034d10f88b" category="paragraph">このトピックはONTAP 9.7以前が対象です。障害の発生したNICをスロットから取り外したり、メンテナンス時にNICを別のスロットに移したりしなければならない場合があります。</block>
+  <block id="af573fe3536f49b538a7a5e78478b47e" category="list-text">NICポートでホストされているすべてのLIFを移行または削除しておく必要があります。</block>
+  <block id="68f5b35cecb146725fd3787d47d97f60" category="list-text">NICポートがLIFのホームポートになっているポートはありません。</block>
+  <block id="60ccccf52bc751406dcc4a9aff1bd74e" category="list-text">NICからポートを削除するには、高度なPrivilegesが必要です。</block>
+  <block id="38abd375e1250ccb945791ffe0f4fcf2" category="list-text">NICからポートを削除します。</block>
+  <block id="1edc30c9cec2665a01f0a9cc7910d9fc" category="paragraph"><block ref="ce40425bd6c0ef0314bdd114d6980b61" prefix="" category="inline-code"></block></block>
+  <block id="d7dd98ce71c2f2739d8dbb0312174af2" category="list-text">ポートが削除されたことを確認します。</block>
+  <block id="47cd03a2fa721b9f4f83dca38829afea" category="paragraph"><block ref="838c4deb1e9c47dcd4c44b6e40276467" prefix="" category="inline-code"></block></block>
+  <block id="daa7b5256a5159e27b3a5a2ec8349d9d" category="list-text">network port showコマンドの出力に削除したポートが表示される場合は、手順1を繰り返します。</block>
+  <block id="19bf87c82445072fe6568b60767d7b78" category="summary">ブロードキャストドメインにポートを手動で追加したりドメインからポートを削除したりすることは、推奨されません</block>
+  <block id="876b163d470ad17f7e57977a1fb3a7a4" category="doc">ブロードキャストドメインのポートを追加または削除する（ONTAP 9.7以前）</block>
+  <block id="d0e4d312be789fa9609491a71720b1a1" category="paragraph">ブロードキャストドメインの作成時にネットワークポートを追加したり、既存のブロードキャストドメインに対してポートを追加したり削除したりできます。これにより、クラスタ内のすべてのポートを効率的に使用できます。</block>
+  <block id="82d5593d0cdfd31166134520e453fb74" category="paragraph">新しいブロードキャストドメインに追加するポートがすでに別のブロードキャストドメインにある場合は、新しいブロードキャストドメインに割り当てる前にそのブロードキャストドメインからポートを削除する必要があります。</block>
+  <block id="807951cd4d6fcb2e150d21fbd9f5b807" category="admonition">このタスクは、ONTAP 9.8ではなくONTAP 9.0~9.7に関連しています。</block>
+  <block id="353cd250aa9a6d62eefe59937d353b0f" category="list-text">ブロードキャストドメインに追加するポートは、別のブロードキャストドメインに属していないポートにする必要があります。</block>
+  <block id="59270bd5af684cbd2f53d6057c1fb383" category="list-text">すでにインターフェイスグループに属しているポートを個別にブロードキャストドメインに追加することはできません。</block>
+  <block id="540b443896df21c3dd0b368ca18128af" category="paragraph">ネットワークポートの追加と削除には、次のルールが適用されます。</block>
+  <block id="8811151dda23edd2a5108a6fa1ff1be8" category="cell">ポートの追加</block>
+  <block id="858f1a0e377ca7cbf492f157f80c1789" category="cell">ポートの削除</block>
+  <block id="a9ab7ec094ce4b25c1cefebbdcc04d38" category="cell">ネットワークポート、VLAN、インターフェイスグループ（ifgrp）のいずれかです。</block>
+  <block id="3bc4fb7c2035117d63df4fa973af67bf" category="cell">ポートは、ブロードキャストドメインのシステム定義のフェイルオーバーグループに追加されます。</block>
+  <block id="f71ce9afeee0c9083f8cec5ce12e8d6d" category="cell">ポートはブロードキャストドメインのすべてのフェイルオーバーグループから削除されます。</block>
+  <block id="5ec058e125df964e3212b92a1344e836" category="cell">ポートのMTUは、ブロードキャストドメインに設定されているMTU値に更新されます。</block>
+  <block id="7bcbfe8bd9d90deb15678f71f0bed919" category="cell">ポートのMTUは変更されません。</block>
+  <block id="9afc0ffaa6e1d4e4f5ea6cd92cbe12b9" category="cell">ポートのIPspaceがブロードキャストドメインのIPspaceの値に更新されます。</block>
+  <block id="b64f65c77c392ed7c104c1ff38a89f7b" category="cell">ポートはブロードキャストドメイン属性のない「Default」IPspaceに移動されます。</block>
+  <block id="bc8bcf06defaa0b66aea0e8f6331139f" category="admonition">インターフェイスグループの最後のメンバーポートをコマンドを使用して削除する<block ref="d575b091ef70bd2ac59a248dac4d658e" prefix=" " category="inline-code"></block>と、そのインターフェイスグループポートがブロードキャストドメインから削除されます。これは、ブロードキャストドメインに空のインターフェイスグループポートが存在できないためです。</block>
+  <block id="40df56690b3f73d28b9c0537efd4c202" category="list-text">コマンドを使用して、ブロードキャストドメインに現在割り当てられているポートまたは割り当てられていないポートを表示します<block ref="838c4deb1e9c47dcd4c44b6e40276467" prefix=" " category="inline-code"></block>。</block>
+  <block id="33f8d1377a89c0505bf6bbd687544fe8" category="list-text">ブロードキャストドメインにネットワークポートを追加または削除します。</block>
+  <block id="75679f9f9577ec4abce75ef8e0a00e7d" category="paragraph">ブロードキャストドメインにポートを追加する</block>
+  <block id="8f822f2d07295ece2b3ed7d8bc0255ff" category="paragraph"><block ref="c12e4cf1de1c55f93fa3c87cac484b3b" prefix="" category="inline-code"></block></block>
+  <block id="c0551af818f4a1ac54f3175279a051b3" category="paragraph">ブロードキャストドメインからポートを削除する</block>
+  <block id="ee210a0730802d9c055ca601e95c499c" category="paragraph"><block ref="0a00983c93a43364f8ece0dd4878a2d5" prefix="" category="inline-code"></block></block>
+  <block id="eb595208b2e206995da2f02804845846" category="list-text">ポートがブロードキャストドメインに対して追加または削除されたことを確認します。</block>
+  <block id="b594ae869da49f856ebb1c5ca8dfb9b4" category="section-title">ポートの追加と削除の例</block>
+  <block id="fb8d5ad141799c307eb1fcfcb716b28a" category="paragraph">次のコマンドは、Default IPspaceのブロードキャスト ドメインbcast1に、ノードcluster-1-01のポートe0gと、ノードcluster-1-02のe0gを追加します。</block>
+  <block id="f23acb14778bd25381425e8327f3775c" category="paragraph"><block ref="e5d2dc24fe6e32d79713c7fbc4e6f490" prefix="" category="inline-code"></block></block>
+  <block id="30671794ffa73ee4b020d67f720d6f68" category="paragraph">次のコマンドは、Cluster IPspaceのブロードキャスト ドメインClusterに、クラスタ ポートを2つ追加します。</block>
+  <block id="6a91675c7de00d7744149b3e588cd626" category="paragraph"><block ref="d83e55384a4a0bec023cb45fe68c600d" prefix="" category="inline-code"></block></block>
+  <block id="614c89cdf853f484ebc0b5b55e7a87cd" category="paragraph">次のコマンドは、Default IPspaceのブロードキャスト ドメインbcast1から、ノードcluster1-01のポートe0eを削除します。</block>
+  <block id="05acd91b7cdf216d410b1b3c44593e88" category="paragraph"><block ref="f988032db9ad3aefa801757eb684c9d6" prefix="" category="inline-code"></block></block>
+  <block id="bc2602c5a66493ba7d85e8bd5d0e7f9b" category="list-text"><block ref="bc2602c5a66493ba7d85e8bd5d0e7f9b" category="inline-link-macro-rx"></block></block>
+  <block id="84bdf9349c63fefa4aa4743ee6f7bc1c" category="summary">ブロードキャストドメインの MTU 値を変更して、ブロードキャストドメインのすべてのポートのその値を変更します</block>
+  <block id="b65f35d38e54f653d62f385179f0697a" category="doc">ブロードキャストドメイン（ONTAP 9.7以前）のポートのMTU値を変更する</block>
+  <block id="2b8eb4f7080b49d3e6d219e7482285c1" category="paragraph">あるブロードキャストドメインのMTU値を変更して、そのブロードキャストドメイン内のすべてのポートのMTU値を変更できます。これは、ネットワークで行われたトポロジの変更をサポートするために実行できます。</block>
+  <block id="17169cdd38bd8629d45990b5c46f3b8a" category="paragraph">MTU値は、管理トラフィックを処理するe0Mポートを除き、そのレイヤ2ネットワークに接続されているすべてのデバイスで同じである必要があります。</block>
+  <block id="387b8c86faaf37988b48544b6aeee058" category="paragraph">MTU値を変更すると、影響を受けるポートを経由するトラフィックが一時的に中断されます。プロンプトが表示され、MTUを変更するには「y」と入力する必要があります。</block>
+  <block id="c558e6cc70dea26b9ff4a4f10e4fcf81" category="paragraph">ブロードキャストドメインのすべてのポートのMTU値を変更します。</block>
+  <block id="eff7b7f6ff578e4ab608a330289c49a5" category="list-text"><block ref="91597b98c407da31245936f26c8a9887" prefix="" category="inline-code"></block>は、ブロードキャストドメインの名前です。</block>
+  <block id="65437b39a930bfdd02459d96ad335c5f" category="list-text"><block ref="661a504c6c4cd163fe4d67836577b926" prefix="" category="inline-code"></block>はIPパケットのMTUサイズです。通常は1500と9000です。</block>
+  <block id="3174c9efde96d4881e6291980fe1cb18" category="list-text"><block ref="1e2d1a4a58bdff2d126f8f6ca8608478" prefix="" category="inline-code"></block>は、このブロードキャストドメインが配置されているIPspaceの名前です。このオプションの値を指定しないかぎり、「Default」IPspaceが使用されます。次のコマンドは、ブロードキャストドメインbcast1のすべてのポートのMTUを9000に変更します。</block>
+  <block id="c8c91b71c9f2c29b3110bfc3348a9f0a" category="summary">ブロードキャストドメインは、同じレイヤ 2 ネットワークに属するネットワークポートをグループ化したものです</block>
+  <block id="0eac6cba5e9f8b059013158afd4c62e1" category="doc">ブロードキャストドメインの概要（ONTAP 9 .7以前）</block>
+  <block id="d9aacb3b3086394f21ba1ec931f98cfc" category="paragraph">ブロードキャストドメインは、同じレイヤ2ネットワークに属するネットワークポートをグループ化するためのものです。グループ化したポートは、データトラフィックまたは管理トラフィック用のStorage Virtual Machine（SVM）で使用できます。</block>
+  <block id="ab7522c6814a39bb50b1835cf25f6259" category="paragraph">ブロードキャストドメインはIPspace内にあります。クラスタの初期化では、デフォルトのブロードキャストドメインが2つ作成されます。</block>
+  <block id="b162e4d019362577aa2f67b09f6f8671" category="list-text">デフォルトのブロードキャストドメインには、デフォルトのIPspace内にあるポートが含まれています。これらのポートは、主にデータの提供に使用されます。クラスタ管理ポートとノード管理ポートも、このブロードキャスト ドメインに含まれています。</block>
+  <block id="e706cfbf7e7027617769f0a64d1aa44b" category="list-text">Clusterブロードキャスト ドメインには、Cluster IPspace内にあるポートが含まれています。これらのポートはクラスタ通信に使われ、クラスタの全ノードのすべてのクラスタ ポートが含まれています。</block>
+  <block id="d58198b796a8425bceb05d28fbd76655" category="paragraph">クライアント トラフィックを分離するために独自のIPspaceを作成した場合は、作成した各IPspace内にブロードキャスト ドメインを作成する必要があります。</block>
+  <block id="6803a7584a25c4fead41b63c82cd6216" category="admonition">ブロードキャスト ドメインを作成して、同じレイヤ2ネットワークに属するクラスタのネットワーク ポートをグループ化します。これらのポートは、SVMで使用されます。</block>
+  <block id="c7d645e9536a7b441c9ccf5073a87e53" category="section-title">ブロードキャスト ドメインの使用例</block>
+  <block id="6b1bc3d86b8575e2402bcae1d0dd6788" category="paragraph">ブロードキャスト ドメインは、同じIPspace内にあり、相互にレイヤ2の到達可能性があるネットワーク ポートの集まりです。一般にクラスタ内の複数のノードのポートが含まれます。</block>
+  <block id="d4f97706d831e1453d51bf1fc26afe5b" category="paragraph">次の図は、4ノード クラスタの3つのブロードキャスト ドメインにポートを割り当てている例を示します。</block>
+  <block id="3b33bbfb1f410cbbfcbb9edebb1724b5" category="list-text">Clusterブロードキャスト ドメインはクラスタの初期化中に自動的に作成され、クラスタ内の各ノードのポートaとbが含まれます。</block>
+  <block id="45bb6bb21322652b107d80754e12b482" category="list-text">Defaultブロードキャスト ドメインもクラスタの初期化中に自動的に作成され、クラスタ内の各ノードのポートcとdが含まれます。</block>
+  <block id="e1c2adb896f3eb2d80b2bb9acd04a2ab" category="list-text">bcast1というブロードキャスト ドメインは手動で作成されたドメインで、クラスタ内の各ノードのポートe、f、gが含まれます。このブロードキャスト ドメインは、新しいクライアントが新しいSVMを介してデータにアクセスできるよう、システム管理者が作成したものです。</block>
+  <block id="bc800d449ed8e2782b98036c5f5a2d7f" category="inline-image-macro">ブロードキャストドメインのイメージ</block>
+  <block id="8c96bff404841be809ae66a4ad5b6275" category="paragraph"><block ref="8c96bff404841be809ae66a4ad5b6275" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="330c8578ee83c50c4ecc9ee0f494fa09" category="paragraph">各ブロードキャストドメインと同じ名前で、同じネットワークポートを持つフェイルオーバーグループが自動的に作成されます。このフェイルオーバーグループはシステムによって自動的に管理されます。つまり、ブロードキャストドメインのポートが追加または削除されると、そのフェイルオーバーグループのポートも自動的に追加または削除されます。</block>
+  <block id="25f1938e8a6466ef3646cb1540f85372" category="summary">ブロードキャストドメインは、同じレイヤ 2 ネットワークに属するクラスタ内のネットワークポートをグループ化したものです</block>
+  <block id="7084354993a2057e35e719497f454908" category="doc">ブロードキャストドメインの作成（ONTAP 9 .7以前）</block>
+  <block id="d2af663c9f1ae5451b1a97146f08a126" category="paragraph">ONTAP 9 .7以前では、ブロードキャストドメインを作成して、同じレイヤ2ネットワークに属するクラスタのネットワークポートをグループ化します。作成したポートはSVMで使用できます。カスタムIPspaceのブロードキャストドメインを作成する必要があります。IPspaceに作成されたSVMは、ブロードキャストドメイン内のポートを使用します。</block>
+  <block id="2e42f15c7120467b5cdcd910659c690e" category="paragraph">ONTAP 9 .8以降では、ブロードキャストドメインはクラスタの作成時または追加時に自動的に作成されます。ONTAP 9 .8以降を実行している場合は、これらの手順は必要ありません。</block>
+  <block id="cdfc66112c43ad875d275256bf56a0f7" category="paragraph">ONTAP 9 .7以前では、別のブロードキャストドメインに属しているポートは追加できません。</block>
+  <block id="00234cb54c6941e3ce2aa2db5d988975" category="paragraph">LIFのフェイルオーバー先のポートは、LIFのフェイルオーバーグループのメンバーである必要があります。ブロードキャストドメインを作成すると、同じ名前のフェイルオーバーグループがONTAPによって自動的に作成されます。フェイルオーバーグループには、ブロードキャストドメインに割り当てられているすべてのポートが含まれます。</block>
+  <block id="2da0403e9693c05aeecf9502d0349c34" category="list-text">ブロードキャストドメイン名はすべてIPspace内で一意である必要があります。</block>
+  <block id="8bf49bcc8e8b90061bbd45e3db073ec4" category="list-text">ブロードキャストドメインに追加できるポートは、物理ネットワークポート、VLAN、インターフェイスグループ（ifgrp）です。</block>
+  <block id="608b519dfea74bf54d6726307e2a1766" category="list-text">使用するポートが別のブロードキャストドメインに属しているが、使用されていない場合は、コマンドを使用し<block ref="0a00983c93a43364f8ece0dd4878a2d5" prefix=" " category="inline-code"></block>て既存のブロードキャストドメインからポートを削除します。</block>
+  <block id="f565d0644ece2679545030bed13406b0" category="list-text">ブロードキャストドメインに追加したポートのMTUは、ブロードキャストドメインに設定されているMTU値に更新されます。</block>
+  <block id="cfb2c61655c25e94834a1f09fd005d19" category="list-text">MTU値は、管理トラフィックを処理するe0Mポートを除き、そのレイヤ2ネットワークに接続されているすべてのデバイスで同じである必要があります。</block>
+  <block id="e5fe57f952d70ed401e5861edaf9ae0c" category="list-text">IPspace名を指定しない場合、ブロードキャストドメインは「Default」IPspaceに作成されます。</block>
+  <block id="1312b6cbbbab7880093895c4569e66da" category="paragraph">システムの設定を簡単にするために、同じポートを含む同じ名前のフェイルオーバーグループが自動的に作成されます。</block>
+  <block id="ceada676563d9ab4ca18178626c9043a" category="list-text">現在ブロードキャストドメインに割り当てられていないポートを表示します。</block>
+  <block id="f177c774edac8d2a79f45ccdc8769093" category="paragraph">大量のポートが表示される場合は、コマンドを使用し<block ref="2a3461e3a4a6c88dfd6189ed53d7be86" prefix=" " category="inline-code"></block>て未割り当てのポートだけを表示します。</block>
+  <block id="c0530f1c04744d25a88aeb2f159adc32" category="list-text">ブロードキャストドメインを作成します。</block>
+  <block id="8c75d5d1dad634d47b8f73b373c64a84" category="paragraph"><block ref="a75f2bb2d65350dc3dc21819fddf6ccb" prefix="" category="inline-code"></block></block>
+  <block id="7dbda91791d8061923d0727a2ffcdc7b" category="list-text"><block ref="289edfc4a087f238917c49bef07c1c04" prefix="" category="inline-code"></block>は、作成するブロードキャストドメインの名前です。</block>
+  <block id="14409e67f8d582025246a8374acb16f3" category="list-text"><block ref="7454bc6579d8ca579fcee3b334978157" prefix="" category="inline-code"></block>はIPパケットのMTUサイズです。通常は1500と9000です。</block>
+  <block id="2de58babc2706f5001395f1a14ded934" category="paragraph">この値は、このブロードキャストドメインに追加するすべてのポートに適用されます。</block>
+  <block id="ce33973ccdcf8db7aecac1107c0732d5" category="list-text"><block ref="c1e9d0002d8674820c304cb9a686131b" prefix="" category="inline-code"></block>は、このブロードキャストドメインを追加するIPspaceの名前です。</block>
+  <block id="bf18ab96260035dd0a9ffe0a460ad2fb" category="paragraph">このパラメータの値を指定しないかぎり、「Default」IPspaceが使用されます。</block>
+  <block id="d5fa6d0e4cbcf07ae0a8f6fc75cfe84f" category="list-text"><block ref="81e7b05ddc23856a323f5d93ae3411e9" prefix="" category="inline-code"></block>は、ブロードキャストドメインに追加するポートのリストです。</block>
+  <block id="7b5feee15c08e42c701b1e7d2baf4cd4" category="paragraph">ポートは、などの形式で追加され<block ref="c9d6108e720ea1dc6b861e3dc3f9a836" prefix=" " category="inline-code"></block><block ref="7118632ca0fca9993b6e431b5a8f18ef" prefix=" " category="inline-code"></block>ます。</block>
+  <block id="ef21becc740e64be66d95dae6102c96b" category="list-text">必要に応じてブロードキャストドメインが作成されたことを確認します。<block ref="837631748deddf22ad5093eb8e692fc8" prefix=" " category="inline-code"></block></block>
+  <block id="0a52730597fb4ffa01fc117d9e71e3a9" category="paragraph-title">例</block>
+  <block id="a1135c8ad88ea4ba1a44733d141d127f" category="paragraph">次のコマンドは、「Default」IPspaceにブロードキャスト ドメインbcast1を作成し、MTUを1500に設定してポートを4つ追加します。</block>
+  <block id="3eb4407be0a68041d1a14be0f55138aa" category="paragraph"><block ref="8e73198de3259084af8bf415b1d828da" prefix="" category="inline-code"></block></block>
+  <block id="8ce92432b3a9f0e70f3f2194fd9e5d63" category="inline-link-macro">クラスタとSVMのピアリング</block>
+  <block id="3296d9be819d40b3f88d4db2f4765b60" category="paragraph">この時点で、サブネットを作成してブロードキャストドメインで使用可能になるIPアドレスのプールを定義するか、SVMとインターフェイスをIPspaceに割り当てることができます。詳細については、を参照してください <block ref="0f49ebc043f34c8eee78a10f20fb2395" category="inline-link-macro-rx"></block>。</block>
+  <block id="b7c51c7c8ce6cfe3ce9622c15ab603c5" category="paragraph">既存のブロードキャストドメインの名前を変更する必要がある場合は、コマンドを使用し<block ref="de2e0efb0823c8f70bf0a6956aa9f32d" prefix=" " category="inline-code"></block>ます。</block>
+  <block id="c4eb738b4fb28de5899d6607eabfc15a" category="summary">不要なブロードキャストドメインを削除します。これにより、関連付けられているポートは「 Default 」 IPspace に移動します</block>
+  <block id="69d33826982d1d12f324d1a4f62ae3ab" category="doc">ブロードキャストドメインを削除する</block>
+  <block id="dfc877fbb3dd5451e66053dd8808b9b1" category="paragraph">不要になったブロードキャストドメインは削除できます。これにより、指定したブロードキャストドメインに関連付けられているポートが「デフォルト」のIPspaceに移動されます。</block>
+  <block id="7238432d2f6c501bf5a873fb2b1aa2d7" category="paragraph">削除するブロードキャストドメインに、関連付けられているサブネット、ネットワークインターフェイス、またはSVMがないようにします。</block>
+  <block id="0d6eaca347d77dcdc19b0b5ea1a76a61" category="list-text">システムで作成された「Cluster」ブロードキャストドメインは削除できません。</block>
+  <block id="c86cdfa0da2a4d2bbe3d74986b93ee5c" category="list-text">ブロードキャストドメインを削除すると、そのブロードキャストドメインに関連するフェイルオーバーグループがすべて削除されます。</block>
+  <block id="15536381fe2a2faa89fd9b3d765858dc" category="paragraph">実行する手順は、使用するインターフェイス（System ManagerまたはCLI）によって異なります。</block>
+  <block id="2a73cf4fc00ade50c334946244d87d3f" category="paragraph">* ONTAP 9.12.0以降では、System Managerを使用してブロードキャストドメイン*を削除できます</block>
+  <block id="25b4cd8d82f19eb90a3e456bb673bf8e" category="paragraph">ブロードキャストドメインにポートが含まれている場合、またはブロードキャストドメインがサブネットに関連付けられている場合は、deleteオプションは表示されません。</block>
+  <block id="c8a1e492c48f762ae54e7ebb4ab541d8" category="list-text">[ネットワーク]&gt;[概要]&gt;[ブロードキャストドメイン*]を選択します。</block>
+  <block id="11325f67c791914c7c2be6dc6d510a40" category="inline-image-macro">メニューオプションアイコン</block>
+  <block id="18cda7d39c0d23abf04a9c2d34d065a5" category="list-text">削除するブロードキャストドメインの横にある*&gt; Delete *を選択します <block ref="d47b50c0fc9a1e10d010a1d0b2f31ccd" category="inline-image-macro-rx" type="image"></block> 。</block>
+  <block id="d27fbf78daa20f580f2506f06c970c17" category="paragraph">*ブロードキャストドメイン*を削除するには、CLIを使用してください</block>
+  <block id="4144172f3b3d46962522b41714817b2d" category="paragraph">ブロードキャストドメインを削除します。</block>
+  <block id="5f8a1a5751f8c542306289a85e36091e" category="paragraph"><block ref="3e8c642d9d28230b7ee4b2542ab14d65" prefix="" category="inline-code"></block></block>
+  <block id="a0acbfe543c454b3348d2c133f1b6295" category="paragraph">次のコマンドは、ipspace1というIPspaceのブロードキャストドメインdefault-1を削除します。</block>
+  <block id="b321c736b07e48b1322969a9c95bf535" category="paragraph"><block ref="327ac268b07d31761507d696a711658c" prefix="" category="inline-code"></block></block>
+  <block id="5c95c84543784e9f6a2fe5bf885e2294" category="summary">新しい IPspace に追加するブロードキャストドメインを設定する前に、ブロードキャストドメインに使用できるポートを確認する必要があります</block>
+  <block id="0c5196e82570c15f81530537057e1331" category="doc">ブロードキャストドメインに使用できるポートの確認（ONTAP 9 .7以前）</block>
+  <block id="a55490311f238285cbb94de7290101cc" category="paragraph">新しいIPspaceに追加するブロードキャストドメインを設定する前に、ブロードキャストドメインに使用できるポートを確認する必要があります。</block>
+  <block id="c22f3cda47d5fdbc6e1f4f8e6014b80b" category="list-text">ポートには、物理ポート、VLAN、インターフェイスグループ（ifgroup）を指定できます。</block>
+  <block id="3c78652b2fd986979d6a5db98dfdfca4" category="list-text">新しいブロードキャストドメインに追加するポートを既存のブロードキャストドメインに割り当てることはできません。</block>
+  <block id="f55ecca1951608d9ee58243faa5b107c" category="list-text">ブロードキャストドメインに追加するポートがすでに別のブロードキャストドメイン（デフォルトIPspaceのデフォルトブロードキャストドメインなど）にある場合は、そのブロードキャストドメインからポートを削除してから新しいブロードキャストドメインに割り当てる必要があります。</block>
+  <block id="6899d13f3ef6ad75270d9a56232747d8" category="list-text">LIFが割り当てられているポートは、ブロードキャストドメインから削除できません。</block>
+  <block id="d467d03c8ba5fa104d666b5e698af708" category="list-text">クラスタ管理LIFとノード管理LIFはデフォルトIPspace内のデフォルトブロードキャストドメインに割り当てられているため、これらのLIFに割り当てられているポートをデフォルトブロードキャストドメインから削除することはできません。</block>
+  <block id="9fe84254c2b50f9d152b2529ef6d5896" category="list-text">現在のポートの割り当てを確認します。</block>
+  <block id="87f0cb242dad3911382bed9e6b49a3eb" category="paragraph">この例では、コマンドの出力から次の情報が得られます。</block>
+  <block id="060fc6a7d0732c3911402b04e0cd7712" category="list-text">各ノードのポート<block ref="96640993dd2592a16c29226daf83b860" prefix=" " category="inline-code"></block>、<block ref="5191792b1ad05675fea3bbf015036b3b" prefix=" " category="inline-code"></block>、<block ref="295208bc8c52d4a2745d40b6c029c8a2" prefix=" " category="inline-code"></block>、、<block ref="40c989cc0bdee457475f49d3f3f8c10a" prefix=" " category="inline-code"></block>が<block ref="cbd803f54be888bcec7290684e827de3" prefix=" " category="inline-code"></block>デフォルトブロードキャストドメインに割り当てられています。</block>
+  <block id="5a5769097d7ff909d9db4994eb94c598" category="list-text">これらのポートは、作成するIPspaceのブロードキャストドメインで使用できる可能性があります。</block>
+  <block id="2d7bd16b2b05b3beba9d306ace93fc16" category="list-text">デフォルトブロードキャストドメイン内の、LIFインターフェイスに割り当てられている、したがって新しいブロードキャストドメインに移動できないポートを確認します。</block>
+  <block id="6485b14c0e329aebda0c4dcd7d09dbd0" category="paragraph"><block ref="16fdd92def5a71313d6535c74ef67b81" prefix="" category="inline-code"></block></block>
+  <block id="206fd17bd4ff22578ce7dfd3eeda1bce" category="paragraph">次の例では、コマンドの出力から次の情報が得られます。</block>
+  <block id="aea36eb42bb9dbe26fa3ca2ed50f13ef" category="list-text">ノードポートは各ノードのポートに割り当てられ<block ref="96640993dd2592a16c29226daf83b860" prefix=" " category="inline-code"></block>、クラスタ管理LIFのホームノードはに<block ref="164546f60261c7e4be0c5f5f9aaeec86" prefix=" " category="inline-code"></block>なります<block ref="96640993dd2592a16c29226daf83b860" prefix=" " category="inline-code"></block>。</block>
+  <block id="e030789a4812857d3fe43582fb0c26e9" category="list-text">各ノードのポート<block ref="5191792b1ad05675fea3bbf015036b3b" prefix=" " category="inline-code"></block>、<block ref="295208bc8c52d4a2745d40b6c029c8a2" prefix=" " category="inline-code"></block>、<block ref="40c989cc0bdee457475f49d3f3f8c10a" prefix=" " category="inline-code"></block>、およびは<block ref="cbd803f54be888bcec7290684e827de3" prefix=" " category="inline-code"></block>LIFをホストしていないため、デフォルトのブロードキャストドメインから削除して、新しいIPspaceの新しいブロードキャストドメインに追加できます。</block>
+  <block id="0c0ebf5d0c386effe0c4ea3bb6a091d0" category="summary">クラスタの各 IPspace 内にあるブロードキャストドメインのリストを表示する</block>
+  <block id="ab1bcf457d346a893b0eafa1a236c09a" category="doc">ブロードキャストドメインを表示する（ONTAP 9.7以前）</block>
+  <block id="cbe1dc3777cd20a0d92187abbff67361" category="paragraph">クラスタ内の各IPspace内のブロードキャストドメインのリストを表示できます。この出力には、各ブロードキャストドメインのポートとMTU値のリストも表示されます。</block>
+  <block id="4dd0a3dcb24b65dc74edf225eea96e9e" category="paragraph">クラスタのブロードキャストドメインと関連付けられているポートを表示します。</block>
+  <block id="16bcfd3dd5caef4624a26861f613de4d" category="paragraph">次のコマンドは、クラスタ内のすべてのブロードキャストドメインと関連付けられているポートを表示します。</block>
+  <block id="02c6f3c7f2a102c8feaf17f1ee49d7d1" category="paragraph">次のコマンドは、bcast1ブロードキャストドメイン内のポートのうち、更新ステータスがerrorになっている（ポートを適切に更新できなかった）ポートを表示します。</block>
+  <block id="f676f8146c874e30db84a1b86b98cdd8" category="paragraph">詳細については、を参照して<block ref="757904457a186124ea090cb36514c336" category="inline-link-rx"></block>ください。</block>
+  <block id="f125fb7a17694fde8fc62bf1f5403f63" category="summary">1 つのブロードキャストドメインのポートを既存のブロードキャストドメインにマージします</block>
+  <block id="d6e77738134005faad3f13e9d99832e0" category="doc">ブロードキャストドメインのマージ（ONTAP 9.7以前）</block>
+  <block id="d44312486267d0b67b359622ebec3072" category="paragraph">mergeコマンドを使用して、1つのブロードキャストドメインのすべてのポートを既存のブロードキャストドメインに移動できます。</block>
+  <block id="c4d2cf7b708e6f4a9be5ebb749367d51" category="paragraph">この方法を使用すると、ブロードキャストドメインのすべてのポートを削除してから既存のブロードキャストドメインに追加するだけで済みます。</block>
+  <block id="34742edd88e1c1a838801b96a12aa853" category="paragraph">1つのブロードキャストドメインのポートを既存のブロードキャストドメインにマージします。</block>
+  <block id="231d7a8a938027c3f431dd44a351d590" category="list-text"><block ref="4ae3944df3ee772807922dcf9bb86c13" prefix="" category="inline-code"></block>は、ブロードキャストドメインのあるIPspaceの名前です。</block>
+  <block id="b45cf8a38f8a35883dad2febf2eebd8c" category="list-text"><block ref="d62caed4dd1926010ddc86f190b6ba33" prefix="" category="inline-code"></block>は、マージするブロードキャストドメインの名前です。</block>
+  <block id="ebbc4cb7d39145643367dba5b44ec3a4" category="list-text"><block ref="8bc45a66ca1d95be402cd8b945966bc0" prefix="" category="inline-code"></block>は、追加のポートを受け取るブロードキャストドメインの名前です。</block>
+  <block id="084a5499a3262408f7407d4b5d94a8cd" category="paragraph">次の例では、bd-data1というブロードキャストドメインをbd-data2というブロードキャストドメインにマージしています。</block>
+  <block id="8c0d6cb3daaa4c421de57e8603baba9e" category="paragraph"><block ref="222fb13a2f3f8435ab3341d0a1e6646e" prefix="" category="inline-code"></block></block>
+  <block id="3ba5cac2cdb7a6b105f8f2f54ab809ab" category="summary">ブロードキャストドメインをスプリットして、 ONTAP 9.0 から 9.7 の構成を物理ネットワークトポロジと同期します</block>
+  <block id="de68df247c72eac7598794005c3adb05" category="doc">ブロードキャストドメインのスプリット（ONTAP 9 .7以前）</block>
+  <block id="1665dbb387021af02fbd41599af8c1ea" category="paragraph">既存のブロードキャストドメインを2つにスプリットして、それぞれのブロードキャストドメインに元のブロードキャストドメインに割り当てられていたポートの一部を含めることができます。</block>
+  <block id="9f09e6fc8b14b00ee0893ebaf95d57f5" category="list-text">ポートがフェイルオーバーグループに含まれている場合は、フェイルオーバーグループ内のすべてのポートをスプリットする必要があります。</block>
+  <block id="0f3b145a3b547dc0be5f0e9aac22376d" category="list-text">ポートにLIFが関連付けられている場合、LIFをサブネットの範囲に含めることはできません。</block>
+  <block id="1436ed75c3dbf565a1b99976386fad9c" category="paragraph">ブロードキャストドメインを2つのブロードキャストドメインにスプリットします。</block>
+  <block id="3f555ebbd92becae184f01887af6d1bc" category="list-text"><block ref="4ae3944df3ee772807922dcf9bb86c13" prefix="" category="inline-code"></block>は、ブロードキャストドメインのあるIPspaceの名前です。</block>
+  <block id="fd0bf1d9d932f6e270977c4b7d345378" category="list-text"><block ref="d62caed4dd1926010ddc86f190b6ba33" prefix="" category="inline-code"></block>は、スプリットするブロードキャストドメインの名前です。</block>
+  <block id="95bc0aa511018e57fce15a6576a48093" category="list-text"><block ref="0a902740c3a036c7e0d2e7d9629f8b97" prefix="" category="inline-code"></block>は、作成する新しいブロードキャストドメインの名前です。</block>
+  <block id="6a6f9b1e774f2ce8e84c95acac76ae96" category="list-text"><block ref="739b964305f4482d70b429f32839ba08" prefix="" category="inline-code"></block>は、新しいブロードキャストドメインに追加するノードの名前とポートです。</block>
+  <block id="23c0ae72a284fcf3f5b10548f5789ff4" category="summary">ONTAP 9.1-9.7 NAS パスのフェイルオーバーワークフローへようこそ</block>
+  <block id="34db590c01ede9e82dd63cccecaa913f" category="doc">NASパスのフェイルオーバーのセットアップ（ONTAP 9 .7以前）</block>
+  <block id="6bd13b949c8f90ab75bda1bca4590734" category="paragraph">このワークフローは、ONTAP 9 .0~9.7のNASパスフェイルオーバーをセットアップするためのネットワーク設定手順を示しています。このワークフローは次のことを前提としています。</block>
+  <block id="504b17be8679b22ce0ff24309326833c" category="list-text">NASパスのフェイルオーバーに関するベストプラクティスを使用してネットワーク設定を簡易化したい。</block>
+  <block id="084e87a2feb2d2b3178ae0ce559845d4" category="list-text">System ManagerではなくCLIを使用する必要がある。</block>
+  <block id="edd065cbe8aace4091a0ae0c74038b57" category="list-text">ONTAP 9.0～9.7が稼働している新しいシステムでネットワークを設定しようとしている。</block>
+  <block id="f5bf5336fca238353f35af37209df243" category="paragraph">9.7より新しいリリースのONTAPを実行している場合は、ONTAP 9.8以降でのNASパスのフェイルオーバー手順を使用してください。</block>
+  <block id="ec2261a75bde24b45faec00c74cb5402" category="inline-link-macro">NASパスのフェイルオーバー ワークフロー（ONTAP 9.8以降）</block>
+  <block id="426171489fede6b6c617db26566f2b65" category="list-text"><block ref="426171489fede6b6c617db26566f2b65" category="inline-link-macro-rx"></block></block>
+  <block id="5c701a2881474e7fd80b7c493de7a89b" category="paragraph">ネットワークのコンポーネントと管理の詳細については、ネットワーク管理に関する次の参考資料を参照してください。</block>
+  <block id="33343788000c2e11b2ab3d1f5c0a84f4" category="inline-link-macro">ネットワーク管理の概要</block>
+  <block id="c018500b1daca5c03a1b256cd2e162b1" category="list-text"><block ref="c018500b1daca5c03a1b256cd2e162b1" category="inline-link-macro-rx"></block></block>
+  <block id="51a7c4cc865e3b2797a7e9bad8a38cd9" category="summary">ONTAP 9.1-9.7 の NAS パスのフェイルオーバー設定</block>
+  <block id="06d5a559d704cb358a39441a58ad7bdc" category="doc">NASパスのフェイルオーバー ワークフロー（ONTAP 9.7以前）</block>
+  <block id="48a52df7e251ea9f3671d1eddb223a69" category="paragraph">ネットワークの基本概念をすでに理解している場合は、NASパスのフェイルオーバー設定に関するこの「ハンズオン」ワークフローを確認することで、ネットワークのセットアップにかかる時間を短縮できます。</block>
+  <block id="db56fc3159913493dd62271cf105ae5e" category="paragraph">NAS LIFは、現在のポートでリンク障害が発生すると、稼働しているネットワークポートに自動的に移行します。ネットワークがフラットな場合は、ONTAPのデフォルトを使用してパスのフェイルオーバーを管理できます。それ以外の場合は、このワークフローの手順に従ってパスのフェイルオーバーを設定する必要があります。</block>
+  <block id="e809b033aefc596f34714759e8952cfd" category="inline-image-macro">NASパスのフェイルオーバー設定のワークフロー</block>
+  <block id="7afa3e05706fb2c1d22370a50ddd70db" category="paragraph"><block ref="7afa3e05706fb2c1d22370a50ddd70db" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="673dcd987ffee0d36ad8b601d118bee1" category="admonition">SAN LIFは移行されません（リンク障害後に手動で移動しないかぎり）。代わりに、ホストのマルチパステクノロジによってトラフィックが別のLIFに転送されます。詳細については、を参照してください <block ref="b35eb150b08c3207edd7d52f8c5b1782" category="inline-link-macro-rx"></block>。</block>
+  <block id="06c2cea18679d64399783748fa367bdd" category="inline-image-macro">1つ</block>
+  <block id="85e2e027bff940fa88f819e030434f41" category="inline-link-macro">ワークシートに記入する</block>
+  <block id="dd592f9173f2e3aa39503dc6404b62cc" category="paragraph-title"><block ref="58f667aaf05f87159670e12bd9bc076b" category="inline-image-macro-rx" type="image"></block><block ref="ba82cab04dc8cd96e7d1d4eb4ddaa74c" category="inline-link-macro-rx"></block></block>
+  <block id="7a21d4711ab8743806dfcc48fe98d49f" category="paragraph">ワークシートを使用して、NASパスのフェイルオーバーを計画します。</block>
+  <block id="aada29daee1d64ed0fe907043855cb7e" category="inline-image-macro">2つ</block>
+  <block id="3430a606df1bb4e9856b52bf4630cc68" category="paragraph-title"><block ref="54f425ce8d89f4ed6b8a546561af5d60" category="inline-image-macro-rx" type="image"></block><block ref="855c5f5c266078890e0287e98c817adb" category="inline-link-macro-rx"></block></block>
+  <block id="e5e61e8932467a83b8d90c275a2ef298" category="paragraph">クラスタ内のSVMごとに個別のIPアドレススペースを作成します。</block>
+  <block id="ca8a2087e5557e317599344687a57391" category="inline-image-macro">3つ</block>
+  <block id="2dead1d9ad7d823c51e1cff8d5128b65" category="paragraph-title"><block ref="05b2444faffd66d76e88602ea7dd353f" category="inline-image-macro-rx" type="image"></block><block ref="35068c46c015a21209889b285af38788" category="inline-link-macro-rx"></block></block>
+  <block id="1910962f156f61912684490f4242065c" category="paragraph">ブロードキャストドメインを作成する</block>
+  <block id="981b8fcee42e1e726a67a2b9a98ea6e9" category="inline-image-macro">4つ</block>
+  <block id="19122663da1f92b70a07dcad6d15f038" category="paragraph-title"><block ref="beadfa85a2fdca06b91edc1131c603e6" category="inline-image-macro-rx" type="image"></block><block ref="709fb476c1c74490343cf76fbe3eb527" category="inline-link-macro-rx"></block></block>
+  <block id="3c084c392af3c1ac1cb987e1e9b9361d" category="paragraph">サブネットを作成する。</block>
+  <block id="e5d9de39f7ca1ba2637e5640af3ae8aa" category="inline-image-macro">5 つ</block>
+  <block id="62f0d7e61a87ca7750612015fcd9e49e" category="paragraph-title"><block ref="99e8b2f00e172bfcff96afdce69907bc" category="inline-image-macro-rx" type="image"></block><block ref="f45004704d4c0d172f2819e8cc869fab" category="inline-link-macro-rx"></block></block>
+  <block id="667155d2bf1a682dd7b481d3b104f8f4" category="paragraph">クライアントにデータを提供するSVMを作成します。</block>
+  <block id="e6fbc0b9673f8c86726688d7607fc8f5" category="inline-image-macro">6</block>
+  <block id="5085681ae6e18662ed0f7dbc3acdd8b6" category="inline-link-macro">LIFの作成</block>
+  <block id="acb8a1e19dae2542880403acd668761e" category="paragraph-title"><block ref="ef78558f80439832e0f51cc22cee8b8c" category="inline-image-macro-rx" type="image"></block><block ref="2b2e92d677c5f9738af6172260042ef9" category="inline-link-macro-rx"></block></block>
+  <block id="9ac3a14a3d6d5935af229768daa1a457" category="paragraph">データへのアクセスに使用するポートにLIFを作成します。</block>
+  <block id="12e67aac3e7f9227cc35f8f047d7dc74" category="inline-image-macro">7</block>
+  <block id="07944f91170bbdc41891de5118723d5f" category="inline-link-macro">SVM用のDNSサービスの設定</block>
+  <block id="09ea1912035f7c4012c76855c7edd529" category="paragraph-title"><block ref="36915574c413876eaa75cbd48f69fd00" category="inline-image-macro-rx" type="image"></block><block ref="f3483a1000991c0ad065cd246c2a0d4e" category="inline-link-macro-rx"></block></block>
+  <block id="ba4515c67fa8b30b78068a6068b29366" category="paragraph">NFSまたはSMBサーバを作成する前に、SVM用のDNSサービスを設定します。</block>
+  <block id="3f0f1f86cf650b1a2cf4754fc5fec337" category="summary">ONTAP 9.1-9.7 で NAS パスのフェイルオーバーを設定する前に、ワークシートのすべてのセクションに記入します</block>
+  <block id="97c96f564cb1a6da828d8dfec057cf12" category="doc">NASパスのフェイルオーバー設定用ワークシート（ONTAP 9 .7以前）</block>
+  <block id="83b133aa529b564cecd3e7d7a8f96314" category="paragraph">NASパスのフェイルオーバーを設定する前に、ワークシートのすべてのセクションに情報を入力する必要があります。</block>
+  <block id="e5bd0aee2452c5f3d5d5cab77d5dff6e" category="section-title">IPspace設定</block>
+  <block id="b97bd3c8bcc7f81686a9082b10daf43d" category="paragraph">IPspaceを使用すると、クラスタ内のSVMごとに個別のIPアドレス スペースを作成できます。これにより、管理上分離されたネットワーク ドメインのクライアントが、IPアドレスの同じサブネット範囲内の重複したIPアドレスを使用してクラスタのデータにアクセスできるようになります。</block>
+  <block id="a82be0f551b8708bc08eb33cd9ded0cf" category="cell">情報</block>
+  <block id="6e18e908568ef24580d93bfd3e0f40d7" category="cell">必須</block>
+  <block id="f8d0e53dace25d0c35a6408f7cc4b99f" category="cell">自分の価値観</block>
+  <block id="2810996596467d952c3bc505ef2ce0c4" category="paragraph">IPspaceメイ</block>
+  <block id="3addeb84a4863033cbf00b39f8402b69" category="list-text">IPspaceの名前。</block>
+  <block id="b047342ee7d111aefcccd5670a47b87b" category="list-text">この名前はクラスタ内で一意である必要があります。</block>
+  <block id="dc92da9eb694675647cf429795361db5" category="section-title">ブロードキャストドメインの設定</block>
+  <block id="a05666131ccfeadc81a46ce8db6fcc93" category="paragraph">ブロードキャストドメインは、同じレイヤ2ネットワークに属するポートをグループ化し、ブロードキャストドメインポートにMTUを設定します。</block>
+  <block id="3d1de194271f0ef6170d5b075b43f5a8" category="paragraph">ブロードキャストドメインはIPspaceに割り当てられます。IPspaceには1つ以上のブロードキャストドメインを含めることができます。</block>
+  <block id="7a666d858ef4d90f82df092808c08225" category="list-text">ブロードキャストドメインの割り当て先のIPspaceを指定します。</block>
+  <block id="f78fb2ae89f1f25120e1dbc3eefae80c" category="list-text">既存のIPspaceを指定する必要があります。</block>
+  <block id="4e66c0b0500d3b3ef6cbaebc0e0adf49" category="paragraph">ブロードキャストドメイン名</block>
+  <block id="65d3f1b2e060e13d61d3dcc5cb01e345" category="list-text">ブロードキャストドメインの名前を指定します。</block>
+  <block id="0b4800d671f34459d0f8962d5a0b0d94" category="list-text">この名前はIPspace内で一意である必要があります。</block>
+  <block id="1a03f6720968dfb968df6cc034114444" category="paragraph">MTU</block>
+  <block id="8c9f46597d2aead3fa844651ee562ed6" category="list-text">ブロードキャストドメインのMTU。</block>
+  <block id="6a79bb70929dcc80f9375a5ada5a2c2f" category="list-text">一般的には* 1500 *または* 9000 *に設定されます。</block>
+  <block id="8904a66adde271eedf2d2612ef724d51" category="list-text">MTU値は、ブロードキャストドメイン内のすべてのポートと、あとでブロードキャストドメインに追加されるすべてのポートに適用されます。</block>
+  <block id="514e1f6ac6d46bd4dd1aff421440b7c6" category="admonition">MTU値は、ネットワークに接続されているすべてのデバイスで同じである必要があります。管理トラフィックやサービス プロセッサのトラフィックを処理するe0Mポートについては、MTUを1500バイト以下に設定する必要があります。</block>
+  <block id="407c4e9fac86b98147da49acd4fa0d01" category="paragraph">ポート</block>
+  <block id="a9d545a8be6012214571d812baced1af" category="list-text">ブロードキャストドメインに追加するネットワークポートを指定します。</block>
+  <block id="e1961453874db902176504734ff74994" category="list-text">ブロードキャストドメインには、物理ポート、VLAN、インターフェイスグループ（ifgroup）を割り当てることができます。</block>
+  <block id="1305f0748c773db97c49e7146800263a" category="list-text">ポートが別のブロードキャストドメインにある場合は、そのドメインに追加する前に削除する必要があります。</block>
+  <block id="79f36819c05f36d7aa6021153cf1cb0f" category="list-text">ポートは、ノード名とポートの両方を指定して割り当てます（例：node1：e0d）。</block>
+  <block id="d4eb3fd806f1b879ccaf2a16a2c42767" category="section-title">サブネット構成</block>
+  <block id="9729f55cd82694df764e283507b8ccf9" category="paragraph">サブネットにはIPアドレスのプールとデフォルトゲートウェイが含まれ、IPspace内のSVMで使用されるLIFに割り当てることができます。</block>
+  <block id="a1c6c5799039a99aad9c439e2cd5db96" category="list-text">SVMでLIFを作成するときは、IPアドレスとサブネットを指定する代わりにサブネットの名前を指定できます。</block>
+  <block id="646599ec8773da9a93a68d449302526f" category="list-text">サブネットはデフォルトゲートウェイと一緒に設定できるため、SVMの作成時に別途デフォルトゲートウェイを作成する必要はありません。</block>
+  <block id="d9e502816b831781990d1762c16564b2" category="list-text">ブロードキャストドメインには1つ以上のサブネットを含めることができます。複数のサブネットをIPspaceのブロードキャストドメインに関連付けることで、異なるサブネット上にあるSVM LIFを設定できます。</block>
+  <block id="8c3d27ac961ae71ced271d4febccae0d" category="list-text">各サブネットには、同じIPspace内の他のサブネットに割り当てられたIPアドレスと重複しないIPアドレスを含める必要があります。</block>
+  <block id="ddcf4e1c1216e96f385a3739e0a17f2c" category="list-text">サブネットを使用する代わりに、SVMデータLIFに特定のIPアドレスを割り当ててSVM用のデフォルトゲートウェイを作成することができます。</block>
+  <block id="727b5595061035010757a5289661b260" category="list-text">サブネットを割り当てるIPspace。</block>
+  <block id="1ed3530a3787bea53a54c48ac5c62fc4" category="paragraph">サブネット名</block>
+  <block id="3bc5640ce9665d89513a468cc547e6e7" category="list-text">サブネットの名前を指定します。</block>
+  <block id="d76124e4167fe8c750e2d08acfcca2ce" category="list-text">名前はIPspace内で一意である必要があります。</block>
+  <block id="a8288c2a3522ce8098992f847589b9c3" category="list-text">サブネットを割り当てるブロードキャストドメインを指定します。</block>
+  <block id="bdbf51e493f02bd57cc80cf06d9f7205" category="list-text">ブロードキャストドメインは指定したIPspaceに存在している必要があります。</block>
+  <block id="e7c7c564e15052903f54b7e8c8aa486d" category="paragraph">サブネット名とマスク</block>
+  <block id="503c8e0f8167825792cf774622f4ddcc" category="list-text">IPアドレスが存在するサブネットとマスク。</block>
+  <block id="261366d41bd76a93bb2437087853a489" category="list-text">サブネットのデフォルトゲートウェイを指定できます。</block>
+  <block id="5bae9da685d7dace1251b3ffd3ccd898" category="list-text">サブネットの作成時にゲートウェイを割り当てなかった場合は、いつでもゲートウェイを割り当てることができます。</block>
+  <block id="29c595bcdc7ffa8a27f2583bdf8ca0bd" category="paragraph">IP アドレスの範囲</block>
+  <block id="30c3bb312f3fc3c97ea4e9a9de1cdfde" category="list-text">IPアドレスの範囲または特定のIPアドレスを指定できます。たとえば、次のような範囲を指定できます。<block ref="7f8386efdf48158c8938319ab0d7ee26" prefix=" " category="inline-code"></block></block>
+  <block id="3b2576d784d591234dd70d07b0a01e51" category="list-text">IPアドレスの範囲を指定しない場合、指定したサブネット内のすべての範囲のIPアドレスがLIFに割り当て可能になります。</block>
+  <block id="19574a7f9b48b89d6be7f52d664c9f69" category="paragraph">LIF との関連付けを強制的に更新します</block>
+  <block id="e9ab789f936a3a886cc5cce66830eb7c" category="list-text">既存のLIFの関連付けを強制的に更新するかどうかを指定します。</block>
+  <block id="5676a4c28d818be40848aeef92ec3a40" category="list-text">デフォルトでは、サービスプロセッサインターフェイスまたはネットワークインターフェイスが指定した範囲のIPアドレスを使用している場合、サブネットの作成は失敗します。</block>
+  <block id="4c4a2a7343af16e13f3154e9f1c4e1ae" category="list-text">このパラメータを使用すると、手動でアドレスを指定したインターフェイスがサブネットに関連付けられ、コマンドが成功します。</block>
+  <block id="99897c39b8224cf5a25fe9c6f599b3a7" category="section-title">SVM構成</block>
+  <block id="7acdd762e80048ce0b202007498ab360" category="paragraph">SVMを使用して、クライアントやホストにデータを提供します。</block>
+  <block id="3ab25d5f5087226e9601e9405341d073" category="inline-link-macro">ファブリック接続 MetroCluster をインストール</block>
+  <block id="abbd612ee9cbfeb24eeb2620fdbeb3a7" category="inline-link-macro">ストレッチMetroCluster をインストールします</block>
+  <block id="08cf8d8ff0eefec04bc3ee3801724ca5" category="paragraph">記録した値は、デフォルトのデータSVMを作成するためのものです。MetroClusterソースSVMを作成する場合は、またはを参照してください<block ref="5488151483f7e2bfe24758bbbb4d6f40" category="inline-link-macro-rx"></block><block ref="0f945cf40056f72194333a50ae2a7c08" category="inline-link-macro-rx"></block>。</block>
+  <block id="909e80dc24d1482269e80eced7d88999" category="list-text">SVMの名前。</block>
+  <block id="f9c215fad59eccfd633cc802142428bf" category="list-text">SVM名がクラスタ リーグ全体で一意になるように、完全修飾ドメイン名（FQDN）を使用します。</block>
+  <block id="ef353fe31d5db8109b5d533c24bef6ec" category="paragraph">ルートボリューム名</block>
+  <block id="71fb303e432869b4fecaa82142df78b0" category="list-text">SVMルートボリュームの名前。</block>
+  <block id="89e2bd1a8abca7dc54e226c642335923" category="list-text">SVMルートボリュームを保持するアグリゲートの名前。</block>
+  <block id="524fe24b7614583659b4776b84cf9fc0" category="list-text">既存のアグリゲートを指定する必要があります</block>
+  <block id="06c36c7f86c5fbaf46d802a84b9181ad" category="list-text">SVMルートボリュームのセキュリティ形式。</block>
+  <block id="dd7a83ccba76c6dcb9fb1c70e44b53cf" category="list-text">指定できる値は、 * ntfs * 、 * unix * 、および * mixed * です。</block>
+  <block id="5afd2082730bfa6121fd03528cb70ac6" category="list-text">SVMが割り当てられているIPspace。</block>
+  <block id="c5920bc5aa330be11d10b27e4a4f267a" category="list-text">既存のIPspaceを指定する必要があります。</block>
+  <block id="9909525fa5942e85be246dfa744836e4" category="paragraph">SVMの言語設定</block>
+  <block id="534f06bd7d7e91addf533215d348f635" category="list-text">SVMとそのボリュームで使用されるデフォルトの言語。</block>
+  <block id="6810bd6fb965e510a000caaaf5cede04" category="list-text">ボリュームの言語を指定しなかった場合は、 SVM のデフォルトの言語設定は * C.UTF-8 * になります。</block>
+  <block id="c9d672e5232d7dd45cf750528352cfbb" category="list-text">SVMの言語の設定によって、SVM内のすべてのNASボリュームのファイル名とデータの表示に使用される文字セットが決まります。言語はSVMの作成後に変更できます。</block>
+  <block id="cb001cd493365720d42ec425b1721062" category="section-title">LIFの構成</block>
+  <block id="e20ec2a162d3ed9a051e35844d6967ac" category="paragraph">SVMは、1つ以上のネットワーク論理インターフェイス（LIF）を介してクライアントとホストにデータを提供します。</block>
+  <block id="b69141d39d5f37e0dc4a7afcba6b5d15" category="list-text">LIFのSVMの名前。</block>
+  <block id="8e429a606dfb2cd8e6e6d6665eeb5067" category="paragraph">LIF名</block>
+  <block id="aca5c43eb5724bd30dab74c6c1b4ca51" category="list-text">LIFの名前。</block>
+  <block id="d9875a9b18af94ad593e9cf6f2acd590" category="list-text">ノードに利用可能なデータ ポートがある場合は、ノードごとに複数のデータLIFを割り当てたり、クラスタ内の任意のノードにLIFを割り当てたりすることができます。</block>
+  <block id="dc21c1d5e0019fbe2ce57daf9055d365" category="list-text">冗長性を確保するには、データ サブネットごとに2つ以上のデータLIFを作成する必要があり、特定のサブネットに割り当てられたLIFには、異なるノード上のホーム ポートを割り当てる必要があります。* 重要：ノンストップオペレーションソリューション用に Hyper-V または SQL Server over SMB をホストする SMB サーバを設定する場合、クラスタ内の SVM のすべてのノードに少なくとも 1 つのデータ LIF が存在する必要があります。</block>
+  <block id="77e741be92ecc04ee13fcfd53988b199" category="paragraph">LIFのロール</block>
+  <block id="3a2cdcdec40516552430edaef938a929" category="list-text">LIFのロール。</block>
+  <block id="da0fa0d25572794dea4ac4a6be847d1a" category="list-text">データLIFにはデータロールが割り当てられます。</block>
+  <block id="6bcd23cd4d0583cbac3240665b21113a" category="cell">はい、 ONTAP 9.6 から廃止されました</block>
+  <block id="53cd0c7fe94923d60ebc43f128ac06b9" category="cell">LIF のサービスポリシーサービスポリシー。サービスポリシーは、LIFを使用できるネットワークサービスを定義します。データSVMとシステムSVMの両方のデータトラフィックと管理トラフィックの管理に組み込みのサービスとサービスポリシーを使用できます。</block>
+  <block id="ca0424782e05c72333cda58235a8e74b" category="cell">はい、 ONTAP 9.6 以降でサポートされています</block>
+  <block id="5c3e82aaab88228809071abe1946de82" category="paragraph">キョカスルプロトコル</block>
+  <block id="904e941dc3f7d5ad65283bdba75b4c91" category="list-text">LIFを使用できるプロトコル。</block>
+  <block id="c27a6bb12bf5dc4359cfaafcf80b0083" category="list-text">デフォルトでは、SMB、NFS、およびFlexCacheが許可されています。FlexCacheプロトコルを使用するボリュームは、Data ONTAP 7-Modeを実行しているシステムのFlexCacheボリュームの元のボリュームにすることができます。</block>
+  <block id="4e1730669bff2008b0a4dffee3a59d7a" category="admonition">LIFを使用するプロトコルは、LIFが作成されたあとは変更できません。LIFの設定時にすべてのプロトコルを指定する必要があります。</block>
+  <block id="3e59131434f3a574162c6a9f46c4bae5" category="paragraph">ホームノード</block>
+  <block id="febe10a3047b2475b8983f8db76f7bb9" category="list-text">LIFがホームポートにリバートされるときにLIFが戻るノード。</block>
+  <block id="0fc089cfc9daaf7fd97972795ea8cffb" category="list-text">各データLIFのホームノードを記録する必要があります。</block>
+  <block id="a3f83c0fa8815df9be554f2f19e2a6b4" category="paragraph">ホームポートまたはブロードキャストドメイン</block>
+  <block id="8248f505d519f103856ec5553ce0a1ca" category="list-text">LIFがホームポートにリバートされるときに論理インターフェイスが戻るポート。</block>
+  <block id="1a3a0e0614b76b32b5b3d2114770bd19" category="list-text">各データLIFのホームポートを記録する必要があります。</block>
+  <block id="2f6be82345aa8df96d0f1040df7eaf2f" category="list-text">SVMに割り当てるサブネット。</block>
+  <block id="e2395fd8c89f496becbd6d29cb6bf2bf" category="list-text">アプリケーションサーバへの継続的可用性を備えたSMB接続を確立するために使用されるデータLIFは、すべて同じサブネット上にある必要があります。</block>
+  <block id="92726c0f24832710bb5154f1048f934b" category="cell">○（サブネットを使用する場合）</block>
+  <block id="489f99357e51540f388c06988f7d5a29" category="section-title">DNS構成</block>
+  <block id="c7c142a0d5d4f9c60dcdf7a3bc09a4ff" category="paragraph">NFSまたはSMBサーバを作成する前に、SVMでDNSを設定する必要があります。</block>
+  <block id="44685b08b845cc11ae9c9f8140dc0d6b" category="list-text">NFSサーバまたはSMBサーバを作成するSVMの名前。</block>
+  <block id="d04714ee29d29f72537dfb160f6d5ad5" category="paragraph">DNSトメインメイ</block>
+  <block id="a379c3b1b459e3dfdfbe21845dc1cf69" category="list-text">ホストとIPの名前解決を実行するときにホスト名に付加するドメイン名のリスト。</block>
+  <block id="a4472cd10a741a0f8d78c0359728a2d5" category="list-text">最初にローカルドメインをリストし、次にDNSクエリが最も頻繁に実行されるドメイン名をリストします。</block>
+  <block id="9da99b068b3f65fefc36626478b66566" category="paragraph">DNSサーバのIPアドレス</block>
+  <block id="19c87adcee53338ce2c53bae0c6be7b5" category="list-text">NFSまたはSMBサーバの名前解決を提供するDNSサーバのIPアドレスのリスト。</block>
+  <block id="7ff51c9d56f426dd2680804fefe19f96" category="list-text">これらのDNSサーバには、Active DirectoryのLDAPサーバと、SMBサーバが参加するドメインのドメイン コントローラを見つけるために必要なサービス ロケーション レコード（SRV）が含まれている必要があります。SRVレコードは、サービスの名前を、そのサービスを提供するサーバのDNSコンピュータ名にマップするために使用されます。ローカルのDNSクエリを介してサービス ロケーション レコードを取得できない場合は、SMBサーバの作成に失敗します。ONTAPがActive Directory SRVレコードを確実に見つけることができるようにする最も簡単な方法は、Active Directory統合DNSサーバをSVMのDNSサーバとして構成することです。DNS管理者が手動で、Active Directoryドメイン コントローラに関する情報を含んだDNSゾーンにSRVのレコードを追加した場合は、Active Directoryを統合していないDNSサーバを使用することができます。</block>
+  <block id="232df65ca03c67ddb27adbf8e408280c" category="inline-link-macro">Microsoft TechNet での Active Directory の DNS サポートのしくみ</block>
+  <block id="3cd9abcfa006c1e077bce0c7b96b9c20" category="list-text">Active Directoryに統合されたSRVレコードの詳細については、のトピックを参照してください<block ref="d1f6662e4871c2f33d4b20711c690ec4" category="inline-link-macro-rx"></block>。</block>
+  <block id="dd47bd62208837b6e1f60041344e1295" category="section-title">動的DNS設定</block>
+  <block id="c45d5ec9671bb526fc03e7539cffa0ed" category="paragraph">動的DNSを使用してActive Directory統合DNSサーバにDNSエントリを自動的に追加する前に、SVMで動的DNS（DDNS）を設定する必要があります。</block>
+  <block id="09c16992a902cd1818335845718fd9a7" category="paragraph">SVM上のすべてのデータLIFについてDNSレコードが作成されます。SVM上に複数のデータLIFを作成することで、割り当てられたデータIPアドレスへのクライアント接続の負荷を分散できます。DNSは、ホスト名を使用して確立された接続を、割り当てられたIPアドレスにラウンドロビン方式で負荷分散します。</block>
+  <block id="b2342f7f4b047678a52f44c5a1c7d747" category="list-text">NFSサーバまたはSMBサーバを作成するSVM。</block>
+  <block id="3359de90ad703eb25320fdf6246535c4" category="paragraph">DDNSを使用するかどうか</block>
+  <block id="4509c88bd3315acc21448a213e2e65a7" category="list-text">DDNSを使用するかどうかを指定します。</block>
+  <block id="0bbc8715109e7d978d1bd9a97ed54eb5" category="list-text">SVMで設定されているDNSサーバがDDNSをサポートしている必要があります。デフォルトでは、DDNSは無効になっています。</block>
+  <block id="fd2ff08f0ed721e158829abea5b2f554" category="paragraph">セキュアなDDNSを使用するかどうか</block>
+  <block id="bbb664556743685b88e062062c435131" category="list-text">Secure DDNSは、Active Directory統合DNSでのみサポートされます。</block>
+  <block id="05ed41391caf6661a07768eaa3dab5e8" category="list-text">Active Directory統合DNSでセキュアなDDNS更新のみが許可されている場合は、このパラメータの値をtrueにする必要があります。</block>
+  <block id="b364c30be937abefba6a4416aeb852c0" category="list-text">デフォルトでは、Secure DDNSは無効になっています。</block>
+  <block id="3acd119655ed0a9783317f21b6fdbd87" category="list-text">Secure DDNSは、SVM用のSMBサーバまたはActive Directoryアカウントが作成されたあとにのみ有効にできます。</block>
+  <block id="59bf7732b97416bd383c815b45e84669" category="paragraph">DNSドメインのFQDN</block>
+  <block id="664b37c4a141f9cef183a7f4fc968661" category="list-text">DNSドメインのFQDN。</block>
+  <block id="6bc11f0c86a787b4d889735982c409da" category="list-text">SVMのDNSネームサービス用に設定されているドメイン名と同じ名前を使用する必要があります。</block>
+  <block id="3fca185d931e262fa7a276c9bf6f2cee" category="sidebar">ONTAP 9.7以前のバージョンのSystem ManagerインターフェイスはSystem Managerクラシックと呼ばれ、ONTAP 9.8以降のバージョンのSystem Managerインターフェイスとは異なるユーザナビゲーションを提供します。ONTAP 9.7以前のバージョンのSystem Managerを使用しているユーザ向けに、このドキュメントサイトでは、System Managerクラシックを使用した設定ワークフローと、ONTAP 9.6および9.7用のSystem Managerクラシックオンラインヘルプを紹介しています。ONTAP 9.8では、ONTAPネットワークの基礎も大幅に変更されました。このドキュメントサイトでは、ONTAP 9.7以前のバージョンにのみ該当するネットワーク情報を提供しています。</block>
+  <block id="6c0c5be5efc057d5f1d970ee6885e6d7" category="sidebar">ブロードキャストドメインの管理（ONTAP 9.7以前）</block>
+  <block id="ba13c142bb4736a3dabe15c34364414f" category="sidebar">ONTAP 9.7以前のネットワーク管理</block>
+  <block id="b1ddb251aa66bea48e797b1ba2490583" category="sidebar">ネットワークに関する一般的なトピック（ONTAP 9.7以前）</block>
+  <block id="a29d5547f6b6a3eb59e3d47cdb1c8b3e" category="sidebar">ブロードキャストドメイン（ONTAP 9.7以前）</block>
+  <block id="d7f29243972dcd66136a878c3167ee3a" category="sidebar">NASパスのフェイルオーバーについて（ONTAP 9.7以前）</block>
 </blocks>

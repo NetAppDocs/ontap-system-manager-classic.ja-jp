@@ -5,7 +5,12 @@ keywords: aggregates, system, manager, security, backup, performance, data, shar
 summary: System Manager を使用して、セキュリティ、バックアップ、パフォーマンス、およびデータ共有に関するさまざまな要件をサポートするアグリゲートを作成できます。 
 ---
 = System Manager - ONTAP 9.7 以前を使用してアグリゲートを管理します
+:hardbreaks:
 :allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
 
 
 ONTAP System Manager クラシック（ ONTAP 9.7 以前で使用可能）を使用して、セキュリティ、バックアップ、パフォーマンス、およびデータ共有に関するさまざまな要件をサポートするアグリゲートを作成できます。
