@@ -22,7 +22,7 @@ summary: ディザスタリカバリの設定を開始する前に、ソース�
 .. [ * Configuration * ] > [* Cluster Peers* ] をクリックします。
 .. ピアクラスタが認証済みで使用可能であることを確認します。
 +
-image::../media/cluster_pper_930_disaster.gif[クラスタ・ディザスタ 930]
+image::../media/cluster_pper_930_disaster.gif[ピアクラスタが認証されて使用可能であることの確認]
 
 .. [ * Configuration * > * SVM peers * ] をクリックします。
 .. デスティネーション SVM がソース SVM とピア関係にあることを確認します。
@@ -34,7 +34,7 @@ image::../media/cluster_pper_930_disaster.gif[クラスタ・ディザスタ 930
 .. [* Cluster Details] ペインで、 [* Cluster Peers* ] をクリックします。
 .. ピアクラスタが認証済みで使用可能であることを確認します。
 +
-image::../media/cluster_peer_health_disaster.gif[クラスタピアの健常性が災害しました]
+image::../media/cluster_peer_health_disaster.gif[ピアクラスタが認証済みで使用可能であることを示す[Cluster Peers]セクション]
 
 .. SVM * タブをクリックし、ソース SVM を選択します。
 .. ピア Storage Virtual Machines * 領域で、デスティネーション SVM がソース SVM とピア関係にあることを確認します。

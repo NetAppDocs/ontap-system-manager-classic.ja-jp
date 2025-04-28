@@ -44,7 +44,7 @@ SnapVault 関係に問題がある場合は、トラブルシューティング�
 http://www.netapp.com/us/media/tr-4015.pdf["ネットアップテクニカルレポート 4015 ：v SnapMirror Configuration and Best Practices for ONTAP 9.1 、 9.2 』"^]
 
 +
-image::../media/monitor_sv.gif[sv を監視します]
+image::../media/monitor_sv.gif[SnapVault関係のステータス]
 
 
 

@@ -20,7 +20,7 @@ System Manager 9.6 以降では、既存の FlexCache ボリュームのプロ�
 . *オプション：* FlexCache Volume *の下の* Volume *フィールドに、FlexCache ボリュームの新しい名前を入力します。
 . *オプション：* FlexCache Volume *の下の* Size *フィールドにFlexCache ボリュームの新しいサイズを入力し、ドロップダウンメニューから単位を選択します。
 . *オプション：*暗号化を有効または無効にします。
-. * オプション： * クリック image:../media/advanced_options.gif[""] FlexCache ボリュームの詳細設定を変更します。を参照してください link:task_specifying_advanced_options_for_flexcache_volume.html["FlexCache ボリュームのアドバンストオプションの指定"]。
+. *オプション：*クリックするimage:../media/advanced_options.gif["[詳細オプション]アイコン"]と、FlexCacheボリュームの詳細設定が変更されます。を参照してください link:task_specifying_advanced_options_for_flexcache_volume.html["FlexCache ボリュームのアドバンストオプションの指定"]。
 . [ 保存（ Save ） ] をクリックして、変更を保存します。
 
 

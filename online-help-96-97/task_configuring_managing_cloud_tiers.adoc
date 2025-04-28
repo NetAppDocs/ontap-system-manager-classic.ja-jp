@@ -15,7 +15,7 @@ summary: データを複数の階層に格納すると、ストレージシス�
 * オールフラッシュ（オール SSD ）アグリゲートが必要です
 
 
-image::../media/fabricpool_workflow.gif[FabricPool ワークフロー]
+image::../media/fabricpool_workflow.gif[System Managerヲシヨウシタクラウトカイソウノセツテイトカンリノワクフロ]
 
 
 
@@ -69,7 +69,7 @@ System Manager を使用して、 SSD アグリゲートまたは仮想マシン
 +
 AWS Commercial Cloud Service （ C2S ）をタイプとして選択した場合は、 CAP URL 、サーバ CA 証明書、およびクライアント証明書を指定する必要があります。
 
-. 次のいずれかの設定を変更する場合は、 [ 詳細オプション ] アイコンをクリックします image:../media/advanced_options.gif[""] [ 拡張オプション * ] ダイアログウィンドウを表示して、変更を行うことができます。
+. 次のいずれかの設定を変更する場合は、[詳細オプション]アイコンをクリックしimage:../media/advanced_options.gif["[詳細オプション]アイコン"]て*[詳細オプション]ダイアログウィンドウを表示し、変更を行うことができます。
 +
 ** クラウド階層へのアクセスに使用するポート番号
 ** クラウド階層へのデータのセキュアな転送を可能にする * SSL * オプションを有効または無効にします

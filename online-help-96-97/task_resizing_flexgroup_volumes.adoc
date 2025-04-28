@@ -29,7 +29,7 @@ ONTAP System Manager クラシック（ ONTAP 9.7 以前で使用可能）を使
 +
 [NOTE]
 ====
-新しいリソースを追加して FlexGroup ボリュームを拡張する場合は、をクリックします image:../media/advanced_options.gif[""] （アドバンストオプション）。
+新しいリソースを追加してFlexGroupボリュームを拡張する場合は、（アドバンストオプション）をクリックしますimage:../media/advanced_options.gif["[詳細オプション]アイコン"]。
 
 ====
 . Snapshot コピーリザーブの割合を指定します。

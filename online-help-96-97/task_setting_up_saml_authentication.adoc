@@ -13,7 +13,7 @@ summary: リモートユーザが System Manager にログインする前にセ�
 [role="lead"]
 ONTAP System Managerクラシック（ONTAP 9.7以前で使用可能）を使用して、Security Assertion Markup Language（SAML）認証をセットアップできます。リモートユーザは、 System Manager にログインする前に、セキュアなアイデンティティプロバイダ（ IdP ）を通じて認証されます。
 
-image::../media/mfa_workflow.gif[MFA ワークフロー]
+image::../media/mfa_workflow.gif[System ManagerでSAML認証を設定するためのワークフロー]
 
 
 

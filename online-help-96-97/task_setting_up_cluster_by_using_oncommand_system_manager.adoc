@@ -31,4 +31,4 @@ ONTAP System Manager クラシック（ ONTAP 9.7 以前で使用可能）を使
 
 クラスタのセットアップは、テンプレートファイルを使用して行うことも、クラスタセットアップウィザードで値を手動で入力して行うことも可能です。
 
-image::../media/cluster_setup_workflow.gif[クラスタセットアップワークフロー]
+image::../media/cluster_setup_workflow.gif[ONTAP System Managerヲシヨウシタクラスタノセットアップワークフロー]

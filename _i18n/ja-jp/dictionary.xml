@@ -24,11 +24,9 @@
   <block id="0329d06e24e712fa93416a0dd6c5b7fc" category="summary">クラスタの準備が完了したら、コントローラを設置し、ノード管理 LIF を設定する必要があります。</block>
   <block id="6659a60f476a4bc6bb0fb4f4102757a3" category="doc">新しいノードをインストール</block>
   <block id="82b39557b0069bd98188100e91cfae2e" category="paragraph">クラスタの準備が完了したら、コントローラを設置し、ノード管理 LIF を設定する必要があります。コントローラが既存のクラスタと同じ ONTAP バージョンを実行していない場合、または転用したコントローラであるためにハードウェアレベルで HA が実現されていない場合は、メンテナンスモードで問題に対処する必要があります。最後に、ノードをクラスタに追加します。</block>
-  <block id="e9f56eb126455869bdb213c6b8827217" category="summary">著作権、商標、機械翻訳</block>
   <block id="ca4d696c3c3d4566b032bf5cba740486" category="summary">両方のノードをクラスタに追加したら、 AutoSupport を設定し、 SP ネットワークを完了して、新しく追加したノードの設定を完了する必要があります。</block>
   <block id="e1fc6c6b1bea9d0f3e8bfcf9946ae71f" category="doc">拡張を完了</block>
   <block id="ad683faa511f565152842bf2cc28c270" category="paragraph">両方のノードをクラスタに追加したら、 AutoSupport を設定し、 SP ネットワークを完了して、新しく追加したノードの設定を完了する必要があります。その後、拡張したクラスタを検証し、 AutoSupport メッセージを生成して拡張を完了します。クラスタが SAN を使用している場合は、 LUN パスを更新する必要があります。</block>
-  <block id="b1ff5704b48e42d700d43961dd415064" category="summary">商標です</block>
   <block id="c4ce4761e466527d26b3e3d5ed1006fd" category="paragraph">NetApp 、 NetApp のロゴ、および NetApp の商標ページに記載されているマークは、 NetApp, Inc. の商標です。その他の会社名および製品名は、それぞれの所有者の商標である場合があります。</block>
   <block id="d41d8cd98f00b204e9800998ecf8427e" category="inline-link"></block>
   <block id="f99aa604031e5049799e73b5c3748a98" category="paragraph"><block ref="f99aa604031e5049799e73b5c3748a98" category="inline-link-rx"></block></block>
@@ -219,9 +217,6 @@
   <block id="3f710cadb0123c693533da68aaf5b596" category="section-title">次に何をするか</block>
   <block id="6871e5e77d1bbcfaf45a526f739ae1c4" category="list-text">クラスタが保護されている場合は、ピア関係や保護状態に問題が生じないように、新しく追加したノードに必要な数のクラスタ間 LIF を作成します。</block>
   <block id="e5e21644bd8ca1cdc7c44d822e6b5d7e" category="list-text">クラスタで SAN データプロトコルが有効になっている場合は、データ処理用の SAN データ LIF を必要な数だけ作成します。</block>
-  <block id="b4de17ead867a3cf0b9d11e57e562672" category="summary">機械翻訳</block>
-  <block id="6b6c87870bfc5260f4e7282bb5b52dd6" category="paragraph">ローカライズされたコンテンツに関する重要な情報については、 netapp.com を参照してください。</block>
-  <block id="db9bfd81e26275c9db26e2db3ac172c3" category="paragraph"><block ref="db9bfd81e26275c9db26e2db3ac172c3" category="inline-link-rx"></block></block>
   <block id="3e1d317678e6347a5fa13b4bd9a4b314" category="summary">クラスタを拡張したら、拡張プロセスが完了したことを示す AutoSupport メッセージを送信する必要があります。</block>
   <block id="4c31c3d540d717a12e42d373054f9834" category="doc">拡張完了の AutoSupport メッセージを生成</block>
   <block id="04bf035c552b790ab05fa106250f7bbd" category="paragraph">クラスタを拡張したら、拡張プロセスが完了したことを示す AutoSupport メッセージを送信する必要があります。このメッセージは、社内と社外のサポートスタッフに拡張が完了したことを伝えるとともに、将来トラブルシューティングが必要となった場合のタイムスタンプとして機能します。</block>
@@ -262,13 +257,6 @@ System Manager によって、新しく追加したノードが検索されま�
   <block id="47107fc361977e371fe1b26cb1308b1a" category="list-text">既存のライセンスを表示するには、<block ref="684590f66f47755afa88d3f70f9f25ad" prefix=" " category="inline-code"></block> コマンドを実行します</block>
   <block id="7ace006c80a00947bf34b0fff7fa0b84" category="list-text">既存のノードと新しいノードのシリアル番号を含むすべてのシリアル番号に対してノードロックライセンスが表示されていることを確認します。</block>
   <block id="6016a2b341113bf496b719905398ecd2" category="summary">著作権</block>
-  <block id="e10b5b38785c3a24ec75723ab75b4360" category="paragraph">Copyright © 2021 NetApp 、 Inc. All rights reserved.米国で印刷されています</block>
-  <block id="2275e007ee598cef266c877f9c52ee25" category="paragraph">このドキュメントは著作権によって保護されています。画像媒体、電子媒体、および写真複写、記録媒体などの機械媒体など、いかなる形式および方法による複製も禁止します。 電子検索システムにテープを貼り付けたり、保存したりすることは、著作権所有者の書面による事前承諾がある場合を除きます。</block>
-  <block id="ce4ad2236c56cc11a838f29c8c261bf7" category="paragraph">ネットアップの著作物から派生したソフトウェアは、次に示す使用許諾条項および免責条項の対象となります。</block>
-  <block id="b110bc9db113b3149cb9e2ed905d4c6c" category="paragraph">このソフトウェアは、ネットアップによって「現状のまま」提供されています。ネットアップは明示的な保証、または商品性および特定目的に対する適合性の暗示的保証を含み、かつこれに限定されないいかなる暗示的な保証も行いません。ネットアップは、いかなる場合でも、間接的、偶発的、特別、懲罰的、または または結果的損害（代替品または代替サービスの調達、使用の損失、データ、利益、またはこれらに限定されないものを含みますが、これらに限定されません。） ただし、契約、厳格責任、または本ソフトウェアの使用に起因する不法行為（過失やその他を含む）のいずれであっても、かかる損害の可能性について知らされていた場合でも、責任の理論に基づいて発生します。</block>
-  <block id="4fc9b260d15698bbd988f76ca839c5b6" category="paragraph">ネットアップは、ここに記載されているすべての製品に対する変更を随時、予告なく行う権利を保有します。ネットアップによる明示的な書面による合意がある場合を除き、ここに記載されている製品の使用により生じる責任および義務に対して、ネットアップは責任を負いません。この製品の使用または購入は、ネットアップの特許権、商標権、またはその他の知的所有権に基づくライセンスの供与とはみなされません。</block>
-  <block id="87bfcb691f34a9e3fdda83480f0acf78" category="paragraph">このマニュアルに記載されている製品は、 1 つ以上の米国特許、その他の国の特許、および出願中の特許によ特許、その他の国の特許、および出願中の特許。</block>
-  <block id="464821ce353b86f770de0d09b5f5aabe" category="paragraph">本書に含まれるデータは市販品（ FAR 2.101 の定義に基づく）に関係し、データの所有権は NetApp 、 Inc. にあります米国政府は、本データの提供の根拠となった米国政府との関係においてのみ本データを使用するための、非独占的、譲渡不可、サブライセンス不可、全世界を対象とした取り消し不能の制限付きライセンスを保有しています当該契約の裏付けとする場合にのみ本データを使用できます。本資料に記載されている場合を除き、本データは、使用、開示、複製、変更、実施されないものとします。 または、 NetApp 、 Inc. の書面による事前の承認なしに表示することもできます。国防総省に付与される米国政府のライセンス権限は、 DFARS 252.227-7015 （ b ）項で定められた権限に制限されます。</block>
   <block id="edf395b0a461287b50491dbaa383b1b6" category="summary">クラスタを拡張する前に、 advanced 権限でバックアップファイルを作成して、クラスタ構成の情報を保存し、必要に応じてノード構成を保存する必要があります。</block>
   <block id="4e96c94f849071959f33f30f4f95bf2b" category="doc">クラスタ構成をバックアップ</block>
   <block id="486e131c42bd68bf6f1d4c477a83b1dc" category="list-text">を使用して権限レベルをadvancedに設定します。<block ref="0581d0d071ad835f74bf419081ce5d75" prefix=" " category="inline-code"></block> コマンドを実行します</block>
@@ -553,14 +541,12 @@ ONTAP で災害の発生後にデスティネーションボリュームをア�
   <block id="d3d98fa048d258c0324e828c27353505" category="list-text">ONTAP 9.3 以降を実行している場合は、次の手順に従ってクラスタピア関係と SVM ピア関係を確認します。</block>
   <block id="b7ea99ac89364f94c13349479a294349" category="list-text">[ * Configuration * ] &gt; [* Cluster Peers* ] をクリックします。</block>
   <block id="804ed1169721f9a31d45ac25dea9d3b7" category="list-text">ピアクラスタが認証済みで使用可能であることを確認します。</block>
-  <block id="210fc08adc8ff148771c97038e36e4a2" category="image-alt">クラスタ・ディザスタ 930</block>
   <block id="b00b5a06a64eaf7c4f42870166a2aad2" category="list-text">[ * Configuration * &gt; * SVM peers * ] をクリックします。</block>
   <block id="2cd2d1c721231aba4b1ddb6e9d895651" category="list-text">デスティネーション SVM がソース SVM とピア関係にあることを確認します。</block>
   <block id="99836e3678844f90eef5cb688f7465e9" category="list-text">ONTAP 9.2 以前を実行している場合は、次の手順を実行してクラスタピア関係と SVM ピア関係を確認します。</block>
   <block id="90db7210ac0f4f1ad1b4dd4cfcfac5da" category="list-text">[* 構成 * （ Configurations * ） ] タブをクリックします。</block>
   <block id="2a2e870fff30043f3c9dcb4197a26ef5" category="list-text">[* Cluster Details] ペインで、 [* Cluster Peers* ] をクリックします。</block>
   <block id="c21fd7a1920921211438047acb8b050d" category="list-text">ピアクラスタが認証済みで使用可能であることを確認します。</block>
-  <block id="0b15c5403001871b8dc99e6667f1290a" category="image-alt">クラスタピアの健常性が災害しました</block>
   <block id="2be054e35e4d5560ca990a7e9e6268aa" category="list-text">SVM * タブをクリックし、ソース SVM を選択します。</block>
   <block id="b6df2d1162d761beba29ffb0a8acc5cd" category="list-text">ピア Storage Virtual Machines * 領域で、デスティネーション SVM がソース SVM とピア関係にあることを確認します。</block>
   <block id="e0bdda06757b2ddd302f0b23a4dc96c3" category="paragraph">この領域にピア関係にある SVM が表示されない場合は、 SnapMirror 関係を作成するときに SVM ピア関係を作成できます。</block>
@@ -595,7 +581,6 @@ ONTAP で災害の発生後にデスティネーションボリュームをア�
   <block id="fb0a81662f28f92400a38a3fc7257c04" category="paragraph">SnapMirror 関係に問題がある場合は、トラブルシューティングを行ってください。</block>
   <block id="73b78c43309e115e0e384388b5b2344a" category="inline-link">ネットアップテクニカルレポート 4015 ：v SnapMirror Configuration and Best Practices for ONTAP 9.1 、 9.2 』</block>
   <block id="0d3e0428120e2a5f798ccb69e7a1a227" category="paragraph"><block ref="0d3e0428120e2a5f798ccb69e7a1a227" category="inline-link-rx"></block></block>
-  <block id="d5acc2bd87e2b4fbcc92386c8cb98621" category="image-alt">SnapMirror 監視 3 のヘルス状態の遅延</block>
   <block id="505604a7f60ed1132f33db4c6fc8dc9e" category="summary">安定した運用を実現するために、 FC 構成全体がサポートされることを確認する必要があります。</block>
   <block id="b8dca5a9dd8bb2f421089717f16a3b2f" category="doc">FC 構成がサポートされていることを確認します</block>
   <block id="db7238e539bbe82343523aa524ac5d58" category="list-text">Interoperability Matrix に移動して、次のコンポーネントについて、サポートされている組み合わせであることを確認します。</block>
@@ -883,13 +868,7 @@ ONTAP で災害の発生後にデスティネーションボリュームをア�
   <block id="93b944d05af7d54cba8d7dc1adc744b1" category="list-text">NetApp Support Siteから該当するバージョンの Windows Unified Host Utilities をダウンロードします。</block>
   <block id="1190124555424f6326b153d14c7adeb6" category="list-text">実行ファイルを実行し、画面の指示に従います。</block>
   <block id="257dcf2363da5a069ec4e8bae654f70b" category="list-text">プロンプトが表示されたら、 Windows ホストをリブートします。</block>
-  <block id="09e95b77ffe81fe465a83ba99efad5c8" category="paragraph"><block ref="09e95b77ffe81fe465a83ba99efad5c8" category="inline-link-rx"></block></block>
-  <block id="7aa531e9acfe2b98e34d2c92fe9846ff" category="paragraph"><block ref="7aa531e9acfe2b98e34d2c92fe9846ff" category="inline-link-rx"></block></block>
-  <block id="d7f1fbcf9ce4e42f705add574d262b2c" category="paragraph"><block ref="d7f1fbcf9ce4e42f705add574d262b2c" category="inline-link-rx"></block></block>
-  <block id="fc248f74f5e36542f7f5627b8610e9a3" category="paragraph"><block ref="fc248f74f5e36542f7f5627b8610e9a3" category="inline-link-rx"></block></block>
   <block id="6de6f1db3c6d9273da9d8e254b666753" category="paragraph">本製品で使用されているサードパーティの著作権およびライセンスに関する情報を提供します。</block>
-  <block id="1e6000d4849ef9f3e08d1d9908e9f163" category="inline-link-macro">ONTAP 9.9.1 に関する注意事項</block>
-  <block id="6f408b9c999245c7aa32bc9cb1a020f6" category="inline-link-macro">ONTAP 9.8 に関する注意事項</block>
   <block id="04b0bd5b1b4d414fdde93f809162d36d" category="inline-link-macro">ONTAP 9.7 の場合の注意事項</block>
   <block id="0c1d7dffcba488555d5eb39b8991e822" category="inline-link-macro">ONTAP 9.6に関する注意事項</block>
   <block id="a11ac6880e72412c0f54ae19bea3d191" category="inline-link-macro">ONTAP 9.5 では次の点に注意</block>
@@ -897,15 +876,6 @@ ONTAP で災害の発生後にデスティネーションボリュームをア�
   <block id="bf7dcf6467a8a03b05b2d37d31d6eccd" category="inline-link-macro">ONTAP 9.3 での注意</block>
   <block id="0328352fdfda84af6968462d1a67d3a6" category="inline-link-macro">ONTAP 9.2に関する注意事項</block>
   <block id="83904100c7d6fe0102e8b2b5bd8ec4bb" category="inline-link-macro">ONTAP 9.1に関する注意事項</block>
-  <block id="e34c6bf4588770e60093fd241f4c94cd" category="paragraph"><block ref="5d7354cfb327d65286a65782f8490ba6" category="inline-link-macro-rx"></block>
-<block ref="9c55eb1e0fbbd6c443bf0436871639ef" category="inline-link-macro-rx"></block>
-<block ref="84ee5be262ba420366f62cfd722d0bb9" category="inline-link-macro-rx"></block>
-<block ref="c4fa97eae3fc7b7bfd1757818737f725" category="inline-link-macro-rx"></block>
-<block ref="863fc1cf1c4ef06b9dbeab0269fcbe22" category="inline-link-macro-rx"></block>
-<block ref="bc609cdc163eb15a127f1d8965ceeebf" category="inline-link-macro-rx"></block>
-<block ref="91c2725aac92b0d17a3a041b2764f68c" category="inline-link-macro-rx"></block>
-<block ref="60d4a45fe1b65b8f6ff1a4825a003443" category="inline-link-macro-rx"></block>
-<block ref="0da6a5a2ec0e0b0adc52f0c7d86b1f9c" category="inline-link-macro-rx"></block></block>
   <block id="1efe07eef4e047f77d97d7a9521fe678" category="summary">ONTAP System Manager の従来のインターフェイス（ ONTAP 9.7 以前）を使用すると、 ESXi ホストから ONTAP ボリュームを使用するデータストアへの NFS アクセスを簡単に設定できます。</block>
   <block id="9fbe728d7eb2adabf531ccdcf064bc53" category="doc">VSCを使用したESXi向けのNFS設定の概要</block>
   <block id="039d2d1f92ed5762bd1672bf32bb614a" category="paragraph">次の場合にこの手順を使用します。</block>
@@ -2042,8 +2012,6 @@ ONTAP で災害の発生後にデスティネーションボリュームをア�
   <block id="291619053227579fae6d00b2bcfab62f" category="paragraph">ESX ホストの FC ホストバスアダプタ（ HBA ）でサポート対象外のバージョンのドライバ、ファームウェア、 BIOS が実行されている場合は、更新する必要があります。</block>
   <block id="710de516c6cbad99668973bb1f4c3c0d" category="paragraph">構成に対してサポートされているドライバ、ファームウェア、 BIOS のバージョンをで確認しておく必要があります<block ref="ae0acc7a1cf35a69eb7b42685c902841" category="inline-link-rx"></block>。</block>
   <block id="982aef1e07fe09b104ef69dc47d79d37" category="list-text">ESXi のバージョンに対応した ESXi ホストのコンソールコマンドを使用して、インストールされている HBA のドライバ、ファームウェア、 BIOS のバージョンを確認します。</block>
-  <block id="49b4e6a2e5626cd5db40b840d6113bed" category="inline-link">VMware の技術情報アーティクル 1002413 ：「 Identifying the firmware of a Qlogic or Emulex FC HBA</block>
-  <block id="a12ed0f6188622691e50debf584fcdcf" category="paragraph"><block ref="a12ed0f6188622691e50debf584fcdcf" category="inline-link-rx"></block></block>
   <block id="2157ff4fa230c3478676d1a9841d6742" category="summary">既存の Storage Virtual Machine を使用する場合、 ONTAP System Manager を使用して、 SVM で FC サービスが実行されていることを確認する必要があります。また、 FC 論理インターフェイスがすでに作成されていることも確認する必要があります。</block>
   <block id="27045e1024ed1f1f4ea149b9fcfc4e8f" category="summary">Virtual Storage Console for VMware vSphere を使用すると、 ESXi ホストでネットアップの FC ストレージを使用するために必要な設定タスクやプロビジョニングタスクの多くを自動化できます。Virtual Storage Console は vCenter Server のプラグインです。</block>
   <block id="4593e2432306bcea64d49dcce3ddc04b" category="paragraph">テストに失敗した場合は、ストレージクラスタで FC サービスが実行されていることを確認し、 LUN および FC スイッチゾーニングへの FC パスをチェックしてください。</block>
@@ -2128,7 +2096,6 @@ ONTAP で災害の発生後にデスティネーションボリュームをア�
   <block id="462b95590d7acd7152240693f2733651" category="doc">ソースボリュームのステータスを確認</block>
   <block id="c59a59058714f4c78669e823c620680c" category="list-text">ソースボリュームを選択し、ソースボリュームがオフラインになっていることを確認します。</block>
   <block id="fdc1c760c29ca327926071ef4ce12c0d" category="list-text">SnapMirror 関係のデスティネーションボリュームを特定します。</block>
-  <block id="7c99e1c96275e73971c3274eea4bfc6a" category="image-alt">SnapMirror デスティネーション 93</block>
   <block id="54b184892f23afa68d9eab493ac216da" category="list-text">ONTAP 9.2 以前： Volumes （ボリューム）ページの下部にある * Data Protection * （データ保護 * ）タブをクリックして、 SnapMirror 関係のデスティネーションボリュームと、ボリュームが含まれている SVM の名前を確認します。</block>
   <block id="7bba42ab30c3eef639318c4cbe6cb31e" category="image-alt">デスティネーションボリュームの図</block>
   <block id="4b7d4ac6c63d48c124530d952203e03c" category="summary">デスティネーションボリュームをアクティブ化するには、 SnapMirror 関係を休止して解除する必要があります。休止した時点で、以降の SnapMirror データ転送は無効になります。</block>
@@ -2728,10 +2695,8 @@ ONTAP で災害の発生後にデスティネーションボリュームをア�
   <block id="5afc224ecb9fcc7f50684353cdfccb80" category="paragraph">クラスタを作成するには、コンソールからログインし、クラスタネットワークのいずれかのノードでノード管理 IP アドレスを設定する必要があります。いずれかのノードでノード管理 IP アドレスを設定したら、 ONTAP System Manager で他のノードを追加してクラスタを作成できます。</block>
   <block id="990bb85c5a67a4d1782a863aa6cc1497" category="paragraph">クラスタセットアップは、 ONTAP ソフトウェアの MetroCluster 構成ではサポートされません。</block>
   <block id="4dfcde39ef2f0b93b09f7b13052dd23f" category="paragraph">クラスタのセットアップは、テンプレートファイルを使用して行うことも、クラスタセットアップウィザードで値を手動で入力して行うことも可能です。</block>
-  <block id="7d9a08439c0869dea94d925777b7aba3" category="image-alt">クラスタセットアップワークフロー</block>
   <block id="f1dc21dc6179a3fdff96b7b031c7ae81" category="summary">クラスタは、 System Manager またはコマンドラインインターフェイス（ CLI ）を使用して作成できます。System Manager を使用してクラスタを作成するには、クラスタネットワークのいずれかのノードでノード管理 IP アドレスを設定する必要があります。CLI を使用してクラスタを作成した場合、設定に System Manager を使用できます。</block>
   <block id="1c867bc949570263498e870403b0e61a" category="doc">クラスタ環境をセットアップする</block>
-  <block id="58369fe03b8cca246bfd9acff3681041" category="image-alt">クラスタセットアップガイド</block>
   <block id="7c5c5dd8c983200f4658fbc653960629" category="summary">System Manager 9.6 以降では、不要になった FlexCache を削除できます。</block>
   <block id="2d911a2e75192035a8c705e9139ab46f" category="doc">FlexCache ボリュームを削除しています</block>
   <block id="32eb59d1751d73c381a2d8a05a29e10e" category="list-text">FlexCache ボリュームのジャンクションパスがアンマウントされている必要があります。</block>
@@ -2873,118 +2838,8 @@ ONTAP で災害の発生後にデスティネーションボリュームをア�
   <block id="c43a320001422c6e6555386d6eb7ffa4" category="list-text">[ * その他のアクション * &gt; * サイズ変更 * ] をクリックします。</block>
   <block id="5e7f2bb84ab8fc2c252782cc441d2850" category="list-text">ウィザードの指示に従って、情報を入力または選択します。</block>
   <block id="baf8d3396b691e5b2244efc835a2c55b" category="list-text">[*Volumes] ウィンドウで、使用可能な容量とボリュームの合計容量に加えた変更を確認します。</block>
-  <block id="f210a25eaf89fa55ced5c9c77e0b242b" category="summary">System Manager を使用して、共有を作成、編集、管理できます。</block>
-  <block id="258afb30ae69ea72441de6bfa02ded92" category="doc">System Manager - ONTAP 9.7 以前を使用して共有を管理します</block>
-  <block id="47e145cac11e2ed21e19d35136895102" category="paragraph">ONTAP System Manager クラシック（ ONTAP 9.7 以前で使用可能）を使用して、共有を作成、編集、管理できます。</block>
-  <block id="a218828013e03d9b77f9be08cba59cdd" category="section-title">CIFS 共有を作成する</block>
-  <block id="cdcdccf6b4cea67b1649f64dfc42ff76" category="paragraph">System Manager を使用して CIFS 共有を作成し、 CIFS ユーザがアクセス可能なフォルダ、 qtree 、またはボリュームを指定できます。</block>
-  <block id="3e859c820cd401f603bf6eb4bb47e006" category="paragraph">CIFS をセットアップして開始するには、 CIFS ライセンスがインストールされている必要があります。</block>
-  <block id="36e4c7125d339b895d4735d2ebc3c84b" category="list-text">[* ストレージ *&gt;* 共有 ] をクリックします。</block>
-  <block id="3c6b636b52f4ee0b5d619d487135638c" category="list-text">SVM * フィールドのドロップダウンメニューから、 CIFS 共有を作成する SVM を選択します。</block>
-  <block id="a5b98ff7955f554a6ab08c3a07b3fb83" category="list-text">[ 共有の作成 * ] ウィンドウで、 [ * 参照 ] をクリックし、共有するフォルダ、 qtree 、またはボリュームを選択します。</block>
-  <block id="b4f2a0dfcf3a06588721c3cf46426f55" category="list-text">新しい CIFS 共有の名前を指定します。</block>
-  <block id="ede7f1ea5f8033a3ddc8b303e6c3fe16" category="list-text">*オプション：* Hyper-VおよびSQL *で継続的可用性を有効にするチェックボックスをオンにすると、SMB 3.0以降をサポートするクライアントがノンストップオペレーション時にファイルを継続して開いておけるようになります。</block>
-  <block id="81c3a43e87c04aa4f2867930228320dd" category="paragraph">このオプションを使用して開いたファイルは、フェイルオーバー、ギブバック、 LIF の移行など、システムを停止させるイベントから保護されます。</block>
-  <block id="174695729a46aa0db160108074800cc8" category="paragraph">System Manager 9.6 以降では、 FlexGroup ボリュームの継続的可用性がサポートされます。</block>
-  <block id="44ec628d221f20d3a532dfdc1a49b9cc" category="list-text">SMB 3.0 暗号化を有効にするには、 * この共有へのアクセス時にデータを暗号化 * チェックボックスをオンにします。</block>
-  <block id="c11f0d9c886f553934dce4b687e69569" category="list-text">共有の概要またはコメントを入力し、 * Create * をクリックします。</block>
-  <block id="546e6304bd126985d219dddabcbf5774" category="paragraph">CIFS 共有が作成され、グループ内の「 Everyone の完全な制御」にアクセス権限が設定されます。</block>
-  <block id="4edcc08cf152edc7b42b029db1ecc67b" category="section-title">共有アクセスを停止します</block>
-  <block id="a4c1c7b32cb8db1bee81e7e0947286fe" category="paragraph">フォルダ、 qtree 、またはボリュームへの共有ネットワークアクセスを削除するときは、 System Manager を使用して共有を停止できます。</block>
-  <block id="97ab5031ba61fa20c45fa57196e475eb" category="paragraph">CIFS ライセンスをインストールしておく必要があります。</block>
-  <block id="ca31348e1f2b9f2491ba1ae68c0b31f4" category="list-text">SVM * フィールドのドロップダウンメニューから、停止する CIFS 共有が配置されている SVM を選択します。</block>
-  <block id="8e97fc4679f75b5eedb5c8820c4301f1" category="list-text">共有のリストから、共有を停止する共有を選択し、 * 共有の停止 * をクリックします。</block>
-  <block id="cae7974fde4c42dc22986eda0127cd15" category="list-text">確認のチェックボックスをオンにし、 * 停止 * をクリックします。</block>
-  <block id="6a780d4d415bbd377aa9fdc38651f67f" category="list-text">共有が [ * 共有 ] ウィンドウに表示されなくなったことを確認します。</block>
-  <block id="c6d1ab85546f960ef1908682152ddb98" category="section-title">ホームディレクトリ共有を作成する</block>
-  <block id="2ded840bb0d149049d94d6cc27cd4eb9" category="paragraph">System Manager を使用して、ホームディレクトリ共有を作成し、ホームディレクトリ検索パスを管理できます。</block>
-  <block id="07b21b3751e97e8be0734694465e1a54" category="paragraph">CIFS がセットアップされて開始されている必要があります。</block>
-  <block id="8833b993932917d5dc821b8ddc12292f" category="list-text">[ ホームディレクトリの作成 *] をクリックし、ユーザーをディレクトリにマップする方法を決定するパターン情報を入力します。</block>
-  <block id="05f43ec9f04690f81f77fec126b3f286" category="list-text">作成したホームディレクトリが * Shares * ウィンドウに表示されていることを確認します。</block>
-  <block id="653ecc56780e9ae45a3425b21f179e73" category="section-title">共有設定を編集します</block>
-  <block id="8b8233970ae93cddab3fcb0f038a19cf" category="paragraph">System Manager を使用して、シンボリックリンクの設定、共有に対するユーザやグループのアクセス権、共有へのアクセスの種類など、共有設定を変更することができます。また、 Hyper-V による共有の継続的可用性や Access-Based Enumeration （ ABE ；アクセスベースの列挙）を有効または無効にすることもできます。System Manager 9.6 以降では、 FlexGroup ボリュームの継続的可用性がサポートされます。</block>
-  <block id="7246a01d2a352fc6450f7f466d58dac5" category="list-text">共有のリストから変更する共有を選択し、 * 編集 * をクリックします。</block>
-  <block id="28d42a3f5ce4234a5cb6b5eda7721b12" category="list-text">共有設定の編集 * ダイアログボックスで、必要に応じて共有設定を変更します。</block>
-  <block id="b187cf812109744ed2a6197d64b4c287" category="list-text">General * タブで、 Hyper-V による共有の継続的可用性を有効にします</block>
-  <block id="24e24350d0c2bbfe6239c8cda68a9fdd" category="paragraph">継続的可用性を有効にすると、 SMB 3.0 をサポートする SMB 3.0 クライアントで、無停止運用時にファイルを継続して開いておくことができます。継続して開いておくように指定したファイルは、フェイルオーバー、ギブバック、 LIF の移行など、システムを停止させるイベントから保護されます。</block>
-  <block id="c422043bdc2f7971f0ae6747690d03c7" category="list-text">[ * アクセス許可 * ] タブで、ユーザーまたはグループを追加し、アクセスの種類を指定するアクセス許可を割り当てます。</block>
-  <block id="5c0287506e18b638d89ba4098983d76a" category="list-text">[ * オプション * （ * Options * ） ] タブで、必要なオプションを選択します。</block>
-  <block id="d5ba1e032c63c476f97b1f0bded5e2ed" category="list-text">[* 共有 ] ウィンドウで選択した共有に加えた変更を確認します。</block>
-  <block id="1f06c32e4284c548639b045d1a680c1f" category="section-title">ONTAP で動的ホームディレクトリを有効にする方法</block>
-  <block id="ddb6804ce83c0756809d4eaa0da80de7" category="paragraph">ONTAP ホームディレクトリを使用すると、 SMB 共有を設定し、ユーザと一連の変数に基づいてさまざまなディレクトリにマッピングすることができます。ユーザごとに別個の共有を作成するのではなく、 1 つの共有を設定し、いくつかのホームディレクトリパラメータを指定して、エントリポイント（共有）とホームディレクトリ（ SVM 上のディレクトリ）間の関係をユーザ単位で定義します。</block>
-  <block id="47d8b0af5d2931cb4e847ec858c73ecf" category="paragraph">ゲストユーザとしてログインしたユーザは、ホームディレクトリを持ちません。また、他のユーザのホームディレクトリにアクセスすることはできません。ユーザとディレクトリのマッピング方法を決定する 4 つの変数があります。</block>
-  <block id="e61e15ac8c5f8d0b85109886001adfad" category="list-text">* 共有名 *</block>
-  <block id="bc684c6854b9c8f2cb609b73ffac4b9c" category="paragraph">ユーザの接続先として作成する共有の名前です。この共有にはホームディレクトリのプロパティを設定する必要があります。</block>
-  <block id="9cec6f3479185182d510faeb5c88e095" category="paragraph">共有名には、次の動的な名前を使用できます。</block>
-  <block id="cf46804cd7f94ff0f06229165a1e08bc" category="list-text"><block ref="61fdc52186559b1681736cfb53393d7a" prefix="" category="inline-code"></block> （ユーザのWindowsユーザ名）</block>
-  <block id="c7d7c222f5eb544bb7a6e17489d16fb1" category="list-text"><block ref="a7bd935a88c629dc11c52e0c16c2a8a0" prefix="" category="inline-code"></block> （ユーザのWindowsドメイン名）</block>
-  <block id="c3e0b780eb59c719da0f62c0418963e2" category="list-text"><block ref="b4e514e05859a94a7c7d3404f63dca8d" prefix="" category="inline-code"></block> （ユーザのマッピングされたUNIXユーザ名）</block>
-  <block id="053021b69a316a9b62283baaca04bdee" category="paragraph">すべてのホームディレクトリ間で共有名を一意にするには、共有名に<block ref="61fdc52186559b1681736cfb53393d7a" prefix=" " category="inline-code"></block> または<block ref="b4e514e05859a94a7c7d3404f63dca8d" prefix=" " category="inline-code"></block> 変数（Variable）：共有名には両方を使用できます<block ref="a7bd935a88c629dc11c52e0c16c2a8a0" prefix=" " category="inline-code"></block> および<block ref="61fdc52186559b1681736cfb53393d7a" prefix=" " category="inline-code"></block> 変数（例：<block ref="a7bd935a88c629dc11c52e0c16c2a8a0" prefix=" " category="inline-code"></block><block ref="61fdc52186559b1681736cfb53393d7a" prefix="/" category="inline-code"></block>または、共有名に静的な部分と変数の部分（home_など）を含めることができます<block ref="61fdc52186559b1681736cfb53393d7a" prefix="" category="inline-code"></block>）。</block>
-  <block id="0521b4a71a02a28d9873367a66e9d83a" category="list-text">* 共有パス *</block>
-  <block id="7f794a8325e108e30caf0916da9858f8" category="paragraph">共有によって定義される、つまり、共有名の 1 つに関連付けられる相対パスです。各検索パスに付加されて、 SVM のルートからのユーザのホームディレクトリの完全パスを生成します。静的（例：<block ref="106a6c241b8797f52e1e77317b96a201" prefix=" " category="inline-code"></block>）、動的（例：<block ref="61fdc52186559b1681736cfb53393d7a" prefix=" " category="inline-code"></block>）、または2つの組み合わせ（例：<block ref="a2b6508e05db4948da997e79c88b26c6" prefix=" " category="inline-code"></block>）。</block>
-  <block id="6fcc718fd1fe6c61104b90deb1cf42a2" category="list-text">* 検索パス *</block>
-  <block id="2401c90889b207694e0799fda5109a63" category="paragraph">SVM のルートからの絶対パスのセットで、 ONTAP ではこのパスに基づいてホームディレクトリが検索されます。を使用して、1つ以上の検索パスを指定できます<block ref="5a6a8dfa9830413979e30e9a232a26b9" prefix=" " category="inline-code"></block> コマンドを実行します複数 ONTAP の検索パスを指定すると、有効なパスが見つかるまで、指定された順に各検索パスが試行されます。</block>
-  <block id="b8247bb8487a381712f3b1e7f9afee38" category="list-text">* ディレクトリ *</block>
-  <block id="94476d0b91f52a04ef07ba6853a8fe57" category="paragraph">ユーザに対して作成する、そのユーザのホームディレクトリです。通常、ディレクトリ名はユーザの名前です。ホームディレクトリは、検索パスで定義されるいずれかのディレクトリに作成する必要があります。</block>
-  <block id="d87a9db633a6535cd29bd2e3ceb1c8dd" category="paragraph">たとえば、次のように設定します。</block>
-  <block id="7180a0452db924e5e8285ae78d6355b2" category="list-text">ユーザ： John Smith</block>
-  <block id="03fdb6c3f4384c6171e95f71401eb5e0" category="list-text">ユーザのドメイン： acme</block>
-  <block id="1a0691e264e3961203ea0cfedc4e5d2b" category="list-text">ユーザ名： jsmith</block>
-  <block id="33e9d5aa58536f2b75b2e74481b6da5f" category="list-text">SVM 名： vs1</block>
-  <block id="67542d137c252a447549f5aea3bdae37" category="list-text">ホームディレクトリ共有名#1：home_<block ref="61fdc52186559b1681736cfb53393d7a" prefix="" category="inline-code"></block> -共有パス：<block ref="61fdc52186559b1681736cfb53393d7a" prefix=" " category="inline-code"></block></block>
-  <block id="af46ee21386ad593388ff8e626ff1d79" category="list-text">ホームディレクトリ共有名#2：<block ref="61fdc52186559b1681736cfb53393d7a" prefix=" " category="inline-code"></block> -共有パス：<block ref="4b4be07fc24b62eb35c983adef6588a7" prefix=" " category="inline-code"></block></block>
-  <block id="8bdaad80963ec7997b9171bbde3ccf58" category="list-text">検索パス#1：<block ref="f1fef4e82588d65ba30cd9aa01821bb8" prefix=" " category="inline-code"></block></block>
-  <block id="d5de8e98475d82f92b73735119bbb86e" category="list-text">検索パス#2：<block ref="516141bba2650fcf50f472110df9bbb3" prefix=" " category="inline-code"></block></block>
-  <block id="17a2b091f4b18b78a643898b857c0b7b" category="list-text">検索パス#3：<block ref="32467dc27b5c1dc6fdb3be6be9e0d4bd" prefix=" " category="inline-code"></block></block>
-  <block id="f79a499c73fbab60e0656b54d92e9a15" category="list-text">ホームディレクトリ：<block ref="92fb357e2e22d96fcbb3dc91b7ad3c44" prefix=" " category="inline-code"></block></block>
-  <block id="364487be3ccdb0ddb95024d179f03f3e" category="paragraph">シナリオ1：ユーザーがに接続します<block ref="4e9da487017687cc0e20849436bbd1ea" prefix=" " category="inline-code"></block>。これは最初のホームディレクトリ共有名に一致し、相対パスが生成されます<block ref="39ce7e2a8573b41ce73b5ba41617f8f7" prefix=" " category="inline-code"></block>。ONTAP がというディレクトリを検索するようになりました<block ref="39ce7e2a8573b41ce73b5ba41617f8f7" prefix=" " category="inline-code"></block> 各検索パスを順にチェックするには、次の手順に従います。</block>
-  <block id="da31e9584c464660c8d01fdcce993262" category="list-text"><block ref="99f56e83581477446df1f3c1ced8c2b0" prefix="" category="inline-code"></block> は存在しません。検索パス#2に進みます。</block>
-  <block id="3ea0fe8fc6a7f1b43185c7059aa5790c" category="list-text"><block ref="92fb357e2e22d96fcbb3dc91b7ad3c44" prefix="" category="inline-code"></block> は存在します。したがって、検索パス#3はチェックされません。これで、ユーザは自分のホームディレクトリに接続されました。</block>
-  <block id="a5e47d213ee8b7b800451b243c5340e3" category="paragraph">シナリオ2：ユーザーがに接続する<block ref="2cb9e3fa2f4a596f846cef78a337560b" prefix=" " category="inline-code"></block>。これは2番目のホームディレクトリ共有名に一致し、相対パスが生成されます<block ref="8e5f8e3dcb23383e32f49e7a055826f4" prefix=" " category="inline-code"></block>。ONTAP がというディレクトリを検索するようになりました<block ref="8e5f8e3dcb23383e32f49e7a055826f4" prefix=" " category="inline-code"></block> 各検索パスを順にチェックするには、次の手順に従います。</block>
-  <block id="ba77d086e3046fd832fb4fe3435a490d" category="list-text"><block ref="e5eb2f73a2e9980fc90e088246bf2a31" prefix="" category="inline-code"></block> は存在しません。検索パス#2に進みます。</block>
-  <block id="4a0368d08fff02c4b3d2ceeffbb4d136" category="list-text"><block ref="8211f5e2f4fb295058ab715023554df1" prefix="" category="inline-code"></block> は存在しません。検索パス#3に進みます。</block>
-  <block id="47cf52fe22b54398467dba6a9a1e4a7b" category="list-text"><block ref="8a86a2c448e1f60496b94e4c1a846e60" prefix="" category="inline-code"></block> は存在しません。ホームディレクトリが存在しないため、接続は失敗します。</block>
-  <block id="4918741feccad41b42cd99aa33e42f28" category="section-title">共有ウィンドウ</block>
-  <block id="a7c99ceadac4e4924151c84d763c467f" category="paragraph">共有の管理や共有に関する情報の表示には、共有ウィンドウを使用できます。</block>
-  <block id="fda574f52a0c012e098901afa3932b69" category="list-text">* 共有の作成 *</block>
-  <block id="d852a51701ee8f10a9ca310896bd4554" category="paragraph">共有を作成できる [ 共有の作成 ] ダイアログボックスを開きます。</block>
-  <block id="78051d4bf07107990835bebcaff82f9c" category="list-text">* ホームディレクトリを作成 *</block>
-  <block id="73ebeda6b0e6d0bdc61b3514087f98b2" category="paragraph">Create Home Directory Share ダイアログボックスを開きます。このダイアログボックスで、新しいホームディレクトリ共有を作成できます。</block>
-  <block id="165ea29705bdce07533240e5baf023d6" category="paragraph">設定の編集ダイアログボックスを開きます。このダイアログボックスで、選択した共有のプロパティを変更できます。</block>
-  <block id="78970f78ae18db72c079df474a70cac5" category="list-text">* 共有を停止 *</block>
-  <block id="9e4ba745eb5929a46ac85a66bbde51ec" category="paragraph">選択したオブジェクトが共有されないようにします。</block>
-  <block id="c871110fae62093309dc98c9c0f64df9" category="section-title">共有リスト</block>
-  <block id="729863cbd7aed54d8a3908488c22b0a6" category="paragraph">共有リストには、各共有の名前とパスが表示されます。</block>
-  <block id="9c29b201d911f46f3d4ec9a15dc66cc6" category="list-text">* 共有名 *</block>
-  <block id="3aba51888e43a206b38531d1ba5da58f" category="paragraph">共有の名前が表示されます。</block>
   <block id="973c986d28beec057d1064afec603777" category="list-text">* パス *</block>
-  <block id="e80af012f9ce34e9ab0beba04371d194" category="paragraph">共有されている既存のフォルダ、 qtree 、またはボリュームの完全なパス名が表示されます。パスの区切り文字には、スラッシュまたはバックスラッシュを使用できますが、 ONTAP では、いずれの区切り文字もスラッシュとして表示されます。</block>
-  <block id="7b22a3952681ecb4cdbd6fe703765dae" category="list-text">* ホームディレクトリ *</block>
-  <block id="cbc95fa902a86727e89b85af3f19d0fb" category="paragraph">ホームディレクトリ共有の名前が表示されます。</block>
   <block id="9bdc480955b350f1fe8089392ad36cbe" category="list-text">* コメント *</block>
-  <block id="c9b73398fbc4618f61034f91e3a7daec" category="paragraph">共有の追加の説明がある場合に表示されます。</block>
-  <block id="dd8a5de672229fa8ff58411a6a3e41ff" category="list-text">* 共有の継続的な可用性 *</block>
-  <block id="2d6ca664e165a57792b1b59ede4c3890" category="paragraph">共有が継続的可用性に対して有効になっているかどうかが表示されます。System Manager 9.6 以降では、 FlexGroup ボリュームの継続的可用性がサポートされます。</block>
-  <block id="97469443dfc3695c09f70f7590eeac08" category="paragraph">共有リストの下の領域には、共有プロパティと各共有のアクセス権が表示されます。</block>
-  <block id="e6ce8998f0d4cbe5a38c523c958f4162" category="list-text">* プロパティ *</block>
-  <block id="217a0172345c647bc3f6a354cd7b6108" category="list-text">oplock ステータス</block>
-  <block id="cf6115c8d6bbdd2a732e670a8a63edc1" category="paragraph">共有で便宜的ロック（ oplock ）を使用するかどうかを示します。</block>
-  <block id="3a63af1322a4a738092f2dc891ab6afb" category="list-text">参照可能</block>
-  <block id="14fda0af9c46576b371ec3b6e1fb623d" category="paragraph">Windows クライアントから共有を参照できるかどうかを示します。</block>
-  <block id="18bfc8152a3e795a4008c07d0c432528" category="list-text">Snapshot を表示します</block>
-  <block id="d111a1648cc63acf08b9954ea5d1c5fb" category="paragraph">クライアントで Snapshot コピーを表示できるかどうかを示します。</block>
-  <block id="b8c91392a068a4dbf0999fb089045c52" category="list-text">共有の継続的な可用性</block>
-  <block id="41aef6f60f95609aa7b5ca4777bfe44c" category="paragraph">共有が継続的に利用できるように有効になっているか無効になっているかを示します。System Manager 9.6 以降では、 FlexGroup ボリュームの継続的可用性がサポートされます。</block>
-  <block id="ced58c7b6a62adeb9dff9028fa5cf9db" category="list-text">ABE ：アクセスベースの列挙</block>
-  <block id="3af978aaedd422de2f12de5f6b53767e" category="paragraph">共有で Access-Based Enumeration が有効になっているかどうかを示します。</block>
-  <block id="601881e1c15a5899164ae1415fa564f9" category="list-text">BranchCache</block>
-  <block id="c042c62a5b971b02ac210ea6cea9f49b" category="paragraph">共有で BranchCache が有効になっているかどうかを示します。</block>
-  <block id="5ba189119209879ea0338f2967d8829a" category="list-text">SMB 暗号化</block>
-  <block id="a8e8461d71a3b3c9c05c1ca0cab3bf26" category="paragraph">SMB 3.0 を使用したデータ暗号化が Storage Virtual Machine （ SVM ）レベルまたは共有レベルで有効になっているかどうかを示します。SMB 暗号化が SVM レベルで有効になっている場合は、すべての共有に SMB 暗号化が適用され、（ SVM レベルで）「有効」という値が表示されます。</block>
-  <block id="361ba3dce11fe3e84d163ed8a377ee53" category="list-text">以前のバージョン</block>
-  <block id="b9aa6e095ab5ade3b6a47afb5635c76f" category="paragraph">クライアントで以前のバージョンを表示してリストアできるかどうかを指定します。</block>
-  <block id="6330d7da9b567d52cb7f38d3b59cad4c" category="list-text">* 共有アクセス制御 *</block>
-  <block id="5ecdcfa6df2b43f1cd8b09359c0e9628" category="paragraph">共有のドメインユーザ、ドメイングループ、ローカルユーザ、およびローカルグループのアクセス権が表示されます。</block>
   <block id="b1f7b0489956884280bdba01a96b051b" category="inline-xref-macro">CIFSノセツトアツフ</block>
   <block id="e017ec9aae777eea6bb4e0e623c50b13" category="paragraph"><block ref="e017ec9aae777eea6bb4e0e623c50b13" category="inline-xref-macro-rx"></block></block>
   <block id="fc5c41a08a339689427e86a62085d18e" category="summary">Storage Virtual Machine （ SVM ）を最終的な運用状態に、または基本的なネットワーク設定までセットアップしたら、必要に応じてその管理を SVM 管理者に委譲できます。</block>
@@ -3041,7 +2896,6 @@ ONTAP で災害の発生後にデスティネーションボリュームをア�
   <block id="1bcaa70ba0011203f6ed88fca02c0c7e" category="list-text">「無効」の位置に * FlexGroup * を残すと、作成された FabricPool ボリュームには FabricPool 以外のアグリゲートのみが含まれ、階層化ポリシーは「なし」に設定されます。</block>
   <block id="280912f92ac8838961caf4bcdd792e10" category="list-text">SVM に FabricPool アグリゲートがない場合、「無効」の位置に「 * FabricPool * 」と表示され、変更することはできません。</block>
   <block id="2bdfe1e585cb4707ff4ee5a03fe0d58b" category="list-text">SVM に FabricPool アグリゲートしかない場合は、「 FabricPool 」ボタンが「 enabled 」の位置に表示され、変更することはできません。</block>
-  <block id="03552d367764e7839a614933f825001e" category="list-text">特定のアグリゲートを指定する場合は、をクリックします <block ref="03cbf9b997ad0db8d0ffb988950200e2" category="inline-image-macro-rx" type="image"></block> （アドバンストオプション）。</block>
   <block id="54cea90da7b4369891eee22f858ad14b" category="paragraph">作成する FlexGroup ボリュームに関連付けられているアグリゲートは、ベストプラクティスに従ってデフォルトで選択されます。アグリゲートラベルの横に表示されます。</block>
   <block id="b7145e84aa34f2e12721b0af370554c0" category="list-text">[* 保護（ Protection ） ] セクションで、次の操作を実行します。</block>
   <block id="8d51cd39a18c87bf1f3c125efbb15875" category="list-text">* Volume Protection * オプションを有効にします。</block>
@@ -3414,14 +3268,11 @@ ONTAP で災害の発生後にデスティネーションボリュームをア�
   <block id="32032cf60e20cb1e13004a35c19895f0" category="list-text">*オプション：* FlexCache Volume *の下の* Size *フィールドにFlexCache ボリュームの新しいサイズを入力し、ドロップダウンメニューから単位を選択します。</block>
   <block id="390c84eadfb369c9bba59931c7fc2b02" category="list-text">*オプション：*暗号化を有効または無効にします。</block>
   <block id="fa8ddae57fb0b13c4eb7a2f3b7deaa99" category="inline-link-macro">FlexCache ボリュームのアドバンストオプションの指定</block>
-  <block id="4db6d5da67865342306912fad857400f" category="list-text">* オプション： * クリック <block ref="03cbf9b997ad0db8d0ffb988950200e2" category="inline-image-macro-rx" type="image"></block> FlexCache ボリュームの詳細設定を変更します。を参照してください <block ref="01d1f9ee7eafcb47c4d200eceb73ffd6" category="inline-link-macro-rx"></block>。</block>
   <block id="8491b775711be80e6a608ef1ebb96121" category="list-text">[ 保存（ Save ） ] をクリックして、変更を保存します。</block>
   <block id="a56e31822510cde8f8a20d6f36849aa7" category="summary">System Manager を使用して、ディスクを管理できます。</block>
   <block id="d7a551057ba910463c17513387122618" category="doc">System Manager - ONTAP 9.7 以前を使用してディスクを管理します</block>
   <block id="4408c783f4f77dad27b39a90a5feb7d2" category="paragraph">ONTAP System Manager クラシック（ ONTAP 9.7 以前で使用可能）を使用してディスクを管理できます。</block>
   <block id="edda3972d1bc3950c540b7172745645c" category="paragraph"><block ref="edda3972d1bc3950c540b7172745645c" category="inline-link-rx"></block></block>
-  <block id="70894d5c0a41692947485c0d0a19e60a" category="inline-link">FlexArray 仮想化のインストール要件およびリファレンス</block>
-  <block id="b42d776faedad51898dbe5bf906051a2" category="paragraph"><block ref="b42d776faedad51898dbe5bf906051a2" category="inline-link-rx"></block></block>
   <block id="9dd326a487d106b896106eeadb347626" category="summary">System Manager 9.6 以降では、 FlexCache ボリュームに関する情報を表示できます。FlexCache ボリュームの割り当てスペースとパフォーマンスがグラフィカルに表示されます。</block>
   <block id="af94d293d65ac05aba778e00e3ba5510" category="doc">FlexCache ボリューム情報を表示しています</block>
   <block id="d5a19af6bd480993ed2b7a77e9921ee4" category="list-text">表示されたボリュームのリストで、情報を表示する FlexCache ボリュームを選択します。</block>
@@ -3602,7 +3453,6 @@ ONTAP で災害の発生後にデスティネーションボリュームをア�
   <block id="11633eb84d1995cfa5bc65cc29e7c23a" category="list-text">[ コメントの追加 ] をクリックして、ポリシーのコメントを追加します。</block>
   <block id="f51d83be71182a7a9735e02d70d57f6e" category="list-text">バックアップまたはミラーバックアップタイプのポリシーの場合は、 SnapMirror ラベルとデスティネーションの保持数を指定します。</block>
   <block id="114168a53a6b42c89026b910fc64289f" category="summary">System Manager 9.6 以降では、 FlexCache ボリュームを編集する際に、 FlexCache ボリュームに関連付けるアドバンストオプションを指定できます。</block>
-  <block id="8f51b4e853f8f8190d9ce869e3f71555" category="list-text">*オプション：*[Edit FlexCache volume*（ボリュームの編集）]ウィンドウで、をクリックします <block ref="03cbf9b997ad0db8d0ffb988950200e2" category="inline-image-macro-rx" type="image"></block> をクリックして、アドバンストオプションを指定します。</block>
   <block id="cc6147bf70776e78f1689c5b5ec50cdf" category="paragraph">[ 詳細オプション ] ウィンドウが表示されます。このセクションにはセクション（左側の列の見出し）があり、さまざまなオプションを指定できます。</block>
   <block id="1f272132f306cd712954818240769549" category="list-text">*オプション：* General Details *セクションで、ボリュームの権限を編集できます。</block>
   <block id="ffe0fe06e388737190c902ee2d01f847" category="list-text">アグリゲートセクションでは、アグリゲートの選択 * の切り替えボタンを有効にしてベストプラクティスのデフォルト設定を上書きし、アグリゲートのリストから選択することができます。</block>
@@ -3736,14 +3586,6 @@ ONTAP で災害の発生後にデスティネーションボリュームをア�
   <block id="cafdb1219cee48c72aefb4a06983873c" category="list-text">テキストボックスで名前を更新し、 * 送信 * をクリックします。</block>
   <block id="e801d2be7b11bcc8807e4f9a7c173b7f" category="paragraph">MetroCluster サイト A のステータスを表示すると更新後の名前を確認できます。</block>
   <block id="e9551f243e2860df3b1dfddc05a6cf7f" category="list-text">リモートサイト（サイトB）からMetroClusterサイトAを表示したときに更新後の名前を表示するには、リモートサイト（サイトB）のCLIで次のコマンドを実行します。<block ref="53866ad7e92443056aec27897d674600" prefix=" " category="inline-code"></block></block>
-  <block id="936df13c62816bb541c8c569a83692db" category="summary">System Manager を使用して、セキュリティ、バックアップ、パフォーマンス、およびデータ共有に関するさまざまな要件をサポートするアグリゲートを作成できます。</block>
-  <block id="aab5e3cd425b154cb96d27c6f7249138" category="doc">System Manager - ONTAP 9.7 以前を使用してアグリゲートを管理します</block>
-  <block id="9a37af394d1d31dd77ff0d7043b0269b" category="paragraph">ONTAP System Manager クラシック（ ONTAP 9.7 以前で使用可能）を使用して、セキュリティ、バックアップ、パフォーマンス、およびデータ共有に関するさまざまな要件をサポートするアグリゲートを作成できます。</block>
-  <block id="cd6f186b58ad08a0aa15702a06871670" category="paragraph">アグリゲートウィンドウを使用して、アグリゲートに関する情報を作成、表示、および管理できます。</block>
-  <block id="35381a31106f6d9e3114d4b4d6d38f12" category="paragraph">アグリゲートの作成ダイアログボックスを開きます。このダイアログボックスで、アグリゲートを作成できます。</block>
-  <block id="6f63d1aa5fa8cb0919b9d381b827eefb" category="paragraph">アグリゲートの編集ダイアログボックスを開きます。このダイアログボックスで、アグリゲートの名前またはアグリゲートに提供する RAID 保護のレベルを変更できます。</block>
-  <block id="6ddf98429421db1c79baf89c8d15ebc2" category="paragraph">選択したアグリゲートを削除します。</block>
-  <block id="f990940885a7262711c74616e1416ff6" category="paragraph">このボタンは、ルートアグリゲートに対しては無効になります。</block>
   <block id="b0f857586a11d1835d63ccfd5a7c94b0" category="list-text">* その他のアクション *</block>
   <block id="d9fec617ec0f6c9621190b472ac59feb" category="paragraph">次のオプションが用意されています。</block>
   <block id="60f070e92e3980a1a93a915ce99841fb" category="list-text">* ステータスを * に変更します</block>
@@ -3753,58 +3595,25 @@ ONTAP で災害の発生後にデスティネーションボリュームをア�
   <block id="8d9da4bc0e49a50e09ac9f7e56789d39" category="list-text">オフラインです</block>
   <block id="0974133f9628072341df79d62c53b92a" category="paragraph">読み取りおよび書き込みアクセスが許可されていません。</block>
   <block id="034d70b46e41ec9d0306b0001e04cae7" category="list-text">制限</block>
-  <block id="b3144de0ef9237ecb5a3cb8485c2060a" category="paragraph">パリティの再構築などの一部の処理は許可されますが、データアクセスは許可されません。</block>
   <block id="4d20253a0478c684c2de0a0fb803cc03" category="list-text">* 容量を追加 *</block>
   <block id="4edae08fff3ee88387fcd0576d349d16" category="paragraph">既存のアグリゲートに容量（ HDD または SSD ）を追加できます。</block>
   <block id="ac25e29b281c5fe7e5c94b7d0ab40aee" category="list-text">* キャッシュを追加 *</block>
   <block id="918ca2a2678c961296588bb076c8f0f6" category="paragraph">既存の HDD アグリゲートまたは Flash Pool アグリゲートにキャッシュディスク（ SSD ）を追加できます。</block>
-  <block id="3c14e506fc727ed3380560dc7037ad5c" category="paragraph">このボタンは、オールフラッシュで最適化されたノードを含むクラスタでは使用できません。</block>
   <block id="5ccaf135104488a13f1ac23cc6143691" category="list-text">* ミラー *</block>
   <block id="ddc1efb6fc657900eeb3bd6ee540d25c" category="paragraph">アグリゲートをミラーリングできます。</block>
   <block id="07728bee97105d471c3ab19da1966201" category="list-text">* ボリューム移動 *</block>
   <block id="69e5c422ce83897e32ce0b9ec4d7c9a8" category="paragraph">FlexVol ボリュームを移動できます。</block>
-  <block id="339a40b6a613ea3ec552b5339bc261a8" category="list-text">* クラウド階層を接続 *</block>
-  <block id="87d2c400e633ce33a2a67a308be5bdda" category="paragraph">アグリゲートにクラウド階層を接続できます。</block>
-  <block id="c877851beb23e96091e8562c8d1b88a7" category="section-title">アグリゲートリスト</block>
-  <block id="5e78bc7f662cab6891c8ff38cb07a068" category="paragraph">各アグリゲートの名前とスペース使用量情報が表示されます。</block>
   <block id="eb2dc6157e951f6bdf5569b2c253a984" category="list-text">* ステータス *</block>
-  <block id="986e97d621ddbef8a3235d5c6b7d4096" category="paragraph">アグリゲートのステータスが表示されます。</block>
   <block id="496ee322ba138fdbc777e5ab2e30145e" category="list-text">* 名前 *</block>
-  <block id="5ce9fff649cdfda9f94e4cc7011234a9" category="paragraph">アグリゲートの名前が表示されます。</block>
   <block id="04eaef0c64f7604067332b0b05e598d3" category="list-text">* ノード *</block>
-  <block id="99001178cd0cb6fa6787aef67cb2cba7" category="paragraph">アグリゲートのディスクが割り当てられているノードの名前が表示されます。</block>
   <block id="e8a10e1832156c48d05e40d44124a4f9" category="paragraph">このフィールドは、クラスタレベルでのみ使用できます。</block>
-  <block id="28e42dd5833ce63bcac5edc7f48a152d" category="paragraph">アグリゲートのタイプが表示されます。</block>
-  <block id="b7d06b5b2888bd0cbb9cb0b77d8925c7" category="paragraph">このフィールドは、オールフラッシュで最適化されたノードを含むクラスタに対しては表示されません。</block>
-  <block id="25444e13e1490cfb73e044b4e98cba6b" category="list-text">* 使用（ % ） *</block>
-  <block id="e48543894493fb7fd6d6320e3e3fe0b6" category="paragraph">アグリゲートで使用されているスペースの割合が表示されます。</block>
   <block id="17451b8c728d0bc6a4f3dafe44501ab3" category="list-text">* 利用可能なスペース *</block>
-  <block id="b45bc28e9ea320c35412c90a6da0817f" category="paragraph">アグリゲートの使用可能なスペースが表示されます。</block>
   <block id="effd2fa0311563a1e224e6c36de775bb" category="list-text">* 使用済みスペース *</block>
-  <block id="7750bf7a821da6870eb3fa224f646d87" category="paragraph">アグリゲートでデータに使用されているスペースの量が表示されます。</block>
   <block id="de68ee7ea3dbee1b91084b9a54b3f334" category="list-text">* 合計容量 *</block>
-  <block id="31b39c8fce21f1bdc9a05f612c2d7f92" category="paragraph">アグリゲートの合計スペースが表示されます。</block>
-  <block id="ad194123577ad25914a0ad436f83d256" category="list-text">* FabricPool *</block>
-  <block id="c26194d8f7d34b5001790e724f7bc44e" category="paragraph">選択したアグリゲートがクラウド階層に接続されているかどうかが表示されます。</block>
-  <block id="0cd040a51684da558c6c12a9a3c4ec13" category="list-text">* クラウド階層 *</block>
-  <block id="6d84d0d086fc6ac4cd08fb009eb3afff" category="paragraph">選択したアグリゲートがクラウド階層に接続されている場合は、クラウド階層の名前が表示されます。</block>
-  <block id="b9d57360a621fd7b1e32b17490f2c32b" category="list-text">* ボリューム数 *</block>
-  <block id="f06ad6fa54f2513703034b7dfd6cab6d" category="paragraph">アグリゲートに関連付けられているボリュームの数が表示されます。</block>
-  <block id="300f5ad4dc018c74937eef89a804af57" category="list-text">* ディスク数 *</block>
-  <block id="887d1cc61a498f51a05d9edde203d8a0" category="paragraph">アグリゲートの作成に使用されているディスクの数が表示されます。</block>
-  <block id="2dcf6cf8b63d51754222cbe105d055f9" category="list-text">* Flash Pool *</block>
-  <block id="7cf88a2e216a75f251bc3fb4939e9874" category="paragraph">Flash Pool アグリゲートの合計キャッシュサイズが表示されます。「 NA 」という値は、アグリゲートが Flash Pool アグリゲートではないことを示します。</block>
-  <block id="2377b182d295db38042880797b0706eb" category="list-text">* Mirrored * （ミラーリング）</block>
-  <block id="3669b26c14adf1b8df923887205025df" category="paragraph">アグリゲートがミラーされているかどうかが表示されます</block>
   <block id="db0ee96118986edbb435bada8a7b6ae4" category="list-text">* SnapLock タイプ *</block>
-  <block id="03239fde94c3a6403d92ebc7e4d47ae3" category="paragraph">アグリゲートの SnapLock タイプが表示されます。</block>
-  <block id="8e0f7fc5c91a651d41ace5ca9df686d2" category="paragraph">アグリゲートを選択すると、選択したアグリゲートに関する情報が表示されます。Show More Details をクリックすると、選択したアグリゲートに関する詳細情報を表示できます。</block>
   <block id="9228c96f976b189d00d20754d7057173" category="list-text">* 概要タブ *</block>
-  <block id="41baae8263adb4ec516ef9c10284e931" category="paragraph">選択したアグリゲートに関する詳細な情報が表示されます。これには、アグリゲートのスペース割り当て、アグリゲートのスペース削減、アグリゲートのパフォーマンス（ IOPS および合計データ転送数）などの情報が含まれます。</block>
   <block id="53da544587b12f299b5208bfa37c41dd" category="list-text">* ディスク情報タブ *</block>
-  <block id="7684669141bc1d61ff12daea729dbbd5" category="paragraph">ディスクの名前、ディスクタイプ、物理サイズ、使用可能なサイズ、ディスクの位置などのディスクのレイアウト情報が表示されます。 ディスクのステータス、プレックス名、プレックスのステータス、 RAID グループ、 RAID タイプ、 選択したアグリゲートのストレージプール（存在する場合）を指定します。ディスクのプライマリパスに関連付けられたディスクポート、およびマルチパス設定の場合はディスクのセカンダリパスに関連付けられたディスク名も表示されます。</block>
   <block id="3c62a3dcff986acc24aef37165a45e95" category="list-text">* Volumes （ボリューム）タブ *</block>
-  <block id="68f887cbc24995b778d4f33a8db8a5ef" category="paragraph">アグリゲート上の合計ボリューム数、合計アグリゲートスペース、およびアグリゲートにコミット済みのスペースについての詳細が表示されます。</block>
   <block id="e6a419981c51552ec6ad5c8357bab911" category="list-text">* パフォーマンスタブ *</block>
   <block id="1b485d0caa650bce2a01d08ddaa170f3" category="paragraph">スループットや IOPS など、アグリゲートのパフォーマンス指標のグラフが表示されます。スループットや IOPS についての読み取り、書き込み、および合計転送回数のパフォーマンス指標データが、 SSD と HDD で別々に表示されます。</block>
   <block id="e6d518267af76dc4ce9e2fadd8c3f25a" category="paragraph">クライアントのタイムゾーンやクラスタのタイムゾーンを変更すると、パフォーマンス指標のグラフも変わります。最新のグラフを表示するには、ブラウザの表示を更新してください。</block>
@@ -3961,7 +3770,6 @@ ONTAP で災害の発生後にデスティネーションボリュームをア�
   <block id="1d226977e25ff0748c81b0ef9156e807" category="summary">FlexGroup ボリュームを作成するときに、 FlexGroup ボリュームに関連付けるオプションを指定できます。</block>
   <block id="402229f8ce0167d0a78bbd044f5164cf" category="doc">System Manager - ONTAP 9.7 以前を使用して、 FlexGroup ボリュームのアドバンストオプションを指定します</block>
   <block id="97da1d3682fa19cce007f55dd00e9257" category="paragraph">FlexGroup ボリュームを作成するときに、 ONTAP System Manager クラシック（ ONTAP 9.7 以前でサポート）を使用して、 FlexGroup ボリュームに関連付けるオプションを指定できます。</block>
-  <block id="033b2063dda0545cbfd4fa75d02943a7" category="list-text">*オプション：* Create FlexGroup *ウィンドウで、をクリックします <block ref="03cbf9b997ad0db8d0ffb988950200e2" category="inline-image-macro-rx" type="image"></block> をクリックして、アドバンストオプションを指定します。</block>
   <block id="771c51fdfe14e209bbf3372e85216fc9" category="list-text">「 * 一般的な詳細」セクションで、スペースリザベーションとセキュリティ形式を選択し、ボリュームの UNIX 権限を設定します。</block>
   <block id="e722561c54240493896eff618531d51d" category="paragraph">次の制限事項に注意してください。</block>
   <block id="6a02b35da34c235f387235cad63d8572" category="list-text">スペースリザベーションオプションは、 FabricPool アグリゲートに対しては使用できません。</block>
@@ -4431,7 +4239,6 @@ ONTAP で災害の発生後にデスティネーションボリュームをア�
   <block id="53b4513f2c85f3042617d06afa7e6787" category="list-text">* プール *</block>
   <block id="a239d33c7781f7db89a7f5b78175b890" category="paragraph">選択したアレイ LUN が割り当てられているプールの名前が表示されます。</block>
   <block id="208cfd8d72838668e354af8a85fd9dcf" category="paragraph">アレイ LUN リストの下の領域には、選択したアレイ LUN に関する詳細情報が表示されます。</block>
-  <block id="cefd59017a4a065f49d52af021a7df7a" category="paragraph"><block ref="cefd59017a4a065f49d52af021a7df7a" category="inline-link-rx"></block></block>
   <block id="ff0f224e8e84ff31060820637ead03d3" category="summary">System Manager を使用して、ハードウェアキャッシュモジュールを管理できます。</block>
   <block id="fc127a3a51a884e1e04b66f7100eb154" category="doc">System Manager - ONTAP 9.7 以前を使用してハードウェアキャッシュを管理します</block>
   <block id="7b9cdbb20d7b7f588086eab7aa5c2913" category="paragraph">ONTAP System Manager クラシック（ ONTAP 9.7 以前で使用可能）を使用して、ハードウェアキャッシュモジュールを管理できます。</block>
@@ -4482,7 +4289,6 @@ ONTAP で災害の発生後にデスティネーションボリュームをア�
   <block id="1302257e569da026aa67b8e89db540a7" category="summary">System Manager を使用して、 MetroCluster 構成のクラスタを更新できます。クラスタの更新以外の処理は、すべて両方のクラスタで実行する必要があります。</block>
   <block id="a36ead175efb45759fee5f11ce0d539b" category="doc">MetroCluster 構成のクラスタを System Manager ONTAP 9.7 以前を使用して更新する</block>
   <block id="5b53589c41b3f02720bf43be353e0006" category="paragraph">ONTAP MetroCluster 構成のクラスタを更新するには、 System Manager クラシック（ ONTAP 9.7 以前で使用可能）を使用します。クラスタの更新以外の処理は、すべて両方のクラスタで実行する必要があります。</block>
-  <block id="e21d029f0ed2c65ab82ac9c0fa962f8d" category="image-alt">クラスタの MCC 構成を更新しています</block>
   <block id="06ad2274f297ab67ff2225385dc0f3e8" category="paragraph"><block ref="06ad2274f297ab67ff2225385dc0f3e8" category="inline-link-rx"></block></block>
   <block id="dbe63deae24a1ac56f258042500b3305" category="summary">System Manager を使用して、 Storage Virtual Machine （ SVM ）に iSCSI プロトコルを設定して、ブロックレベルのデータアクセスを提供できます。iSCSI LIF とポートセットを作成し、 LIF をポートセットに追加できます。最適なアダプタで LIF が作成され、データパスの冗長性を確保するためにポートセットに割り当てられます。</block>
   <block id="f5db4f9448aaa78931200f9e088d969e" category="doc">System Manager - ONTAP 9.7 以前を使用して、 SVM に iSCSI プロトコルを設定します</block>
@@ -5330,7 +5136,6 @@ ONTAP で災害の発生後にデスティネーションボリュームをア�
   <block id="13c1b8619e5d72fc421632cfdcc39164" category="summary">System Manager を使用して、ハイアベイラビリティ（ HA ）ペアのクラスタまたは個々のノードを更新できます。更新を実行するには、 ONTAP イメージを選択し、 HA ペアのクラスタまたは個々のノードを更新する準備ができているかどうかを確認してから、更新を実行します。</block>
   <block id="41900314c94464c2e9abd692d4c2e94a" category="doc">System Manager - ONTAP 9.7 以前を使用して、 MetroCluster 以外の構成のクラスタを更新します</block>
   <block id="7c32eebc5c66a11a9625082f47b48aae" category="paragraph">ONTAP System Manager クラシック（ ONTAP 9.7 以前で使用可能）を使用して、ハイアベイラビリティ（ HA ）ペアのクラスタまたは個々のノードを更新できます。更新を実行するには、 ONTAP イメージを選択し、 HA ペアのクラスタまたは個々のノードを更新する準備ができているかどうかを確認してから、更新を実行します。</block>
-  <block id="a641131755584229b6a82aeeabc83cdb" category="image-alt">クラスタを更新しています</block>
   <block id="d27a348a8a5fed8494cd123b1de658a7" category="summary">System Manager を使用して、 LDAP クライアント設定を追加、編集、削除できます。</block>
   <block id="6bdc6e23cb590c92f04dbf87942b2526" category="doc">ONTAP 9.7 以前の System Manager で LDAP クライアントサービスを設定します</block>
   <block id="1cc58ec3ba2b0eaeaf517b9ada71d80a" category="paragraph">ONTAP System Manager クラシック（ ONTAP 9.7 以前で使用可能）を使用して、 LDAP クライアント設定を追加、編集、および削除できます。</block>
@@ -5342,7 +5147,6 @@ ONTAP で災害の発生後にデスティネーションボリュームをア�
   <block id="d59c6b980e5f10012e7a6a8f810e2b53" category="list-text">SVM レベル： * SVM * &gt; * SVM 設定 * &gt; * LDAP クライアント * をクリックします。</block>
   <block id="8edf4fdc0a99903668ac5dc754e21f43" category="list-text">LDAP クライアントの名前を入力します。</block>
   <block id="0c5163f0f9f5192027f456fddded55c8" category="list-text">Active Directory ドメインまたは LDAP サーバのいずれかを追加します。</block>
-  <block id="7c8b08ce095003f9a8b15aef9ca913bf" category="list-text">をクリックします <block ref="03cbf9b997ad0db8d0ffb988950200e2" category="inline-image-macro-rx" type="image"></block> （詳細オプション）、 * スキーマ * を選択し、 * 適用 * をクリックします。</block>
   <block id="819aa7db437f104cac55b21e1b98c91f" category="list-text">[*Base DN*] と [*TCP Port*] を指定します。</block>
   <block id="fa19e45f0c7971c2a0a4dfe83b8694ac" category="list-text">バインド * をクリックし、認証の詳細を指定します。</block>
   <block id="c076e7171f87bf601582215d048e77ea" category="list-text">追加した LDAP クライアントが表示されていることを確認します。</block>
@@ -5572,7 +5376,6 @@ ONTAP で災害の発生後にデスティネーションボリュームをア�
   <block id="503e6a1d24532cf16b90068dcf9d0814" category="list-text">FlexCache ボリュームのサイズ変更 * ウィンドウで、 FlexCache ボリュームのサイズを変更するサイズを指定します。</block>
   <block id="2c228870bc26117c2bcc38d47fed7cbb" category="paragraph">デフォルトでは、既存のアグリゲートを使用して FlexCache ボリュームのサイズが変更されます。System Manager 9.6 以降では、ボリュームに対して許容される最大サイズがフィールドの横に表示されます。</block>
   <block id="ee06c3a75d2f90d528d0bdad6ee8b794" category="inline-link-macro">FlexCache ボリュームのアドバンストオプションの指定</block>
-  <block id="0141b877fcf49f33b47400dd7edb78c1" category="paragraph">新しいリソースを追加して FlexCache ボリュームを拡張する場合は、をクリックします <block ref="03cbf9b997ad0db8d0ffb988950200e2" category="inline-image-macro-rx" type="image"></block> （アドバンストオプション）。を参照してください <block ref="4f3fc931d92f22f55a489e2373f71d6c" category="inline-link-macro-rx"></block>。</block>
   <block id="689dc6ae2f8d54723af8baa6aff39f7d" category="list-text">FlexCache ボリュームのサイズを変更するには、 * Save * （保存）をクリックします。</block>
   <block id="921b80fe6e8cca2c6db98a54b19efc65" category="summary">System Manager を使用して、ボリュームの自動 Snapshot コピーを自動作成するスケジュールを設定できます。コピーを作成する時間と頻度を指定できます。保存する Snapshot コピーの数も指定できます。</block>
   <block id="836f907e1a3a35e35703941bae06b845" category="doc">System Manager ONTAP 9.7 以前を使用して、 Snapshot コピーの自動作成をスケジュールします</block>
@@ -5896,7 +5699,6 @@ ONTAP で災害の発生後にデスティネーションボリュームをア�
   <block id="da167c465aa599598b528deacafa47eb" category="list-text">サイズを変更する FlexGroup ボリュームを選択し、 * その他の操作 * &gt; * サイズ変更 * をクリックします。</block>
   <block id="fb7e107fc632fc3b47e98f65a2b1026f" category="list-text">FlexGroup ボリュームのサイズ変更 * ウィンドウで、 FlexGroup ボリュームのサイズを変更するサイズを指定します。</block>
   <block id="42812d45e8b6d5528bed4f0e674b503f" category="paragraph">デフォルトでは、既存のアグリゲートを使用して FlexGroup ボリュームのサイズが変更されます。System Manager 9.6 以降では、ボリュームに対して許容される最小サイズがフィールドの横に表示されます。</block>
-  <block id="8fc29799fa5d7d61b9fce4781993418c" category="paragraph">新しいリソースを追加して FlexGroup ボリュームを拡張する場合は、をクリックします <block ref="03cbf9b997ad0db8d0ffb988950200e2" category="inline-image-macro-rx" type="image"></block> （アドバンストオプション）。</block>
   <block id="dae0d20dbc1649cc1e11aab7858b03f2" category="list-text">Snapshot コピーリザーブの割合を指定します。</block>
   <block id="30743dc8da0a0156886a97e9699f314a" category="list-text">FlexGroup ボリュームのサイズを変更するには、 * サイズ変更 * をクリックします。</block>
   <block id="e6ade167bc69389f90ba21383b403cee" category="summary">ONTAP 9.4 以降では、 ONTAP ソフトウェアイメージをNetApp Support Siteからローカルフォルダにコピーできます。ONTAP 9.3 以前からのアップグレードの場合は、 ONTAP ソフトウェアイメージをネットワーク上の HTTP サーバまたは FTP サーバにコピーする必要があります。</block>
@@ -5984,7 +5786,6 @@ ONTAP で災害の発生後にデスティネーションボリュームをア�
   <block id="77cce86a4e36ee7f8b1df43dfe7261f3" category="list-text">スイッチバック処理を実行する前に、設定の変更がすべて完了している必要があります。これにより、ネゴシエートスイッチオーバーまたはスイッチバックの処理との競合が回避されます。</block>
   <block id="e05feb27d4f334232dd375e6020c3b53" category="section-title">MetroCluster スイッチオーバー / スイッチバックのワークフローフローチャート</block>
   <block id="8e33bcb19b3ebee0d06e874b21519678" category="paragraph">次のフローチャートは、スイッチオーバーとスイッチバックの処理を開始した場合に発生するフェーズとプロセスを示しています。</block>
-  <block id="d2433a156dea88c5bc9b3fe8dbe2183e" category="image-alt">スイッチオーバーのスイッチバックワークフロー</block>
   <block id="5a80ad07474cac4dee95efc76e8c6388" category="summary">ストレージの推奨事項に基づいてアグリゲートを作成できます。また、要件に応じてストレージを手動で作成することもできます。System Manager を使用して、 1 つ以上のボリュームにストレージを提供するための Flash Pool アグリゲート、 SnapLock アグリゲート、および FabricPool 対応アグリゲートを作成できます。</block>
   <block id="d08159a440a303f7b3b7c94dc1935c5a" category="doc">System Manager - ONTAP 9.7 以前を使用して、アグリゲートを使用してストレージをプロビジョニングします</block>
   <block id="f87363de91a44888ba803f5cb7e20111" category="paragraph">ONTAP System Manager クラシック（ ONTAP 9.7 以前で使用可能）を使用して、ストレージの推奨事項に基づいてアグリゲートを作成したり、要件に応じて手動でアグリゲートを作成したりできます。System Manager を使用して、 1 つ以上のボリュームにストレージを提供するための Flash Pool アグリゲート、 SnapLock アグリゲート、および FabricPool 対応アグリゲートを作成できます。</block>
@@ -6215,7 +6016,6 @@ ONTAP で災害の発生後にデスティネーションボリュームをア�
   <block id="9e007cde0294836d49fce82a0770d6fa" category="summary">ピアリングのセットアップでは、各ノードでクラスタ間論理インターフェイス（ LIF ）を作成してから、クラスタピア関係を作成し、 SVM ピア関係を作成します。</block>
   <block id="829111bc2f9e8438581c99c65c273ac5" category="doc">System Manager - ONTAP 9.7 以前を使用してピアリングをセットアップします</block>
   <block id="7e1817ade72aa48bb92d7c2ab07e88a1" category="paragraph">ピアリングの設定には、ONTAP System Managerクラシック（ONTAP 9.7以前で使用可能）を使用できます。ピアリングのセットアップでは、各ノードでクラスタ間論理インターフェイス（ LIF ）を作成してから、クラスタピア関係を作成し、 SVM ピア関係を作成します。</block>
-  <block id="6af8acc69bcdc16b7f8e5adeec4d8b16" category="image-alt">ピア関係の作成ワークフロー</block>
   <block id="48f1b7cd8c5e771ef4ce929e95a1d530" category="section-title">[[prerequisites- peering、Prerequisites]クラスタピアリングの前提条件]</block>
   <block id="6b6ad8c82295777d87897d52b0fa88f0" category="paragraph">クラスタピアリングを設定する前に、接続、ポート、 IP アドレス、サブネット、ファイアウォール、 とクラスタの命名要件が満たされている。</block>
   <block id="a8416e889da6102accaf0c0db08552a7" category="list-text">サブネットがクラスタ間通信で使用するポートを含むブロードキャストドメインに属している。</block>
@@ -6528,7 +6328,6 @@ ONTAP で災害の発生後にデスティネーションボリュームをア�
   <block id="7d613ace3ff4e6c511496c52961bf228" category="paragraph">クラウド階層の設定と管理には、 ONTAP System Manger クラシック（ ONTAP 9.7 以前で利用可能）を使用できます。データを複数の階層に格納すると、ストレージシステムの効率を高めることができます。ストレージ階層の管理には、 FabricPool 対応アグリゲートを使用します。クラウド階層には、アクセス頻度に基づいてデータが格納されます。</block>
   <block id="ef3e2551fede2086c67b6a8bf70db3c4" category="list-text">ONTAP 9.2 以降が実行されている必要があります。</block>
   <block id="d93c7ae1d0a683437e8cdf90782faccd" category="list-text">オールフラッシュ（オール SSD ）アグリゲートが必要です</block>
-  <block id="1d4f7d5b7c436f0c489b78bb854907f9" category="image-alt">FabricPool ワークフロー</block>
   <block id="3ea40fea2e95ba7ab2a868e8a7d9fb54" category="section-title">クラウド階層を追加します</block>
   <block id="6b7613736554701bbd26dc07c42dfa16" category="paragraph">System Manager を使用して、 SSD アグリゲートまたは仮想マシンディスク（ VMDK ）アグリゲートにクラウド階層を追加できます。クラウド階層は、使用頻度の低いデータ用のストレージとして利用できます。</block>
   <block id="98ee5417a1c5fcb1c3bee4ce46f259b8" category="list-text">オブジェクトストアに接続するためのアクセスキー ID とシークレットキーが必要です。</block>
@@ -6547,7 +6346,6 @@ ONTAP で災害の発生後にデスティネーションボリュームをア�
   <block id="da5a736d7934ea0fda310527ffdb4d23" category="paragraph">選択した内容に基づいて、 [ サービス名（ FQDN ） * ] フィールドにサーバエンドポイントが自動的に入力されます。</block>
   <block id="a1e9aeb6148784e4a0c8a4f989ead80b" category="list-text">クラウド階層のアクセスキー ID 、クラウド階層のシークレットキー、およびコンテナ名を指定します。</block>
   <block id="bd14d3410b286c3b639ecc238d233ca2" category="paragraph">AWS Commercial Cloud Service （ C2S ）をタイプとして選択した場合は、 CAP URL 、サーバ CA 証明書、およびクライアント証明書を指定する必要があります。</block>
-  <block id="71bffb6a33e98f88fab832116ed7dced" category="list-text">次のいずれかの設定を変更する場合は、 [ 詳細オプション ] アイコンをクリックします <block ref="03cbf9b997ad0db8d0ffb988950200e2" category="inline-image-macro-rx" type="image"></block> [ 拡張オプション * ] ダイアログウィンドウを表示して、変更を行うことができます。</block>
   <block id="466c4f4287d2b270a412473911428058" category="list-text">クラウド階層へのアクセスに使用するポート番号</block>
   <block id="f2a1cbf8ea8f7901f12aa799b104a80d" category="list-text">クラウド階層へのデータのセキュアな転送を可能にする * SSL * オプションを有効または無効にします</block>
   <block id="ff0167481b8bdc3a1e0af03f1a713dfa" category="list-text">*オプション：* StorageGRID 用のクラウド階層を追加する場合や、IBM Cloud Object Storage環境（Cleversafeなど）をFabricPool で使用する場合は、CA証明書を指定する必要があります。「 * オブジェクトストア証明書 * 」トグルボタンを移動し、証明書の内容をコピーして、 CA 証明書を指定します。次に、署名済み証明書に証明書の内容を貼り付けます。</block>
@@ -6694,7 +6492,6 @@ ONTAP で災害の発生後にデスティネーションボリュームをア�
   <block id="e074b06c6bcffc41130111700ce589f4" category="summary">リモートユーザが System Manager にログインする前にセキュアな Identity Provider （ IdP ；アイデンティティプロバイダ）を使用して認証されるように、 Security Assertion Markup Language （ SAML ；セキュリティアサーションマークアップ言語）認証をセットアップできます。</block>
   <block id="a30fa0b5cb2afd6f435aa35fc7ca5745" category="doc">System Manager - ONTAP 9.7 以前を使用して SAML 認証をセットアップします</block>
   <block id="782f1156076101990b814a229110b078" category="paragraph">ONTAP System Managerクラシック（ONTAP 9.7以前で使用可能）を使用して、Security Assertion Markup Language（SAML）認証をセットアップできます。リモートユーザは、 System Manager にログインする前に、セキュアなアイデンティティプロバイダ（ IdP ）を通じて認証されます。</block>
-  <block id="a1c17e9e89d922e43d5aa0884477d0b3" category="image-alt">MFA ワークフロー</block>
   <block id="bec16219366d2631eb9ed04aecabc005" category="section-title">SAML 認証を有効にする</block>
   <block id="a1e6388446604ac005b86b7f11abf1b0" category="paragraph">System Manager では、セキュアなアイデンティティプロバイダ（ IdP ）を使用してリモートユーザがログインできるように、 Security Assertion Markup Language （ SAML ）認証を設定できます。</block>
   <block id="a1036b59d73505365ef378243a1e483a" category="list-text">リモート認証に使用する IdP を設定する必要があります。</block>
@@ -6944,7 +6741,6 @@ ONTAP で災害の発生後にデスティネーションボリュームをア�
   <block id="2fd31c025fae94406db26f660b0bcce6" category="list-text">[ 続行 ] をクリックして、ファイルトレースプロセスを開始します。</block>
   <block id="10e8bbfe3840d1904e9ee75029024bb1" category="list-text">選択した SVM のファイルまたは共有へのアクセスに使用しているプロトコルを選択します。</block>
   <block id="0fddf3ba5354d0302fcdd3f1a444e4ab" category="list-text">[ * ユーザー名 * ] フィールドに、ファイルまたは共有にアクセスしようとしているユーザーの名前を入力します。</block>
-  <block id="243f1fd197bf7fa79315a076feaf79fa" category="list-text">* オプション： * クリック <block ref="03cbf9b997ad0db8d0ffb988950200e2" category="inline-image-macro-rx" type="image"></block> 詳細を指定してトレースの範囲を限定します。</block>
   <block id="a1d52fca6609f6ceae1e7b0dc368c1a2" category="paragraph">[ 詳細オプション ] ダイアログボックスでは、次の詳細を指定できます。</block>
   <block id="9430c8c9455d0a71e88758d5f0cb5f9c" category="list-text">* クライアント IP アドレス * ：クライアントの IP アドレスを指定します。</block>
   <block id="0a2be69058c2dadb60ef8bd4f7128b12" category="list-text">* ファイル * ：トレースするファイル名またはファイルパスを指定します。</block>
@@ -7779,7 +7575,6 @@ ONTAP System Manager のブラウザアクセスでサポートされるのは H
   <block id="96ef680007b9b6a4ed27f07ba3a181df" category="paragraph">ONTAP System Managerクラシック（ONTAP 9.7以前で使用可能）を使用して、SVMにNVMeプロトコルを設定できます。SVM で NVMe プロトコルを有効にすると、ネームスペースをプロビジョニングしてホストとサブシステムに割り当てることができます。</block>
   <block id="e23275ea7297d3239b7dd72d554793b1" category="paragraph">ONTAP 9.5 以降では、 NVMe プロトコルを使用する HA ペアの各ノードに対して、少なくとも 1 つの NVMe LIF を設定する必要があります。定義できる NVMe LIF の数はノードごとに 2 つまでです。NVMe LIF は、 System Manager を使用して SVM の設定を作成または編集するときに設定します。</block>
   <block id="1a169b0c93fde678e7545eea664d622c" category="paragraph">次の図は、 NVMe を設定するためのワークフローを示しています。</block>
-  <block id="f986c0d1608453a3100a148119f1f6d3" category="image-alt">NVMe のセットアップワークフロー</block>
   <block id="c8e9033e5faaaadf3419887a2963fcd3" category="summary">System Manager を使用して、 CIFS サーバを有効にして、 CIFS クライアントがクラスタ内のファイルにアクセスできるようにすることができます。</block>
   <block id="76a6394ebba69d649eac839a06da71d9" category="doc">System ManagerでのCIFSプロトコルの設定- ONTAP 9.7以前</block>
   <block id="8ddabe3ae143d491ee852f8d59f2a3dd" category="paragraph">ONTAP System Manager クラシック（ ONTAP 9.7 以前で使用可能）を使用して、 CIFS サーバを有効にして、 CIFS クライアントがクラスタ上のファイルにアクセスできるように設定することができます。</block>
@@ -7921,10 +7716,8 @@ ONTAP System Manager のブラウザアクセスでサポートされるのは H
   <block id="7afec9c2554738ce7a7de58297d6c030" category="paragraph">System Manager 9.6 以降では、 FlexGroup DP ボリュームの名前も変更できます。</block>
   <block id="a3bd68f70522585bc51163fa9590fa4e" category="list-text">*オプション：* encrypted *オプションを有効にして、ボリュームの暗号化を有効にします。</block>
   <block id="82420e9f127f5641742dbb7e880fabbe" category="inline-link-macro">FlexGroup ボリュームのアドバンストオプションの指定</block>
-  <block id="9ee319675caed914c3f8a3702fba2502" category="list-text">* オプション： * クリック <block ref="03cbf9b997ad0db8d0ffb988950200e2" category="inline-image-macro-rx" type="image"></block> FlexGroup ボリュームの設定を変更します。を参照してください <block ref="07a83aa5aab69a8b3aaebefbf523161a" category="inline-link-macro-rx"></block>。</block>
   <block id="4e5dab7015140f89b3c6813a37296dca" category="list-text">FlexGroup ボリュームのサイズを変更するサイズを指定します。</block>
   <block id="dc9d37a202e296240d704411fe802886" category="paragraph">デフォルトでは、既存のアグリゲートを使用して FlexGroup ボリュームのサイズが変更されます。ボリュームに対して許容される最小サイズがサイズのフィールドの横に表示されます。</block>
-  <block id="6992875b19c0688c37cf36118301e391" category="paragraph">新しいリソースを追加して FlexGroup ボリュームを拡張する場合は、をクリックします <block ref="03cbf9b997ad0db8d0ffb988950200e2" category="inline-image-macro-rx" type="image"></block> （アドバンストオプション）。を参照してください <block ref="07a83aa5aab69a8b3aaebefbf523161a" category="inline-link-macro-rx"></block>。</block>
   <block id="36336ab4893fca29807b6c8d48e5d614" category="summary">System Manager を使用して、ネームマッピングエントリを指定し、異なるプラットフォームのユーザをマッピングできます。</block>
   <block id="94b62c27be996324d0173ca83ba2629b" category="doc">System Manager を使用したネームマッピング - ONTAP 9.7 以前</block>
   <block id="cee4c228dbc1bd4065b40bb31f18464c" category="paragraph">ONTAP System Manager クラシック（ ONTAP 9.7 以前で使用可能）を使用して、ネームマッピングエントリを指定し、異なるプラットフォームのユーザをマッピングできます。</block>
@@ -8367,68 +8160,6 @@ ONTAP System Manager のブラウザアクセスでサポートされるのは H
   <block id="6554454b0b446406d68531c90f523542" category="paragraph">ディスクタイプの混在やディスク rpm の混在など、 RAID の混在オプションが RAID グループに対して有効になっている場合は、 アグリゲートの既存のディスクのディスクタイプとディスク rpm は、互換性があるスペアを取得するために使用されるスペアディスクの有効なディスクタイプと有効なディスク rpm と一致します。</block>
   <block id="3c7ac17931d7b7b66cf7c263fc1c828c" category="inline-xref-macro">データディスクを追加しています</block>
   <block id="b43496159a45e73d14c7489b1036d050" category="paragraph"><block ref="b43496159a45e73d14c7489b1036d050" category="inline-xref-macro-rx"></block></block>
-  <block id="17b6d0d254f588212107e44b9311cacd" category="summary">System Manager を使用して、ストレージシステムのヘルスモニタに役立つ AutoSupport 通知を設定できます。</block>
-  <block id="a75e8acf7cda75c2cae76c182cea9cc1" category="doc">System Manager - ONTAP 9.7 以前を使用して、 AutoSupport 通知を管理します</block>
-  <block id="65cb7b95d3e9511248e4d454f7a1000b" category="paragraph">ONTAP System Manager クラシック（ ONTAP 9.7 以前で使用可能）を使用して、ストレージシステムの健常性の監視に役立つ AutoSupport 通知を設定できます。</block>
-  <block id="f53ffe37b23382fbc1ab9e0ff74a9ca1" category="section-title">AutoSupport 通知を設定する</block>
-  <block id="899866a691c80f26e2daef7ca4226aa1" category="paragraph">System Manager の Edit AutoSupport Settings dialog box を使用して、 E メール通知の送信に使用する E メールアドレスを指定し、複数の E メールホスト名を追加することで、 AutoSupport 通知を設定できます。</block>
-  <block id="5201d100a8e314b3fbeeacae19e521d3" category="list-text">ノードを選択し、 * Edit * をクリックします。</block>
-  <block id="687a771b0731f71db5005ea461393c80" category="list-text">[*Email Recipient*] タブで、電子メール通知の送信元の電子メールアドレスを入力し、電子メール受信者と各電子メール受信者のメッセージコンテンツを指定して、メールホストを追加します。</block>
-  <block id="b3993d767356f296d9ae01951029b2e8" category="paragraph">ホスト名の E メールアドレスは 5 つまで追加できます。</block>
-  <block id="256162f8692cabf4b90ce635f28d203d" category="list-text">[* Others * （その他 * ） ] タブで、電子メールメッセージを配信する転送プロトコルをドロップダウンリストから選択し、 HTTP または HTTPS プロキシサーバの詳細を指定します。</block>
-  <block id="f8095d0bd0b763a9801c727b7b9c9e2c" category="list-text">AutoSupport 通知用に設定した設定が、 * AutoSupport * ウィンドウで正しく設定されていることを確認します。</block>
-  <block id="7cfccaa9582383c3fb3502dee8cd8fa0" category="section-title">AutoSupport 設定を有効または無効にします</block>
-  <block id="4a25ae18d6356c3e2e94389495282dca" category="paragraph">System Manager を使用して、ストレージシステムで AutoSupport 設定を有効または無効にすることができます。AutoSupport メッセージを使用すると、ストレージシステムのヘルスを監視したり、テクニカルサポートや社内のサポート部門に通知を送信したりできます。</block>
-  <block id="0403edc618662f219efdb5cec6ce921d" category="paragraph">AutoSupport オプションはデフォルトで有効になっています。</block>
-  <block id="a178fec1a73600346ab5639de318ab04" category="list-text">ノードを選択し、 * Enable * または * Disable * をクリックします。</block>
-  <block id="8a9933d1b53dd6f17d6ec97c4891fc28" category="list-text">AutoSupport のステータスに変更内容が正しく表示されることを確認します。</block>
-  <block id="05e7844ebc444b6fad146ea35ed30693" category="section-title">AutoSupport E メール受信者を追加します</block>
-  <block id="d16928f0be7c6d00043db7f8f698713f" category="paragraph">System Manager の AutoSupport 設定の編集ダイアログボックスの * E メール受信者 * タブを使用して、 AutoSupport 通知の受信者の E メールアドレスを追加できます。</block>
-  <block id="2fb66b8ac10e5a7bcdd7a6b1230f7634" category="list-text">[ 電子メール受信者 *] タブで、電子メール受信者のアドレスを入力し、受信者が完全なメッセージと短いメッセージのどちらを受信するかを指定して、 [ * 追加 ] をクリックします。</block>
-  <block id="12ddeca8b6e6bc6719229aed2ca28f10" category="list-text">指定した詳細が * AutoSupport * ウィンドウに表示されていることを確認します。</block>
-  <block id="59141343290d3909b8aaa7db97777945" category="section-title">AutoSupport 設定をテストします</block>
-  <block id="32568cbbe429ec99cc04958091170933" category="paragraph">System Manager の AutoSupport テストダイアログボックスを使用して、 AutoSupport が正しく設定されていることをテストできます。</block>
-  <block id="ecdef053776ef467659a2f7843d75970" category="list-text">ノードを選択し、 * Test * をクリックします。</block>
-  <block id="e8fd5a221ba9aaf9f296550b6f84c874" category="list-text">[* AutoSupport Test* ] ダイアログ・ボックスで、 AutoSupport の件名に「 Test AutoSupport 」と入力するか、 AutoSupport の設定をテストしていることを受信者に知らせる任意のテキストを入力します。</block>
-  <block id="e5e2f833538b1021bce60cd294a0b820" category="list-text">[ * テスト * ] をクリックします。</block>
-  <block id="b4df96ee5421c196535d968ddf8dcdbf" category="paragraph">「 Test AutoSupport 」という件名の電子メールメッセージ、または「 AutoSupport subject 」フィールドに入力したテキストが、指定した受信者に送信されます。</block>
-  <block id="f8ac418fe34a9d032d82e1a5fe1cc538" category="section-title">AutoSupport データを生成します</block>
-  <block id="d7c288e747ce8081bd029cb8110b915a" category="paragraph">System Manager を使用して 1 つまたは複数のノードの AutoSupport データを生成することで、それらのヘルスを監視したり、テクニカルサポートに通知を送信したりできます。</block>
-  <block id="560b99032ab2ade2fd44293f30542881" category="list-text">ノードを選択し、 * AutoSupport Request* &gt; * AutoSupport 生成 * をクリックします。</block>
-  <block id="b4c58686dbd257d5a4c2cfc900c2fffe" category="paragraph">デフォルトでは、すべてのノードの AutoSupport データが生成されます。</block>
-  <block id="66901fe22b1302d615fd6a33ce3ed2a1" category="list-text">[Generate AutoSupport * （ * 生成ツール * ） ] ダイアログボックスで、次の手順を実行します。</block>
-  <block id="907fe6e970abae806b1c310cc8ebfe5b" category="list-text">特定のノードの AutoSupport データを生成する場合は、 [ すべてのノードの AutoSupport データを生成する *] チェックボックスをオフにして、ノードを選択します。</block>
-  <block id="fe9737666daea356168fe09824dd7c16" category="list-text">ケース番号を入力します。</block>
-  <block id="cf4ac7ce33a0d726953e3d5617ce159f" category="list-text">[* 確認 * （ * Confirmation * ） ] ダイアログボックスで、 [OK] をクリックします。</block>
-  <block id="44922bc3fbbb78111c1b1d7f3f6a16d5" category="section-title">AutoSupport の概要を表示します</block>
-  <block id="180585c2bf107777563ef87199b3a128" category="paragraph">System Manager を使用して以前のすべての AutoSupport データのステータスと詳細を表示することで、テクニカルサポートに送信されたデータを確認することができます。また、ストレージシステムの健常性やパフォーマンスに関する情報も確認できます。</block>
-  <block id="40e9b033a605f4b9e70b7533dbe4cc68" category="list-text">ノードを選択し、 * AutoSupport Request* &gt; * View Previous Summary * をクリックします。</block>
-  <block id="ec319ea6d5029219f5360564e39bce20" category="paragraph">すべてのノードの AutoSupport データが表示されます。</block>
-  <block id="7cd2400c36efced648da662ee35c50db" category="section-title">AutoSupport の重大度のタイプ</block>
-  <block id="481b198660a6150c43056f34d7e2cf2e" category="paragraph">AutoSupport メッセージには、各メッセージの目的を示す重大度のタイプが設定されます。たとえば、緊急の問題にすぐに対処する場合や、情報提供のみを目的とした場合などです。</block>
-  <block id="696cbc725f30685e5fa8ce370d6f6954" category="paragraph">メッセージには次のいずれかの重大度が設定されます。</block>
-  <block id="581092a5673e91e014d76b69ceebdf33" category="list-text">* 警告 * ：アラートメッセージは、何らかの処置を行わないと、より高いレベルのイベントが発生する可能性があることを示します。</block>
-  <block id="e2187f9725fb45cce9f73beddfb887f4" category="paragraph">アラートメッセージに対しては、 24 時間以内に対処を行う必要があります。</block>
-  <block id="742c1bb29d3105108b3c147111efab2e" category="list-text">* 緊急 * ：システム停止が発生すると、緊急メッセージが表示されます。</block>
-  <block id="deadcded381dc54c5b4315a60e438efb" category="paragraph">緊急メッセージに対しては、すぐに対処する必要があります。</block>
-  <block id="0f8ace2d00677452acebed4ac5f08f28" category="list-text">* エラー * ：エラー状態は、無視した場合に発生する可能性がある問題を示します。</block>
-  <block id="bda1600937310f07d4e989c02fc850f5" category="list-text">* 通知 * ：通常の状態だが重要な状態。</block>
-  <block id="915f01d0c8edc0c91010fd08de60d06e" category="list-text">* 情報 * ：情報メッセージは、問題に関する詳細情報を提供しますが、これは無視してかまいません。</block>
-  <block id="5c1133334cd09acd3c04f0c1c5901533" category="list-text">* デバッグ *: デバッグレベルのメッセージには、実行する必要がある手順が記載されています。</block>
-  <block id="da1e3514a2d926808d163915057fbecc" category="paragraph">社内のサポート部門が AutoSupport メッセージを E メールで受信する場合、重大度は E メールメッセージの件名に表示されます。</block>
-  <block id="6bcf33de034389db3d5853162953d505" category="section-title">AutoSupport ウィンドウ</block>
-  <block id="1a7d77c8e798bc441a5334c9355a45d5" category="paragraph">AutoSupport ウィンドウでは、システムの現在の AutoSupport 設定を確認できます。システムの AutoSupport 設定を変更することもできます。</block>
-  <block id="359380a3c78af945b2ae90f815244396" category="paragraph">AutoSupport 通知を有効にします。* Enable * がデフォルトです。</block>
-  <block id="da870272b32f4cbfade1d5a90b8e3f29" category="paragraph">AutoSupport 通知を無効にします</block>
-  <block id="2e7e65a7e342af7e8e9f4a5bd5546e80" category="list-text">* テスト *</block>
-  <block id="e5ff12d5fe310fb00a01d79c857e3012" category="paragraph">AutoSupport テストダイアログボックスを開きます。このダイアログボックスで、 AutoSupport テストメッセージを生成できます。</block>
-  <block id="c17beda1e1f2784da4409798c0b828aa" category="list-text">* AutoSupport リクエスト *</block>
-  <block id="9efb97efa656bf8b294b9560fa48f2e3" category="paragraph">次の AutoSupport 要求を実行します。</block>
-  <block id="f7b81a92807ea0daac699e3be8d2f1a8" category="list-text">* AutoSupport を生成 *</block>
-  <block id="5f6eee0f282fb718d0b02e1081963d06" category="paragraph">選択したノードまたはすべてのノードの AutoSupport データを生成します。</block>
-  <block id="4db536d8e0d23affd53ff50f18315229" category="list-text">* 前の概要を表示 *</block>
-  <block id="49edbf7f86eb853da37612c4c1c8c81b" category="paragraph">以前のすべての AutoSupport データのステータスと詳細を表示します。</block>
-  <block id="85d7a739c6bad7aa6a52aeb9d15d8dc7" category="paragraph">詳細領域には、ノード名、 AutoSupport のステータス、使用される転送プロトコル、プロキシサーバの名前など、 AutoSupport の設定情報が表示されます。</block>
   <block id="cf18771d2723aa8f45b649802cca21bb" category="summary">System Manager を使用して単一のアグリゲート内のデータをリアルタイムでミラーすることで、データを保護し、耐障害性を高めることができます。アグリゲートをミラーすると、ディスクおよびアレイ LUN への接続における単一点障害が排除されます。</block>
   <block id="082fcd43395a78c9af7e1c1aede841c9" category="doc">System Manager ONTAP 9.7 以前を使用してアグリゲートをミラーリングします</block>
   <block id="7320e70f830697cfb3f68adab3cec989" category="paragraph">ONTAP System Manager 従来型（ ONTAP 9.7 以前で利用可能）を使用すると、単一のアグリゲート内でデータをリアルタイムでミラーリングすることで、データを保護し、耐障害性を高めることができます。アグリゲートをミラーすると、ディスクおよびアレイ LUN への接続における単一点障害が排除されます。</block>
@@ -9021,7 +8752,6 @@ ONTAP System Manager のブラウザアクセスでサポートされるのは H
   <block id="56f7090374da6c285faf44a2d3d36387" category="paragraph">データ転送に失敗するほとんどの場合、このフィールドには<block ref="bafd7322c6e97d25b6299b5d6fe8920b" prefix=" " category="inline-code"></block>。ただし、エラーが発生した場合は、フィールドに<block ref="93cba07454f06a4a960172bbd6e2a435" prefix=" " category="inline-code"></block>。「詳細」セクションの転送エラーを確認して、データ転送が失敗していないことを確認する必要があります。</block>
   <block id="d984d9c45d9cc749d08f539d70415f1c" category="list-text">遅延時間は転送スケジュールの間隔よりも短い必要があります。</block>
   <block id="84ab02685a1be3ebfb0d9fdcdebd3620" category="paragraph">たとえば、転送スケジュールが 1 日ごとの場合、遅延時間は 1 日未満でなければなりません。</block>
-  <block id="1eeba1edb754efde0f9cecd9c594e61f" category="image-alt">sv を監視します</block>
   <block id="f54fe60c5cda1542fbcb4223ed181b1a" category="summary">SnapVault バックアップを作成するには、ピア関係にあるそれぞれのクラスタのソースボリュームとデスティネーションボリュームの間で SnapVault 関係を作成する必要があります。</block>
   <block id="681b555578c6300aa44915faa6e62624" category="doc">SnapVault 関係の作成（ ONTAP 9.3 以降）</block>
   <block id="111d55d127c8b160f91a1ed2a3d66659" category="list-text">バックアップするボリュームを選択し、 * Actions * &gt; * Protect * をクリックします。</block>
@@ -9035,17 +8765,13 @@ ONTAP System Manager のブラウザアクセスでサポートされるのは H
   <block id="0e4bdb912795a75f20bb4cf92e12ede0" category="list-text">[ 保護スケジュール ] を選択します。</block>
   <block id="8a29542fd88167bed5c273f4dfaf8a32" category="paragraph">デフォルトでは、が表示されます<block ref="bea79186fd7af2da67e59b4b15df5a26" prefix=" " category="inline-code"></block> スケジュールが選択されています。</block>
   <block id="a2c37d2ba543d4b2fa6945958d1b06a6" category="paragraph">デフォルトでは、すべてのデータ保護関係が初期化されます。</block>
-  <block id="cdce3cfd69d3c04640402322214fbd7b" category="image-alt">SnapVault の詳細オプション</block>
   <block id="ad4cee41b42d5d1487fc368bacee9035" category="list-text">[* Volumes] ： [Protect Volumes] ページで、 [* Validate] をクリックして、ボリュームに SnapMirror ラベルが一致するかどうかを確認します。</block>
   <block id="15b9d1ba7d09ca92877eccf7c8dc834c" category="list-text">[ 保存（ Save ） ] をクリックして、 SnapVault 関係を作成します。</block>
   <block id="8692227f3e95b2f8bebdf8e94baa86d2" category="list-text">SnapVault関係のステータスが<block ref="d34e79870b17da17e894ddc837954dcc" prefix=" " category="inline-code"></block> 状態。</block>
   <block id="9c53011af7d95ac75de04cec46ecb8d2" category="list-text">[*Volumes] ウィンドウに移動し、バックアップされたボリュームを選択します。</block>
   <block id="94b31a2df9b136cec0223f40179bf9fa" category="list-text">ボリュームを展開し、 * protection * をクリックして、ボリュームのデータ保護ステータスを表示します。</block>
-  <block id="0acbaa58e2a15a8cfdca743b66a7589f" category="image-alt">SnapVault 9 3.</block>
   <block id="7b1a6834c9e6f565e0e67a08da561eb0" category="summary">SnapVault テクノロジを使用したデータ保護の設定を開始する前に、ソースクラスタとデスティネーションクラスタがピアとして設定され、ピア関係を通じて相互に通信していることを確認する必要があります。また、ソース SVM とデスティネーション SVM がピアとして設定され、ピア関係を通じて相互に通信していることも確認する必要があります。</block>
   <block id="1d2c5f3cf91a6ac4437d06b0d35f22aa" category="doc">クラスタピア関係と SVM ピア関係を確認</block>
-  <block id="9aaabaf6b02ac9896ad51eeefe73cf8f" category="image-alt">クラスタ・荷台 930 のバックアップ</block>
-  <block id="c78e5ac9d023c52ba5fef3f2b6285cf3" category="image-alt">クラスタピアヘルスバックアップ</block>
   <block id="d9754d70c58cd9e08660aa07fe333726" category="paragraph">この領域にピア関係にある SVM が表示されない場合は、 SnapVault 関係を作成するときに SVM ピア関係を作成できます。</block>
   <block id="71d1ddff7dfe7c5d5d498435abd07d64" category="inline-xref-macro">SnapVault 関係の作成（ ONTAP 9.2 以前）</block>
   <block id="7aba3f692e5d868662f8bb21f2d6b326" category="paragraph"><block ref="7aba3f692e5d868662f8bb21f2d6b326" category="inline-xref-macro-rx"></block></block>
@@ -9053,17 +8779,13 @@ ONTAP System Manager のブラウザアクセスでサポートされるのは H
   <block id="7b54a4baecee8025c7a584063b284860" category="list-text">バックアップするボリュームを選択し、 *Protect をクリックします。</block>
   <block id="46a75c55e1d18259e0d99ca1a2d6e6dc" category="list-text">デフォルトのボリューム名を使用するか、新しいボリューム名を入力します。</block>
   <block id="290b5b3199ef348f9cbd79b99c5bb958" category="list-text">[ 重複排除を有効にする *] チェックボックスがオンになっていることを確認します。</block>
-  <block id="31cb8a9c222dc79d8a607e91c2ec5087" category="image-alt">デスティネーションボリュームの SnapVault</block>
   <block id="853eaceca4495bec215242975ab75a5c" category="list-text">[構成の詳細]*セクションで、<block ref="a56c1780b810accc7f0bc23193dc16aa" prefix=" " category="inline-code"></block> を使用します。</block>
   <block id="aff39a5b1ae1c8209559a8d4f0ddc867" category="list-text">ベース Snapshot コピーを転送するために * Initialize Relationship * チェックボックスが選択されていることを確認し、 * Create * をクリックします</block>
-  <block id="0d1bc641bee3f79300dd2bd71a01cd61" category="image-alt">Config Details SnapVault の略</block>
   <block id="02a06f3e8dce89d13793f3516c1397b5" category="paragraph">指定したバックアップポリシーとスケジュールを使用して関係が作成されます。関係が初期化されて、ソースボリュームからデスティネーションボリュームへのデータのベースライン転送が開始されます。</block>
   <block id="9ed2c9c51f61eff07d1309d3b0a092ab" category="paragraph">[ ステータス ] セクションには、各ジョブのステータスが表示されます。</block>
-  <block id="571a6fbf06fcab2eacce2bf9f22f7d14" category="image-alt">SnapVault の作成が完了しました</block>
   <block id="12e1c92f78e02c7c7176879151b9f047" category="list-text">SnapVault関係のステータスが<block ref="d34e79870b17da17e894ddc837954dcc" prefix=" " category="inline-code"></block> 状態。</block>
   <block id="0a1f8ccbf1c3a92e6cf0a2fab027e9d7" category="list-text">ボリュームリストからボリュームを選択し、 * データ保護 * をクリックします。</block>
   <block id="ede5499c007334976c473361dd3cae93" category="list-text">下部の*[データ保護]*タブで、作成したSnapMirror関係がリストに表示され、関係の状態が<block ref="d34e79870b17da17e894ddc837954dcc" prefix=" " category="inline-code"></block> タイプはです。<block ref="5b70a213f150f01f0776fa9481ef2ddf" prefix=" " category="inline-code"></block>。</block>
-  <block id="88a39d6a7af7f65fcb4ad6f3ff576d67" category="image-alt">データ保護ウィンドウ sv</block>
   <block id="0dda7a83024c1a48482d48cb5cc0197e" category="summary">SnapVault バックアップ関係の設定では、クラスタピア関係を確認し、ソースボリュームとデスティネーションボリュームの間に SnapVault 関係を作成し、 SnapVault 関係を監視します。</block>
   <block id="2f17efffc575aac669d2b6d5b6e3ce0c" category="doc">SnapVault バックアップの設定ワークフロー</block>
   <block id="33d698c5405b59cf282a091b0fab54f4" category="image-alt">この図は SnapVault バックアップの設定ワークフローのフローチャートを示したものです。ワークフローの各手順はトピックに対応しています。</block>
@@ -9097,7 +8819,6 @@ ONTAP System Manager のブラウザアクセスでサポートされるのは H
   <block id="6a1430dbf84d6dc23f417c150bfc22be" category="sidebar">System Manager Classic のドキュメント</block>
   <block id="8cd255c7908d433af7a81a9f59fbc06b" category="sidebar">System Manager 9.6 および 9.7 を使用したクラスタ管理</block>
   <block id="c8db31d0d38042ea4fd10dd6bdfd347e" category="sidebar">ONTAP のドキュメント</block>
-  <block id="d648f2a68a54fd1b3329efc3cf24d29c" category="sidebar">法的通知</block>
   <block id="0fe674cba26a6125717793de11bb3096" category="sidebar">クラスタ拡張管理</block>
   <block id="3b878279a04dc47d60932cb294d96259" category="sidebar">概要</block>
   <block id="28ed8622e2b3c95e29e6f443b5b6cd84" category="sidebar">LUN を初期化してフォーマット</block>
@@ -9946,4 +9667,39 @@ ONTAP System Manager のブラウザアクセスでサポートされるのは H
   <block id="b1ddb251aa66bea48e797b1ba2490583" category="sidebar">ネットワークに関する一般的なトピック（ONTAP 9.7以前）</block>
   <block id="a29d5547f6b6a3eb59e3d47cdb1c8b3e" category="sidebar">ブロードキャストドメイン（ONTAP 9.7以前）</block>
   <block id="d7f29243972dcd66136a878c3167ee3a" category="sidebar">NASパスのフェイルオーバーについて（ONTAP 9.7以前）</block>
+  <block id="31a492c1ac21a132d45144f6d5949a5a" category="paragraph"><block ref="2cd65b4a044075cfd9ad4a91f42fdff4" category="inline-link-macro-rx"></block> <block ref="5e764cc3fdcc19ff667796e414159bdc" category="inline-link-macro-rx"></block> <block ref="561451f09c7bca700ea0d7833cd9e92e" category="inline-link-macro-rx"></block> <block ref="d23d341a344216fbf99a91152429d49c" category="inline-link-macro-rx"></block> <block ref="b35e8fbd7b0369b23734510994911ec4" category="inline-link-macro-rx"></block> <block ref="41d4305cf7a6acb595086f123121a781" category="inline-link-macro-rx"></block> <block ref="ea685649fabe77da53e843fec56f72b8" category="inline-link-macro-rx"></block></block>
+  <block id="021e58ded68582927279871a5a249d56" category="inline-image-macro">[詳細オプション]アイコン</block>
+  <block id="e942e17609bdfacf699e4326db9a5c6c" category="list-text">（詳細オプション）をクリックし<block ref="6c20450af8e0cd46e0829c03c729b979" category="inline-image-macro-rx" type="image"></block>、*スキーマ*を選択して*適用*をクリックします。</block>
+  <block id="71d3f2fbd3f099e5e4004ce407520fc5" category="image-alt">MetroClusterスイッチオーバーとスイッチバックのワークフローフローチャート</block>
+  <block id="0a8898c3a5c1c7dfcdf9a1ea89ba1371" category="image-alt">NVMeのセットアップワークフロー</block>
+  <block id="c92735279096095430f4ba8938a4625a" category="image-alt">クラスタカンキヨウノセツトアツフワアクフロオ</block>
+  <block id="0932f3e300e26042e0464118925831e7" category="image-alt">System Managerを使用してMetroCluster構成のクラスタを更新</block>
+  <block id="2138adc51055649c980ae237aae09678" category="image-alt">System Managerを使用してMetroCluster以外の構成のクラスタを更新する</block>
+  <block id="58eb14d339cce9656dd664894d1bed13" category="image-alt">System Managerヲシヨウシタクラウトカイソウノセツテイトカンリノワクフロ</block>
+  <block id="0f996dc5a102ad4590e9c4a6a1b2bea6" category="list-text">次のいずれかの設定を変更する場合は、[詳細オプション]アイコンをクリックし<block ref="6c20450af8e0cd46e0829c03c729b979" category="inline-image-macro-rx" type="image"></block>て*[詳細オプション]ダイアログウィンドウを表示し、変更を行うことができます。</block>
+  <block id="b9749ab015e0a86ac53cf1e8355b0463" category="list-text">特定のアグリゲートを指定する場合は、（アドバンストオプション）をクリックします<block ref="6c20450af8e0cd46e0829c03c729b979" category="inline-image-macro-rx" type="image"></block>。</block>
+  <block id="6b4f7970ed14ffcd2cd01a5bcad00df4" category="list-text">*オプション：*クリックする<block ref="6c20450af8e0cd46e0829c03c729b979" category="inline-image-macro-rx" type="image"></block>と、FlexCacheボリュームの詳細設定が変更されます。を参照してください <block ref="01d1f9ee7eafcb47c4d200eceb73ffd6" category="inline-link-macro-rx"></block>。</block>
+  <block id="66a8e1c221410e093d9f8952f96aa718" category="list-text">*オプション：*クリックする<block ref="6c20450af8e0cd46e0829c03c729b979" category="inline-image-macro-rx" type="image"></block>と、FlexGroupボリュームの設定が変更されます。を参照してください <block ref="07a83aa5aab69a8b3aaebefbf523161a" category="inline-link-macro-rx"></block>。</block>
+  <block id="12f0ba62a35184ad78e46495aed599c3" category="paragraph">新しいリソースを追加してFlexGroupボリュームを拡張する場合は、（アドバンストオプション）をクリックします<block ref="6c20450af8e0cd46e0829c03c729b979" category="inline-image-macro-rx" type="image"></block>。を参照してください <block ref="07a83aa5aab69a8b3aaebefbf523161a" category="inline-link-macro-rx"></block>。</block>
+  <block id="bd2994eecdfc948859d61e5e8af39d76" category="paragraph">新しいリソースを追加してFlexCacheボリュームを拡張する場合は、（アドバンストオプション）をクリックします<block ref="6c20450af8e0cd46e0829c03c729b979" category="inline-image-macro-rx" type="image"></block>。を参照してください <block ref="4f3fc931d92f22f55a489e2373f71d6c" category="inline-link-macro-rx"></block>。</block>
+  <block id="1c2bb56fbb6f256a844ce48503a61592" category="paragraph">新しいリソースを追加してFlexGroupボリュームを拡張する場合は、（アドバンストオプション）をクリックします<block ref="6c20450af8e0cd46e0829c03c729b979" category="inline-image-macro-rx" type="image"></block>。</block>
+  <block id="4f0cd92236bc3ee5c59393dcb1cd46c4" category="image-alt">ONTAP System Managerヲシヨウシタクラスタノセットアップワークフロー</block>
+  <block id="34db6f0144d3faddcec6503e7b19a934" category="image-alt">ピアリングノセットアップワークフロー</block>
+  <block id="10fb5742f027d94f2d9a2be7a521980a" category="image-alt">System ManagerでSAML認証を設定するためのワークフロー</block>
+  <block id="ac406f7b3ac832289490a9928155e573" category="list-text">*オプション：*[Edit FlexCache volume]*ウィンドウで、をクリックし<block ref="6c20450af8e0cd46e0829c03c729b979" category="inline-image-macro-rx" type="image"></block>て詳細オプションを指定します。</block>
+  <block id="22c88cbfb69451eb5b1700c79078a2e8" category="list-text">*オプション：*[ FlexGroupの作成]ウィンドウで、をクリックし<block ref="6c20450af8e0cd46e0829c03c729b979" category="inline-image-macro-rx" type="image"></block>て詳細オプションを指定します。</block>
+  <block id="a4f2dcacb59f6247563b33c78abb9af7" category="list-text">*オプション：*クリックし<block ref="6c20450af8e0cd46e0829c03c729b979" category="inline-image-macro-rx" type="image"></block>て詳細を指定し、トレースの範囲を絞り込みます。</block>
+  <block id="98ff9d400ff71b78fe9bd8396d181d0c" category="image-alt">[設定][デスティネーションボリューム]タブ（[重複排除を有効にする]チェックボックス）</block>
+  <block id="c8c7c1580ea9ee0164932b98ebbba6e9" category="image-alt">[設定の詳細]タブと[関係の初期化]チェックボックス</block>
+  <block id="a39ef4a00faaede12888a132ba359f72" category="image-alt">[保護関係の作成]タブに各ジョブのステータスが表示された[ステータス]セクションが表示される</block>
+  <block id="0ff83997287948cdae3d09fc1f872456" category="image-alt">データ保護の下部のタブ</block>
+  <block id="39c95ce3156249f19819bd55058330d0" category="image-alt">SnapVaultの[詳細オプション]タブ</block>
+  <block id="7574361a6adbb68646e2913372161dd6" category="image-alt">ボリュームのデータ保護ステータスを示す[ボリューム]ウィンドウ</block>
+  <block id="d0ab8e4cbb595e3b42eea0ebaa196387" category="image-alt">SnapVault関係のステータス</block>
+  <block id="b49af746329694d471b02754b346b2e1" category="image-alt">ピアクラスタの検証</block>
+  <block id="f1708c3087f0b9656f84ffb11ef5f176" category="image-alt">[Cluster Peers]セクションを表示する[Cluster details]ペインで、ピアクラスタが認証済みで使用可能であることを確認</block>
+  <block id="f143a26d3aa1a2ec09915e966ba2e79d" category="image-alt">SnapMirrorテエタテンソウノステエタス</block>
+  <block id="2cb784360ea1f63614d3f5bcaa598a3f" category="image-alt">ピアクラスタが認証されて使用可能であることの確認</block>
+  <block id="da91c7a4b0770d58391de5b02e703da7" category="image-alt">ピアクラスタが認証済みで使用可能であることを示す[Cluster Peers]セクション</block>
+  <block id="9a1ae1f025bf3468de6eafb8382a5104" category="image-alt">SnapMirror関係にあるデスティネーションボリュームを示す[保護]タブの画像</block>
 </blocks>

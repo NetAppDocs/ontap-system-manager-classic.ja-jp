@@ -14,7 +14,7 @@ summary: System Manager 9.6 以降では、 FlexCache ボリュームを編集�
 System Manager 9.6 以降では、 FlexCache ボリュームを編集する際に、 FlexCache ボリュームに関連付けるアドバンストオプションを指定できます。
 
 .手順
-. *オプション：*[Edit FlexCache volume*（ボリュームの編集）]ウィンドウで、をクリックします image:../media/advanced_options.gif[""] をクリックして、アドバンストオプションを指定します。
+. *オプション：*[Edit FlexCache volume]*ウィンドウで、をクリックしimage:../media/advanced_options.gif["[詳細オプション]アイコン"]て詳細オプションを指定します。
 +
 [ 詳細オプション ] ウィンドウが表示されます。このセクションにはセクション（左側の列の見出し）があり、さまざまなオプションを指定できます。
 

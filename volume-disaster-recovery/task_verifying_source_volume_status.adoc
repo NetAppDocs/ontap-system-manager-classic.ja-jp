@@ -23,7 +23,7 @@ summary: ソースボリュームを使用できないときは、ソースボ�
 +
 ** ONTAP 9.3 以降：ソースボリュームをダブルクリックして詳細を表示し、 * protection * をクリックして、 SnapMirror 関係のデスティネーションボリュームと、ボリュームが含まれている SVM の名前を特定します。
 +
-image::../media/snapmirror_destination_93.gif[SnapMirror デスティネーション 93]
+image::../media/snapmirror_destination_93.gif[SnapMirror関係にあるデスティネーションボリュームを示す[保護]タブの画像]
 
 ** ONTAP 9.2 以前： Volumes （ボリューム）ページの下部にある * Data Protection * （データ保護 * ）タブをクリックして、 SnapMirror 関係のデスティネーションボリュームと、ボリュームが含まれている SVM の名前を確認します。
 +

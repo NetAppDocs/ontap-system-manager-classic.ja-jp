@@ -70,7 +70,7 @@ ONTAP System Manager の従来型機能（ ONTAP 9.7 以前で使用可能）を
 ** SVM に FabricPool アグリゲートしかない場合は、「 FabricPool 」ボタンが「 enabled 」の位置に表示され、変更することはできません。
 
 
-. 特定のアグリゲートを指定する場合は、をクリックします image:../media/advanced_options.gif[""] （アドバンストオプション）。
+. 特定のアグリゲートを指定する場合は、（アドバンストオプション）をクリックしますimage:../media/advanced_options.gif["[詳細オプション]アイコン"]。
 +
 作成する FlexGroup ボリュームに関連付けられているアグリゲートは、ベストプラクティスに従ってデフォルトで選択されます。アグリゲートラベルの横に表示されます。
 

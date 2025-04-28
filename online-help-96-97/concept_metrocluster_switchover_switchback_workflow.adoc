@@ -56,4 +56,4 @@ System Manager では、リモートクラスタサイトのステータスに�
 
 次のフローチャートは、スイッチオーバーとスイッチバックの処理を開始した場合に発生するフェーズとプロセスを示しています。
 
-image::../media/switchover_switchback_workflow.jpg[スイッチオーバーのスイッチバックワークフロー]
+image::../media/switchover_switchback_workflow.jpg[MetroClusterスイッチオーバーとスイッチバックのワークフローフローチャート]

@@ -14,7 +14,7 @@ summary: FlexGroup ボリュームを作成するときに、 FlexGroup ボリ�
 FlexGroup ボリュームを作成するときに、 ONTAP System Manager クラシック（ ONTAP 9.7 以前でサポート）を使用して、 FlexGroup ボリュームに関連付けるオプションを指定できます。
 
 .手順
-. *オプション：* Create FlexGroup *ウィンドウで、をクリックします image:../media/advanced_options.gif[""] をクリックして、アドバンストオプションを指定します。
+. *オプション：*[ FlexGroupの作成]ウィンドウで、をクリックしimage:../media/advanced_options.gif["[詳細オプション]アイコン"]て詳細オプションを指定します。
 +
 [ 詳細オプション ] ウィンドウが表示されます。このセクションにはセクション（左側の列の見出し）があり、さまざまなオプションを指定できます。
 

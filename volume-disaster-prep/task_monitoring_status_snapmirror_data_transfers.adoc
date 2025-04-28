@@ -44,7 +44,7 @@ SnapMirror 関係に問題がある場合は、トラブルシューティング
 http://www.netapp.com/us/media/tr-4015.pdf["ネットアップテクニカルレポート 4015 ：v SnapMirror Configuration and Best Practices for ONTAP 9.1 、 9.2 』"^]
 
 +
-image::../media/snapmirror_monitor_3_health_state_lag.gif[SnapMirror 監視 3 のヘルス状態の遅延]
+image::../media/snapmirror_monitor_3_health_state_lag.gif[SnapMirrorテエタテンソウノステエタス]
 
 
 

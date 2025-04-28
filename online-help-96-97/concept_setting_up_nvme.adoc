@@ -17,4 +17,4 @@ ONTAP 9.5 以降では、 NVMe プロトコルを使用する HA ペアの各ノ
 
 次の図は、 NVMe を設定するためのワークフローを示しています。
 
-image::../media/nvme_setup_workflow.gif[NVMe のセットアップワークフロー]
+image::../media/nvme_setup_workflow.gif[NVMeのセットアップワークフロー]

@@ -26,7 +26,3 @@ ESX ホストの FC ホストバスアダプタ（ HBA ）でサポート対象�
 インストール手順と必要なインストールユーティリティは、ダウンロードファイルに含まれています。
 
 
-
-* 関連情報 *
-
-http://kb.vmware.com/kb/1002413["VMware の技術情報アーティクル 1002413 ：「 Identifying the firmware of a Qlogic or Emulex FC HBA"]

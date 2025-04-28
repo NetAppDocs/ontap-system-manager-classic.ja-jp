@@ -178,7 +178,3 @@ ONTAP ソフトウェアでは、ディスクおよびアレイ LUN に所有権
 === 詳細領域
 
 アレイ LUN リストの下の領域には、選択したアレイ LUN に関する詳細情報が表示されます。
-
-* 関連情報 *
-
-https://docs.netapp.com/ontap-9/topic/com.netapp.doc.vs-irrg/home.html["FlexArray 仮想化のインストール要件およびリファレンス"]

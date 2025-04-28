@@ -13,7 +13,7 @@ summary: ピアリングのセットアップでは、各ノードでクラス�
 [role="lead"]
 ピアリングの設定には、ONTAP System Managerクラシック（ONTAP 9.7以前で使用可能）を使用できます。ピアリングのセットアップでは、各ノードでクラスタ間論理インターフェイス（ LIF ）を作成してから、クラスタピア関係を作成し、 SVM ピア関係を作成します。
 
-image::../media/peering_workflow.gif[ピア関係の作成ワークフロー]
+image::../media/peering_workflow.gif[ピアリングノセットアップワークフロー]
 
 
 

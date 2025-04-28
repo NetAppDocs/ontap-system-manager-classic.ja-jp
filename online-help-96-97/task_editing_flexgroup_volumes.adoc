@@ -37,7 +37,7 @@ System Manager 9.6 以降では、 FlexGroup DP ボリュームの名前も変�
 このオプションを使用できるのは、ボリューム暗号化ライセンスを有効にした場合のみです。また、対応するプラットフォームで暗号化がサポートされている必要があります。
 
 . Snapshot コピーリザーブの割合を指定します。
-. * オプション： * クリック image:../media/advanced_options.gif[""] FlexGroup ボリュームの設定を変更します。を参照してください link:task_specifying_advanced_options_for_flexgroup_volume.html["FlexGroup ボリュームのアドバンストオプションの指定"]。
+. *オプション：*クリックするimage:../media/advanced_options.gif["[詳細オプション]アイコン"]と、FlexGroupボリュームの設定が変更されます。を参照してください link:task_specifying_advanced_options_for_flexgroup_volume.html["FlexGroup ボリュームのアドバンストオプションの指定"]。
 . FlexGroup ボリュームのサイズを変更するサイズを指定します。
 +
 デフォルトでは、既存のアグリゲートを使用して FlexGroup ボリュームのサイズが変更されます。ボリュームに対して許容される最小サイズがサイズのフィールドの横に表示されます。
@@ -45,7 +45,7 @@ System Manager 9.6 以降では、 FlexGroup DP ボリュームの名前も変�
 +
 [NOTE]
 ====
-新しいリソースを追加して FlexGroup ボリュームを拡張する場合は、をクリックします image:../media/advanced_options.gif[""] （アドバンストオプション）。を参照してください link:task_specifying_advanced_options_for_flexgroup_volume.html["FlexGroup ボリュームのアドバンストオプションの指定"]。
+新しいリソースを追加してFlexGroupボリュームを拡張する場合は、（アドバンストオプション）をクリックしますimage:../media/advanced_options.gif["[詳細オプション]アイコン"]。を参照してください link:task_specifying_advanced_options_for_flexgroup_volume.html["FlexGroup ボリュームのアドバンストオプションの指定"]。
 
 ====
 . [ 保存（ Save ） ] をクリックして、変更を保存します。

@@ -17,6 +17,4 @@ ONTAP System Manager クラシック（ ONTAP 9.7 以前で使用可能）を使
 
 https://docs.netapp.com/us-en/ontap/disks-aggregates/index.html["ディスクおよびアグリゲートの管理"^]
 
-https://docs.netapp.com/ontap-9/topic/com.netapp.doc.vs-irrg/home.html["FlexArray 仮想化のインストール要件およびリファレンス"^]
-
 https://docs.netapp.com/us-en/ontap/concepts/index.html["ONTAP の概念"^]

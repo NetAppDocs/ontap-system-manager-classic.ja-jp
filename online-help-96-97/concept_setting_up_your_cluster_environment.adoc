@@ -13,4 +13,4 @@ summary: クラスタは、 System Manager またはコマンドラインイン�
 [role="lead"]
 クラスタは、 System Manager またはコマンドラインインターフェイス（ CLI ）を使用して作成できます。System Manager を使用してクラスタを作成するには、クラスタネットワークのいずれかのノードでノード管理 IP アドレスを設定する必要があります。CLI を使用してクラスタを作成した場合、設定に System Manager を使用できます。
 
-image::../media/guided_cluster_setup.gif[クラスタセットアップガイド]
+image::../media/guided_cluster_setup.gif[クラスタカンキヨウノセツトアツフワアクフロオ]

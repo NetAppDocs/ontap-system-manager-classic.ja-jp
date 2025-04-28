@@ -46,3 +46,7 @@ link:https://www.netapp.com/company/legal/privacy-policy/["https://www.netapp.co
 == オープンソース
 
 通知ファイルには、ネットアップソフトウェアで使用されるサードパーティの著作権およびライセンスに関する情報が記載されています。
+
+本製品で使用されているサードパーティの著作権およびライセンスに関する情報を提供します。
+
+link:https://library.netapp.com/ecm/ecm_download_file/ECMLP2860921["ONTAP 9.7 の場合の注意事項"^] link:https://library.netapp.com/ecm/ecm_download_file/ECMLP2855145["ONTAP 9.6に関する注意事項"^] link:https://library.netapp.com/ecm/ecm_download_file/ECMLP2850702["ONTAP 9.5 では次の点に注意"^] link:https://library.netapp.com/ecm/ecm_download_file/ECMLP2844310["ONTAP 9.4 の注意事項"^] link:https://library.netapp.com/ecm/ecm_download_file/ECMLP2839209["ONTAP 9.3 での注意"^] link:https://library.netapp.com/ecm/ecm_download_file/ECMLP2702054["ONTAP 9.2に関する注意事項"^] link:https://library.netapp.com/ecm/ecm_download_file/ECMLP2516795["ONTAP 9.1に関する注意事項"^]

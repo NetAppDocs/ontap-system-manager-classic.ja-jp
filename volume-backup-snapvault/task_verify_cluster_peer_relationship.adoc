@@ -25,7 +25,7 @@ SnapVault テクノロジを使用したデータ保護の設定を開始する�
 .. [ * Configuration * ] > [* Cluster Peers* ] をクリックします。
 .. ピアクラスタが認証済みで使用可能であることを確認します。
 +
-image::../media/cluster_pper_930_backup.gif[クラスタ・荷台 930 のバックアップ]
+image::../media/cluster_pper_930_backup.gif[ピアクラスタの検証]
 
 .. [ * Configuration * > * SVM peers * ] をクリックします。
 .. デスティネーション SVM がソース SVM とピア関係にあることを確認します。
@@ -37,7 +37,7 @@ image::../media/cluster_pper_930_backup.gif[クラスタ・荷台 930 のバッ�
 .. [* Cluster Details] ペインで、 [* Cluster Peers* ] をクリックします。
 .. ピアクラスタが認証済みで使用可能であることを確認します。
 +
-image::../media/cluster_peer_health_backup.gif[クラスタピアヘルスバックアップ]
+image::../media/cluster_peer_health_backup.gif[[Cluster Peers]セクションを表示する[Cluster details]ペインで、ピアクラスタが認証済みで使用可能であることを確認]
 
 .. SVM * タブをクリックし、ソース SVM を選択します。
 .. ピア Storage Virtual Machines * 領域で、デスティネーション SVM がソース SVM とピア関係にあることを確認します。
